@@ -35,6 +35,17 @@
     var code = (a.getAttribute('hreflang') || 'en').toLowerCase().slice(0, 2);
     document.cookie = 'lv_lang=' + code + ';path=/;max-age=31536000;samesite=lax';
   });
+  // ---------- back button (sub pages) ----------
+  $$('[data-act="back"]').forEach(function (a) {
+    var m = location.pathname.match(/^(\/(?:ko|ja|zh-Hant))?\/insights\/[^/]+\/$/);
+    if (m) a.setAttribute('href', (m[1] || '') + '/insights/');
+    a.addEventListener('click', function (e) {
+      var same = false;
+      try { same = document.referrer && new URL(document.referrer).origin === location.origin; } catch (x) {}
+      if (same && history.length > 1) { e.preventDefault(); history.back(); }
+    });
+  });
+
   // ---------- mobile menu ----------
   var menu = $('.lv-menu');
   $$('[data-act="menu"]').forEach(function (el) {
