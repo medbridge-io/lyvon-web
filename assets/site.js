@@ -27,6 +27,14 @@
     });
   });
 
+
+  // remember a manual language choice (read by the / redirect function)
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[hreflang]');
+    if (!a) return;
+    var code = (a.getAttribute('hreflang') || 'en').toLowerCase().slice(0, 2);
+    document.cookie = 'lv_lang=' + code + ';path=/;max-age=31536000;samesite=lax';
+  });
   // ---------- mobile menu ----------
   var menu = $('.lv-menu');
   $$('[data-act="menu"]').forEach(function (el) {
