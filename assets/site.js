@@ -33,7 +33,7 @@
     var a = e.target.closest && e.target.closest('a[hreflang]');
     if (!a) return;
     var code = (a.getAttribute('hreflang') || 'en').toLowerCase().slice(0, 2);
-    document.cookie = 'lv_lang=' + code + ';path=/;max-age=31536000;samesite=lax';
+    document.cookie = 'lv_lang=' + code + ';path=/;samesite=lax';  // session only: a new visit follows the phone language again
   });
   // ---------- back button (sub pages) ----------
   $$('[data-act="back"]').forEach(function (a) {
