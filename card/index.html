@@ -171,18 +171,18 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     en:{flip:"Tap to flip", cta:"Book a free lesson", callkr:"Call KR", calljp:"Call JP", email:"Email", kakao:"KakaoTalk", web:"Website",
         mb:"Admissions prep →", mp:"Flagship →", mc:"After admission →", save:"Save contact", share:"Share card", copy:"Copy link",
         qrcap:"Scan to open this card", qrhint:"Tap to enlarge", qrlp:"Press and hold the image to save it to Photos", qrsave:"Save QR", qrclose:"Close",
-        foot:"Learning · Communication · Connection — potential into growth.<br>Beginning in medicine, reaching beyond.", sub:"노재봉", toast:"Link copied", path:""},
+        foot:"Learning · Communication · Connection — potential into growth.<br>Beginning in medicine, reaching beyond.", sub:"", toast:"Link copied", path:""},
     zh:{flip:"點擊翻面", cta:"預約免費課程", callkr:"韓國電話", calljp:"日本電話", email:"電子郵件", kakao:"KakaoTalk", web:"網站",
         mb:"入學準備 →", mp:"旗艦課程 →", mc:"錄取之後 →", save:"儲存聯絡人", share:"分享名片", copy:"複製連結",
         qrcap:"掃描開啟數位名片", qrhint:"點擊放大", qrlp:"長按圖片即可儲存至相簿", qrsave:"儲存 QR", qrclose:"關閉",
-        foot:"以學習、溝通與連結，讓潛力化為成長。<br>從醫學出發，走向更遠。", sub:"노재봉", toast:"已複製連結", path:"/zh-Hant"}
+        foot:"以學習、溝通與連結，讓潛力化為成長。<br>從醫學出發，走向更遠。", sub:"", toast:"已複製連結", path:"/zh-Hant"}
   };
   var cur = 'ko';
   function setLang(l){
     var d = I[l] || I.en; cur = l;
     document.querySelectorAll('.lang button').forEach(function(b){ b.classList.toggle('on', b.dataset.l === l); });
     document.querySelectorAll('[data-i]').forEach(function(e){ var k = e.dataset.i; if (d[k] != null) e.innerHTML = d[k]; });
-    document.getElementById('nameSub').textContent = d.sub;
+    var ns = document.getElementById('nameSub'); ns.textContent = d.sub; ns.style.display = d.sub ? '' : 'none';
     document.getElementById('cta').href = d.path + '/book/';
     document.getElementById('web').href = d.path + '/';
     document.querySelectorAll('[data-prog]').forEach(function(a){ a.href = d.path + a.getAttribute('href').replace(/^\/(ko|ja|zh-Hant)/, ''); });
