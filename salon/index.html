@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LYVON Salon — Tokyo · One book a month, in English</title>
+<meta name="description" content="LYVON Salon Tokyo: one book a month, weekly 1:1 English conversations with a professional instructor, a monthly club night and LYVON Table, a dinner in Tokyo. 毎月一冊の本を英語で語り合う、LYVONのサロン。">
+<link rel="icon" type="image/png" href="/salon/icon.png">
+<link rel="apple-touch-icon" href="/salon/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F1A26;
+    --paper:#FFFFFF;
+    --cream:#F2F5F8;
+    --accent:#5F7A96;
+    --accent-dark:#20344A;
+    --muted:#6B7480;
+    --line:#DDE3EA;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter','Noto Sans JP',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-weight:300}
+  .serif{font-family:'Cormorant Garamond',serif}
+  .jp{font-family:'Noto Sans JP',sans-serif;color:var(--muted);font-size:.86em;font-weight:300}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px}
+
+  /* Nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:980px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+  .logo{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;letter-spacing:.06em}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{color:var(--ink);text-decoration:none;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase}
+  .nav-cta{background:var(--ink);color:var(--paper)!important;padding:9px 20px;border-radius:2px}
+  @media(max-width:640px){.nav-links a:not(.nav-cta){display:none}}
+
+  /* Hero */
+  header{padding:190px 0 130px;text-align:center;color:#FFFFFF;background:#0F1A26;position:relative;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background-position:center;background-size:cover;opacity:0;transition:opacity 1.8s ease;z-index:0}
+  .hero-bg.active{opacity:1}
+  header .wrap{position:relative;z-index:2}
+  @media(min-width:761px){.hero-bg-tokyo{background-position:center 35% !important}}
+  .kicker{letter-spacing:.32em;text-transform:uppercase;font-size:.72rem;color:#9DB4CC;font-weight:500;margin-bottom:26px}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,7vw,4.6rem);font-weight:500;line-height:1.12;letter-spacing:.01em}
+  .hero-sub{margin:28px auto 0;max-width:560px;font-size:1.02rem;color:#E6EBF1}
+  .hero-jp{margin:14px auto 0;max-width:560px}
+  .hero-jp.jp, .hero-jp .jp{color:#D3DCE6 !important;font-size:.92rem;font-weight:300;text-shadow:0 1px 6px rgba(5,12,20,.5)}
+  header h1,header .hero-sub{text-shadow:0 1px 10px rgba(0,0,0,.4)}
+  header .btn-ghost{border-color:#FFFFFF;color:#FFFFFF}
+  header .btn-ghost:hover{background:#FFFFFF;color:var(--ink)}
+  header .seats-note{color:#9DB4CC}
+  .hero-cta{margin-top:44px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;text-decoration:none;padding:15px 36px;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;border-radius:2px;transition:.2s}
+  .btn-primary{background:var(--ink);color:var(--paper)}
+  .btn-primary:hover{background:var(--accent-dark)}
+  .btn-ghost{border:1px solid var(--ink);color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper)}
+  .seats-note{margin-top:18px;font-size:.8rem;letter-spacing:.1em;color:var(--accent);text-transform:uppercase}
+
+  /* Sections */
+  section{padding:90px 0}
+  .sec-label{letter-spacing:.28em;text-transform:uppercase;font-size:.7rem;color:var(--accent);font-weight:500;margin-bottom:14px}
+  h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:500;line-height:1.25;margin-bottom:10px}
+  .h2-jp{margin-bottom:34px}
+
+  /* Concept */
+  .concept{background:var(--cream)}
+  .concept-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+  @media(max-width:760px){.concept-grid{grid-template-columns:1fr}}
+  .concept p{margin-bottom:18px;color:#2E3A48}
+  .principles{display:flex;flex-direction:column;gap:22px}
+  .principle{border-left:2px solid var(--accent);padding-left:20px}
+  .principle strong{display:block;font-weight:500;font-size:1rem;margin-bottom:4px}
+  .principle span{font-size:.9rem;color:var(--muted)}
+
+  /* Photo strip */
+  .photo-strip{padding:0 0 90px}
+  .strip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:640px){.strip-grid{grid-template-columns:1fr}}
+  .strip-grid figure{position:relative;overflow:hidden;border-radius:2px;aspect-ratio:4/3}
+  .strip-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+  .strip-grid figure:hover img{transform:scale(1.04)}
+  .strip-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 16px 12px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#FFFFFF;background:linear-gradient(transparent, rgba(15,26,38,.75))}
+
+  /* Concept image */
+  .concept-img{margin-top:28px;border-radius:2px;overflow:hidden}
+  .concept-img img{width:100%;height:260px;object-fit:cover;display:block}
+
+  /* How it works */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:20px}
+  @media(max-width:760px){.steps{grid-template-columns:1fr}}
+  .step-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--accent);font-style:italic;line-height:1}
+  .step h3{font-weight:500;font-size:1.02rem;margin:12px 0 8px}
+  .step p{font-size:.9rem;color:var(--muted)}
+
+  /* Event card */
+  .event{background:var(--ink);color:var(--paper)}
+  .event .sec-label{color:#9DB4CC}
+  .event-card{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+  @media(max-width:760px){.event-card{grid-template-columns:1fr}}
+  .event h2{color:var(--paper)}
+  .book-cover{background:linear-gradient(160deg,#1A2A3C,#24384F);border:1px solid #3A4E66;padding:48px 40px;text-align:center;border-radius:2px}
+  .book-cover .bc-img{display:block;max-height:280px;max-width:70%;margin:0 auto 22px;box-shadow:0 10px 30px rgba(5,12,20,.5);border-radius:2px}
+  .book-cover .bc-label{letter-spacing:.26em;font-size:.66rem;text-transform:uppercase;color:#9DB4CC;margin-bottom:18px}
+  .book-cover .bc-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:500;line-height:1.2}
+  .book-cover .bc-author{margin-top:10px;font-size:.9rem;color:#C3CBD4}
+  .book-cover .bc-jp{margin-top:16px;font-size:.8rem;color:#9DB4CC}
+  .detail-list{margin:30px 0;display:flex;flex-direction:column;gap:0}
+  .detail{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid #2A3B50;font-size:.94rem}
+  .detail dt{color:#9DB4CC;letter-spacing:.06em;text-transform:uppercase;font-size:.76rem;padding-top:3px;white-space:nowrap}
+  .detail dd{text-align:right}
+  .detail dd .jp{color:#9DB4CC}
+  .event .btn-primary{background:var(--paper);color:var(--ink)}
+  .event .btn-primary:hover{background:#9DB4CC;color:var(--ink)}
+
+  /* Season lineup */
+  .season{background:var(--cream)}
+  .book-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+  @media(max-width:760px){.book-grid{grid-template-columns:1fr}}
+  .book-card{background:#fff;border:1px solid var(--line);border-radius:2px;padding:28px 26px;display:flex;flex-direction:column}
+  .book-card.current{border-color:var(--accent);background:linear-gradient(180deg,#fff,#F2F5F8)}
+  .bk-cover{height:200px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;background:var(--cream);border-radius:2px}
+  .bk-cover img{max-height:180px;max-width:80%;box-shadow:0 6px 18px rgba(15,26,38,.22);border-radius:2px}
+  .bk-vol{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:12px}
+  .bk-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:500;line-height:1.25}
+  .bk-author{font-size:.85rem;color:var(--muted);margin:6px 0 4px}
+  .bk-jp{font-size:.78rem;color:var(--muted)}
+  .bk-theme{margin-top:auto;padding-top:16px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#2E3A48}
+
+  /* Salon / Pricing */
+  .salon .steps{margin-bottom:50px}
+  .pricing{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:820px;margin:0 auto}
+  @media(max-width:700px){.pricing{grid-template-columns:1fr}}
+  .price-card{background:#fff;border:1px solid var(--line);border-radius:2px;padding:38px 34px;text-align:center;display:flex;flex-direction:column}
+  .price-card.featured{border:1px solid var(--accent);background:linear-gradient(180deg,#fff, #F2F5F8);position:relative}
+  .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;padding:5px 14px;border-radius:2px}
+  .price-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:500}
+  .price-card .pc-jp{font-size:.8rem;color:var(--muted);margin-bottom:16px}
+  .price-card .pc-price{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:500;margin:8px 0 2px}
+  .price-card .pc-per{font-size:.8rem;color:var(--muted);margin-bottom:22px}
+  .price-card ul{list-style:none;text-align:left;margin:0 auto 28px;font-size:.9rem;color:#2E3A48;display:flex;flex-direction:column;gap:10px;flex:1}
+  .price-card li::before{content:'—';color:var(--accent);margin-right:10px}
+  .price-card li span.jp{display:block;margin-left:24px;font-size:.78rem}
+  .price-card .btn{width:100%}
+
+  /* Who */
+  .who-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:26px}
+  @media(max-width:640px){.who-grid{grid-template-columns:1fr}}
+  .who-card{background:#fff;border:1px solid var(--line);padding:26px 28px;border-radius:2px}
+  .who-card strong{display:block;font-weight:500;margin-bottom:6px}
+  .who-card span{font-size:.88rem;color:var(--muted)}
+
+  /* FAQ */
+  .faq{background:var(--cream)}
+  details{border-bottom:1px solid var(--line);padding:20px 0}
+  summary{cursor:pointer;font-weight:400;font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+  summary::after{content:'+';font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--accent);line-height:1;flex-shrink:0}
+  summary .q{display:block}
+  summary .q .jp{display:block;margin-top:3px;font-size:.78rem}
+  details[open] summary::after{content:'−'}
+  details p{margin-top:12px;font-size:.92rem;color:var(--muted);max-width:640px}
+
+  /* Reserve */
+  .reserve{text-align:center}
+  .reserve .price{font-family:'Cormorant Garamond',serif;font-size:3.4rem;font-weight:500;margin:18px 0 4px}
+  .reserve .price small{font-size:1.1rem;color:var(--muted);font-family:'Inter',sans-serif;font-weight:300}
+  .reserve p{max-width:520px;margin:0 auto 8px;color:#2E3A48}
+
+  /* Mobile polish */
+  @media(max-width:640px){
+    section{padding:64px 0}
+    header{padding:150px 0 90px}
+    .detail{flex-direction:column;gap:4px}
+    .detail dd{text-align:left}
+    .book-cover{padding:36px 24px}
+    .reserve .price{font-size:2.6rem}
+  }
+  @media(max-width:480px){
+    .logo{font-size:1.05rem}
+    .logo span{display:none}
+    .nav-cta{padding:8px 14px;font-size:.76rem}
+  }
+
+  footer{border-top:1px solid var(--line);padding:40px 0;text-align:center;font-size:.8rem;color:var(--muted)}
+  footer .logo{display:block;margin-bottom:10px}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="/" style="text-decoration:none;color:inherit">LYVON Salon <span style="font-family:'Inter',sans-serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);vertical-align:middle;margin-left:6px">Tokyo</span></a>
+    <div class="nav-links">
+      <a href="#salon">The Salon</a>
+      <a href="#event">LYVON Table</a>
+      <a href="#season">Books</a>
+      <a href="#faq">FAQ</a>
+      <a href="#join" class="nav-cta">Join the Salon</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="hero-bg active" style="background-image:linear-gradient(rgba(15,26,38,.62),rgba(15,26,38,.80)),url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=80')"></div>
+  <div class="hero-bg" style="background-image:linear-gradient(rgba(15,26,38,.62),rgba(15,26,38,.80)),url('https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1800&q=80')"></div>
+  <div class="hero-bg" style="background-image:linear-gradient(rgba(15,26,38,.62),rgba(15,26,38,.80)),url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=80')"></div>
+  <div class="hero-bg" style="background-image:linear-gradient(rgba(15,26,38,.62),rgba(15,26,38,.80)),url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1800&q=80')"></div>
+  <div class="hero-bg hero-bg-tokyo" style="background-image:linear-gradient(rgba(15,26,38,.62),rgba(15,26,38,.80)),url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=1800&q=80');background-position:center 65%"></div>
+  <div class="wrap">
+    <div class="kicker">LYVON Salon · Tokyo</div>
+    <h1 class="serif">One book a month.<br>Four conversations. One table.</h1>
+    <p class="hero-sub">One great book each month, four 1:1 conversations about it in English with a professional instructor, and a table in Tokyo to share it with others.</p>
+    <p class="hero-jp jp">毎月一冊の本を、英語で語る。専門の英語講師と毎週1対1で対話し、月に一度は東京のテーブルへ。</p>
+    <div class="hero-cta">
+      <a href="#join" class="btn btn-primary">Join the Salon</a>
+      <a href="#how" class="btn btn-ghost">How It Works</a>
+    </div>
+    <div class="seats-note">Season 1 starts December 2026 · Seoul, Taipei &amp; Hong Kong coming</div>
+  </div>
+</header>
+
+<section id="concept" class="concept">
+  <div class="wrap">
+    <div class="sec-label">Concept</div>
+    <h2 class="serif">Not a class. Not a meetup.<br>A conversation.</h2>
+    <p class="h2-jp jp">授業でも、交流会でもなく、対話の場。</p>
+    <div class="concept-grid">
+      <div>
+        <p>Most adults in Tokyo already study English. What they rarely get is a place to say what they actually think — about ideas, work and the world — and be challenged on it. At LYVON we call it <em>output, not input</em>: everyone has potential, and it grows when you put it into words.</p>
+        <p>LYVON Salon gives you one book a month and four 1:1 conversations about it, online, in English. Once a month, members meet at the online Club Night and around a real table in Tokyo — LYVON Table.</p>
+        <p class="jp">毎月一冊の本をテーマに、1対1のオンラインセッションで英語の対話を重ねます。月に一度はクラブナイトと、東京のテーブル「LYVON Table」へ。</p>
+        <div class="concept-img">
+          <img src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?auto=format&fit=crop&w=1200&q=80" alt="Reading a book over coffee" loading="lazy">
+        </div>
+      </div>
+      <div class="principles">
+        <div class="principle">
+          <strong>Your own instructor <span class="jp">専門講師と1対1</span></strong>
+          <span>Weekly 1:1 sessions with a professional English instructor. You do most of the talking.</span>
+        </div>
+        <div class="principle">
+          <strong>Speak, don't study <span class="jp">勉強ではなく、対話</span></strong>
+          <span>No textbooks. You practise saying what you think — the skill you need in meetings, interviews and at the table.</span>
+        </div>
+        <div class="principle">
+          <strong>Your LYVON Record <span class="jp">毎月の記録</span></strong>
+          <span>After every session, a short written record of what improved and what to work on next — the same method LYVON uses with its students.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-label">How It Works</div>
+    <h2 class="serif">A month at the salon</h2>
+    <p class="h2-jp jp">サロンの1か月</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num serif">01</div>
+        <h3>Read the book <span class="jp">本を読む</span></h3>
+        <p>Each month has one book. English or Japanese edition — both are fine.</p>
+      </div>
+      <div class="step">
+        <div class="step-num serif">02</div>
+        <h3>Talk 1:1, weekly <span class="jp">毎週1対1で対話</span></h3>
+        <p>Four online sessions a month with your instructor. Each week covers part of the book; week four brings it all together.</p>
+      </div>
+      <div class="step">
+        <div class="step-num serif">03</div>
+        <h3>Join the club <span class="jp">クラブで出会う</span></h3>
+        <p>A monthly online Club Night with other members, and LYVON Table — a dinner in Tokyo that opens when three people sign up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="salon" class="salon">
+  <div class="wrap">
+    <div class="sec-label">The Salon — Membership</div>
+    <h2 class="serif">Membership</h2>
+    <p class="h2-jp jp">料金プラン</p>
+    <div class="pricing">
+      <div class="price-card featured">
+        <div class="badge">Main Program</div>
+        <h3>LYVON Salon</h3>
+        <div class="pc-jp">LYVONサロン（オンライン・月額）</div>
+        <div class="pc-price">¥29,800</div>
+        <div class="pc-per">per month, tax included / 月額（税込）・いつでも退会OK</div>
+        <ul>
+          <li>4 weekly 1:1 sessions with a professional English instructor<span class="jp">専門講師との1対1セッション（週1回×4回）</span></li>
+          <li>Your LYVON Record after every session<span class="jp">毎回のフィードバック記録</span></li>
+          <li>Monthly online Club Night — 50 minutes, up to 5 members, led by an instructor<span class="jp">月1回のオンライン・クラブナイト（50分・最大5名・講師が進行）</span></li>
+          <li>Priority booking and member price for LYVON Table<span class="jp">LYVON Tableの優先予約・会員価格</span></li>
+        </ul>
+        <a href="#join" class="btn btn-primary">Join the Salon</a>
+      </div>
+      <div class="price-card">
+        <h3>LYVON Table</h3>
+        <div class="pc-jp">月例ディナー（東京）</div>
+        <div class="pc-price">¥8,000</div>
+        <div class="pc-per">per dinner, tax included / 1回（税込）・会員価格あり</div>
+        <ul>
+          <li>Opens when 3 people sign up (max 8)<span class="jp">3名から開催（最大8名）</span></li>
+          <li>Dinner and drinks included<span class="jp">食事・飲み放題込み</span></li>
+          <li>Pay only after the table is confirmed<span class="jp">開催確定後にお支払い</span></li>
+        </ul>
+        <a href="#join" class="btn btn-ghost">Apply for the Dinner</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="photo-strip">
+  <div class="wrap">
+    <div class="strip-grid">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=1000&q=80" alt="Books" loading="lazy">
+        <figcaption>One Book · 一冊の本</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1000&q=80" alt="Dinner table" loading="lazy">
+        <figcaption>One Table · 一つのテーブル</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1000&q=80" alt="Tokyo at night" loading="lazy">
+        <figcaption>In Tokyo · 東京で</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="season" class="season">
+  <div class="wrap">
+    <div class="sec-label">Season 1 — The Reading List</div>
+    <h2 class="serif">Six months, six conversations</h2>
+    <p class="h2-jp jp">シーズン1（2026年12月〜2027年5月）のラインナップ。毎月一冊。</p>
+    <div class="book-grid">
+      <div class="book-card current">
+        <div class="bk-cover"><img src="https://covers.openlibrary.org/b/isbn/9781610392501-L.jpg" alt="The Culture Map cover" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+        <div class="bk-vol">Vol.1 · December · Culture</div>
+        <div class="bk-title serif">The Culture Map</div>
+        <div class="bk-author">Erin Meyer</div>
+        <div class="bk-jp">『異文化理解力』</div>
+        <div class="bk-theme">Working across cultures</div>
+      </div>
+      <div class="book-card">
+        <div class="bk-cover"><img src="https://covers.openlibrary.org/b/isbn/9780735214484-L.jpg" alt="Range cover" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+        <div class="bk-vol">Vol.2 · January · Career</div>
+        <div class="bk-title serif">Range</div>
+        <div class="bk-author">David Epstein</div>
+        <div class="bk-jp">『RANGE — 知識の「幅」が最強の武器になる』</div>
+        <div class="bk-theme">Generalist vs. specialist</div>
+      </div>
+      <div class="book-card">
+        <div class="bk-cover"><img src="https://covers.openlibrary.org/b/isbn/9781984877864-L.jpg" alt="No Rules Rules cover" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+        <div class="bk-vol">Vol.3 · February · Organization</div>
+        <div class="bk-title serif">No Rules Rules</div>
+        <div class="bk-author">Reed Hastings &amp; Erin Meyer</div>
+        <div class="bk-jp">『NO RULES — 世界一「自由」な会社、NETFLIX』</div>
+        <div class="bk-theme">Freedom &amp; candor at work</div>
+      </div>
+      <div class="book-card">
+        <div class="bk-cover"><img src="https://covers.openlibrary.org/b/isbn/9781501197277-L.jpg" alt="The Courage to Be Disliked cover" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+        <div class="bk-vol">Vol.4 · March · Mindset</div>
+        <div class="bk-title serif">The Courage to Be Disliked</div>
+        <div class="bk-author">Ichiro Kishimi &amp; Fumitake Koga</div>
+        <div class="bk-jp">『嫌われる勇気』</div>
+        <div class="bk-theme">Freedom from approval</div>
+      </div>
+      <div class="book-card">
+        <div class="bk-cover"><img src="https://covers.openlibrary.org/b/isbn/9781250107817-L.jpg" alt="Factfulness cover" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+        <div class="bk-vol">Vol.5 · April · Worldview</div>
+        <div class="bk-title serif">Factfulness</div>
+        <div class="bk-author">Hans Rosling</div>
+        <div class="bk-jp">『FACTFULNESS — 10の思い込みを乗り越え、データを基に世界を正しく見る習慣』</div>
+        <div class="bk-theme">Seeing the world clearly</div>
+      </div>
+      <div class="book-card">
+        <div class="bk-cover"><img src="https://covers.openlibrary.org/b/isbn/9781101974520-L.jpg" alt="Men Without Women cover" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+        <div class="bk-vol">Vol.6 · May · Fiction</div>
+        <div class="bk-title serif">Men Without Women</div>
+        <div class="bk-author">Haruki Murakami</div>
+        <div class="bk-jp">『女のいない男たち』</div>
+        <div class="bk-theme">Stories of solitude &amp; connection</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="event" class="event">
+  <div class="wrap">
+    <div class="event-card">
+      <div>
+        <div class="sec-label">LYVON Table · Tokyo</div>
+        <h2 class="serif">The table opens at three</h2>
+        <p class="jp" style="color:#9DB4CC">3名集まれば、テーブルが開きます（最大8名）</p>
+        <dl class="detail-list">
+          <div class="detail"><dt>When</dt><dd>The Friday after week four · 19:30 – 21:30<br><span class="jp">セッション4週目の後の金曜日（日程は毎月ご案内）</span></dd></div>
+          <div class="detail"><dt>Place</dt><dd>Private dining near Tokyo Station<br>(Otemachi / Yaesu / Nihonbashi / Ginza)<br><span class="jp">東京駅周辺の個室（確定後にご案内）</span></dd></div>
+          <div class="detail"><dt>Seats</dt><dd>3 – 8</dd></div>
+          <div class="detail"><dt>Price</dt><dd>¥8,000 (tax included) <span style="color:#9DB4CC">— members get priority and a member price</span></dd></div>
+          <div class="detail"><dt>Confirmed</dt><dd>7 days before, by email. If fewer than three sign up, we meet at the online Club Night instead — nothing to pay.<br><span class="jp">7日前に開催可否をご連絡。3名未満の場合はオンラインのクラブナイトにご招待します（お支払い不要）。</span></dd></div>
+        </dl>
+        <a href="#join" class="btn btn-primary">Apply for the Dinner</a>
+      </div>
+      <div class="book-cover">
+        <div class="bc-label">This Month's Book</div>
+        <img class="bc-img" src="https://covers.openlibrary.org/b/isbn/9781610392501-L.jpg" alt="The Culture Map book cover" loading="lazy" onerror="this.style.display='none'">
+        <div class="bc-title serif">The Culture Map</div>
+        <div class="bc-author">Erin Meyer</div>
+        <div class="bc-jp">日本語版『異文化理解力』でもOK</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="who">
+  <div class="wrap">
+    <div class="sec-label">Who It's For</div>
+    <h2 class="serif">Eight seats, eight perspectives</h2>
+    <p class="h2-jp jp">こんな方のための席です</p>
+    <div class="who-grid">
+      <div class="who-card">
+        <strong>The global-career builder <span class="jp">グローバルキャリア志向</span></strong>
+        <span>You work in Japan and want your English — and your network — to match your ambitions.</span>
+      </div>
+      <div class="who-card">
+        <strong>The international professional <span class="jp">東京在住の外国人プロフェッショナル</span></strong>
+        <span>You're in Tokyo and want conversations that go deeper than networking small talk.</span>
+      </div>
+      <div class="who-card">
+        <strong>The curious reader <span class="jp">読書好き</span></strong>
+        <span>You read good books anyway — you'd rather discuss them with interesting people.</span>
+      </div>
+      <div class="who-card">
+        <strong>The future founder <span class="jp">起業を考えている人</span></strong>
+        <span>You're looking for ideas, honest feedback, and people who think about business seriously.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cities" style="padding:70px 0">
+  <div class="wrap" style="text-align:center">
+    <div class="sec-label">LYVON Salon Across Asia</div>
+    <h2 class="serif">Tokyo first. More tables to come.</h2>
+    <p class="h2-jp jp">東京からスタート。ソウル・台北・香港も準備中です。</p>
+    <p style="max-width:620px;margin:18px auto 0;color:#2E3A48">Tokyo · Season 1, December 2026 &nbsp;—&nbsp; Seoul · Taipei · Hong Kong, coming soon.</p>
+    <p style="margin-top:14px"><a href="mailto:hello@lyvon.io?subject=LYVON%20Salon%20waitlist" style="color:var(--accent)">Join the waitlist for your city →</a></p>
+  </div>
+</section>
+
+<section id="founder" style="padding:80px 0;border-top:1px solid var(--line)">
+  <div class="wrap" style="max-width:760px">
+    <div class="sec-label">From the Founder</div>
+    <h2 class="serif">We grow when we speak.</h2>
+    <p class="h2-jp jp">人は、話すことで成長する。</p>
+    <p style="margin-top:22px;color:#2E3A48">For ten years I was part of an international English speaking club — standing up to speak in front of people from many countries, and listening closely to theirs. What I learned there is simple: people grow most when they say what they think, out loud, in front of others. LYVON Salon, built between Seoul and Tokyo, turns that experience into one book and one month of conversation.</p>
+    <p class="jp" style="margin-top:10px">10年間、国際的な英語スピーチクラブに所属し、さまざまな国の人の前で話し、その人たちの言葉に耳を傾けてきました。そこで学んだことはシンプルです。人は自分の考えを声に出して伝えるときに、いちばん成長する。ソウルと東京を拠点に生まれたLYVON Salonは、その経験を一冊の本と一か月の対話に込めた場所です。</p>
+    <p style="margin-top:18px;color:#2E3A48">Your 1:1 sessions and Club Night are led by LYVON's professional English instructors. LYVON Table, the dinner in Tokyo, is hosted by me.</p>
+    <p class="jp" style="margin-top:6px">1対1セッションとクラブナイトはLYVONの専門英語講師が担当し、東京でのディナー「LYVON Table」は私が主催します。</p>
+    <p style="margin-top:22px;font-family:'Cormorant Garamond',serif;font-size:1.25rem">Patrick Noh <span style="font-family:Inter,sans-serif;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-left:8px">Founder, LYVON</span></p>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="wrap">
+    <div class="sec-label">FAQ</div>
+    <h2 class="serif">Questions</h2>
+    <p class="h2-jp jp">よくある質問</p>
+    <details>
+      <summary><span class="q">My English isn't perfect. Can I join? <span class="jp">英語に自信がなくても参加できますか？</span></span></summary>
+      <p>Yes. Conversational level is enough. 1:1 sessions go at your pace. 日常会話レベルで十分です。1対1なので自分のペースで話せます。</p>
+    </details>
+    <details>
+      <summary><span class="q">When are the sessions? <span class="jp">セッションはいつですか？</span></span></summary>
+      <p>Once a week, four times a month, at a time you set with your instructor. 週1回・月4回。時間は講師と調整して決めます。</p>
+    </details>
+    <details>
+      <summary><span class="q">Do I have to finish the book? <span class="jp">本を読み終えていないとだめですか？</span></span></summary>
+      <p>Each weekly session covers part of the book, so you read along. The Japanese edition is completely fine. 毎週少しずつ読み進めます。日本語版での読書も歓迎です。</p>
+    </details>
+    <details>
+      <summary><span class="q">What is Club Night? <span class="jp">クラブナイトとは？</span></span></summary>
+      <p>A 50-minute online session once a month where members discuss the month's book together. An instructor leads it as mediator, with up to 5 members per session: a 1-minute speech each, then discussion. If more members join, we open another session. 月に一度、会員同士でその月の本を語り合う50分のオンラインセッションです。講師が進行役を務め、1回最大5名。1人1分のスピーチの後、ディスカッションを行います。人数が多い場合はセッションを追加します。</p>
+    </details>
+    <details>
+      <summary><span class="q">Is LYVON Table included in the membership? <span class="jp">ディナーは会費に含まれますか？</span></span></summary>
+      <p>No. Members get priority booking and a member price. Non-members are welcome at ¥8,000. 会費には含まれません。会員は優先予約と会員価格でご参加いただけます。</p>
+    </details>
+    <details>
+      <summary><span class="q">What if fewer than three people sign up for LYVON Table? <span class="jp">ディナーの申込が3名未満の場合は？</span></span></summary>
+      <p>We let you know 7 days before and invite you to the online Club Night instead. You only pay once a table is confirmed. 7日前にご連絡し、オンラインのクラブナイトにご招待します。お支払いは開催確定後のみです。</p>
+    </details>
+    <details>
+      <summary><span class="q">Can I cancel? <span class="jp">退会・キャンセルはできますか？</span></span></summary>
+      <p>The salon is month to month — cancel any time before the next month. For a confirmed dinner, full refund up to 72 hours before; after that you can pass your seat to a friend. サロンはいつでも退会OK（翌月分から）。ディナーは72時間前まで全額返金、それ以降は席のお譲りが可能です。</p>
+    </details>
+  </div>
+</section>
+
+<section id="join" class="reserve">
+  <div class="wrap">
+    <div class="sec-label">Join</div>
+    <h2 class="serif">Join LYVON Salon</h2>
+    <p class="h2-jp jp">シーズン1 — 2026年12月スタート</p>
+    <p>We reply within 48 hours and match you with your instructor.<br><span class="jp">48時間以内にご連絡し、担当講師をご案内します。</span></p>
+    <div class="hero-cta">
+      <a href="mailto:hello@lyvon.io?subject=LYVON%20Salon%20Tokyo" class="btn btn-primary">Join LYVON Salon — ¥29,800/mo</a>
+      <a href="mailto:hello@lyvon.io?subject=LYVON%20Table%20Tokyo" class="btn btn-ghost">Apply for LYVON Table — ¥8,000</a>
+    </div>
+    <p style="margin-top:22px;font-size:.82rem;color:var(--muted)">Questions? <a href="mailto:hello@lyvon.io" style="color:var(--accent)">hello@lyvon.io</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="logo serif">LYVON Salon</span>
+    Tokyo · Seoul · Taipei · Hong Kong<br>
+    <span class="jp">English · 日本語 · 한국어 — hosted in three languages</span><br>
+    <a href="/salon/legal/">特定商取引法に基づく表記 · Legal notice</a> · <a href="/legal/">Privacy</a><br>
+    <span class="jp">© 2026 LYVON. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var slides=document.querySelectorAll('.hero-bg');
+  if(slides.length<2)return;
+  var i=0;
+  setInterval(function(){
+    slides[i].classList.remove('active');
+    i=(i+1)%slides.length;
+    slides[i].classList.add('active');
+  },6000);
+})();
+</script>
+</body>
+</html>
