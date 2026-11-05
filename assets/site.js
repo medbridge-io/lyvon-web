@@ -192,11 +192,11 @@
       // stagger siblings that enter together
       var prev = el.previousElementSibling;
       while (prev && prev.classList.contains('lv-rv') && !prev.classList.contains('lv-in') && sibs < 6) { sibs++; prev = prev.previousElementSibling; }
-      el.style.transitionDelay = (sibs * 90) + 'ms';
+      el.style.transitionDelay = (sibs * 140) + 'ms';
       el.classList.add('lv-in');
       io.unobserve(el);
     });
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  }, { rootMargin: '0px 0px -14% 0px', threshold: 0.12 });
   picked.forEach(function (el) { io.observe(el); });
 
   // count-up for large figures (e.g. 91.7%, 12, 150)
@@ -215,7 +215,7 @@
       if (!e.isIntersecting) return;
       co.unobserve(e.target);
       var n = nums.filter(function (x) { return x.el === e.target; })[0]; if (!n) return;
-      var t0 = null, D = 1400;
+      var t0 = null, D = 1800;
       function step(t) {
         if (!t0) t0 = t;
         var k = Math.min(1, (t - t0) / D), v = n.end * (1 - Math.pow(1 - k, 3));
