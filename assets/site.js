@@ -151,6 +151,18 @@
   }
 })();
 
+// ---------- phone strip: start centred on the middle phone when it overflows ----------
+(function () {
+  document.querySelectorAll('.lv-phones').forEach(function (strip) {
+    function centre() {
+      if (strip.scrollWidth <= strip.clientWidth + 2) return;
+      var kids = strip.children, mid = kids[Math.floor(kids.length / 2)];
+      if (mid) strip.scrollLeft += mid.getBoundingClientRect().left - strip.getBoundingClientRect().left - (strip.clientWidth - mid.offsetWidth) / 2;
+    }
+    centre(); window.addEventListener('load', centre);
+  });
+})();
+
 // ---------- motion (subtle; off for prefers-reduced-motion) ----------
 (function () {
   'use strict';
@@ -163,10 +175,6 @@
   var ROOT = document.querySelector('body > .lv-root, body > [class$="-root"]') || document.body;
   var hero = document.querySelector('.lv-hero') || ROOT.querySelector('section');
   if (hero) hero.classList.add('lv-hero');
-  if (hero) {
-    hero.querySelectorAll('img').forEach(function (im) { im.classList.add('lv-kb'); });
-    requestAnimationFrame(function () { requestAnimationFrame(function () { hero.classList.add('lv-hero-in'); }); });
-  }
 
   // scroll reveal
   var SEL = 'h1,h2,h3,p,li,img,figure,dl,table,article,a.lv-row,blockquote';

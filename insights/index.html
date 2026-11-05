@@ -10,7 +10,8 @@ html{scroll-behavior:smooth}body{margin:0;background:#F7F7F4}a{color:inherit;tex
 .lv-root{container-type:inline-size}.lv-navlinks{display:flex}.lv-menubtn{display:none}
 .lv-hero a:hover,.lv-dark a:hover,.lv-header a:hover{color:#FFFFFF}
 @container (max-width: 900px){.lv-navlinks{display:none!important}.lv-menubtn{display:flex!important}}
-[hidden]{display:none!important}.lv-anim .lv-rv{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}.lv-anim .lv-rv.lv-in{opacity:1;transform:none}.lv-anim img.lv-kb{transform:scale(1.08);transition:transform 2.6s cubic-bezier(.2,.7,.2,1)}.lv-anim .lv-hero-in img.lv-kb{transform:scale(1)}.lv-anim .lv-hero h1,.lv-anim .lv-hero p{opacity:0;transform:translateY(16px);transition:opacity 1.1s .35s cubic-bezier(.2,.7,.2,1),transform 1.1s .35s cubic-bezier(.2,.7,.2,1)}.lv-anim .lv-hero-in h1,.lv-anim .lv-hero-in p{opacity:1;transform:none}a.lv-row{transition:background-color .3s}@media (prefers-reduced-motion: reduce){.lv-anim .lv-rv,.lv-anim img.lv-kb,.lv-anim .lv-hero h1,.lv-anim .lv-hero p{opacity:1!important;transform:none!important;transition:none!important}}
+[hidden]{display:none!important}.lv-phones{justify-content:flex-start!important;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}.lv-phones::-webkit-scrollbar{display:none}.lv-phones>*{scroll-snap-align:center}.lv-phones>:first-child{margin-left:auto}.lv-phones>:last-child{margin-right:auto}.lv-guidebar:hover strong{text-decoration:underline}@media (max-width:600px){.lv-gb-sub{display:none}}@container (max-width: 700px){.lv-tri figcaption{display:none!important}}
+.lv-anim .lv-rv{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}.lv-anim .lv-rv.lv-in{opacity:1;transform:none}a.lv-row{transition:background-color .3s}@media (prefers-reduced-motion: reduce){.lv-anim .lv-rv{opacity:1!important;transform:none!important;transition:none!important}}
 
 .lv-prose{max-width:760px;margin:0 auto;padding:clamp(56px,8cqi,110px) clamp(20px,4.5cqi,64px);font-size:16px;line-height:1.75;color:#2E3135}
 .lv-prose h2{font-size:26px;font-weight:400;letter-spacing:-0.01em;color:#17191C;margin:48px 0 12px}.lv-prose h3{font-size:18px;font-weight:600;color:#17191C;margin:32px 0 8px}
@@ -20,7 +21,7 @@ html{scroll-behavior:smooth}body{margin:0;background:#F7F7F4}a{color:inherit;tex
 input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid #E4C874;outline-offset:2px}
 body{margin:0;font-family:Inter, 'Helvetica Neue', 'Noto Sans KR', sans-serif}</style>
 </head><body>
-<div class="lv-guidebar" style="background:#E4C874;color:#17191C;font-size:13px;text-align:center;padding:9px 16px;position:relative;z-index:6"><button type="button" data-act="guide" style="background:none;border:none;font:inherit;color:inherit;cursor:pointer;letter-spacing:0.04em"><strong style="font-weight:600">Free Welcome Guide</strong> — the LYVON programs in 9 pages <span aria-hidden="true">→</span></button></div>
+<div class="lv-guidebar" style="background:#0F1A26;color:rgba(247,247,244,.86);font-size:13px;text-align:center;padding:10px 16px;position:relative;z-index:6;border-bottom:1px solid rgba(228,200,116,.28)"><button type="button" data-act="guide" style="background:none;border:none;font:inherit;color:inherit;cursor:pointer;letter-spacing:0.04em;min-height:24px"><strong style="font-weight:600;color:#E4C874">Free Welcome Guide</strong><span class="lv-gb-sub"> — the LYVON programs in 9 pages</span> <span aria-hidden="true" style="color:#E4C874">→</span></button></div>
 <div class="lv-root" style="width:100%;background:#F7F7F4;color:#17191C;font-family:Inter, 'Helvetica Neue', 'Noto Sans KR', sans-serif;-webkit-font-smoothing:antialiased">
 <section class="lv-hero" style="position:relative;background:#0F1A26;color:#F7F7F4;padding:140px clamp(20px,4.5cqi,64px) 64px"><header class="lv-header" style="position:absolute;top:0;left:0;right:0;z-index:5;height:80px;box-sizing:border-box;padding:0 clamp(20px,4.5cqi,64px);display:flex;align-items:center;justify-content:space-between;gap:24px;color:#F7F7F4">
   <a href="/" style="font-size:15px;font-weight:600;letter-spacing:0.32em">LYVON</a>
@@ -71,5 +72,5 @@ body{margin:0;font-family:Inter, 'Helvetica Neue', 'Noto Sans KR', sans-serif}</
     </form>
   </div>
 </div>
-<script src="/assets/site.js" defer></script>
+<script src="/assets/site.js?v=bada8216" defer></script>
 </body></html>
