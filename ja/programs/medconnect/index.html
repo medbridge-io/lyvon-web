@@ -7,7 +7,7 @@
 <link href="/favicon.ico" rel="icon"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Noto+Sans+JP:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
-html{scroll-behavior:smooth;background:#0F1A26}body{margin:0;background:#0F1A26}html[lang=ko] body{word-break:keep-all;overflow-wrap:anywhere}a{color:inherit;text-decoration:none}a:hover{color:#20344A}
+html{scroll-behavior:smooth;background:#0F1A26}body{margin:0;background:#0F1A26}html[lang=ko] body{word-break:keep-all;overflow-wrap:anywhere}html[lang=zh-Hant] :is(h1,h2,h3,blockquote){text-wrap:balance}a{color:inherit;text-decoration:none}a:hover{color:#20344A}
 .lv-root{container-type:inline-size}.lv-navlinks{display:flex}.lv-menubtn{display:none}
 .lv-hero a:hover,.lv-dark a:hover,.lv-header a:hover{color:#FFFFFF}
 @container (max-width: 900px){.lv-navlinks{display:none!important}.lv-menubtn{display:flex!important}}
@@ -17,10 +17,10 @@ html{scroll-behavior:smooth;background:#0F1A26}body{margin:0;background:#0F1A26}
 .lv-anim .lv-rv{opacity:0;transform:translateY(48px);transition:opacity 1.1s cubic-bezier(.16,.8,.24,1),transform 1.1s cubic-bezier(.16,.8,.24,1)}.lv-anim img.lv-rv,.lv-anim figure.lv-rv{transform:translateY(32px) scale(1.06)}.lv-anim h2.lv-rv{transform:translateY(56px)}.lv-anim .lv-rv.lv-in{opacity:1;transform:none}a.lv-row{transition:background-color .3s}.lv-row-cta{margin-top:12px;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;border:1px solid #17191C;font-size:12px;font-weight:500;letter-spacing:0.14em;color:#17191C;transition:background-color .25s,color .25s}.lv-row-name{white-space:nowrap;overflow-wrap:normal}a.lv-row>div:first-child{flex-basis:300px!important}.lv-row-arrow{display:inline-block;transition:transform .25s}a.lv-row:hover .lv-row-cta,a.lv-row:focus-visible .lv-row-cta{background:#20344A;border-color:#20344A;color:#F7F7F4}a.lv-row:hover .lv-row-arrow{transform:translateX(5px)}@media (prefers-reduced-motion: reduce){.lv-anim .lv-rv{opacity:1!important;transform:none!important;transition:none!important}}
 
 .lv-prose{max-width:760px;margin:0 auto;padding:clamp(56px,8cqi,110px) clamp(20px,4.5cqi,64px);font-size:16px;line-height:1.75;color:#2E3135}
-.lv-prose h2{font-size:26px;font-weight:400;letter-spacing:-0.01em;color:#17191C;margin:48px 0 12px}.lv-prose h3{font-size:18px;font-weight:600;color:#17191C;margin:32px 0 8px}
+.lv-prose h2{font-size:26px;font-weight:400;line-height:1.3;letter-spacing:-0.01em;color:#17191C;margin:48px 0 12px}.lv-prose h3{font-size:18px;font-weight:600;color:#17191C;margin:32px 0 8px}
 .lv-prose table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;font-size:14px;margin:16px 0}.lv-prose th,.lv-prose td{border-top:1px solid #C4C6C3;padding:10px 8px;text-align:left;vertical-align:top}
 .lv-prose a{text-decoration:underline}.lv-prose ul{padding-left:20px}
-.lv-prose{overflow-wrap:anywhere}.lv-prose td,.lv-prose th{min-width:7em}
+.lv-prose{overflow-wrap:anywhere}.mp-root article li{display:grid!important;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:16px!important}.lv-prose td,.lv-prose th{min-width:7em}
 input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid #E4C874;outline-offset:2px}
 
 body{margin:0;background:#F7F7F4}
@@ -43,7 +43,7 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(42, 18, 32, 0.62) 0%, rgba(42, 18, 32, 0.38) 60%, rgba(42, 18, 32, 0.15) 100%)"></div>
 <header class="lv-header" style="position:absolute;top:0;left:0;right:0;z-index:5;height:80px;box-sizing:border-box;padding:0 clamp(20px,4.5cqi,64px);display:flex;align-items:center;justify-content:space-between;gap:24px;color:#F7F7F4">
 <a href="/ja/" style="font-size:15px;font-weight:600;letter-spacing:0.32em">LYVON</a>
-<nav aria-label="メイン" class="lv-navlinks" style="gap:clamp(24px,2.8cqi,40px);font-size:12px;font-weight:500;letter-spacing:0.16em">
+<nav aria-label="メイン" class="lv-navlinks" style="gap:clamp(24px,2.8cqi,40px);font-size:12px;font-weight:500;letter-spacing: 0.06em">
 <a href="/ja/#about">LYVON について</a><a href="/ja/#programs">プログラム</a><a href="/ja/#network">ネットワーク</a><a href="/ja/insights/">インサイト</a><a href="/ja/book/">お問い合わせ</a>
 </nav>
 <div style="display:flex;align-items:center;gap:4px;position:relative">
@@ -53,12 +53,12 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 </div>
 </header>
 <div style="position: relative; z-index: 2; flex-grow: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 28px; padding: 40px clamp(20px, 4.5cqi, 64px) clamp(48px, 6cqi, 88px); max-width: 1280px; box-sizing: border-box">
-<p class="mc-fade" style="margin: 0; font-size: 12px; letter-spacing: 0.24em; color: #E8BCCD">プログラム / <a href="/ja/programs/medconnect/" style="color:inherit;text-decoration:none"><strong style="color: #FFFFFF; font-weight: 600">MEDCONNECT</strong></a> · 合格後</p>
+<p class="mc-fade" style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #E8BCCD">プログラム / <a href="/ja/programs/medconnect/" style="color:inherit;text-decoration:none"><strong style="color: #FFFFFF; font-weight: 600">MEDCONNECT</strong></a> · 合格後</p>
 <h1 class="mc-fade mc-d1" style="margin: 0; max-width: 14em; font-size: clamp(40px, 5.4cqi, 76px); line-height: 1.04; font-weight: 400; letter-spacing: -0.03em">合格。そして、さらなる成長へ。</h1>
 <p class="mc-fade mc-d2" style="margin: 0; max-width: 34em; font-size: clamp(17px, 1.5cqi, 20px); line-height: 1.6; font-weight: 300; color: #F2DCE5">医学部・歯学部・薬学部・獣医学部の在学生、そして未来の医療専門家のためのメンバーシップ。ディスカッションから学会の壇上まで、実践的な医学英語を共に鍛えます。</p>
 <div class="mc-fade mc-d3" style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
-<a href="/ja/book/?program=medconnect" style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; font-size: 12px; font-weight: 500; letter-spacing: 0.18em">MEDCONNECT について問い合わせる <span aria-hidden="true">→</span></a>
-<a href="#programs" style="min-height: 52px; display: flex; align-items: center; padding: 0 24px; border: 1px solid rgba(247, 247, 244, 0.6); font-size: 12px; font-weight: 500; letter-spacing: 0.18em">プログラムを見る</a>
+<a href="/ja/book/?program=medconnect" style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">MEDCONNECT について問い合わせる <span aria-hidden="true">→</span></a>
+<a href="#programs" style="min-height: 52px; display: flex; align-items: center; padding: 0 24px; border: 1px solid rgba(247, 247, 244, 0.6); font-size: 12px; font-weight: 500; letter-spacing: 0.06em">プログラムを見る</a>
 </div>
 <dl style="margin: 16px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 24px; padding-top: 28px; border-top: 1px solid rgba(247, 247, 244, 0.25); max-width: 880px">
 <div><dt style="font-size: 34px; font-weight: 300">6</dt><dd style="margin: 6px 0 0; font-size: 12px; color: #E8BCCD">プログラムトラック</dd></div>
@@ -76,7 +76,7 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 </div>
 </div>
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">01 — 対象</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">01 — 対象</p>
 <h2 style="margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">合格は終わりではなく、始まりです。</h2>
 <p style="margin: 0; max-width: 34em; font-size: 17px; line-height: 1.6; font-weight: 300; color: #2E3135">講義、論文、症例検討、学会 — そのすべてが英語で行われます。MedConnect は、入学試験が終わった後も話す習慣を続けていきます。</p>
 <ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr))"><li style="padding: 20px 16px 20px 0; border-top: 1px solid #17191C"><span style="font-size: 12px; color: #8E1F4B">01</span><p style="margin: 8px 0 0; font-size: 17px; font-weight: 500">医学部生</p></li><li style="padding: 20px 16px 20px 0; border-top: 1px solid #17191C"><span style="font-size: 12px; color: #8E1F4B">02</span><p style="margin: 8px 0 0; font-size: 17px; font-weight: 500">歯学部生</p></li><li style="padding: 20px 16px 20px 0; border-top: 1px solid #C4C6C3"><span style="font-size: 12px; color: #8E1F4B">03</span><p style="margin: 8px 0 0; font-size: 17px; font-weight: 500">薬学部生</p></li><li style="padding: 20px 16px 20px 0; border-top: 1px solid #C4C6C3"><span style="font-size: 12px; color: #8E1F4B">04</span><p style="margin: 8px 0 0; font-size: 17px; font-weight: 500">獣医学部生</p></li></ul>
@@ -88,7 +88,7 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 <section class="mc-dark" id="programs" style="padding: clamp(80px, 10cqi, 150px) clamp(20px, 4.5cqi, 64px); background: #2A1220; color: #F7F7F4">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #E3A9C0">02 — プログラム</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #E3A9C0">02 — プログラム</p>
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
 <h2 style="margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">ディスカッションから学会の壇上まで。</h2>
 <p style="margin: 0; max-width: 36em; font-size: 17px; line-height: 1.6; font-weight: 300; color: #F0D3DE">医療のキャリアで実際に求められる英語を、一歩ずつたどる6つのトラック。</p>
@@ -109,7 +109,7 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 </div>
 </div>
 <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #E3A9C0">同じメソッドを、ワンランク上で</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #E3A9C0">同じメソッドを、ワンランク上で</p>
 <p style="margin: 0; font-size: clamp(24px, 2.4cqi, 32px); line-height: 1.2; font-weight: 400">インプットではなく、アウトプット — 今度は論文、症例、学会で。</p>
 <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #F0D3DE">MedBridge と MedPath のスピーキング重視のアプローチは合格後も続き、医学部と臨床現場の英語に生かされます。</p>
 </div>
@@ -120,13 +120,13 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 <section style="padding: clamp(80px, 10cqi, 150px) clamp(20px, 4.5cqi, 64px); background: #EBECE9">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">03 — LYVON の学習パス</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">03 — LYVON の学習パス</p>
 <h2 style="flex: 999 1 560px; margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">Bridge. Path. Connect.</h2>
 </div>
 <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px">
-<li><a href="/ja/programs/medbridge/" style="height: 100%; box-sizing: border-box; padding: 28px 24px; background: #F7F7F4; color: #17191C; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 11px; letter-spacing: 0.2em; color: #0F766E">01 · 基礎</span><span style="font-size: 26px; font-weight: 500">MedBridge →</span><span style="font-size: 14px; line-height: 1.5; color: #44484C">医学英語のコミュニケーション基礎。</span></a></li>
-<li><a href="/ja/programs/medpath/" style="height: 100%; box-sizing: border-box; padding: 28px 24px; background: #F7F7F4; color: #17191C; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 11px; letter-spacing: 0.2em; color: #4338CA">02 · 入試</span><span style="font-size: 26px; font-weight: 500">MedPath →</span><span style="font-size: 14px; line-height: 1.5; color: #44484C">英語口頭入試の対策。</span></a></li>
-<li style="padding: 28px 24px; background: #8E1F4B; color: #FFFFFF; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 11px; letter-spacing: 0.2em; color: #F5D6E2">03 · 合格後</span><a href="/ja/programs/medconnect/" style="color:inherit;text-decoration:none"><span style="font-size: 26px; font-weight: 500">MedConnect</span></a><span style="font-size: 14px; line-height: 1.5; color: #FBE9F0">成長を続けるためのメンバーシップ。</span></li>
+<li><a href="/ja/programs/medbridge/" style="height: 100%; box-sizing: border-box; padding: 28px 24px; background: #F7F7F4; color: #17191C; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 11px; letter-spacing: 0.06em; color: #0F766E">01 · 基礎</span><span style="font-size: 26px; font-weight: 500">MedBridge →</span><span style="font-size: 14px; line-height: 1.5; color: #44484C">医学英語のコミュニケーション基礎。</span></a></li>
+<li><a href="/ja/programs/medpath/" style="height: 100%; box-sizing: border-box; padding: 28px 24px; background: #F7F7F4; color: #17191C; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 11px; letter-spacing: 0.06em; color: #4338CA">02 · 入試</span><span style="font-size: 26px; font-weight: 500">MedPath →</span><span style="font-size: 14px; line-height: 1.5; color: #44484C">英語口頭入試の対策。</span></a></li>
+<li style="padding: 28px 24px; background: #8E1F4B; color: #FFFFFF; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 11px; letter-spacing: 0.06em; color: #F5D6E2">03 · 合格後</span><a href="/ja/programs/medconnect/" style="color:inherit;text-decoration:none"><span style="font-size: 26px; font-weight: 500">MedConnect</span></a><span style="font-size: 14px; line-height: 1.5; color: #FBE9F0">成長を続けるためのメンバーシップ。</span></li>
 </ol>
 <p style="margin: 0; font-size: 12px; letter-spacing: 0.2em; color: #5F6367">CONNECT · GROW · BELONG</p>
 </div>
@@ -135,18 +135,18 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 <section style="padding: clamp(80px, 10cqi, 150px) clamp(20px, 4.5cqi, 64px)">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px 64px; align-items: flex-start">
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">04 — パイロット</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">04 — パイロット</p>
 <h2 style="margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em; color: #2A1220">2026年7月からパイロット運営中。</h2>
 <p style="margin: 0; max-width: 34em; font-size: 17px; line-height: 1.6; font-weight: 300; color: #2E3135">MedConnect はお問い合わせを受け付けています。スケジュールやメンバーシップの詳細は、お問い合わせいただいた方に個別にご案内します。</p>
 <dl style="margin: 8px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; font-size: 14px">
-<div style="border-top: 1px solid #17191C; padding-top: 12px"><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">形式</dt><dd style="margin: 6px 0 0">ライブオンライン · 1対1および少人数グループ</dd></div>
-<div style="border-top: 1px solid #17191C; padding-top: 12px"><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">プラン</dt><dd style="margin: 6px 0 0">月額メンバーシップ</dd></div>
-<div style="border-top: 1px solid #C4C6C3; padding-top: 12px"><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">講師</dt><dd style="margin: 6px 0 0">医学英語を専門とするプロの英語講師</dd></div>
-<div style="border-top: 1px solid #C4C6C3; padding-top: 12px"><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">コミュニティ</dt><dd style="margin: 6px 0 0">合格した学生と仲間たちのプライベートコミュニティ</dd></div>
+<div style="border-top: 1px solid #17191C; padding-top: 12px"><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">形式</dt><dd style="margin: 6px 0 0">ライブオンライン · 1対1および少人数グループ</dd></div>
+<div style="border-top: 1px solid #17191C; padding-top: 12px"><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">プラン</dt><dd style="margin: 6px 0 0">月額メンバーシップ</dd></div>
+<div style="border-top: 1px solid #C4C6C3; padding-top: 12px"><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">講師</dt><dd style="margin: 6px 0 0">医学英語を専門とするプロの英語講師</dd></div>
+<div style="border-top: 1px solid #C4C6C3; padding-top: 12px"><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">コミュニティ</dt><dd style="margin: 6px 0 0">合格した学生と仲間たちのプライベートコミュニティ</dd></div>
 </dl>
 </div>
 <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0 0 4px; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">お問い合わせ時にお知らせいただきたいこと</p>
+<p style="margin: 0 0 4px; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">お問い合わせ時にお知らせいただきたいこと</p>
 <div style="padding: 20px; border: 1px solid #DCDDDA; background: #FFFFFF"><p style="margin: 0; font-size: 16px; font-weight: 500">在籍大学と学年</p><p style="margin: 6px 0 0; font-size: 13px; line-height: 1.5; color: #44484C">医学部・歯学部・薬学部・獣医学部のいずれか、そして大学名。</p></div>
 <div style="padding: 20px; border: 1px solid #DCDDDA; background: #FFFFFF"><p style="margin: 0; font-size: 16px; font-weight: 500">取り組みたいこと</p><p style="margin: 6px 0 0; font-size: 13px; line-height: 1.5; color: #44484C">ディスカッション、論文、症例発表、または学会英語。</p></div>
 <div style="padding: 20px; border: 1px solid #DCDDDA; background: #FFFFFF"><p style="margin: 0; font-size: 16px; font-weight: 500">返信言語</p><p style="margin: 6px 0 0; font-size: 13px; line-height: 1.5; color: #44484C">英語、韓国語、または日本語。</p></div>
@@ -157,12 +157,12 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 <section class="mc-dark" id="book" style="padding: clamp(96px, 11cqi, 170px) clamp(20px, 4.5cqi, 64px); background: #8E1F4B; color: #F7F7F4">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px 64px; align-items: flex-end; justify-content: space-between">
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #F5D6E2">MEDCONNECT へのお問い合わせ</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #F5D6E2">MEDCONNECT へのお問い合わせ</p>
 <h2 style="margin: 0; font-size: clamp(36px, 4.6cqi, 64px); line-height: 1.04; font-weight: 400; letter-spacing: -0.03em">合格したら、その勢いを止めずに。</h2>
 <p style="margin: 0; max-width: 34em; font-size: 17px; line-height: 1.6; font-weight: 300; color: #FBE9F0">在籍大学と目標についてお聞かせください。パイロットの進め方についてご返信します。</p>
 </div>
 <div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start">
-<a href="/ja/book/?program=medconnect" style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; font-size: 12px; font-weight: 500; letter-spacing: 0.18em">MEDCONNECT について問い合わせる <span aria-hidden="true">→</span></a>
+<a href="/ja/book/?program=medconnect" style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">MEDCONNECT について問い合わせる <span aria-hidden="true">→</span></a>
 <a href="https://line.me/ti/p/uwrW7dtHqN" rel="noopener" style="min-height: 44px; display: flex; align-items: center; font-size: 13px; color: #FBE9F0" target="_blank">LINE で相談 ↗</a>
 <a href="mailto:hello@lyvon.io" style="min-height: 44px; display: flex; align-items: center; font-size: 13px; color: #FBE9F0">hello@lyvon.io</a>
 </div>
@@ -193,7 +193,7 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 <div aria-label="無料ウェルカムガイド" aria-modal="true" class="lv-guide" hidden="" role="dialog" style="position:fixed;inset:0;z-index:50;background:rgba(15,26,38,.72);display:flex;align-items:center;justify-content:center;padding:20px">
 <div style="width:100%;max-width:460px;background:#F7F7F4;color:#17191C;padding:32px 28px;position:relative">
 <button aria-label="閉じる" data-act="guide" style="position:absolute;top:8px;right:8px;min-width:44px;min-height:44px;background:none;border:none;font-size:24px;cursor:pointer" type="button">×</button>
-<p style="margin:0 0 8px;font-size:11px;font-weight:500;letter-spacing:0.24em;color:#5F6367">無料ウェルカムガイド</p>
+<p style="margin:0 0 8px;font-size:11px;font-weight:500;letter-spacing: 0.06em;color:#5F6367">無料ウェルカムガイド</p>
 <p style="margin:0 0 20px;font-size:24px;line-height:1.2">LYVON ウェルカムガイドをメールでお届けします。</p>
 <form class="lv-guideform" style="display:flex;flex-direction:column;gap:14px">
 <input aria-hidden="true" autocomplete="off" name="company" style="position:absolute;left:-9999px" tabindex="-1" type="text"/>
@@ -201,7 +201,7 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;letter-spacing:0.08em;color:#44484C">メールアドレス *<input autocomplete="email" name="email" required="" style="min-height:46px;padding:0 12px;border:1px solid #C4C6C3;background:#FFF;font:inherit;font-size:15px" type="email"/></label>
 <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;letter-spacing:0.08em;color:#44484C">ガイドの言語 *<select name="replyLang" required="" style="min-height:46px;padding:0 12px;border:1px solid #C4C6C3;background:#FFF;font:inherit;font-size:15px"><option value="EN">English</option><option value="KO">한국어</option><option value="JA">日本語</option><option value="ZH">繁體中文</option></select></label>
 <label style="display:flex;gap:10px;align-items:flex-start;font-size:12px;line-height:1.5;color:#44484C"><input name="consent" required="" style="width:18px;height:18px;margin:2px 0 0;flex-shrink:0" type="checkbox"/><span>ガイド送付のため、氏名とメールアドレスを収集・利用することに同意します。詳しくは次をご覧ください： <a href="/legal/#privacy" style="text-decoration:underline">プライバシーポリシー</a>. *</span></label>
-<button style="min-height:50px;background:#20344A;color:#FFF;border:none;font:inherit;font-size:12px;font-weight:500;letter-spacing:0.18em;cursor:pointer" type="submit">ガイドを受け取る →</button>
+<button style="min-height:50px;background:#20344A;color:#FFF;border:none;font:inherit;font-size:12px;font-weight:500;letter-spacing: 0.06em;cursor:pointer" type="submit">ガイドを受け取る →</button>
 <p class="lv-guidemsg" role="status" style="margin:0;font-size:13px;color:#20344A"></p>
 </form>
 </div>

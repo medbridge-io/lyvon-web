@@ -7,7 +7,7 @@
 <link href="/favicon.ico" rel="icon"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Noto+Sans+KR:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
-html{scroll-behavior:smooth;background:#0F1A26}body{margin:0;background:#0F1A26}html[lang=ko] body{word-break:keep-all;overflow-wrap:anywhere}a{color:inherit;text-decoration:none}a:hover{color:#20344A}
+html{scroll-behavior:smooth;background:#0F1A26}body{margin:0;background:#0F1A26}html[lang=ko] body{word-break:keep-all;overflow-wrap:anywhere}html[lang=zh-Hant] :is(h1,h2,h3,blockquote){text-wrap:balance}a{color:inherit;text-decoration:none}a:hover{color:#20344A}
 .lv-root{container-type:inline-size}.lv-navlinks{display:flex}.lv-menubtn{display:none}
 .lv-hero a:hover,.lv-dark a:hover,.lv-header a:hover{color:#FFFFFF}
 @container (max-width: 900px){.lv-navlinks{display:none!important}.lv-menubtn{display:flex!important}}
@@ -17,10 +17,10 @@ html{scroll-behavior:smooth;background:#0F1A26}body{margin:0;background:#0F1A26}
 .lv-anim .lv-rv{opacity:0;transform:translateY(48px);transition:opacity 1.1s cubic-bezier(.16,.8,.24,1),transform 1.1s cubic-bezier(.16,.8,.24,1)}.lv-anim img.lv-rv,.lv-anim figure.lv-rv{transform:translateY(32px) scale(1.06)}.lv-anim h2.lv-rv{transform:translateY(56px)}.lv-anim .lv-rv.lv-in{opacity:1;transform:none}a.lv-row{transition:background-color .3s}.lv-row-cta{margin-top:12px;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;border:1px solid #17191C;font-size:12px;font-weight:500;letter-spacing:0.14em;color:#17191C;transition:background-color .25s,color .25s}.lv-row-name{white-space:nowrap;overflow-wrap:normal}a.lv-row>div:first-child{flex-basis:300px!important}.lv-row-arrow{display:inline-block;transition:transform .25s}a.lv-row:hover .lv-row-cta,a.lv-row:focus-visible .lv-row-cta{background:#20344A;border-color:#20344A;color:#F7F7F4}a.lv-row:hover .lv-row-arrow{transform:translateX(5px)}@media (prefers-reduced-motion: reduce){.lv-anim .lv-rv{opacity:1!important;transform:none!important;transition:none!important}}
 
 .lv-prose{max-width:760px;margin:0 auto;padding:clamp(56px,8cqi,110px) clamp(20px,4.5cqi,64px);font-size:16px;line-height:1.75;color:#2E3135}
-.lv-prose h2{font-size:26px;font-weight:400;letter-spacing:-0.01em;color:#17191C;margin:48px 0 12px}.lv-prose h3{font-size:18px;font-weight:600;color:#17191C;margin:32px 0 8px}
+.lv-prose h2{font-size:26px;font-weight:400;line-height:1.3;letter-spacing:-0.01em;color:#17191C;margin:48px 0 12px}.lv-prose h3{font-size:18px;font-weight:600;color:#17191C;margin:32px 0 8px}
 .lv-prose table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;font-size:14px;margin:16px 0}.lv-prose th,.lv-prose td{border-top:1px solid #C4C6C3;padding:10px 8px;text-align:left;vertical-align:top}
 .lv-prose a{text-decoration:underline}.lv-prose ul{padding-left:20px}
-.lv-prose{overflow-wrap:anywhere}.lv-prose td,.lv-prose th{min-width:7em}
+.lv-prose{overflow-wrap:anywhere}.mp-root article li{display:grid!important;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:16px!important}.lv-prose td,.lv-prose th{min-width:7em}
 input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid #E4C874;outline-offset:2px}
 
 body{margin:0;background:#F7F7F4}
@@ -49,21 +49,21 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <div class="lv-tri" style="position: absolute; inset: 0; gap: 2px">
 <figure style="margin: 0; position: relative; overflow: hidden">
 <img alt="롯데월드타워와 남산이 보이는 해 질 녘의 서울 스카이라인" class="lv-reveal" src="/assets/img/city-seoul.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 62%"/>
-<figcaption style="position: absolute; left: clamp(20px, 2.5cqi, 32px); bottom: 24px; z-index: 2; display: flex; gap: 12px; align-items: baseline; font-size: 12px; font-weight: 500; letter-spacing: 0.32em"><span style="font-size: 10px; letter-spacing: 0.2em; opacity: 0.85">01</span>서울</figcaption>
+<figcaption style="position: absolute; left: clamp(20px, 2.5cqi, 32px); bottom: 24px; z-index: 2; display: flex; gap: 12px; align-items: baseline; font-size: 12px; font-weight: 500; letter-spacing: 0.06em"><span style="font-size: 10px; letter-spacing: 0.2em; opacity: 0.85">01</span>서울</figcaption>
 </figure>
 <figure style="margin: 0; position: relative; overflow: hidden">
 <img alt="해 질 녘의 도쿄역과 마루노우치 스카이라인" class="lv-reveal lv-reveal2" src="/assets/img/city-tokyo.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 66% 55%"/>
-<figcaption style="position: absolute; left: clamp(20px, 2.5cqi, 32px); bottom: 24px; z-index: 2; display: flex; gap: 12px; align-items: baseline; font-size: 12px; font-weight: 500; letter-spacing: 0.32em"><span style="font-size: 10px; letter-spacing: 0.2em; opacity: 0.85">02</span>도쿄</figcaption>
+<figcaption style="position: absolute; left: clamp(20px, 2.5cqi, 32px); bottom: 24px; z-index: 2; display: flex; gap: 12px; align-items: baseline; font-size: 12px; font-weight: 500; letter-spacing: 0.06em"><span style="font-size: 10px; letter-spacing: 0.2em; opacity: 0.85">02</span>도쿄</figcaption>
 </figure>
 <figure style="margin: 0; position: relative; overflow: hidden">
 <img alt="밤의 마닐라 보니파시오 글로벌 시티" class="lv-reveal lv-reveal3" src="/assets/img/city-manila.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 45% 50%"/>
-<figcaption style="position: absolute; left: clamp(20px, 2.5cqi, 32px); bottom: 24px; z-index: 2; display: flex; gap: 12px; align-items: baseline; font-size: 12px; font-weight: 500; letter-spacing: 0.32em"><span style="font-size: 10px; letter-spacing: 0.2em; opacity: 0.85">03</span>마닐라</figcaption>
+<figcaption style="position: absolute; left: clamp(20px, 2.5cqi, 32px); bottom: 24px; z-index: 2; display: flex; gap: 12px; align-items: baseline; font-size: 12px; font-weight: 500; letter-spacing: 0.06em"><span style="font-size: 10px; letter-spacing: 0.2em; opacity: 0.85">03</span>마닐라</figcaption>
 </figure>
 </div>
 <div aria-hidden="true" style="position: absolute; inset: 0; background: rgba(11, 20, 30, 0.38); pointer-events: none"></div>
 <header class="lv-header" style="position:absolute;top:0;left:0;right:0;z-index:5;height:80px;box-sizing:border-box;padding:0 clamp(20px,4.5cqi,64px);display:flex;align-items:center;justify-content:space-between;gap:24px;color:#F7F7F4">
 <a href="/ko/" style="font-size:15px;font-weight:600;letter-spacing:0.32em">LYVON</a>
-<nav aria-label="주 메뉴" class="lv-navlinks" style="gap:clamp(24px,2.8cqi,40px);font-size:12px;font-weight:500;letter-spacing:0.16em">
+<nav aria-label="주 메뉴" class="lv-navlinks" style="gap:clamp(24px,2.8cqi,40px);font-size:12px;font-weight:500;letter-spacing: 0.06em">
 <a href="/ko/#about">소개</a><a href="/ko/#programs">프로그램</a><a href="/ko/#network">네트워크</a><a href="/ko/insights/">인사이트</a><a href="/ko/book/">문의</a>
 </nav>
 <div style="display:flex;align-items:center;gap:4px;position:relative">
@@ -77,15 +77,15 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <p class="lv-fade lv-d2" style="margin: 0; font-size: clamp(10px, 1cqi, 14px); font-weight: 500; letter-spacing: 0.42em; padding-left: 0.42em">SEOUL · TOKYO · MANILA</p>
 <p class="lv-fade lv-d3" style="margin: 0; font-size: clamp(16px, 1.7cqi, 24px); line-height: 1.4; font-weight: 300; max-width: 22em">아시아를 잇고, 국경을 넘어 가르칩니다.</p>
 <div class="lv-fade lv-d4" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 12px; pointer-events: auto">
-<a href="#programs" style="min-height: 48px; display: flex; align-items: center; gap: 10px; padding: 0 24px; background: #F7F7F4; color: #17191C; font-size: 12px; font-weight: 500; letter-spacing: 0.18em">프로그램 보기 <span aria-hidden="true">→</span></a>
-<a href="#book" style="min-height: 48px; display: flex; align-items: center; padding: 0 24px; border: 1px solid rgba(247, 247, 244, 0.7); font-size: 12px; font-weight: 500; letter-spacing: 0.18em">무료 수업 신청</a>
+<a href="#programs" style="min-height: 48px; display: flex; align-items: center; gap: 10px; padding: 0 24px; background: #F7F7F4; color: #17191C; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">프로그램 보기 <span aria-hidden="true">→</span></a>
+<a href="#book" style="min-height: 48px; display: flex; align-items: center; padding: 0 24px; border: 1px solid rgba(247, 247, 244, 0.7); font-size: 12px; font-weight: 500; letter-spacing: 0.06em">무료 수업 신청</a>
 </div>
 </div>
 </section>
 <!-- 02 PHILOSOPHY -->
 <section id="about" style="padding: clamp(80px, 10cqi, 160px) clamp(20px, 4.5cqi, 64px)">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px 64px">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">01 — 우리의 철학</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">01 — 우리의 철학</p>
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 32px">
 <h2 style="margin: 0; font-size: clamp(40px, 5.6cqi, 80px); line-height: 1.02; font-weight: 400; letter-spacing: -0.03em">국경을 넘는 기회.</h2>
 <p style="margin: 0; max-width: 34em; font-size: clamp(18px, 1.6cqi, 22px); line-height: 1.6; font-weight: 300; color: #2E3135">LYVON은 의미 있는 기회가 지리적 조건에 가로막혀서는 안 된다고 믿습니다. 우리는 국경을 넘어 교육과 커리어를 추구하는 의욕 있는 이들에게 필요한 지식, 준비, 지원을 연결합니다.</p>
@@ -100,7 +100,7 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <section style="padding: 0 clamp(20px, 4.5cqi, 64px) clamp(80px, 10cqi, 160px)">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end; border-top: 1px solid #17191C; padding-top: 28px">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">02 — 우리가 하는 일</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">02 — 우리가 하는 일</p>
 <h2 style="flex: 999 1 560px; margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">새로운 가능성을 여는 교육.</h2>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 48px 40px">
@@ -115,7 +115,7 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #2E3135">쉽지 않은 해외 유학을 위한 체계적인 커뮤니케이션 및 학업 준비.</p>
 </article>
 <article style="display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; gap: 14px; align-items: center"><span style="font-size: 13px; color: #5F6367">03</span><span style="font-size: 10px; font-weight: 500; letter-spacing: 0.18em; color: #20344A; border: 1px solid #20344A; padding: 4px 8px">개발 중</span></div>
+<div style="display: flex; gap: 14px; align-items: center"><span style="font-size: 13px; color: #5F6367">03</span><span style="font-size: 10px; font-weight: 500; letter-spacing: 0.06em; color: #20344A; border: 1px solid #20344A; padding: 4px 8px">개발 중</span></div>
 <h3 style="margin: 0; font-size: 24px; font-weight: 500; letter-spacing: -0.01em">커리어 및 글로벌 기회</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #2E3135">해외 커리어를 지원할 향후 프로그램 — 특히 일본에서의 전문직 기회에 중점을 둡니다.</p>
 </article>
@@ -126,12 +126,12 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <section id="programs" style="padding: clamp(80px, 10cqi, 160px) clamp(20px, 4.5cqi, 64px); background: #EBECE9">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end; padding-bottom: 56px">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">03 — 프로그램</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">03 — 프로그램</p>
 <h2 style="flex: 999 1 560px; margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">여러분의 목표에 맞춘 프로그램.</h2>
 </div>
 <a class="lv-row" href="/ko/programs/medpath/" style="display: flex; flex-wrap: wrap; gap: 24px 64px; padding: 40px 0; border-top: 1px solid #17191C">
 <div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 12px">
-<span style="font-size: 10px; font-weight: 500; letter-spacing: 0.2em; color: #F7F7F4; background: #20344A; padding: 5px 9px; align-self: flex-start">대표 프로그램</span>
+<span style="font-size: 10px; font-weight: 500; letter-spacing: 0.06em; color: #F7F7F4; background: #20344A; padding: 5px 9px; align-self: flex-start">대표 프로그램</span>
 <h3 class="lv-row-name" style="margin: 0; font-size: clamp(36px, 3.6cqi, 52px); font-weight: 500; letter-spacing: -0.03em">MedPath</h3>
 <span class="lv-row-cta"><span>자세히 보기</span><span aria-hidden="true" class="lv-row-arrow">→</span></span></div>
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-wrap: wrap; gap: 24px 48px">
@@ -139,9 +139,9 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #2E3135">유럽 의대 입학을 위한 맞춤형 준비 — 현재는 헝가리 의대·치대·약대·수의대의 영어 구술 입학시험에 집중하고 있습니다.</p>
 <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #2E3135">같은 50개의 생물·화학 레슨을 세 단계 더 깊이 다룹니다: <strong style="font-weight: 600">Define</strong> (Starter) → <strong style="font-weight: 600">Explain</strong> (Core) → <strong style="font-weight: 600">Justify</strong> (Pro).</p>
 <dl style="margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; font-size: 13px">
-<div><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">수업 형태</dt><dd style="margin: 6px 0 0">1:1 · 50분</dd></div>
-<div><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">기간</dt><dd style="margin: 6px 0 0">3단계 · 단계별 3개월</dd></div>
-<div><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">수업 횟수</dt><dd style="margin: 6px 0 0">주 2–4회</dd></div>
+<div><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">수업 형태</dt><dd style="margin: 6px 0 0">1:1 · 50분</dd></div>
+<div><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">기간</dt><dd style="margin: 6px 0 0">3단계 · 단계별 3개월</dd></div>
+<div><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">수업 횟수</dt><dd style="margin: 6px 0 0">주 2–4회</dd></div>
 </dl>
 </div>
 <ul style="flex: 1 1 220px; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #2E3135">
@@ -151,16 +151,16 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 </a>
 <a class="lv-row" href="/ko/programs/medbridge/" style="display: flex; flex-wrap: wrap; gap: 24px 64px; padding: 40px 0; border-top: 1px solid #C4C6C3">
 <div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 12px">
-<span style="font-size: 10px; font-weight: 500; letter-spacing: 0.2em; color: #20344A; border: 1px solid #20344A; padding: 4px 8px; align-self: flex-start">기초 과정</span>
+<span style="font-size: 10px; font-weight: 500; letter-spacing: 0.06em; color: #20344A; border: 1px solid #20344A; padding: 4px 8px; align-self: flex-start">기초 과정</span>
 <h3 class="lv-row-name" style="margin: 0; font-size: clamp(36px, 3.6cqi, 52px); font-weight: 500; letter-spacing: -0.03em">MedBridge</h3>
 <span class="lv-row-cta"><span>자세히 보기</span><span aria-hidden="true" class="lv-row-arrow">→</span></span></div>
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-wrap: wrap; gap: 24px 48px">
 <div style="flex: 2 1 320px; display: flex; flex-direction: column; gap: 20px">
 <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #2E3135">본격적인 학업 준비에 앞서 영어 실력을 다지고 싶은 학습자를 위한 기초 영어 커뮤니케이션 프로그램 — 핵심 의학 어휘, 발음과 문장 구조, 그리고 소리 내어 말하는 습관을 기릅니다.</p>
 <dl style="margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; font-size: 13px">
-<div><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">수업 형태</dt><dd style="margin: 6px 0 0">1:1 · 50분</dd></div>
-<div><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">기간</dt><dd style="margin: 6px 0 0">3개월 · 30개 토픽</dd></div>
-<div><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">수업 횟수</dt><dd style="margin: 6px 0 0">주 2–4회</dd></div>
+<div><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">수업 형태</dt><dd style="margin: 6px 0 0">1:1 · 50분</dd></div>
+<div><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">기간</dt><dd style="margin: 6px 0 0">3개월 · 30개 토픽</dd></div>
+<div><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">수업 횟수</dt><dd style="margin: 6px 0 0">주 2–4회</dd></div>
 </dl>
 </div>
 <ul style="flex: 1 1 220px; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #2E3135">
@@ -170,7 +170,7 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 </a>
 <a class="lv-row" href="/ko/programs/medconnect/" style="display: flex; flex-wrap: wrap; gap: 24px 64px; padding: 40px 0; border-top: 1px solid #C4C6C3; border-bottom: 1px solid #C4C6C3">
 <div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 12px">
-<span style="font-size: 10px; font-weight: 500; letter-spacing: 0.2em; color: #8E1F4B; border: 1px solid #8E1F4B; padding: 4px 8px; align-self: flex-start">파일럿 · 2026년 7월부터</span>
+<span style="font-size: 10px; font-weight: 500; letter-spacing: 0.06em; color: #8E1F4B; border: 1px solid #8E1F4B; padding: 4px 8px; align-self: flex-start">파일럿 · 2026년 7월부터</span>
 <h3 class="lv-row-name" style="margin: 0; font-size: clamp(36px, 3.6cqi, 52px); font-weight: 500; letter-spacing: -0.03em">MedConnect</h3>
 <span class="lv-row-cta"><span>자세히 보기</span><span aria-hidden="true" class="lv-row-arrow">→</span></span></div>
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-wrap: wrap; gap: 24px 48px">
@@ -189,7 +189,7 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <section aria-label="합격 실적" style="padding: clamp(72px, 8cqi, 128px) clamp(20px, 4.5cqi, 64px)">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">MEDPATH — 합격 실적</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">MEDPATH — 합격 실적</p>
 <h2 style="flex: 999 1 560px; margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">24명 중 22명 합격.</h2>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 48px 64px">
@@ -215,14 +215,14 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <section id="method" style="padding: clamp(80px, 10cqi, 160px) clamp(20px, 4.5cqi, 64px)">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(56px, 6cqi, 96px)">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">04 — LYVON 메소드</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">04 — LYVON 메소드</p>
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
 <h2 style="margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">과외가 아닌, 시스템.</h2>
 <p style="margin: 0; max-width: 36em; font-size: 17px; line-height: 1.6; color: #2E3135">LYVON은 유학원이 아닙니다. 유학원은 지원 절차를 대행하지만, 우리는 시험에 합격하는 능력을 키웁니다 — 설계되고, 기록되고, 측정되는 방법으로, 매 수업마다.</p>
 </div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 24px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">3단계 · 같은 50개 레슨을 더 깊이</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">3단계 · 같은 50개 레슨을 더 깊이</p>
 <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2px">
 <li style="display: flex; flex-direction: column; gap: 12px; padding: 28px 24px; background: #EBECE9; color: #17191C">
 <span style="font-size: 11px; letter-spacing: 0.2em; opacity: 0.8">01 · STARTER</span>
@@ -244,19 +244,19 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <div aria-label="LYVON 프로그램 종합 리포트, 익명 처리된 샘플" role="img" style="background: #FFFFFF; border: 1px solid #DCDDDA; box-shadow: 0 1px 0 rgba(0,0,0,0.02); padding: 24px; display: flex; flex-direction: column; gap: 16px; font-family: inherit">
 <div style="height: 3px; background: linear-gradient(90deg, #20344A 70%, #C2A24E)"></div>
 <div style="display: flex; justify-content: space-between; gap: 12px; align-items: flex-start">
-<div><div style="font-size: 9px; letter-spacing: 0.18em; color: #A68A3E">MEDBRIDGE 101 · 프로그램 종합 리포트</div><div style="font-size: 18px; font-weight: 600; color: #20344A; margin-top: 6px">학생 A — 12주 돌아보기</div><div style="font-size: 10px; color: #73777B; margin-top: 2px">48회차 · 프로그램 수료</div></div>
-<div style="text-align: right"><span style="display: inline-block; font-size: 9px; letter-spacing: 0.14em; color: #FFFFFF; background: #C2A24E; padding: 4px 8px; border-radius: 10px">수료</span><div style="font-size: 10px; color: #73777B; margin-top: 6px">48회 수업 · 30개 레슨<br/>출석률 100%</div></div>
+<div><div style="font-size: 9px; letter-spacing: 0.06em; color: #A68A3E">MEDBRIDGE 101 · 프로그램 종합 리포트</div><div style="font-size: 18px; font-weight: 600; color: #20344A; margin-top: 6px">학생 A — 12주 돌아보기</div><div style="font-size: 10px; color: #73777B; margin-top: 2px">48회차 · 프로그램 수료</div></div>
+<div style="text-align: right"><span style="display: inline-block; font-size: 9px; letter-spacing: 0.06em; color: #FFFFFF; background: #C2A24E; padding: 4px 8px; border-radius: 10px">수료</span><div style="font-size: 10px; color: #73777B; margin-top: 6px">48회 수업 · 30개 레슨<br/>출석률 100%</div></div>
 </div>
-<div style="background: #20344A; color: #F7F7F4; padding: 18px"><div style="font-size: 9px; letter-spacing: 0.18em; color: #C2A24E">한 줄 요약</div><div style="font-size: 17px; line-height: 1.35; margin-top: 8px; font-weight: 500">3개월 전에는 문장을 만들고 있었습니다.<br/>지금은 논리를 세우고 있습니다.</div></div>
+<div style="background: #20344A; color: #F7F7F4; padding: 18px"><div style="font-size: 9px; letter-spacing: 0.06em; color: #C2A24E">한 줄 요약</div><div style="font-size: 17px; line-height: 1.35; margin-top: 8px; font-weight: 500">3개월 전에는 문장을 만들고 있었습니다.<br/>지금은 논리를 세우고 있습니다.</div></div>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
-<div style="border: 1px solid #EBECE9; padding: 12px"><div style="font-size: 9px; letter-spacing: 0.16em; color: #20344A; font-weight: 600">이룬 것</div><ul style="margin: 6px 0 0; padding: 0; list-style: none"><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">PREP이 완전히 내 것이 되었습니다</span><span style="font-size: 10px; color: #73777B">4주 차 첫 시도 → 12주 차 꾸준히 유지</span></li><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">리스닝: 매우 우수</span><span style="font-size: 10px; color: #73777B">질문을 다시 묻는 일이 없어졌습니다</span></li><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">미래의 의사다운 말하기</span><span style="font-size: 10px; color: #73777B">외운 문장이 아닌, 자신의 가치관으로</span></li></ul></div>
-<div style="border: 1px solid #EBECE9; padding: 12px"><div style="font-size: 9px; letter-spacing: 0.16em; color: #A68A3E; font-weight: 600">계속 보완할 점</div><ul style="margin: 6px 0 0; padding: 0; list-style: none"><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">관사 및 불가산 명사</span><span style="font-size: 10px; color: #73777B">an information → information</span></li><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">전치사</span><span style="font-size: 10px; color: #73777B">similar to · search for</span></li><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">자세와 시선 처리</span><span style="font-size: 10px; color: #73777B">내용은 준비되었습니다</span></li></ul></div>
+<div style="border: 1px solid #EBECE9; padding: 12px"><div style="font-size: 9px; letter-spacing: 0.06em; color: #20344A; font-weight: 600">이룬 것</div><ul style="margin: 6px 0 0; padding: 0; list-style: none"><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">PREP이 완전히 내 것이 되었습니다</span><span style="font-size: 10px; color: #73777B">4주 차 첫 시도 → 12주 차 꾸준히 유지</span></li><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">리스닝: 매우 우수</span><span style="font-size: 10px; color: #73777B">질문을 다시 묻는 일이 없어졌습니다</span></li><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">미래의 의사다운 말하기</span><span style="font-size: 10px; color: #73777B">외운 문장이 아닌, 자신의 가치관으로</span></li></ul></div>
+<div style="border: 1px solid #EBECE9; padding: 12px"><div style="font-size: 9px; letter-spacing: 0.06em; color: #A68A3E; font-weight: 600">계속 보완할 점</div><ul style="margin: 6px 0 0; padding: 0; list-style: none"><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">관사 및 불가산 명사</span><span style="font-size: 10px; color: #73777B">an information → information</span></li><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">전치사</span><span style="font-size: 10px; color: #73777B">similar to · search for</span></li><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">자세와 시선 처리</span><span style="font-size: 10px; color: #73777B">내용은 준비되었습니다</span></li></ul></div>
 </div>
-<div><div style="font-size: 9px; letter-spacing: 0.16em; color: #A68A3E; font-weight: 600; margin-bottom: 8px">내일이 면접이라면</div><div style="display: flex; gap: 6px"><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">A−</div><div style="font-size: 8px; letter-spacing: 0.12em; color: #5F6367; margin-top: 4px">구조</div></div><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">A</div><div style="font-size: 8px; letter-spacing: 0.12em; color: #5F6367; margin-top: 4px">리스닝</div></div><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">B+</div><div style="font-size: 8px; letter-spacing: 0.12em; color: #5F6367; margin-top: 4px">어휘 정확성</div></div><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">B+</div><div style="font-size: 8px; letter-spacing: 0.12em; color: #5F6367; margin-top: 4px">전달력</div></div><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">A−</div><div style="font-size: 8px; letter-spacing: 0.12em; color: #5F6367; margin-top: 4px">나의 “WHY”</div></div></div></div>
+<div><div style="font-size: 9px; letter-spacing: 0.06em; color: #A68A3E; font-weight: 600; margin-bottom: 8px">내일이 면접이라면</div><div style="display: flex; gap: 6px"><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">A−</div><div style="font-size: 8px; letter-spacing: 0.06em; color: #5F6367; margin-top: 4px">구조</div></div><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">A</div><div style="font-size: 8px; letter-spacing: 0.06em; color: #5F6367; margin-top: 4px">리스닝</div></div><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">B+</div><div style="font-size: 8px; letter-spacing: 0.06em; color: #5F6367; margin-top: 4px">어휘 정확성</div></div><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">B+</div><div style="font-size: 8px; letter-spacing: 0.06em; color: #5F6367; margin-top: 4px">전달력</div></div><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">A−</div><div style="font-size: 8px; letter-spacing: 0.06em; color: #5F6367; margin-top: 4px">나의 “WHY”</div></div></div></div>
 </div>
 </div>
 <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">성장의 증거</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">성장의 증거</p>
 <h3 style="margin: 0; font-size: clamp(26px, 2.6cqi, 36px); line-height: 1.12; font-weight: 400; letter-spacing: -0.02em">느낌이 아닌, 기록.</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #2E3135">매 수업이 끝나면 강사가 다섯 가지 영역에 걸친 Lesson Learned Report(LLR)를 발행합니다. 리포트가 쌓여 프로그램 종합 리포트가 됩니다: 무엇을 해결했고, 무엇이 남았으며, 다음은 무엇인지.</p>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px"><li style="display: flex; gap: 10px; font-size: 14px; line-height: 1.5; color: #2E3135"><span aria-hidden="true" style="color: #20344A">—</span>성취도 · 스피킹 · 리스닝 · 어휘 · 교정</li><li style="display: flex; gap: 10px; font-size: 14px; line-height: 1.5; color: #2E3135"><span aria-hidden="true" style="color: #20344A">—</span>1–2주마다 오류 패턴 추적</li><li style="display: flex; gap: 10px; font-size: 14px; line-height: 1.5; color: #2E3135"><span aria-hidden="true" style="color: #20344A">—</span>4회 수업마다 상세 피드백</li></ul>
@@ -265,7 +265,7 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 </div>
 <div style="display: flex; flex-wrap: wrap-reverse; gap: 40px 64px; align-items: center">
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">학생 및 학부모 대시보드</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">학생 및 학부모 대시보드</p>
 <h3 style="margin: 0; font-size: clamp(26px, 2.6cqi, 36px); line-height: 1.12; font-weight: 400; letter-spacing: -0.02em">학부모님께는 약속이 아닌 성과를 보여 드립니다.</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #2E3135">학생과 학부모는 각자 계정을 가집니다. 매일의 과제, 레슨 진도, 출석과 점수, 그리고 모든 LLR을 전해 듣는 것이 아니라 언제든 직접 확인할 수 있습니다.</p>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px"><li style="display: flex; gap: 10px; font-size: 14px; line-height: 1.5; color: #2E3135"><span aria-hidden="true" style="color: #20344A">—</span>학생: 오늘의 과제, 다음 수업, 학습 로드맵</li><li style="display: flex; gap: 10px; font-size: 14px; line-height: 1.5; color: #2E3135"><span aria-hidden="true" style="color: #20344A">—</span>학부모: 점수와 리포트를 확인하는 별도 계정</li><li style="display: flex; gap: 10px; font-size: 14px; line-height: 1.5; color: #2E3135"><span aria-hidden="true" style="color: #20344A">—</span>교재와 음성 자료를 언제든 바로</li></ul>
@@ -287,7 +287,7 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <div style="display: flex; gap: 14px; font-size: 8px; opacity: 0.9"><div>레슨<br/><strong style="font-size: 13px">4</strong> / 52</div><div>출석<br/><strong style="font-size: 13px">100%</strong></div><div>과제<br/><strong style="font-size: 13px">—</strong></div></div>
 </div>
 <div style="background: #FFFFFF; border-radius: 12px; padding: 12px; font-size: 11px; line-height: 1.4; color: #20344A; font-weight: 600">“습관은 자기 계발의 복리 이자다.”</div>
-<div style="font-size: 8px; letter-spacing: 0.16em; color: #A68A3E">오늘의 과제</div>
+<div style="font-size: 8px; letter-spacing: 0.06em; color: #A68A3E">오늘의 과제</div>
 <div style="background: #FBF6EA; border-radius: 10px; padding: 10px; font-size: 9px; line-height: 1.5; color: #5F4B1F"><strong>복습하는 날</strong><br/>수업이 없는 날의 반복이 실력을 만듭니다 — 단어 → 스피킹 → 리딩.</div></div>
 <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); padding: 8px 4px 10px; background: #FFFBF2; border-top: 1px solid #EEE7D6; font-size: 8px; color: #8A8E92; text-align: center"><span style="color: #A68A3E">오늘</span><span style="color: #8A8E92">피드백</span><span style="color: #8A8E92">일정</span><span style="color: #8A8E92">자료</span><span style="color: #8A8E92">프로필</span></div>
 </div>
@@ -307,7 +307,7 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <div style="display: flex; gap: 14px; font-size: 8px; opacity: 0.9"><div>레슨<br/><strong style="font-size: 13px">4</strong> / 52</div><div>출석<br/><strong style="font-size: 13px">100%</strong></div><div>과제<br/><strong style="font-size: 13px">0%</strong></div></div>
 </div>
 <div style="background: #FFFFFF; border-radius: 12px; padding: 12px; font-size: 11px; line-height: 1.4; color: #20344A; font-weight: 600">“습관은 자기 계발의 복리 이자다.”</div>
-<div style="font-size: 8px; letter-spacing: 0.16em; color: #A68A3E">오늘의 과제</div>
+<div style="font-size: 8px; letter-spacing: 0.06em; color: #A68A3E">오늘의 과제</div>
 <div style="background: #FBF6EA; border-radius: 10px; padding: 10px; font-size: 9px; line-height: 1.5; color: #5F4B1F"><strong>복습하는 날</strong><br/>수업이 없는 날의 반복이 실력을 만듭니다 — 단어 → 스피킹 → 리딩.</div></div>
 <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); padding: 8px 4px 10px; background: #FFFBF2; border-top: 1px solid #EEE7D6; font-size: 8px; color: #8A8E92; text-align: center"><span style="color: #A68A3E">오늘</span><span style="color: #8A8E92">피드백</span><span style="color: #8A8E92">일정</span><span style="color: #8A8E92">자료</span><span style="color: #8A8E92">프로필</span></div>
 </div>
@@ -318,7 +318,7 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <div><div style="font-size: 11px; letter-spacing: 0.22em; color: #E4C874; font-weight: 600">LYVON</div><div style="font-size: 13px; margin-top: 4px">안녕하세요, <strong>학생 A</strong></div><div style="font-size: 8px; opacity: 0.75; margin-top: 3px">● 방금 업데이트됨</div></div>
 <div style="width: 30px; height: 30px; border-radius: 50%; background: #E4C874; color: #3B33C4; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center">SA</div>
 </div>
-<div style="flex-grow: 1; padding: 12px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 8px; letter-spacing: 0.16em; color: #A68A3E">영어 평가</div>
+<div style="flex-grow: 1; padding: 12px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 8px; letter-spacing: 0.06em; color: #A68A3E">영어 평가</div>
 <div style="background: #FFFFFF; border-radius: 14px; padding: 12px; display: flex; flex-direction: column; gap: 6px">
 <div style="font-size: 8px; color: #8A8E92; text-align: right">L04 기준</div>
 <div style="display: flex; justify-content: space-between; align-items: flex-end; background: #F4F3FB; border-radius: 10px; padding: 10px"><div><div style="font-size: 9px; color: #3B33C4; font-weight: 600">종합</div><div style="color: #C2A24E; font-size: 13px; letter-spacing: 1px">★★★☆☆</div></div><div style="display: flex; align-items: baseline; gap: 4px"><strong style="font-size: 26px; color: #3B33C4">3.4</strong><span style="font-size: 9px; color: #8A8E92">/ 5</span><span style="font-size: 8px; background: #E3F4EC; color: #1E6B4A; border-radius: 8px; padding: 2px 6px">▲ +0.1</span></div></div>
@@ -363,7 +363,7 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <section class="lv-dark" id="network" style="padding: clamp(80px, 10cqi, 160px) clamp(20px, 4.5cqi, 64px); background: #0F1A26; color: #F7F7F4">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #B7BCC2">05 — 네트워크</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #B7BCC2">05 — 네트워크</p>
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
 <h2 style="margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">세 도시, 하나의 비전.</h2>
 <p style="margin: 0; max-width: 36em; font-size: 17px; line-height: 1.6; font-weight: 300; color: #D3D6D9">LYVON은 세 도시에서 활동하며, 각 도시는 프로그램을 만들고 학생을 지원하며 아시아 전역으로 성장하는 데 저마다의 역할을 맡고 있습니다.</p>
@@ -372,19 +372,19 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px 24px">
 <article style="display: flex; flex-direction: column; gap: 16px">
 <div style="aspect-ratio: 4 / 5; overflow: hidden; background: #24384F"><img alt="서울 스카이라인" src="/assets/img/city-seoul.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: 55% 62%; display: block"/></div>
-<p style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.32em">서울</p>
+<p style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">서울</p>
 <h3 style="margin: 0; font-size: 22px; font-weight: 400">사업 기반</h3>
 <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CCCF">LYVON이 시작된 곳 — 학생·학부모와 신뢰를 쌓고 한국 시장을 넓혀 갑니다.</p>
 </article>
 <article style="display: flex; flex-direction: column; gap: 16px">
 <div style="aspect-ratio: 4 / 5; overflow: hidden; background: #24384F"><img alt="도쿄 마루노우치 스카이라인" src="/assets/img/city-tokyo.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: 66% 55%; display: block"/></div>
-<p style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.32em">도쿄</p>
+<p style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">도쿄</p>
 <h3 style="margin: 0; font-size: 22px; font-weight: 400">전략 및 확장</h3>
 <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CCCF">해외 전략과 브랜드 방향, 일본 시장 개척, 그리고 향후 일본 커리어 프로그램을 위한 기반을 마련합니다.</p>
 </article>
 <article style="display: flex; flex-direction: column; gap: 16px">
 <div style="aspect-ratio: 4 / 5; overflow: hidden; background: #24384F"><img alt="마닐라 보니파시오 글로벌 시티 스카이라인" src="/assets/img/city-manila.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: 45% 50%; display: block"/></div>
-<p style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.32em">마닐라</p>
+<p style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">마닐라</p>
 <h3 style="margin: 0; font-size: 22px; font-weight: 400">학사 운영 파트너십</h3>
 <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CCCF">필리핀에 기반을 둔 독립 교육 운영 파트너 StepForward와 협력하여 학사 운영을 진행합니다.</p>
 </article>
@@ -396,7 +396,7 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <section style="padding: clamp(80px, 10cqi, 160px) clamp(20px, 4.5cqi, 64px); background: #EBECE9">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px 64px">
 <div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 24px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">06 — 아시아 전역</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">06 — 아시아 전역</p>
 <h2 style="margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">아시아의 학생들을 위해 설계했습니다.</h2>
 <p style="margin: 0; max-width: 30em; font-size: 17px; line-height: 1.6; color: #2E3135">맞춤형 온라인 교육 덕분에 어디에 있든 나에게 맞는 강사와 공부할 수 있습니다. LYVON은 네 개의 우선 시장을 시작으로 아시아 전역의 학생들을 위해 만들어 가고 있습니다.</p>
 </div>
@@ -413,10 +413,10 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <section id="insights" style="padding: clamp(80px, 10cqi, 160px) clamp(20px, 4.5cqi, 64px)">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">07 — 인사이트</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">07 — 인사이트</p>
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: flex-end; justify-content: space-between">
 <h2 style="margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">국경을 넘는 관점.</h2>
-<a href="/ko/insights/" style="font-size: 12px; letter-spacing: 0.14em; color: #5F6367">전체 글 보기 →</a>
+<a href="/ko/insights/" style="font-size: 12px; letter-spacing: 0.06em; color: #5F6367">전체 글 보기 →</a>
 </div>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); border-top: 1px solid #17191C">
@@ -433,7 +433,7 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <section class="lv-dark" id="contact" style="padding: clamp(96px, 12cqi, 180px) clamp(20px, 4.5cqi, 64px); background: #20344A; color: #F7F7F4">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px 64px; align-items: flex-end; justify-content: space-between">
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #C3CBD4">08 — 문의</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #C3CBD4">08 — 문의</p>
 <h2 style="margin: 0; font-size: clamp(40px, 5.6cqi, 80px); line-height: 1.02; font-weight: 400; letter-spacing: -0.03em">다음 챕터는 여기서 시작됩니다.</h2>
 <p style="margin: 0; max-width: 32em; font-size: 17px; line-height: 1.6; font-weight: 300; color: #D6DCE2">정규 수업과 같은 방식의 50분 무료 수업으로 시작하세요. 학생, 가족, 그리고 파트너십을 검토하시는 분 모두 환영합니다. 영어·한국어·일본어로 문의하실 수 있습니다.</p>
 </div>
@@ -467,7 +467,7 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <legend style="padding: 0; margin-bottom: 4px; font-size: 12px; letter-spacing: 0.08em; color: #C3CBD4">관심 학교 (해당 항목 모두 선택) *</legend>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px"><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="schools" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="Semmelweis University"/>Semmelweis University</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="schools" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="University of Pécs"/>University of Pécs</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="schools" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="University of Szeged"/>University of Szeged</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="schools" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="University of Veterinary Medicine Budapest"/>University of Veterinary Medicine Budapest</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="schools" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="Undecided"/>미정</label></div>
 </fieldset>
-<div style="display: flex; justify-content: flex-end"><button style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; border: none; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; cursor: pointer" type="submit">다음 <span aria-hidden="true">→</span></button></div>
+<div style="display: flex; justify-content: flex-end"><button style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; border: none; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.06em; cursor: pointer" type="submit">다음 <span aria-hidden="true">→</span></button></div>
 </form>
 <form data-step="2" hidden="" style="display: flex; flex-direction: column; gap: 32px">
 <div style="display: flex; flex-wrap: wrap; gap: 8px 32px; align-items: baseline; justify-content: space-between">
@@ -487,7 +487,7 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <legend style="padding: 0; margin-bottom: 4px; font-size: 12px; letter-spacing: 0.08em; color: #C3CBD4">가장 큰 고민 (해당 항목 모두 선택)</legend>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px"><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="concerns" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="Words don’t come out when speaking"/>말할 때 단어가 떠오르지 않음</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="concerns" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="Explaining medical concepts in English"/>의학 개념을 영어로 설명하기</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="concerns" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="No structure for logical answers"/>논리적으로 답변하는 구조가 없음</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="concerns" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="No interview experience"/>면접 경험 없음</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="concerns" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="Nerves under exam pressure"/>시험 상황에서의 긴장</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="concerns" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="Not sure where to start"/>어디서부터 시작해야 할지 모름</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="concerns" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="Limited information about Hungarian schools"/>헝가리 학교에 대한 정보 부족</label></div>
 </fieldset>
-<div style="display: flex; justify-content: space-between; align-items: center"><button data-to="1" style="min-height: 52px; padding: 0 8px; background: none; border: none; color: #C3CBD4; font: inherit; font-size: 13px; cursor: pointer" type="button">← 이전</button><button style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; border: none; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; cursor: pointer" type="submit">다음 <span aria-hidden="true">→</span></button></div>
+<div style="display: flex; justify-content: space-between; align-items: center"><button data-to="1" style="min-height: 52px; padding: 0 8px; background: none; border: none; color: #C3CBD4; font: inherit; font-size: 13px; cursor: pointer" type="button">← 이전</button><button style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; border: none; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.06em; cursor: pointer" type="submit">다음 <span aria-hidden="true">→</span></button></div>
 </form>
 <form data-step="3" hidden="" style="display: flex; flex-direction: column; gap: 32px"><input aria-hidden="true" autocomplete="off" name="company" style="position:absolute;left:-9999px" tabindex="-1" type="text"/>
 <div style="display: flex; flex-wrap: wrap; gap: 8px 32px; align-items: baseline; justify-content: space-between">
@@ -522,10 +522,10 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <input name="consent" required="" style="width: 20px; height: 20px; margin: 2px 0 0; flex-shrink: 0; accent-color: #F7F7F4" type="checkbox"/>
 <span>개인정보 수집 및 이용에 동의합니다. <span style="color: #C3CBD4">수집 항목: 이름, 이메일, 전화번호(선택) 및 학습 관련 답변. 목적: 체험 수업 일정 조율, 개별 피드백 및 상담. 보관: 목적 달성 시 또는 요청 시 즉시 삭제.</span> <a href="/ko/legal/" style="color: #F7F7F4; text-decoration: underline">개인정보처리방침</a> *</span>
 </label>
-<div style="display: flex; justify-content: space-between; align-items: center"><button data-to="2" style="min-height: 52px; padding: 0 8px; background: none; border: none; color: #C3CBD4; font: inherit; font-size: 13px; cursor: pointer" type="button">← 이전</button><button style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; border: none; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; cursor: pointer" type="submit">신청하기 <span aria-hidden="true">→</span></button></div><p class="lv-formmsg" role="alert" style="margin:0;font-size:13px;color:#E4C874"></p>
+<div style="display: flex; justify-content: space-between; align-items: center"><button data-to="2" style="min-height: 52px; padding: 0 8px; background: none; border: none; color: #C3CBD4; font: inherit; font-size: 13px; cursor: pointer" type="button">← 이전</button><button style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; border: none; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.06em; cursor: pointer" type="submit">신청하기 <span aria-hidden="true">→</span></button></div><p class="lv-formmsg" role="alert" style="margin:0;font-size:13px;color:#E4C874"></p>
 </form>
 <div data-step="4" hidden="" role="status" style="display: flex; flex-direction: column; gap: 16px; padding: 48px 0">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #C3CBD4">신청이 접수되었습니다</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #C3CBD4">신청이 접수되었습니다</p>
 <p style="margin: 0; font-size: clamp(26px, 2.6cqi, 36px); font-weight: 300">감사합니다. 평일 24시간 이내에 개별 피드백을 보내 드립니다.</p>
 <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #C3CBD4">가장 빠른 일정 조율을 원하시면 이름을 보내 주세요: <a href="https://open.kakao.com/o/sh3TzOsi" style="color: #F7F7F4; text-decoration: underline">카카오톡 오픈채팅</a>.</p>
 <button data-to="1" style="align-self: flex-start; min-height: 44px; padding: 0; background: none; border: none; border-bottom: 1px solid rgba(247, 247, 244, 0.5); color: #F7F7F4; font: inherit; font-size: 13px; cursor: pointer" type="button">다시 신청하기</button>
@@ -573,7 +573,7 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <div aria-label="무료 웰컴 가이드" aria-modal="true" class="lv-guide" hidden="" role="dialog" style="position:fixed;inset:0;z-index:50;background:rgba(15,26,38,.72);display:flex;align-items:center;justify-content:center;padding:20px">
 <div style="width:100%;max-width:460px;background:#F7F7F4;color:#17191C;padding:32px 28px;position:relative">
 <button aria-label="닫기" data-act="guide" style="position:absolute;top:8px;right:8px;min-width:44px;min-height:44px;background:none;border:none;font-size:24px;cursor:pointer" type="button">×</button>
-<p style="margin:0 0 8px;font-size:11px;font-weight:500;letter-spacing:0.24em;color:#5F6367">무료 웰컴 가이드</p>
+<p style="margin:0 0 8px;font-size:11px;font-weight:500;letter-spacing: 0.06em;color:#5F6367">무료 웰컴 가이드</p>
 <p style="margin:0 0 20px;font-size:24px;line-height:1.2">LYVON 웰컴 가이드를 이메일로 받아 보세요.</p>
 <form class="lv-guideform" style="display:flex;flex-direction:column;gap:14px">
 <input aria-hidden="true" autocomplete="off" name="company" style="position:absolute;left:-9999px" tabindex="-1" type="text"/>
@@ -581,7 +581,7 @@ body{margin:0;font-family:Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun 
 <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;letter-spacing:0.08em;color:#44484C">이메일 *<input autocomplete="email" name="email" required="" style="min-height:46px;padding:0 12px;border:1px solid #C4C6C3;background:#FFF;font:inherit;font-size:15px" type="email"/></label>
 <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;letter-spacing:0.08em;color:#44484C">가이드 언어 *<select name="replyLang" required="" style="min-height:46px;padding:0 12px;border:1px solid #C4C6C3;background:#FFF;font:inherit;font-size:15px"><option value="EN">English</option><option value="KO">한국어</option><option value="JA">日本語</option><option value="ZH">繁體中文</option></select></label>
 <label style="display:flex;gap:10px;align-items:flex-start;font-size:12px;line-height:1.5;color:#44484C"><input name="consent" required="" style="width:18px;height:18px;margin:2px 0 0;flex-shrink:0" type="checkbox"/><span>가이드 발송을 위한 이름 및 이메일 수집·이용에 동의합니다. 자세한 내용은 다음을 참고하세요: <a href="/legal/#privacy" style="text-decoration:underline">개인정보처리방침</a>. *</span></label>
-<button style="min-height:50px;background:#20344A;color:#FFF;border:none;font:inherit;font-size:12px;font-weight:500;letter-spacing:0.18em;cursor:pointer" type="submit">가이드 받기 →</button>
+<button style="min-height:50px;background:#20344A;color:#FFF;border:none;font:inherit;font-size:12px;font-weight:500;letter-spacing: 0.06em;cursor:pointer" type="submit">가이드 받기 →</button>
 <p class="lv-guidemsg" role="status" style="margin:0;font-size:13px;color:#20344A"></p>
 </form>
 </div>

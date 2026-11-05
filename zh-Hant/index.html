@@ -7,7 +7,7 @@
 <link href="/favicon.ico" rel="icon"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Noto+Sans+TC:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
-html{scroll-behavior:smooth;background:#0F1A26}body{margin:0;background:#0F1A26}html[lang=ko] body{word-break:keep-all;overflow-wrap:anywhere}a{color:inherit;text-decoration:none}a:hover{color:#20344A}
+html{scroll-behavior:smooth;background:#0F1A26}body{margin:0;background:#0F1A26}html[lang=ko] body{word-break:keep-all;overflow-wrap:anywhere}html[lang=zh-Hant] :is(h1,h2,h3,blockquote){text-wrap:balance}a{color:inherit;text-decoration:none}a:hover{color:#20344A}
 .lv-root{container-type:inline-size}.lv-navlinks{display:flex}.lv-menubtn{display:none}
 .lv-hero a:hover,.lv-dark a:hover,.lv-header a:hover{color:#FFFFFF}
 @container (max-width: 900px){.lv-navlinks{display:none!important}.lv-menubtn{display:flex!important}}
@@ -17,10 +17,10 @@ html{scroll-behavior:smooth;background:#0F1A26}body{margin:0;background:#0F1A26}
 .lv-anim .lv-rv{opacity:0;transform:translateY(48px);transition:opacity 1.1s cubic-bezier(.16,.8,.24,1),transform 1.1s cubic-bezier(.16,.8,.24,1)}.lv-anim img.lv-rv,.lv-anim figure.lv-rv{transform:translateY(32px) scale(1.06)}.lv-anim h2.lv-rv{transform:translateY(56px)}.lv-anim .lv-rv.lv-in{opacity:1;transform:none}a.lv-row{transition:background-color .3s}.lv-row-cta{margin-top:12px;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;border:1px solid #17191C;font-size:12px;font-weight:500;letter-spacing:0.14em;color:#17191C;transition:background-color .25s,color .25s}.lv-row-name{white-space:nowrap;overflow-wrap:normal}a.lv-row>div:first-child{flex-basis:300px!important}.lv-row-arrow{display:inline-block;transition:transform .25s}a.lv-row:hover .lv-row-cta,a.lv-row:focus-visible .lv-row-cta{background:#20344A;border-color:#20344A;color:#F7F7F4}a.lv-row:hover .lv-row-arrow{transform:translateX(5px)}@media (prefers-reduced-motion: reduce){.lv-anim .lv-rv{opacity:1!important;transform:none!important;transition:none!important}}
 
 .lv-prose{max-width:760px;margin:0 auto;padding:clamp(56px,8cqi,110px) clamp(20px,4.5cqi,64px);font-size:16px;line-height:1.75;color:#2E3135}
-.lv-prose h2{font-size:26px;font-weight:400;letter-spacing:-0.01em;color:#17191C;margin:48px 0 12px}.lv-prose h3{font-size:18px;font-weight:600;color:#17191C;margin:32px 0 8px}
+.lv-prose h2{font-size:26px;font-weight:400;line-height:1.3;letter-spacing:-0.01em;color:#17191C;margin:48px 0 12px}.lv-prose h3{font-size:18px;font-weight:600;color:#17191C;margin:32px 0 8px}
 .lv-prose table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;font-size:14px;margin:16px 0}.lv-prose th,.lv-prose td{border-top:1px solid #C4C6C3;padding:10px 8px;text-align:left;vertical-align:top}
 .lv-prose a{text-decoration:underline}.lv-prose ul{padding-left:20px}
-.lv-prose{overflow-wrap:anywhere}.lv-prose td,.lv-prose th{min-width:7em}
+.lv-prose{overflow-wrap:anywhere}.mp-root article li{display:grid!important;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:16px!important}.lv-prose td,.lv-prose th{min-width:7em}
 input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid #E4C874;outline-offset:2px}
 
 body{margin:0;background:#F7F7F4}
@@ -49,25 +49,25 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <div class="lv-tri" style="position: absolute; inset: 0; gap: 2px">
 <figure style="margin: 0; position: relative; overflow: hidden">
 <img alt="黃昏時分的首爾天際線，可見樂天世界塔與南山" class="lv-reveal" src="/assets/img/city-seoul.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 62%"/>
-<figcaption style="position: absolute; left: clamp(20px, 2.5cqi, 32px); bottom: 24px; z-index: 2; display: flex; gap: 12px; align-items: baseline; font-size: 12px; font-weight: 500; letter-spacing: 0.32em"><span style="font-size: 10px; letter-spacing: 0.2em; opacity: 0.85">01</span>首爾</figcaption>
+<figcaption style="position: absolute; left: clamp(20px, 2.5cqi, 32px); bottom: 24px; z-index: 2; display: flex; gap: 12px; align-items: baseline; font-size: 12px; font-weight: 500; letter-spacing: 0.06em"><span style="font-size: 10px; letter-spacing: 0.2em; opacity: 0.85">01</span>首爾</figcaption>
 </figure>
 <figure style="margin: 0; position: relative; overflow: hidden">
 <img alt="黃昏時分的東京車站與丸之內天際線" class="lv-reveal lv-reveal2" src="/assets/img/city-tokyo.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 66% 55%"/>
-<figcaption style="position: absolute; left: clamp(20px, 2.5cqi, 32px); bottom: 24px; z-index: 2; display: flex; gap: 12px; align-items: baseline; font-size: 12px; font-weight: 500; letter-spacing: 0.32em"><span style="font-size: 10px; letter-spacing: 0.2em; opacity: 0.85">02</span>東京</figcaption>
+<figcaption style="position: absolute; left: clamp(20px, 2.5cqi, 32px); bottom: 24px; z-index: 2; display: flex; gap: 12px; align-items: baseline; font-size: 12px; font-weight: 500; letter-spacing: 0.06em"><span style="font-size: 10px; letter-spacing: 0.2em; opacity: 0.85">02</span>東京</figcaption>
 </figure>
 <figure style="margin: 0; position: relative; overflow: hidden">
 <img alt="夜晚的馬尼拉博尼法西奧環球城" class="lv-reveal lv-reveal3" src="/assets/img/city-manila.jpg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 45% 50%"/>
-<figcaption style="position: absolute; left: clamp(20px, 2.5cqi, 32px); bottom: 24px; z-index: 2; display: flex; gap: 12px; align-items: baseline; font-size: 12px; font-weight: 500; letter-spacing: 0.32em"><span style="font-size: 10px; letter-spacing: 0.2em; opacity: 0.85">03</span>馬尼拉</figcaption>
+<figcaption style="position: absolute; left: clamp(20px, 2.5cqi, 32px); bottom: 24px; z-index: 2; display: flex; gap: 12px; align-items: baseline; font-size: 12px; font-weight: 500; letter-spacing: 0.06em"><span style="font-size: 10px; letter-spacing: 0.2em; opacity: 0.85">03</span>馬尼拉</figcaption>
 </figure>
 </div>
 <div aria-hidden="true" style="position: absolute; inset: 0; background: rgba(11, 20, 30, 0.38); pointer-events: none"></div>
 <header class="lv-header" style="position:absolute;top:0;left:0;right:0;z-index:5;height:80px;box-sizing:border-box;padding:0 clamp(20px,4.5cqi,64px);display:flex;align-items:center;justify-content:space-between;gap:24px;color:#F7F7F4">
 <a href="/zh-Hant/" style="font-size:15px;font-weight:600;letter-spacing:0.32em">LYVON</a>
-<nav aria-label="主選單" class="lv-navlinks" style="gap:clamp(24px,2.8cqi,40px);font-size:12px;font-weight:500;letter-spacing:0.16em">
+<nav aria-label="主選單" class="lv-navlinks" style="gap:clamp(24px,2.8cqi,40px);font-size:12px;font-weight:500;letter-spacing: 0.06em">
 <a href="/zh-Hant/#about">關於我們</a><a href="/zh-Hant/#programs">課程</a><a href="/zh-Hant/#network">我們的網絡</a><a href="/zh-Hant/insights/">觀點</a><a href="/zh-Hant/book/">聯絡我們</a>
 </nav>
 <div style="display:flex;align-items:center;gap:4px;position:relative">
-<button aria-expanded="false" aria-haspopup="true" aria-label="選擇語言" data-act="lang" style="min-width:44px;min-height:44px;padding:0 6px;background:none;border:none;font:inherit;font-size:12px;letter-spacing:0.16em;color:#F7F7F4;cursor:pointer" type="button">繁 ▾</button>
+<button aria-expanded="false" aria-haspopup="true" aria-label="選擇語言" data-act="lang" style="min-width:44px;min-height:44px;padding:0 6px;background:none;border:none;font:inherit;font-size:12px;letter-spacing: 0.06em;color:#F7F7F4;cursor:pointer" type="button">繁 ▾</button>
 <ul class="lv-langmenu" hidden="" style="position:absolute;top:48px;right:0;margin:0;padding:8px 0;list-style:none;min-width:168px;background:#F7F7F4;color:#17191C;font-size:13px;box-shadow:0 8px 24px rgba(0,0,0,.18);z-index:30"><li><a href="/zh-Hant/" hreflang="en" lang="en" style="display:flex;justify-content:space-between;min-height:44px;align-items:center;padding:0 16px">English </a></li><li><a href="/ko/" hreflang="ko" lang="ko" style="display:flex;justify-content:space-between;min-height:44px;align-items:center;padding:0 16px">한국어 </a></li><li><a href="/ja/" hreflang="ja" lang="ja" style="display:flex;justify-content:space-between;min-height:44px;align-items:center;padding:0 16px">日本語 </a></li><li><a href="/zh-Hant/" hreflang="zh-Hant" lang="zh-Hant" style="display:flex;justify-content:space-between;min-height:44px;align-items:center;padding:0 16px;font-weight:500">繁體中文 <span style="color:#20344A">●</span></a></li></ul>
 <button aria-label="開啟選單" class="lv-menubtn" data-act="menu" style="min-width:44px;min-height:44px;background:none;border:none;align-items:center;justify-content:center;color:#F7F7F4;cursor:pointer" type="button"><svg aria-hidden="true" fill="none" height="22" stroke="currentColor" stroke-width="1.4" viewbox="0 0 22 22" width="22"><line x1="3" x2="19" y1="8" y2="8"></line><line x1="3" x2="19" y1="14" y2="14"></line></svg></button>
 </div>
@@ -77,15 +77,15 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <p class="lv-fade lv-d2" style="margin: 0; font-size: clamp(10px, 1cqi, 14px); font-weight: 500; letter-spacing: 0.42em; padding-left: 0.42em">SEOUL · TOKYO · MANILA</p>
 <p class="lv-fade lv-d3" style="margin: 0; font-size: clamp(16px, 1.7cqi, 24px); line-height: 1.4; font-weight: 300; max-width: 22em">連結亞洲，教育無國界。</p>
 <div class="lv-fade lv-d4" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 12px; pointer-events: auto">
-<a href="#programs" style="min-height: 48px; display: flex; align-items: center; gap: 10px; padding: 0 24px; background: #F7F7F4; color: #17191C; font-size: 12px; font-weight: 500; letter-spacing: 0.18em">探索課程 <span aria-hidden="true">→</span></a>
-<a href="#book" style="min-height: 48px; display: flex; align-items: center; padding: 0 24px; border: 1px solid rgba(247, 247, 244, 0.7); font-size: 12px; font-weight: 500; letter-spacing: 0.18em">預約免費課程</a>
+<a href="#programs" style="min-height: 48px; display: flex; align-items: center; gap: 10px; padding: 0 24px; background: #F7F7F4; color: #17191C; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">探索課程 <span aria-hidden="true">→</span></a>
+<a href="#book" style="min-height: 48px; display: flex; align-items: center; padding: 0 24px; border: 1px solid rgba(247, 247, 244, 0.7); font-size: 12px; font-weight: 500; letter-spacing: 0.06em">預約免費課程</a>
 </div>
 </div>
 </section>
 <!-- 02 PHILOSOPHY -->
 <section id="about" style="padding: clamp(80px, 10cqi, 160px) clamp(20px, 4.5cqi, 64px)">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px 64px">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">01 — 我們的理念</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">01 — 我們的理念</p>
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 32px">
 <h2 style="margin: 0; font-size: clamp(40px, 5.6cqi, 80px); line-height: 1.02; font-weight: 400; letter-spacing: -0.03em">機會，不受國界限制。</h2>
 <p style="margin: 0; max-width: 34em; font-size: clamp(18px, 1.6cqi, 22px); line-height: 1.6; font-weight: 300; color: #2E3135">LYVON 相信，有意義的機會不應受地理限制。我們為懷抱抱負的人提供跨國求學與發展職涯所需的知識、準備與支援。</p>
@@ -100,7 +100,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <section style="padding: 0 clamp(20px, 4.5cqi, 64px) clamp(80px, 10cqi, 160px)">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end; border-top: 1px solid #17191C; padding-top: 28px">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">02 — 我們的工作</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">02 — 我們的工作</p>
 <h2 style="flex: 999 1 560px; margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">開啟新可能的教育。</h2>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 48px 40px">
@@ -115,7 +115,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #2E3135">為高要求的海外學業提供有架構的溝通與學術準備。</p>
 </article>
 <article style="display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; gap: 14px; align-items: center"><span style="font-size: 13px; color: #5F6367">03</span><span style="font-size: 10px; font-weight: 500; letter-spacing: 0.18em; color: #20344A; border: 1px solid #20344A; padding: 4px 8px">開發中</span></div>
+<div style="display: flex; gap: 14px; align-items: center"><span style="font-size: 13px; color: #5F6367">03</span><span style="font-size: 10px; font-weight: 500; letter-spacing: 0.06em; color: #20344A; border: 1px solid #20344A; padding: 4px 8px">開發中</span></div>
 <h3 style="margin: 0; font-size: 24px; font-weight: 500; letter-spacing: -0.01em">職涯與國際機會</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #2E3135">支援國際職涯的未來課程，特別著重於在日本的專業發展機會。</p>
 </article>
@@ -126,12 +126,12 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <section id="programs" style="padding: clamp(80px, 10cqi, 160px) clamp(20px, 4.5cqi, 64px); background: #EBECE9">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end; padding-bottom: 56px">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">03 — 我們的課程</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">03 — 我們的課程</p>
 <h2 style="flex: 999 1 560px; margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">圍繞您的目標打造的課程。</h2>
 </div>
 <a class="lv-row" href="/zh-Hant/programs/medpath/" style="display: flex; flex-wrap: wrap; gap: 24px 64px; padding: 40px 0; border-top: 1px solid #17191C">
 <div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 12px">
-<span style="font-size: 10px; font-weight: 500; letter-spacing: 0.2em; color: #F7F7F4; background: #20344A; padding: 5px 9px; align-self: flex-start">旗艦課程</span>
+<span style="font-size: 10px; font-weight: 500; letter-spacing: 0.06em; color: #F7F7F4; background: #20344A; padding: 5px 9px; align-self: flex-start">旗艦課程</span>
 <h3 class="lv-row-name" style="margin: 0; font-size: clamp(36px, 3.6cqi, 52px); font-weight: 500; letter-spacing: -0.03em">MedPath</h3>
 <span class="lv-row-cta"><span>查看詳情</span><span aria-hidden="true" class="lv-row-arrow">→</span></span></div>
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-wrap: wrap; gap: 24px 48px">
@@ -139,9 +139,9 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #2E3135">為報考歐洲醫學院量身打造的個人化準備——目前專注於匈牙利醫學系、牙醫學系、藥學系及獸醫學系的英語口試入學考試。</p>
 <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #2E3135">相同的50個生物與化學單元，分三個層次逐步深入： <strong style="font-weight: 600">Define</strong> （Starter）→ <strong style="font-weight: 600">Explain</strong> （Core）→ <strong style="font-weight: 600">Justify</strong> （Pro）。</p>
 <dl style="margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; font-size: 13px">
-<div><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">形式</dt><dd style="margin: 6px 0 0">1:1 · 50分鐘</dd></div>
-<div><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">期間</dt><dd style="margin: 6px 0 0">3個階段 · 各3個月</dd></div>
-<div><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">頻率</dt><dd style="margin: 6px 0 0">每週2–4堂</dd></div>
+<div><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">形式</dt><dd style="margin: 6px 0 0">1:1 · 50分鐘</dd></div>
+<div><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">期間</dt><dd style="margin: 6px 0 0">3個階段 · 各3個月</dd></div>
+<div><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">頻率</dt><dd style="margin: 6px 0 0">每週2–4堂</dd></div>
 </dl>
 </div>
 <ul style="flex: 1 1 220px; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #2E3135">
@@ -151,16 +151,16 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 </a>
 <a class="lv-row" href="/zh-Hant/programs/medbridge/" style="display: flex; flex-wrap: wrap; gap: 24px 64px; padding: 40px 0; border-top: 1px solid #C4C6C3">
 <div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 12px">
-<span style="font-size: 10px; font-weight: 500; letter-spacing: 0.2em; color: #20344A; border: 1px solid #20344A; padding: 4px 8px; align-self: flex-start">基礎課程</span>
+<span style="font-size: 10px; font-weight: 500; letter-spacing: 0.06em; color: #20344A; border: 1px solid #20344A; padding: 4px 8px; align-self: flex-start">基礎課程</span>
 <h3 class="lv-row-name" style="margin: 0; font-size: clamp(36px, 3.6cqi, 52px); font-weight: 500; letter-spacing: -0.03em">MedBridge</h3>
 <span class="lv-row-cta"><span>查看詳情</span><span aria-hidden="true" class="lv-row-arrow">→</span></span></div>
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-wrap: wrap; gap: 24px 48px">
 <div style="flex: 2 1 320px; display: flex; flex-direction: column; gap: 20px">
 <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #2E3135">為希望在進入更高要求的學術準備之前，先強化英語能力的學習者所設計的英語溝通基礎課程——核心醫學字彙、發音與句子結構，以及開口說出來的習慣。</p>
 <dl style="margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; font-size: 13px">
-<div><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">形式</dt><dd style="margin: 6px 0 0">1:1 · 50分鐘</dd></div>
-<div><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">期間</dt><dd style="margin: 6px 0 0">3個月 · 30個主題</dd></div>
-<div><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">頻率</dt><dd style="margin: 6px 0 0">每週2–4堂</dd></div>
+<div><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">形式</dt><dd style="margin: 6px 0 0">1:1 · 50分鐘</dd></div>
+<div><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">期間</dt><dd style="margin: 6px 0 0">3個月 · 30個主題</dd></div>
+<div><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">頻率</dt><dd style="margin: 6px 0 0">每週2–4堂</dd></div>
 </dl>
 </div>
 <ul style="flex: 1 1 220px; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #2E3135">
@@ -170,7 +170,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 </a>
 <a class="lv-row" href="/zh-Hant/programs/medconnect/" style="display: flex; flex-wrap: wrap; gap: 24px 64px; padding: 40px 0; border-top: 1px solid #C4C6C3; border-bottom: 1px solid #C4C6C3">
 <div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 12px">
-<span style="font-size: 10px; font-weight: 500; letter-spacing: 0.2em; color: #8E1F4B; border: 1px solid #8E1F4B; padding: 4px 8px; align-self: flex-start">試行 · 2026年7月起</span>
+<span style="font-size: 10px; font-weight: 500; letter-spacing: 0.06em; color: #8E1F4B; border: 1px solid #8E1F4B; padding: 4px 8px; align-self: flex-start">試行 · 2026年7月起</span>
 <h3 class="lv-row-name" style="margin: 0; font-size: clamp(36px, 3.6cqi, 52px); font-weight: 500; letter-spacing: -0.03em">MedConnect</h3>
 <span class="lv-row-cta"><span>查看詳情</span><span aria-hidden="true" class="lv-row-arrow">→</span></span></div>
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-wrap: wrap; gap: 24px 48px">
@@ -189,7 +189,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <section aria-label="錄取成果" style="padding: clamp(72px, 8cqi, 128px) clamp(20px, 4.5cqi, 64px)">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">MEDPATH — 成果</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">MEDPATH — 成果</p>
 <h2 style="flex: 999 1 560px; margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">24名學生中22名錄取。</h2>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 48px 64px">
@@ -215,14 +215,14 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <section id="method" style="padding: clamp(80px, 10cqi, 160px) clamp(20px, 4.5cqi, 64px)">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(56px, 6cqi, 96px)">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">04 — LYVON 學習法</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">04 — LYVON 學習法</p>
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
 <h2 style="margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">是一套系統，而不只是家教。</h2>
 <p style="margin: 0; max-width: 36em; font-size: 17px; line-height: 1.6; color: #2E3135">LYVON 不是升學代辦機構。代辦機構處理申請手續；我們培養的是通過考試的能力——透過經過設計、紀錄與評量的方法，一堂課接著一堂課累積。</p>
 </div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 24px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">三個層次 · 相同的50個單元，逐步深入</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">三個層次 · 相同的50個單元，逐步深入</p>
 <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2px">
 <li style="display: flex; flex-direction: column; gap: 12px; padding: 28px 24px; background: #EBECE9; color: #17191C">
 <span style="font-size: 11px; letter-spacing: 0.2em; opacity: 0.8">01 · STARTER</span>
@@ -244,19 +244,19 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <div aria-label="LYVON 課程總結報告，匿名範例" role="img" style="background: #FFFFFF; border: 1px solid #DCDDDA; box-shadow: 0 1px 0 rgba(0,0,0,0.02); padding: 24px; display: flex; flex-direction: column; gap: 16px; font-family: inherit">
 <div style="height: 3px; background: linear-gradient(90deg, #20344A 70%, #C2A24E)"></div>
 <div style="display: flex; justify-content: space-between; gap: 12px; align-items: flex-start">
-<div><div style="font-size: 9px; letter-spacing: 0.18em; color: #A68A3E">MEDBRIDGE 101 · 課程總結報告</div><div style="font-size: 18px; font-weight: 600; color: #20344A; margin-top: 6px">學生 A — 12週回顧</div><div style="font-size: 10px; color: #73777B; margin-top: 2px">第48堂 · 課程結業</div></div>
-<div style="text-align: right"><span style="display: inline-block; font-size: 9px; letter-spacing: 0.14em; color: #FFFFFF; background: #C2A24E; padding: 4px 8px; border-radius: 10px">已完成</span><div style="font-size: 10px; color: #73777B; margin-top: 6px">48堂課 · 30個單元<br/>出席率100%</div></div>
+<div><div style="font-size: 9px; letter-spacing: 0.06em; color: #A68A3E">MEDBRIDGE 101 · 課程總結報告</div><div style="font-size: 18px; font-weight: 600; color: #20344A; margin-top: 6px">學生 A — 12週回顧</div><div style="font-size: 10px; color: #73777B; margin-top: 2px">第48堂 · 課程結業</div></div>
+<div style="text-align: right"><span style="display: inline-block; font-size: 9px; letter-spacing: 0.06em; color: #FFFFFF; background: #C2A24E; padding: 4px 8px; border-radius: 10px">已完成</span><div style="font-size: 10px; color: #73777B; margin-top: 6px">48堂課 · 30個單元<br/>出席率100%</div></div>
 </div>
-<div style="background: #20344A; color: #F7F7F4; padding: 18px"><div style="font-size: 9px; letter-spacing: 0.18em; color: #C2A24E">重點總結</div><div style="font-size: 17px; line-height: 1.35; margin-top: 8px; font-weight: 500">三個月前，你還在練習造句。<br/>如今，你已經能夠建構論點。</div></div>
+<div style="background: #20344A; color: #F7F7F4; padding: 18px"><div style="font-size: 9px; letter-spacing: 0.06em; color: #C2A24E">重點總結</div><div style="font-size: 17px; line-height: 1.35; margin-top: 8px; font-weight: 500">三個月前，你還在練習造句。<br/>如今，你已經能夠建構論點。</div></div>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
-<div style="border: 1px solid #EBECE9; padding: 12px"><div style="font-size: 9px; letter-spacing: 0.16em; color: #20344A; font-weight: 600">你的成果</div><ul style="margin: 6px 0 0; padding: 0; list-style: none"><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">PREP 已經成為你的能力</span><span style="font-size: 10px; color: #73777B">第4週首次嘗試 → 第12週穩定運用</span></li><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">聽力：優秀</span><span style="font-size: 10px; color: #73777B">不再需要重複詢問問題</span></li><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">你聽起來就像一位未來的醫師</span><span style="font-size: 10px; color: #73777B">說出自己的價值觀，而非背誦的台詞</span></li></ul></div>
-<div style="border: 1px solid #EBECE9; padding: 12px"><div style="font-size: 9px; letter-spacing: 0.16em; color: #A68A3E; font-weight: 600">需要持續加強的地方</div><ul style="margin: 6px 0 0; padding: 0; list-style: none"><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">冠詞與不可數名詞</span><span style="font-size: 10px; color: #73777B">an information → information</span></li><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">介系詞</span><span style="font-size: 10px; color: #73777B">similar to · search for</span></li><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">姿勢與眼神交流</span><span style="font-size: 10px; color: #73777B">內容已經準備就緒</span></li></ul></div>
+<div style="border: 1px solid #EBECE9; padding: 12px"><div style="font-size: 9px; letter-spacing: 0.06em; color: #20344A; font-weight: 600">你的成果</div><ul style="margin: 6px 0 0; padding: 0; list-style: none"><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">PREP 已經成為你的能力</span><span style="font-size: 10px; color: #73777B">第4週首次嘗試 → 第12週穩定運用</span></li><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">聽力：優秀</span><span style="font-size: 10px; color: #73777B">不再需要重複詢問問題</span></li><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">你聽起來就像一位未來的醫師</span><span style="font-size: 10px; color: #73777B">說出自己的價值觀，而非背誦的台詞</span></li></ul></div>
+<div style="border: 1px solid #EBECE9; padding: 12px"><div style="font-size: 9px; letter-spacing: 0.06em; color: #A68A3E; font-weight: 600">需要持續加強的地方</div><ul style="margin: 6px 0 0; padding: 0; list-style: none"><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">冠詞與不可數名詞</span><span style="font-size: 10px; color: #73777B">an information → information</span></li><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">介系詞</span><span style="font-size: 10px; color: #73777B">similar to · search for</span></li><li style="display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid #EBECE9"><span style="font-size: 12px; font-weight: 500; color: #17191C">姿勢與眼神交流</span><span style="font-size: 10px; color: #73777B">內容已經準備就緒</span></li></ul></div>
 </div>
-<div><div style="font-size: 9px; letter-spacing: 0.16em; color: #A68A3E; font-weight: 600; margin-bottom: 8px">如果明天就是面試</div><div style="display: flex; gap: 6px"><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">A−</div><div style="font-size: 8px; letter-spacing: 0.12em; color: #5F6367; margin-top: 4px">架構</div></div><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">A</div><div style="font-size: 8px; letter-spacing: 0.12em; color: #5F6367; margin-top: 4px">聽力</div></div><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">B+</div><div style="font-size: 8px; letter-spacing: 0.12em; color: #5F6367; margin-top: 4px">用詞精確度</div></div><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">B+</div><div style="font-size: 8px; letter-spacing: 0.12em; color: #5F6367; margin-top: 4px">表達呈現</div></div><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">A−</div><div style="font-size: 8px; letter-spacing: 0.12em; color: #5F6367; margin-top: 4px">你的「WHY」</div></div></div></div>
+<div><div style="font-size: 9px; letter-spacing: 0.06em; color: #A68A3E; font-weight: 600; margin-bottom: 8px">如果明天就是面試</div><div style="display: flex; gap: 6px"><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">A−</div><div style="font-size: 8px; letter-spacing: 0.06em; color: #5F6367; margin-top: 4px">架構</div></div><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">A</div><div style="font-size: 8px; letter-spacing: 0.06em; color: #5F6367; margin-top: 4px">聽力</div></div><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">B+</div><div style="font-size: 8px; letter-spacing: 0.06em; color: #5F6367; margin-top: 4px">用詞精確度</div></div><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">B+</div><div style="font-size: 8px; letter-spacing: 0.06em; color: #5F6367; margin-top: 4px">表達呈現</div></div><div style="flex: 1 1 0; min-width: 0; border: 1px solid #DCDDDA; padding: 10px 4px; text-align: center"><div style="font-size: 18px; font-weight: 500; color: #20344A">A−</div><div style="font-size: 8px; letter-spacing: 0.06em; color: #5F6367; margin-top: 4px">你的「WHY」</div></div></div></div>
 </div>
 </div>
 <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">進步的證據</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">進步的證據</p>
 <h3 style="margin: 0; font-size: clamp(26px, 2.6cqi, 36px); line-height: 1.12; font-weight: 400; letter-spacing: -0.02em">不是感覺，而是紀錄。</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #2E3135">每堂課結束後，講師會針對五個面向撰寫 Lesson Learned Report（LLR）。報告累積成課程總結報告：哪些問題已解決、哪些仍待加強，以及下一步是什麼。</p>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px"><li style="display: flex; gap: 10px; font-size: 14px; line-height: 1.5; color: #2E3135"><span aria-hidden="true" style="color: #20344A">—</span>學習進度 · 口說 · 聽力 · 字彙 · 修正</li><li style="display: flex; gap: 10px; font-size: 14px; line-height: 1.5; color: #2E3135"><span aria-hidden="true" style="color: #20344A">—</span>每一至兩週追蹤錯誤模式</li><li style="display: flex; gap: 10px; font-size: 14px; line-height: 1.5; color: #2E3135"><span aria-hidden="true" style="color: #20344A">—</span>每四堂課提供詳細回饋</li></ul>
@@ -265,7 +265,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 </div>
 <div style="display: flex; flex-wrap: wrap-reverse; gap: 40px 64px; align-items: center">
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">學生與家長儀表板</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">學生與家長儀表板</p>
 <h3 style="margin: 0; font-size: clamp(26px, 2.6cqi, 36px); line-height: 1.12; font-weight: 400; letter-spacing: -0.02em">家長看到的是進度，而不是承諾。</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #2E3135">學生與家長各自擁有專屬帳戶。每日任務、課程進度、出席狀況與分數——以及每一份 LLR——隨時都能查看，不必透過他人轉述。</p>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px"><li style="display: flex; gap: 10px; font-size: 14px; line-height: 1.5; color: #2E3135"><span aria-hidden="true" style="color: #20344A">—</span>學生：今日任務、下一堂課、學習進度路線圖</li><li style="display: flex; gap: 10px; font-size: 14px; line-height: 1.5; color: #2E3135"><span aria-hidden="true" style="color: #20344A">—</span>家長：可查看分數與報告的獨立帳戶</li><li style="display: flex; gap: 10px; font-size: 14px; line-height: 1.5; color: #2E3135"><span aria-hidden="true" style="color: #20344A">—</span>教材與音檔，一鍵即可開啟</li></ul>
@@ -287,7 +287,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <div style="display: flex; gap: 14px; font-size: 8px; opacity: 0.9"><div>單元<br/><strong style="font-size: 13px">4</strong> / 52</div><div>出席<br/><strong style="font-size: 13px">100%</strong></div><div>任務<br/><strong style="font-size: 13px">—</strong></div></div>
 </div>
 <div style="background: #FFFFFF; border-radius: 12px; padding: 12px; font-size: 11px; line-height: 1.4; color: #20344A; font-weight: 600">「習慣是自我提升的複利。」</div>
-<div style="font-size: 8px; letter-spacing: 0.16em; color: #A68A3E">每日任務</div>
+<div style="font-size: 8px; letter-spacing: 0.06em; color: #A68A3E">每日任務</div>
 <div style="background: #FBF6EA; border-radius: 10px; padding: 10px; font-size: 9px; line-height: 1.5; color: #5F4B1F"><strong>複習日</strong><br/>沒有課的日子反覆練習，才能累積實力——單字 → 口說 → 閱讀。</div></div>
 <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); padding: 8px 4px 10px; background: #FFFBF2; border-top: 1px solid #EEE7D6; font-size: 8px; color: #8A8E92; text-align: center"><span style="color: #A68A3E">今天</span><span style="color: #8A8E92">回饋</span><span style="color: #8A8E92">課表</span><span style="color: #8A8E92">教材</span><span style="color: #8A8E92">個人資料</span></div>
 </div>
@@ -307,7 +307,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <div style="display: flex; gap: 14px; font-size: 8px; opacity: 0.9"><div>單元<br/><strong style="font-size: 13px">4</strong> / 52</div><div>出席<br/><strong style="font-size: 13px">100%</strong></div><div>任務<br/><strong style="font-size: 13px">0%</strong></div></div>
 </div>
 <div style="background: #FFFFFF; border-radius: 12px; padding: 12px; font-size: 11px; line-height: 1.4; color: #20344A; font-weight: 600">「習慣是自我提升的複利。」</div>
-<div style="font-size: 8px; letter-spacing: 0.16em; color: #A68A3E">每日任務</div>
+<div style="font-size: 8px; letter-spacing: 0.06em; color: #A68A3E">每日任務</div>
 <div style="background: #FBF6EA; border-radius: 10px; padding: 10px; font-size: 9px; line-height: 1.5; color: #5F4B1F"><strong>複習日</strong><br/>沒有課的日子反覆練習，才能累積實力——單字 → 口說 → 閱讀。</div></div>
 <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); padding: 8px 4px 10px; background: #FFFBF2; border-top: 1px solid #EEE7D6; font-size: 8px; color: #8A8E92; text-align: center"><span style="color: #A68A3E">今天</span><span style="color: #8A8E92">回饋</span><span style="color: #8A8E92">課表</span><span style="color: #8A8E92">教材</span><span style="color: #8A8E92">個人資料</span></div>
 </div>
@@ -318,7 +318,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <div><div style="font-size: 11px; letter-spacing: 0.22em; color: #E4C874; font-weight: 600">LYVON</div><div style="font-size: 13px; margin-top: 4px">您好， <strong>學生 A</strong></div><div style="font-size: 8px; opacity: 0.75; margin-top: 3px">● 剛剛更新</div></div>
 <div style="width: 30px; height: 30px; border-radius: 50%; background: #E4C874; color: #3B33C4; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center">SA</div>
 </div>
-<div style="flex-grow: 1; padding: 12px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 8px; letter-spacing: 0.16em; color: #A68A3E">英語能力評估</div>
+<div style="flex-grow: 1; padding: 12px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 8px; letter-spacing: 0.06em; color: #A68A3E">英語能力評估</div>
 <div style="background: #FFFFFF; border-radius: 14px; padding: 12px; display: flex; flex-direction: column; gap: 6px">
 <div style="font-size: 8px; color: #8A8E92; text-align: right">截至 L04</div>
 <div style="display: flex; justify-content: space-between; align-items: flex-end; background: #F4F3FB; border-radius: 10px; padding: 10px"><div><div style="font-size: 9px; color: #3B33C4; font-weight: 600">整體</div><div style="color: #C2A24E; font-size: 13px; letter-spacing: 1px">★★★☆☆</div></div><div style="display: flex; align-items: baseline; gap: 4px"><strong style="font-size: 26px; color: #3B33C4">3.4</strong><span style="font-size: 9px; color: #8A8E92">/ 5</span><span style="font-size: 8px; background: #E3F4EC; color: #1E6B4A; border-radius: 8px; padding: 2px 6px">▲ +0.1</span></div></div>
@@ -363,7 +363,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <section class="lv-dark" id="network" style="padding: clamp(80px, 10cqi, 160px) clamp(20px, 4.5cqi, 64px); background: #0F1A26; color: #F7F7F4">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #B7BCC2">05 — 我們的網絡</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #B7BCC2">05 — 我們的網絡</p>
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
 <h2 style="margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">三座城市，一個共同願景。</h2>
 <p style="margin: 0; max-width: 36em; font-size: 17px; line-height: 1.6; font-weight: 300; color: #D3D6D9">LYVON 橫跨三座城市運作，每座城市在我們規劃課程、支援學生與拓展亞洲的過程中，各自扮演不同的角色。</p>
@@ -372,19 +372,19 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px 24px">
 <article style="display: flex; flex-direction: column; gap: 16px">
 <div style="aspect-ratio: 4 / 5; overflow: hidden; background: #24384F"><img alt="首爾天際線" src="/assets/img/city-seoul.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: 55% 62%; display: block"/></div>
-<p style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.32em">首爾</p>
+<p style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">首爾</p>
 <h3 style="margin: 0; font-size: 22px; font-weight: 400">事業基地</h3>
 <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CCCF">LYVON 的據點——與學生及家庭建立關係，並開拓韓國市場。</p>
 </article>
 <article style="display: flex; flex-direction: column; gap: 16px">
 <div style="aspect-ratio: 4 / 5; overflow: hidden; background: #24384F"><img alt="東京丸之內天際線" src="/assets/img/city-tokyo.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: 66% 55%; display: block"/></div>
-<p style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.32em">東京</p>
+<p style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">東京</p>
 <h3 style="margin: 0; font-size: 22px; font-weight: 400">策略與拓展</h3>
 <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CCCF">國際策略與品牌方向、日本市場開發，以及為未來日本職涯課程奠定基礎。</p>
 </article>
 <article style="display: flex; flex-direction: column; gap: 16px">
 <div style="aspect-ratio: 4 / 5; overflow: hidden; background: #24384F"><img alt="馬尼拉博尼法西奧環球城天際線" src="/assets/img/city-manila.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: 45% 50%; display: block"/></div>
-<p style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.32em">馬尼拉</p>
+<p style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">馬尼拉</p>
 <h3 style="margin: 0; font-size: 22px; font-weight: 400">教學營運合作</h3>
 <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9CCCF">與合作夥伴 StepForward——位於菲律賓的獨立教育營運合作夥伴——共同進行教學營運。</p>
 </article>
@@ -396,7 +396,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <section style="padding: clamp(80px, 10cqi, 160px) clamp(20px, 4.5cqi, 64px); background: #EBECE9">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px 64px">
 <div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 24px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">06 — 橫跨亞洲</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">06 — 橫跨亞洲</p>
 <h2 style="margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">為亞洲各地的學生而設計。</h2>
 <p style="margin: 0; max-width: 30em; font-size: 17px; line-height: 1.6; color: #2E3135">個人化線上教育讓您無論身在何處，都能與合適的講師一起學習。我們正為亞洲各地的學生打造 LYVON，並從四個優先市場開始。</p>
 </div>
@@ -413,10 +413,10 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <section id="insights" style="padding: clamp(80px, 10cqi, 160px) clamp(20px, 4.5cqi, 64px)">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">07 — 觀點</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">07 — 觀點</p>
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: flex-end; justify-content: space-between">
 <h2 style="margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">跨越國界的觀點。</h2>
-<a href="/zh-Hant/insights/" style="font-size: 12px; letter-spacing: 0.14em; color: #5F6367">所有文章 →</a>
+<a href="/zh-Hant/insights/" style="font-size: 12px; letter-spacing: 0.06em; color: #5F6367">所有文章 →</a>
 </div>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); border-top: 1px solid #17191C">
@@ -433,7 +433,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <section class="lv-dark" id="contact" style="padding: clamp(96px, 12cqi, 180px) clamp(20px, 4.5cqi, 64px); background: #20344A; color: #F7F7F4">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px 64px; align-items: flex-end; justify-content: space-between">
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #C3CBD4">08 — 聯絡我們</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #C3CBD4">08 — 聯絡我們</p>
 <h2 style="margin: 0; font-size: clamp(40px, 5.6cqi, 80px); line-height: 1.02; font-weight: 400; letter-spacing: -0.03em">您的下一個篇章，從這裡開始。</h2>
 <p style="margin: 0; max-width: 32em; font-size: 17px; line-height: 1.6; font-weight: 300; color: #D6DCE2">從一堂與正式課程相同形式的免費50分鐘課程開始。歡迎學生、家長及潛在合作夥伴洽詢。可使用英文、韓文及日文洽詢。</p>
 </div>
@@ -466,7 +466,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <legend style="padding: 0; margin-bottom: 4px; font-size: 12px; letter-spacing: 0.08em; color: #C3CBD4">有意申請的學校（可複選）*</legend>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px"><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="schools" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="Semmelweis University"/>Semmelweis University</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="schools" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="University of Pécs"/>University of Pécs</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="schools" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="University of Szeged"/>University of Szeged</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="schools" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="University of Veterinary Medicine Budapest"/>University of Veterinary Medicine Budapest</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="schools" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="Undecided"/>尚未決定</label></div>
 </fieldset>
-<div style="display: flex; justify-content: flex-end"><button style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; border: none; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; cursor: pointer" type="submit">下一步 <span aria-hidden="true">→</span></button></div>
+<div style="display: flex; justify-content: flex-end"><button style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; border: none; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.06em; cursor: pointer" type="submit">下一步 <span aria-hidden="true">→</span></button></div>
 </form>
 <form data-step="2" hidden="" style="display: flex; flex-direction: column; gap: 32px">
 <div style="display: flex; flex-wrap: wrap; gap: 8px 32px; align-items: baseline; justify-content: space-between">
@@ -486,7 +486,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <legend style="padding: 0; margin-bottom: 4px; font-size: 12px; letter-spacing: 0.08em; color: #C3CBD4">主要煩惱（可複選）</legend>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px"><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="concerns" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="Words don’t come out when speaking"/>開口說話時想不出詞彙</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="concerns" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="Explaining medical concepts in English"/>用英語說明醫學概念</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="concerns" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="No structure for logical answers"/>回答缺乏邏輯架構</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="concerns" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="No interview experience"/>沒有面試經驗</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="concerns" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="Nerves under exam pressure"/>考試壓力下容易緊張</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="concerns" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="Not sure where to start"/>不知道該從哪裡開始</label><label style="display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; color: #F7F7F4; cursor: pointer"><input name="concerns" style="width: 18px; height: 18px; margin: 0; accent-color: #F7F7F4" type="checkbox" value="Limited information about Hungarian schools"/>關於匈牙利學校的資訊有限</label></div>
 </fieldset>
-<div style="display: flex; justify-content: space-between; align-items: center"><button data-to="1" style="min-height: 52px; padding: 0 8px; background: none; border: none; color: #C3CBD4; font: inherit; font-size: 13px; cursor: pointer" type="button">← 上一步</button><button style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; border: none; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; cursor: pointer" type="submit">下一步 <span aria-hidden="true">→</span></button></div>
+<div style="display: flex; justify-content: space-between; align-items: center"><button data-to="1" style="min-height: 52px; padding: 0 8px; background: none; border: none; color: #C3CBD4; font: inherit; font-size: 13px; cursor: pointer" type="button">← 上一步</button><button style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; border: none; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.06em; cursor: pointer" type="submit">下一步 <span aria-hidden="true">→</span></button></div>
 </form>
 <form data-step="3" hidden="" style="display: flex; flex-direction: column; gap: 32px"><input aria-hidden="true" autocomplete="off" name="company" style="position:absolute;left:-9999px" tabindex="-1" type="text"/>
 <div style="display: flex; flex-wrap: wrap; gap: 8px 32px; align-items: baseline; justify-content: space-between">
@@ -521,10 +521,10 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <input name="consent" required="" style="width: 20px; height: 20px; margin: 2px 0 0; flex-shrink: 0; accent-color: #F7F7F4" type="checkbox"/>
 <span>我同意蒐集及利用我的個人資料。 <span style="color: #C3CBD4">蒐集項目：姓名、電子郵件、電話（選填）及與學習相關的回答。目的：安排試聽課程、提供個人回饋及諮詢。保存期間：目的達成後即刪除，或依您的要求立即刪除。</span> <a href="/zh-Hant/legal/" style="color: #F7F7F4; text-decoration: underline">隱私權政策</a> *</span>
 </label>
-<div style="display: flex; justify-content: space-between; align-items: center"><button data-to="2" style="min-height: 52px; padding: 0 8px; background: none; border: none; color: #C3CBD4; font: inherit; font-size: 13px; cursor: pointer" type="button">← 上一步</button><button style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; border: none; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; cursor: pointer" type="submit">送出申請 <span aria-hidden="true">→</span></button></div><p class="lv-formmsg" role="alert" style="margin:0;font-size:13px;color:#E4C874"></p>
+<div style="display: flex; justify-content: space-between; align-items: center"><button data-to="2" style="min-height: 52px; padding: 0 8px; background: none; border: none; color: #C3CBD4; font: inherit; font-size: 13px; cursor: pointer" type="button">← 上一步</button><button style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; border: none; font: inherit; font-size: 12px; font-weight: 500; letter-spacing: 0.06em; cursor: pointer" type="submit">送出申請 <span aria-hidden="true">→</span></button></div><p class="lv-formmsg" role="alert" style="margin:0;font-size:13px;color:#E4C874"></p>
 </form>
 <div data-step="4" hidden="" role="status" style="display: flex; flex-direction: column; gap: 16px; padding: 48px 0">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #C3CBD4">已收到您的申請</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #C3CBD4">已收到您的申請</p>
 <p style="margin: 0; font-size: clamp(26px, 2.6cqi, 36px); font-weight: 300">謝謝您。我們將於平日24小時內提供個人回饋。</p>
 <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #C3CBD4">如需最快安排時間，請將您的姓名寄至 <a href="mailto:hello@lyvon.io" style="color: #F7F7F4; text-decoration: underline">hello@lyvon.io</a>。</p>
 <button data-to="1" style="align-self: flex-start; min-height: 44px; padding: 0; background: none; border: none; border-bottom: 1px solid rgba(247, 247, 244, 0.5); color: #F7F7F4; font: inherit; font-size: 13px; cursor: pointer" type="button">再次送出申請</button>
@@ -572,7 +572,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <div aria-label="免費入門指南" aria-modal="true" class="lv-guide" hidden="" role="dialog" style="position:fixed;inset:0;z-index:50;background:rgba(15,26,38,.72);display:flex;align-items:center;justify-content:center;padding:20px">
 <div style="width:100%;max-width:460px;background:#F7F7F4;color:#17191C;padding:32px 28px;position:relative">
 <button aria-label="關閉" data-act="guide" style="position:absolute;top:8px;right:8px;min-width:44px;min-height:44px;background:none;border:none;font-size:24px;cursor:pointer" type="button">×</button>
-<p style="margin:0 0 8px;font-size:11px;font-weight:500;letter-spacing:0.24em;color:#5F6367">免費入門指南</p>
+<p style="margin:0 0 8px;font-size:11px;font-weight:500;letter-spacing: 0.06em;color:#5F6367">免費入門指南</p>
 <p style="margin:0 0 20px;font-size:24px;line-height:1.2">透過電子郵件索取 LYVON 入門指南。</p>
 <form class="lv-guideform" style="display:flex;flex-direction:column;gap:14px">
 <input aria-hidden="true" autocomplete="off" name="company" style="position:absolute;left:-9999px" tabindex="-1" type="text"/>
@@ -580,7 +580,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;letter-spacing:0.08em;color:#44484C">電子郵件 *<input autocomplete="email" name="email" required="" style="min-height:46px;padding:0 12px;border:1px solid #C4C6C3;background:#FFF;font:inherit;font-size:15px" type="email"/></label>
 <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;letter-spacing:0.08em;color:#44484C">指南語言 *<select name="replyLang" required="" style="min-height:46px;padding:0 12px;border:1px solid #C4C6C3;background:#FFF;font:inherit;font-size:15px"><option value="EN">English</option><option value="KO">한국어</option><option value="JA">日本語</option><option value="ZH">繁體中文</option></select></label>
 <label style="display:flex;gap:10px;align-items:flex-start;font-size:12px;line-height:1.5;color:#44484C"><input name="consent" required="" style="width:18px;height:18px;margin:2px 0 0;flex-shrink:0" type="checkbox"/><span>我同意 LYVON 為寄送指南而蒐集及利用我的姓名與電子郵件，詳情請見 <a href="/legal/#privacy" style="text-decoration:underline">隱私權政策</a>. *</span></label>
-<button style="min-height:50px;background:#20344A;color:#FFF;border:none;font:inherit;font-size:12px;font-weight:500;letter-spacing:0.18em;cursor:pointer" type="submit">寄送指南給我 →</button>
+<button style="min-height:50px;background:#20344A;color:#FFF;border:none;font:inherit;font-size:12px;font-weight:500;letter-spacing: 0.06em;cursor:pointer" type="submit">寄送指南給我 →</button>
 <p class="lv-guidemsg" role="status" style="margin:0;font-size:13px;color:#20344A"></p>
 </form>
 </div>

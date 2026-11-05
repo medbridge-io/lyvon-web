@@ -7,7 +7,7 @@
 <link href="/favicon.ico" rel="icon"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Noto+Sans+JP:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
-html{scroll-behavior:smooth;background:#0F1A26}body{margin:0;background:#0F1A26}html[lang=ko] body{word-break:keep-all;overflow-wrap:anywhere}a{color:inherit;text-decoration:none}a:hover{color:#20344A}
+html{scroll-behavior:smooth;background:#0F1A26}body{margin:0;background:#0F1A26}html[lang=ko] body{word-break:keep-all;overflow-wrap:anywhere}html[lang=zh-Hant] :is(h1,h2,h3,blockquote){text-wrap:balance}a{color:inherit;text-decoration:none}a:hover{color:#20344A}
 .lv-root{container-type:inline-size}.lv-navlinks{display:flex}.lv-menubtn{display:none}
 .lv-hero a:hover,.lv-dark a:hover,.lv-header a:hover{color:#FFFFFF}
 @container (max-width: 900px){.lv-navlinks{display:none!important}.lv-menubtn{display:flex!important}}
@@ -17,10 +17,10 @@ html{scroll-behavior:smooth;background:#0F1A26}body{margin:0;background:#0F1A26}
 .lv-anim .lv-rv{opacity:0;transform:translateY(48px);transition:opacity 1.1s cubic-bezier(.16,.8,.24,1),transform 1.1s cubic-bezier(.16,.8,.24,1)}.lv-anim img.lv-rv,.lv-anim figure.lv-rv{transform:translateY(32px) scale(1.06)}.lv-anim h2.lv-rv{transform:translateY(56px)}.lv-anim .lv-rv.lv-in{opacity:1;transform:none}a.lv-row{transition:background-color .3s}.lv-row-cta{margin-top:12px;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;border:1px solid #17191C;font-size:12px;font-weight:500;letter-spacing:0.14em;color:#17191C;transition:background-color .25s,color .25s}.lv-row-name{white-space:nowrap;overflow-wrap:normal}a.lv-row>div:first-child{flex-basis:300px!important}.lv-row-arrow{display:inline-block;transition:transform .25s}a.lv-row:hover .lv-row-cta,a.lv-row:focus-visible .lv-row-cta{background:#20344A;border-color:#20344A;color:#F7F7F4}a.lv-row:hover .lv-row-arrow{transform:translateX(5px)}@media (prefers-reduced-motion: reduce){.lv-anim .lv-rv{opacity:1!important;transform:none!important;transition:none!important}}
 
 .lv-prose{max-width:760px;margin:0 auto;padding:clamp(56px,8cqi,110px) clamp(20px,4.5cqi,64px);font-size:16px;line-height:1.75;color:#2E3135}
-.lv-prose h2{font-size:26px;font-weight:400;letter-spacing:-0.01em;color:#17191C;margin:48px 0 12px}.lv-prose h3{font-size:18px;font-weight:600;color:#17191C;margin:32px 0 8px}
+.lv-prose h2{font-size:26px;font-weight:400;line-height:1.3;letter-spacing:-0.01em;color:#17191C;margin:48px 0 12px}.lv-prose h3{font-size:18px;font-weight:600;color:#17191C;margin:32px 0 8px}
 .lv-prose table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;font-size:14px;margin:16px 0}.lv-prose th,.lv-prose td{border-top:1px solid #C4C6C3;padding:10px 8px;text-align:left;vertical-align:top}
 .lv-prose a{text-decoration:underline}.lv-prose ul{padding-left:20px}
-.lv-prose{overflow-wrap:anywhere}.lv-prose td,.lv-prose th{min-width:7em}
+.lv-prose{overflow-wrap:anywhere}.mp-root article li{display:grid!important;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:16px!important}.lv-prose td,.lv-prose th{min-width:7em}
 input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid #E4C874;outline-offset:2px}
 
 body{margin:0;background:#F7F7F4}
@@ -43,7 +43,7 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(20, 17, 58, 0.62) 0%, rgba(20, 17, 58, 0.35) 60%, rgba(20, 17, 58, 0.15) 100%)"></div>
 <header class="lv-header" style="position:absolute;top:0;left:0;right:0;z-index:5;height:80px;box-sizing:border-box;padding:0 clamp(20px,4.5cqi,64px);display:flex;align-items:center;justify-content:space-between;gap:24px;color:#F7F7F4">
 <a href="/ja/" style="font-size:15px;font-weight:600;letter-spacing:0.32em">LYVON</a>
-<nav aria-label="メイン" class="lv-navlinks" style="gap:clamp(24px,2.8cqi,40px);font-size:12px;font-weight:500;letter-spacing:0.16em">
+<nav aria-label="メイン" class="lv-navlinks" style="gap:clamp(24px,2.8cqi,40px);font-size:12px;font-weight:500;letter-spacing: 0.06em">
 <a href="/ja/#about">LYVON について</a><a href="/ja/#programs">プログラム</a><a href="/ja/#network">ネットワーク</a><a href="/ja/insights/">インサイト</a><a href="/ja/book/">お問い合わせ</a>
 </nav>
 <div style="display:flex;align-items:center;gap:4px;position:relative">
@@ -53,12 +53,12 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 </div>
 </header>
 <div style="position: relative; z-index: 2; flex-grow: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 28px; padding: 40px clamp(20px, 4.5cqi, 64px) clamp(48px, 6cqi, 88px); max-width: 1280px; box-sizing: border-box">
-<p class="mp-fade" style="margin: 0; font-size: 12px; letter-spacing: 0.24em; color: #C7C9F2">プログラム / <a href="/ja/programs/medpath/" style="color:inherit;text-decoration:none"><strong style="color: #FFFFFF; font-weight: 600">MEDPATH</strong></a> · フラッグシップ</p>
+<p class="mp-fade" style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #C7C9F2">プログラム / <a href="/ja/programs/medpath/" style="color:inherit;text-decoration:none"><strong style="color: #FFFFFF; font-weight: 600">MEDPATH</strong></a> · フラッグシップ</p>
 <h1 class="mp-fade mp-d1" style="margin: 0; max-width: 14em; font-size: clamp(40px, 5.4cqi, 76px); line-height: 1.04; font-weight: 400; letter-spacing: -0.03em">同じ分子を — 定義し、説明し、論証する。</h1>
 <p class="mp-fade mp-d2" style="margin: 0; max-width: 34em; font-size: clamp(17px, 1.5cqi, 20px); line-height: 1.6; font-weight: 300; color: #E3E4F5">ハンガリーの医学部・歯学部・薬学部・獣医学部の英語口頭入試に向けた、3段階・1対1の対策プログラム。</p>
 <div class="mp-fade mp-d3" style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
-<a href="/ja/book/?program=medpath" style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; font-size: 12px; font-weight: 500; letter-spacing: 0.18em">無料レッスンを予約 <span aria-hidden="true">→</span></a>
-<a href="#tiers" style="min-height: 52px; display: flex; align-items: center; padding: 0 24px; border: 1px solid rgba(247, 247, 244, 0.6); font-size: 12px; font-weight: 500; letter-spacing: 0.18em">カリキュラムを見る</a>
+<a href="/ja/book/?program=medpath" style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">無料レッスンを予約 <span aria-hidden="true">→</span></a>
+<a href="#tiers" style="min-height: 52px; display: flex; align-items: center; padding: 0 24px; border: 1px solid rgba(247, 247, 244, 0.6); font-size: 12px; font-weight: 500; letter-spacing: 0.06em">カリキュラムを見る</a>
 </div>
 <dl style="margin: 16px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 24px; padding-top: 28px; border-top: 1px solid rgba(247, 247, 244, 0.25); max-width: 880px">
 <div><dt style="font-size: 34px; font-weight: 300">3</dt><dd style="margin: 6px 0 0; font-size: 12px; color: #C7C9F2">段階 · Starter、Core、Pro</dd></div>
@@ -83,7 +83,7 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 <img alt="人間の頭蓋骨について書かれた英語の解剖学教科書のページ。マーカーが引かれ、眼鏡とペンが置かれている" src="/assets/img/medpath-study.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block"/>
 </div>
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">01 — 口頭試験</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">01 — 口頭試験</p>
 <h2 style="margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">科学の知識だけでは足りません。</h2>
 <p style="margin: 0; font-size: 17px; line-height: 1.65; color: #2E3135">英語の口頭入試で試験官が確認するのは、答えが正しいかどうかだけではありません。受験生がそれをどう説明するか、そして追加の質問を受けたときにどうなるかに耳を傾けています。</p>
 <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0">
@@ -99,7 +99,7 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 <section class="mp-dark" id="tiers" style="padding: clamp(80px, 10cqi, 150px) clamp(20px, 4.5cqi, 64px); background: #14113A; color: #F7F7F4">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #B8BAE8">02 — 3つの段階</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #B8BAE8">02 — 3つの段階</p>
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
 <h2 style="margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">ひとつのレッスンを、3つの深さで。</h2>
 <p style="margin: 0; max-width: 36em; font-size: 17px; line-height: 1.6; font-weight: 300; color: #D9DAF3">MedPath は新しい内容を次々と積み上げることはしません。受講生は同じ50レッスンに、そのたびにより高い思考レベルで取り組みます。だからこそ、予想外の追加質問を受けても答えが崩れません。</p>
@@ -107,22 +107,22 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 </div>
 <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px">
 <li style="display: flex; flex-direction: column; gap: 14px; padding: 32px 28px; background: #2A2670">
-<span style="font-size: 11px; letter-spacing: 0.2em; color: #C7C9F2">TIER 1 · STARTER · 3か月</span>
+<span style="font-size: 11px; letter-spacing: 0.06em; color: #C7C9F2">TIER 1 · STARTER · 3か月</span>
 <span style="font-size: 36px; font-weight: 500; letter-spacing: 0.04em">DEFINE</span>
 <span style="font-size: 15px; color: #E3E4F5">「それは何か？」</span>
-<p style="margin: 8px 0 0; padding-top: 16px; border-top: 1px solid rgba(247, 247, 244, 0.2); font-size: 14px; line-height: 1.55; color: #D9DAF3"><span style="font-size: 11px; letter-spacing: 0.14em; color: #9EA1DE">例 · タンパク質</span><br/>タンパク質とその4つの構造レベルを定義する。</p>
+<p style="margin: 8px 0 0; padding-top: 16px; border-top: 1px solid rgba(247, 247, 244, 0.2); font-size: 14px; line-height: 1.55; color: #D9DAF3"><span style="font-size: 11px; letter-spacing: 0.06em; color: #9EA1DE">例 · タンパク質</span><br/>タンパク質とその4つの構造レベルを定義する。</p>
 </li>
 <li style="display: flex; flex-direction: column; gap: 14px; padding: 32px 28px; background: #3730A3">
-<span style="font-size: 11px; letter-spacing: 0.2em; color: #C7C9F2">TIER 2 · CORE · 3か月</span>
+<span style="font-size: 11px; letter-spacing: 0.06em; color: #C7C9F2">TIER 2 · CORE · 3か月</span>
 <span style="font-size: 36px; font-weight: 500; letter-spacing: 0.04em">EXPLAIN</span>
 <span style="font-size: 15px; color: #E3E4F5">「どのように働くのか？」</span>
-<p style="margin: 8px 0 0; padding-top: 16px; border-top: 1px solid rgba(247, 247, 244, 0.2); font-size: 14px; line-height: 1.55; color: #D9DAF3"><span style="font-size: 11px; letter-spacing: 0.14em; color: #9EA1DE">例 · タンパク質</span><br/>タンパク質がどのように折りたたまれ、機能をもつ形になるのかを説明する。</p>
+<p style="margin: 8px 0 0; padding-top: 16px; border-top: 1px solid rgba(247, 247, 244, 0.2); font-size: 14px; line-height: 1.55; color: #D9DAF3"><span style="font-size: 11px; letter-spacing: 0.06em; color: #9EA1DE">例 · タンパク質</span><br/>タンパク質がどのように折りたたまれ、機能をもつ形になるのかを説明する。</p>
 </li>
 <li style="display: flex; flex-direction: column; gap: 14px; padding: 32px 28px; background: #4338CA">
-<span style="font-size: 11px; letter-spacing: 0.2em; color: #DCDDF7">TIER 3 · PRO · 3か月</span>
+<span style="font-size: 11px; letter-spacing: 0.06em; color: #DCDDF7">TIER 3 · PRO · 3か月</span>
 <span style="font-size: 36px; font-weight: 500; letter-spacing: 0.04em">JUSTIFY</span>
 <span style="font-size: 15px; color: #EEEFFB">「なぜ重要なのか？」</span>
-<p style="margin: 8px 0 0; padding-top: 16px; border-top: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; line-height: 1.55; color: #EEEFFB"><span style="font-size: 11px; letter-spacing: 0.14em; color: #C7C9F2">例 · タンパク質</span><br/>アミノ酸1つの変化がなぜ病気を引き起こしうるのかを論証する。</p>
+<p style="margin: 8px 0 0; padding-top: 16px; border-top: 1px solid rgba(247, 247, 244, 0.25); font-size: 14px; line-height: 1.55; color: #EEEFFB"><span style="font-size: 11px; letter-spacing: 0.06em; color: #C7C9F2">例 · タンパク質</span><br/>アミノ酸1つの変化がなぜ病気を引き起こしうるのかを論証する。</p>
 </li>
 </ol>
 <p style="margin: 0; font-size: 12px; color: #9EA1DE">例は説明のためのものです。各段階は52セッションで構成されます：50レッスンに加え、生物・化学それぞれの総復習が1回ずつ。</p>
@@ -132,7 +132,7 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 <section style="padding: clamp(80px, 10cqi, 150px) clamp(20px, 4.5cqi, 64px)">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">03 — カリキュラム</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">03 — カリキュラム</p>
 <h2 style="flex: 999 1 560px; margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">試験から逆算して設計。</h2>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px">
@@ -162,7 +162,7 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 <img alt="実験用ガラス器具に注がれる青い液体" src="/assets/img/medpath-lab.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block"/>
 </div>
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">1レッスンにつき3冊</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">1レッスンにつき3冊</p>
 <p style="margin: 0; font-size: 22px; line-height: 1.35; font-weight: 400">Class Book · Student Book · Teacher’s Book — 150冊の専用教材。予習用の音声とスクリプト付き。</p>
 <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #44484C">トピックは、LYVON の受講生が出願するハンガリーの各大学が公式に示す口頭試験トピックリストに準拠しています。</p>
 </div>
@@ -173,7 +173,7 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 <section style="padding: clamp(80px, 10cqi, 150px) clamp(20px, 4.5cqi, 64px); background: #EBECE9">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">04 — 1回のセッション</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">04 — 1回のセッション</p>
 <h2 style="flex: 999 1 560px; margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">すべてのセッションは、同じ50分の流れで進みます。</h2>
 </div>
 <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 2px">
@@ -191,34 +191,34 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 <section style="padding: clamp(80px, 10cqi, 150px) clamp(20px, 4.5cqi, 64px)">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">05 — 学習パスと形式</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">05 — 学習パスと形式</p>
 <h2 style="flex: 999 1 560px; margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">MedPath で9か月。基礎課程を含めて12か月。</h2>
 </div>
 <ol aria-label="全課程" style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2px">
-<li style="padding: 24px 20px; background: #E3EFEE; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 11px; letter-spacing: 0.16em; color: #0F766E">基礎 · 3か月</span><a href="/ja/programs/medbridge/" style="color:inherit;text-decoration:none"><span style="font-size: 20px; font-weight: 500">MedBridge</span></a><span style="font-size: 13px; color: #44484C">MedPath の前に推奨</span></li>
-<li style="padding: 24px 20px; background: #E6E5F6; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 11px; letter-spacing: 0.16em; color: #4338CA">3か月</span><span style="font-size: 20px; font-weight: 500">Starter</span><span style="font-size: 13px; color: #44484C">Define</span></li>
-<li style="padding: 24px 20px; background: #D3D1F0; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 11px; letter-spacing: 0.16em; color: #312E81">3か月</span><span style="font-size: 20px; font-weight: 500">Core</span><span style="font-size: 13px; color: #44484C">Explain</span></li>
-<li style="padding: 24px 20px; background: #312E81; color: #FFFFFF; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 11px; letter-spacing: 0.16em; color: #C7C9F2">3か月</span><span style="font-size: 20px; font-weight: 500">Pro</span><span style="font-size: 13px; color: #DCDDF7">Justify → 口頭試験</span></li>
+<li style="padding: 24px 20px; background: #E3EFEE; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 11px; letter-spacing: 0.06em; color: #0F766E">基礎 · 3か月</span><a href="/ja/programs/medbridge/" style="color:inherit;text-decoration:none"><span style="font-size: 20px; font-weight: 500">MedBridge</span></a><span style="font-size: 13px; color: #44484C">MedPath の前に推奨</span></li>
+<li style="padding: 24px 20px; background: #E6E5F6; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 11px; letter-spacing: 0.06em; color: #4338CA">3か月</span><span style="font-size: 20px; font-weight: 500">Starter</span><span style="font-size: 13px; color: #44484C">Define</span></li>
+<li style="padding: 24px 20px; background: #D3D1F0; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 11px; letter-spacing: 0.06em; color: #312E81">3か月</span><span style="font-size: 20px; font-weight: 500">Core</span><span style="font-size: 13px; color: #44484C">Explain</span></li>
+<li style="padding: 24px 20px; background: #312E81; color: #FFFFFF; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 11px; letter-spacing: 0.06em; color: #C7C9F2">3か月</span><span style="font-size: 20px; font-weight: 500">Pro</span><span style="font-size: 13px; color: #DCDDF7">Justify → 口頭試験</span></li>
 </ol>
 <dl style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; padding-top: 32px; border-top: 1px solid #C4C6C3">
-<div><dt style="font-size: 11px; letter-spacing: 0.16em; color: #5F6367">形式</dt><dd style="margin: 8px 0 0; font-size: 16px; line-height: 1.5">ライブオンライン · 1対1 · 50分</dd></div>
-<div><dt style="font-size: 11px; letter-spacing: 0.16em; color: #5F6367">頻度</dt><dd style="margin: 8px 0 0; font-size: 16px; line-height: 1.5">週2〜4回</dd></div>
-<div><dt style="font-size: 11px; letter-spacing: 0.16em; color: #5F6367">授業時間（KST）</dt><dd style="margin: 8px 0 0; font-size: 16px; line-height: 1.5">平日 09:00–22:50<br/>週末 09:00–17:50</dd></div>
-<div><dt style="font-size: 11px; letter-spacing: 0.16em; color: #5F6367">開始レベル</dt><dd style="margin: 8px 0 0; font-size: 16px; line-height: 1.5">無料の診断レッスン後に決定。試験日が近い場合は短縮コースもあります</dd></div>
+<div><dt style="font-size: 11px; letter-spacing: 0.06em; color: #5F6367">形式</dt><dd style="margin: 8px 0 0; font-size: 16px; line-height: 1.5">ライブオンライン · 1対1 · 50分</dd></div>
+<div><dt style="font-size: 11px; letter-spacing: 0.06em; color: #5F6367">頻度</dt><dd style="margin: 8px 0 0; font-size: 16px; line-height: 1.5">週2〜4回</dd></div>
+<div><dt style="font-size: 11px; letter-spacing: 0.06em; color: #5F6367">授業時間（KST）</dt><dd style="margin: 8px 0 0; font-size: 16px; line-height: 1.5">平日 09:00–22:50<br/>週末 09:00–17:50</dd></div>
+<div><dt style="font-size: 11px; letter-spacing: 0.06em; color: #5F6367">開始レベル</dt><dd style="margin: 8px 0 0; font-size: 16px; line-height: 1.5">無料の診断レッスン後に決定。試験日が近い場合は短縮コースもあります</dd></div>
 </dl>
-<p style="margin: 0; font-size: 12px; letter-spacing: 0.12em; color: #5F6367">LYVON · 授業は STEPFORWARD が担当</p>
+<p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #5F6367">LYVON · 授業は STEPFORWARD が担当</p>
 </div>
 </section>
 <!-- CTA -->
 <section class="mp-dark" id="book" style="padding: clamp(96px, 11cqi, 170px) clamp(20px, 4.5cqi, 64px); background: #4338CA; color: #F7F7F4">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px 64px; align-items: flex-end; justify-content: space-between">
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #DCDDF7">まずは無料レッスンから</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #DCDDF7">まずは無料レッスンから</p>
 <h2 style="margin: 0; font-size: clamp(36px, 4.6cqi, 64px); line-height: 1.04; font-weight: 400; letter-spacing: -0.03em">今の実力を、50分で確かめる。</h2>
 <p style="margin: 0; max-width: 34em; font-size: 17px; line-height: 1.6; font-weight: 300; color: #E9E9FB">通常と同じ形式のセッションをまるごと体験し、その後、発音・流暢さ・語彙・デリバリーについて診断します。営業目的の電話ではありません。</p>
 </div>
 <div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start">
-<a href="/ja/book/?program=medpath" style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; font-size: 12px; font-weight: 500; letter-spacing: 0.18em">無料レッスンを予約 <span aria-hidden="true">→</span></a>
+<a href="/ja/book/?program=medpath" style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">無料レッスンを予約 <span aria-hidden="true">→</span></a>
 <a href="https://line.me/ti/p/uwrW7dtHqN" rel="noopener" style="min-height: 44px; display: flex; align-items: center; font-size: 13px; color: #E9E9FB" target="_blank">LINE で相談 ↗</a>
 <a href="mailto:hello@lyvon.io" style="min-height: 44px; display: flex; align-items: center; font-size: 13px; color: #E9E9FB">hello@lyvon.io</a>
 </div>
@@ -249,7 +249,7 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 <div aria-label="無料ウェルカムガイド" aria-modal="true" class="lv-guide" hidden="" role="dialog" style="position:fixed;inset:0;z-index:50;background:rgba(15,26,38,.72);display:flex;align-items:center;justify-content:center;padding:20px">
 <div style="width:100%;max-width:460px;background:#F7F7F4;color:#17191C;padding:32px 28px;position:relative">
 <button aria-label="閉じる" data-act="guide" style="position:absolute;top:8px;right:8px;min-width:44px;min-height:44px;background:none;border:none;font-size:24px;cursor:pointer" type="button">×</button>
-<p style="margin:0 0 8px;font-size:11px;font-weight:500;letter-spacing:0.24em;color:#5F6367">無料ウェルカムガイド</p>
+<p style="margin:0 0 8px;font-size:11px;font-weight:500;letter-spacing: 0.06em;color:#5F6367">無料ウェルカムガイド</p>
 <p style="margin:0 0 20px;font-size:24px;line-height:1.2">LYVON ウェルカムガイドをメールでお届けします。</p>
 <form class="lv-guideform" style="display:flex;flex-direction:column;gap:14px">
 <input aria-hidden="true" autocomplete="off" name="company" style="position:absolute;left:-9999px" tabindex="-1" type="text"/>
@@ -257,7 +257,7 @@ body{margin:0;font-family:Inter, 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', s
 <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;letter-spacing:0.08em;color:#44484C">メールアドレス *<input autocomplete="email" name="email" required="" style="min-height:46px;padding:0 12px;border:1px solid #C4C6C3;background:#FFF;font:inherit;font-size:15px" type="email"/></label>
 <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;letter-spacing:0.08em;color:#44484C">ガイドの言語 *<select name="replyLang" required="" style="min-height:46px;padding:0 12px;border:1px solid #C4C6C3;background:#FFF;font:inherit;font-size:15px"><option value="EN">English</option><option value="KO">한국어</option><option value="JA">日本語</option><option value="ZH">繁體中文</option></select></label>
 <label style="display:flex;gap:10px;align-items:flex-start;font-size:12px;line-height:1.5;color:#44484C"><input name="consent" required="" style="width:18px;height:18px;margin:2px 0 0;flex-shrink:0" type="checkbox"/><span>ガイド送付のため、氏名とメールアドレスを収集・利用することに同意します。詳しくは次をご覧ください： <a href="/legal/#privacy" style="text-decoration:underline">プライバシーポリシー</a>. *</span></label>
-<button style="min-height:50px;background:#20344A;color:#FFF;border:none;font:inherit;font-size:12px;font-weight:500;letter-spacing:0.18em;cursor:pointer" type="submit">ガイドを受け取る →</button>
+<button style="min-height:50px;background:#20344A;color:#FFF;border:none;font:inherit;font-size:12px;font-weight:500;letter-spacing: 0.06em;cursor:pointer" type="submit">ガイドを受け取る →</button>
 <p class="lv-guidemsg" role="status" style="margin:0;font-size:13px;color:#20344A"></p>
 </form>
 </div>

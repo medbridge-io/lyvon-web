@@ -7,7 +7,7 @@
 <link href="/favicon.ico" rel="icon"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Noto+Sans+TC:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
-html{scroll-behavior:smooth;background:#0F1A26}body{margin:0;background:#0F1A26}html[lang=ko] body{word-break:keep-all;overflow-wrap:anywhere}a{color:inherit;text-decoration:none}a:hover{color:#20344A}
+html{scroll-behavior:smooth;background:#0F1A26}body{margin:0;background:#0F1A26}html[lang=ko] body{word-break:keep-all;overflow-wrap:anywhere}html[lang=zh-Hant] :is(h1,h2,h3,blockquote){text-wrap:balance}a{color:inherit;text-decoration:none}a:hover{color:#20344A}
 .lv-root{container-type:inline-size}.lv-navlinks{display:flex}.lv-menubtn{display:none}
 .lv-hero a:hover,.lv-dark a:hover,.lv-header a:hover{color:#FFFFFF}
 @container (max-width: 900px){.lv-navlinks{display:none!important}.lv-menubtn{display:flex!important}}
@@ -17,10 +17,10 @@ html{scroll-behavior:smooth;background:#0F1A26}body{margin:0;background:#0F1A26}
 .lv-anim .lv-rv{opacity:0;transform:translateY(48px);transition:opacity 1.1s cubic-bezier(.16,.8,.24,1),transform 1.1s cubic-bezier(.16,.8,.24,1)}.lv-anim img.lv-rv,.lv-anim figure.lv-rv{transform:translateY(32px) scale(1.06)}.lv-anim h2.lv-rv{transform:translateY(56px)}.lv-anim .lv-rv.lv-in{opacity:1;transform:none}a.lv-row{transition:background-color .3s}.lv-row-cta{margin-top:12px;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;border:1px solid #17191C;font-size:12px;font-weight:500;letter-spacing:0.14em;color:#17191C;transition:background-color .25s,color .25s}.lv-row-name{white-space:nowrap;overflow-wrap:normal}a.lv-row>div:first-child{flex-basis:300px!important}.lv-row-arrow{display:inline-block;transition:transform .25s}a.lv-row:hover .lv-row-cta,a.lv-row:focus-visible .lv-row-cta{background:#20344A;border-color:#20344A;color:#F7F7F4}a.lv-row:hover .lv-row-arrow{transform:translateX(5px)}@media (prefers-reduced-motion: reduce){.lv-anim .lv-rv{opacity:1!important;transform:none!important;transition:none!important}}
 
 .lv-prose{max-width:760px;margin:0 auto;padding:clamp(56px,8cqi,110px) clamp(20px,4.5cqi,64px);font-size:16px;line-height:1.75;color:#2E3135}
-.lv-prose h2{font-size:26px;font-weight:400;letter-spacing:-0.01em;color:#17191C;margin:48px 0 12px}.lv-prose h3{font-size:18px;font-weight:600;color:#17191C;margin:32px 0 8px}
+.lv-prose h2{font-size:26px;font-weight:400;line-height:1.3;letter-spacing:-0.01em;color:#17191C;margin:48px 0 12px}.lv-prose h3{font-size:18px;font-weight:600;color:#17191C;margin:32px 0 8px}
 .lv-prose table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;font-size:14px;margin:16px 0}.lv-prose th,.lv-prose td{border-top:1px solid #C4C6C3;padding:10px 8px;text-align:left;vertical-align:top}
 .lv-prose a{text-decoration:underline}.lv-prose ul{padding-left:20px}
-.lv-prose{overflow-wrap:anywhere}.lv-prose td,.lv-prose th{min-width:7em}
+.lv-prose{overflow-wrap:anywhere}.mp-root article li{display:grid!important;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:16px!important}.lv-prose td,.lv-prose th{min-width:7em}
 input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid #E4C874;outline-offset:2px}
 
 body{margin:0;background:#F7F7F4}
@@ -43,22 +43,22 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(42, 18, 32, 0.62) 0%, rgba(42, 18, 32, 0.38) 60%, rgba(42, 18, 32, 0.15) 100%)"></div>
 <header class="lv-header" style="position:absolute;top:0;left:0;right:0;z-index:5;height:80px;box-sizing:border-box;padding:0 clamp(20px,4.5cqi,64px);display:flex;align-items:center;justify-content:space-between;gap:24px;color:#F7F7F4">
 <a href="/zh-Hant/" style="font-size:15px;font-weight:600;letter-spacing:0.32em">LYVON</a>
-<nav aria-label="主選單" class="lv-navlinks" style="gap:clamp(24px,2.8cqi,40px);font-size:12px;font-weight:500;letter-spacing:0.16em">
+<nav aria-label="主選單" class="lv-navlinks" style="gap:clamp(24px,2.8cqi,40px);font-size:12px;font-weight:500;letter-spacing: 0.06em">
 <a href="/zh-Hant/#about">關於我們</a><a href="/zh-Hant/#programs">課程</a><a href="/zh-Hant/#network">我們的網絡</a><a href="/zh-Hant/insights/">觀點</a><a href="/zh-Hant/book/">聯絡我們</a>
 </nav>
 <div style="display:flex;align-items:center;gap:4px;position:relative">
-<button aria-expanded="false" aria-haspopup="true" aria-label="選擇語言" data-act="lang" style="min-width:44px;min-height:44px;padding:0 6px;background:none;border:none;font:inherit;font-size:12px;letter-spacing:0.16em;color:#F7F7F4;cursor:pointer" type="button">繁 ▾</button>
+<button aria-expanded="false" aria-haspopup="true" aria-label="選擇語言" data-act="lang" style="min-width:44px;min-height:44px;padding:0 6px;background:none;border:none;font:inherit;font-size:12px;letter-spacing: 0.06em;color:#F7F7F4;cursor:pointer" type="button">繁 ▾</button>
 <ul class="lv-langmenu" hidden="" style="position:absolute;top:48px;right:0;margin:0;padding:8px 0;list-style:none;min-width:168px;background:#F7F7F4;color:#17191C;font-size:13px;box-shadow:0 8px 24px rgba(0,0,0,.18);z-index:30"><li><a href="/zh-Hant/programs/medconnect/" hreflang="en" lang="en" style="display:flex;justify-content:space-between;min-height:44px;align-items:center;padding:0 16px">English </a></li><li><a href="/ko/programs/medconnect/" hreflang="ko" lang="ko" style="display:flex;justify-content:space-between;min-height:44px;align-items:center;padding:0 16px">한국어 </a></li><li><a href="/ja/programs/medconnect/" hreflang="ja" lang="ja" style="display:flex;justify-content:space-between;min-height:44px;align-items:center;padding:0 16px">日本語 </a></li><li><a href="/zh-Hant/programs/medconnect/" hreflang="zh-Hant" lang="zh-Hant" style="display:flex;justify-content:space-between;min-height:44px;align-items:center;padding:0 16px;font-weight:500">繁體中文 <span style="color:#20344A">●</span></a></li></ul>
 <button aria-label="開啟選單" class="lv-menubtn" data-act="menu" style="min-width:44px;min-height:44px;background:none;border:none;align-items:center;justify-content:center;color:#F7F7F4;cursor:pointer" type="button"><svg aria-hidden="true" fill="none" height="22" stroke="currentColor" stroke-width="1.4" viewbox="0 0 22 22" width="22"><line x1="3" x2="19" y1="8" y2="8"></line><line x1="3" x2="19" y1="14" y2="14"></line></svg></button>
 </div>
 </header>
 <div style="position: relative; z-index: 2; flex-grow: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 28px; padding: 40px clamp(20px, 4.5cqi, 64px) clamp(48px, 6cqi, 88px); max-width: 1280px; box-sizing: border-box">
-<p class="mc-fade" style="margin: 0; font-size: 12px; letter-spacing: 0.24em; color: #E8BCCD">課程 / <a href="/zh-Hant/programs/medconnect/" style="color:inherit;text-decoration:none"><strong style="color: #FFFFFF; font-weight: 600">MEDCONNECT</strong></a> · 錄取之後</p>
+<p class="mc-fade" style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #E8BCCD">課程 / <a href="/zh-Hant/programs/medconnect/" style="color:inherit;text-decoration:none"><strong style="color: #FFFFFF; font-weight: 600">MEDCONNECT</strong></a> · 錄取之後</p>
 <h1 class="mc-fade mc-d1" style="margin: 0; max-width: 14em; font-size: clamp(40px, 5.4cqi, 76px); line-height: 1.04; font-weight: 400; letter-spacing: -0.03em">已經錄取，持續成長。</h1>
 <p class="mc-fade mc-d2" style="margin: 0; max-width: 34em; font-size: clamp(17px, 1.5cqi, 20px); line-height: 1.6; font-weight: 300; color: #F2DCE5">專為醫學系、牙醫學系、藥學系及獸醫學系在學生，以及未來醫療專業人員設計的會員方案。一起訓練實用的醫學英語——從討論到學術會議講台。</p>
 <div class="mc-fade mc-d3" style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
-<a href="/zh-Hant/book/?program=medconnect" style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; font-size: 12px; font-weight: 500; letter-spacing: 0.18em">洽詢 MEDCONNECT <span aria-hidden="true">→</span></a>
-<a href="#programs" style="min-height: 52px; display: flex; align-items: center; padding: 0 24px; border: 1px solid rgba(247, 247, 244, 0.6); font-size: 12px; font-weight: 500; letter-spacing: 0.18em">查看課程</a>
+<a href="/zh-Hant/book/?program=medconnect" style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">洽詢 MEDCONNECT <span aria-hidden="true">→</span></a>
+<a href="#programs" style="min-height: 52px; display: flex; align-items: center; padding: 0 24px; border: 1px solid rgba(247, 247, 244, 0.6); font-size: 12px; font-weight: 500; letter-spacing: 0.06em">查看課程</a>
 </div>
 <dl style="margin: 16px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 24px; padding-top: 28px; border-top: 1px solid rgba(247, 247, 244, 0.25); max-width: 880px">
 <div><dt style="font-size: 34px; font-weight: 300">6</dt><dd style="margin: 6px 0 0; font-size: 12px; color: #E8BCCD">課程主題</dd></div>
@@ -76,7 +76,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 </div>
 </div>
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">01 — 適合對象</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">01 — 適合對象</p>
 <h2 style="margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">錄取是開始，而不是終點。</h2>
 <p style="margin: 0; max-width: 34em; font-size: 17px; line-height: 1.6; font-weight: 300; color: #2E3135">授課、論文、病例討論與學術會議都以英語進行。MedConnect 讓口說習慣在入學考試結束後持續下去。</p>
 <ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr))"><li style="padding: 20px 16px 20px 0; border-top: 1px solid #17191C"><span style="font-size: 12px; color: #8E1F4B">01</span><p style="margin: 8px 0 0; font-size: 17px; font-weight: 500">醫學系學生</p></li><li style="padding: 20px 16px 20px 0; border-top: 1px solid #17191C"><span style="font-size: 12px; color: #8E1F4B">02</span><p style="margin: 8px 0 0; font-size: 17px; font-weight: 500">牙醫學系學生</p></li><li style="padding: 20px 16px 20px 0; border-top: 1px solid #C4C6C3"><span style="font-size: 12px; color: #8E1F4B">03</span><p style="margin: 8px 0 0; font-size: 17px; font-weight: 500">藥學系學生</p></li><li style="padding: 20px 16px 20px 0; border-top: 1px solid #C4C6C3"><span style="font-size: 12px; color: #8E1F4B">04</span><p style="margin: 8px 0 0; font-size: 17px; font-weight: 500">獸醫學系學生</p></li></ul>
@@ -88,7 +88,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <section class="mc-dark" id="programs" style="padding: clamp(80px, 10cqi, 150px) clamp(20px, 4.5cqi, 64px); background: #2A1220; color: #F7F7F4">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #E3A9C0">02 — 課程</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #E3A9C0">02 — 課程</p>
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
 <h2 style="margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">從討論到學術會議講台。</h2>
 <p style="margin: 0; max-width: 36em; font-size: 17px; line-height: 1.6; font-weight: 300; color: #F0D3DE">六個主題，循序漸進地對應醫療職涯實際需要的英語。</p>
@@ -109,7 +109,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 </div>
 </div>
 <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #E3A9C0">相同的方法，更上一層</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #E3A9C0">相同的方法，更上一層</p>
 <p style="margin: 0; font-size: clamp(24px, 2.4cqi, 32px); line-height: 1.2; font-weight: 400">輸出，而非輸入——如今應用於論文、病例與學術會議。</p>
 <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #F0D3DE">MedBridge 與 MedPath 以口說為優先的方法，在錄取後延續，運用於醫學院與臨床現場的英語。</p>
 </div>
@@ -120,33 +120,33 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <section style="padding: clamp(80px, 10cqi, 150px) clamp(20px, 4.5cqi, 64px); background: #EBECE9">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end">
-<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">03 — LYVON 學習路徑</p>
+<p style="flex: 1 1 220px; margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">03 — LYVON 學習路徑</p>
 <h2 style="flex: 999 1 560px; margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em">Bridge. Path. Connect.</h2>
 </div>
 <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px">
-<li><a href="/zh-Hant/programs/medbridge/" style="height: 100%; box-sizing: border-box; padding: 28px 24px; background: #F7F7F4; color: #17191C; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 11px; letter-spacing: 0.2em; color: #0F766E">01 · 基礎</span><span style="font-size: 26px; font-weight: 500">MedBridge →</span><span style="font-size: 14px; line-height: 1.5; color: #44484C">醫學英語的溝通基礎。</span></a></li>
-<li><a href="/zh-Hant/programs/medpath/" style="height: 100%; box-sizing: border-box; padding: 28px 24px; background: #F7F7F4; color: #17191C; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 11px; letter-spacing: 0.2em; color: #4338CA">02 · 入學</span><span style="font-size: 26px; font-weight: 500">MedPath →</span><span style="font-size: 14px; line-height: 1.5; color: #44484C">英語口試入學考試準備。</span></a></li>
-<li style="padding: 28px 24px; background: #8E1F4B; color: #FFFFFF; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 11px; letter-spacing: 0.2em; color: #F5D6E2">03 · 錄取之後</span><a href="/zh-Hant/programs/medconnect/" style="color:inherit;text-decoration:none"><span style="font-size: 26px; font-weight: 500">MedConnect</span></a><span style="font-size: 14px; line-height: 1.5; color: #FBE9F0">讓成長持續下去的會員方案。</span></li>
+<li><a href="/zh-Hant/programs/medbridge/" style="height: 100%; box-sizing: border-box; padding: 28px 24px; background: #F7F7F4; color: #17191C; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 11px; letter-spacing: 0.06em; color: #0F766E">01 · 基礎</span><span style="font-size: 26px; font-weight: 500">MedBridge →</span><span style="font-size: 14px; line-height: 1.5; color: #44484C">醫學英語的溝通基礎。</span></a></li>
+<li><a href="/zh-Hant/programs/medpath/" style="height: 100%; box-sizing: border-box; padding: 28px 24px; background: #F7F7F4; color: #17191C; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 11px; letter-spacing: 0.06em; color: #4338CA">02 · 入學</span><span style="font-size: 26px; font-weight: 500">MedPath →</span><span style="font-size: 14px; line-height: 1.5; color: #44484C">英語口試入學考試準備。</span></a></li>
+<li style="padding: 28px 24px; background: #8E1F4B; color: #FFFFFF; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 11px; letter-spacing: 0.06em; color: #F5D6E2">03 · 錄取之後</span><a href="/zh-Hant/programs/medconnect/" style="color:inherit;text-decoration:none"><span style="font-size: 26px; font-weight: 500">MedConnect</span></a><span style="font-size: 14px; line-height: 1.5; color: #FBE9F0">讓成長持續下去的會員方案。</span></li>
 </ol>
-<p style="margin: 0; font-size: 12px; letter-spacing: 0.2em; color: #5F6367">連結 · 成長 · 歸屬</p>
+<p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; color: #5F6367">連結 · 成長 · 歸屬</p>
 </div>
 </section>
 <!-- PILOT -->
 <section style="padding: clamp(80px, 10cqi, 150px) clamp(20px, 4.5cqi, 64px)">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px 64px; align-items: flex-start">
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">04 — 試行</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">04 — 試行</p>
 <h2 style="margin: 0; font-size: clamp(32px, 3.6cqi, 52px); line-height: 1.08; font-weight: 400; letter-spacing: -0.025em; color: #2A1220">自2026年7月起試行中。</h2>
 <p style="margin: 0; max-width: 34em; font-size: 17px; line-height: 1.6; font-weight: 300; color: #2E3135">MedConnect 現正開放洽詢。課程時間與會員方案詳情，將於您與我們聯絡時個別說明。</p>
 <dl style="margin: 8px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; font-size: 14px">
-<div style="border-top: 1px solid #17191C; padding-top: 12px"><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">形式</dt><dd style="margin: 6px 0 0">線上即時授課 · 1:1 及小班</dd></div>
-<div style="border-top: 1px solid #17191C; padding-top: 12px"><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">方案</dt><dd style="margin: 6px 0 0">月費會員</dd></div>
-<div style="border-top: 1px solid #C4C6C3; padding-top: 12px"><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">講師</dt><dd style="margin: 6px 0 0">專精醫學英語的專業英語講師</dd></div>
-<div style="border-top: 1px solid #C4C6C3; padding-top: 12px"><dt style="color: #5F6367; letter-spacing: 0.12em; font-size: 11px">社群</dt><dd style="margin: 6px 0 0">由已錄取學生與同儕組成的私人社群</dd></div>
+<div style="border-top: 1px solid #17191C; padding-top: 12px"><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">形式</dt><dd style="margin: 6px 0 0">線上即時授課 · 1:1 及小班</dd></div>
+<div style="border-top: 1px solid #17191C; padding-top: 12px"><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">方案</dt><dd style="margin: 6px 0 0">月費會員</dd></div>
+<div style="border-top: 1px solid #C4C6C3; padding-top: 12px"><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">講師</dt><dd style="margin: 6px 0 0">專精醫學英語的專業英語講師</dd></div>
+<div style="border-top: 1px solid #C4C6C3; padding-top: 12px"><dt style="color: #5F6367; letter-spacing: 0.06em; font-size: 11px">社群</dt><dd style="margin: 6px 0 0">由已錄取學生與同儕組成的私人社群</dd></div>
 </dl>
 </div>
 <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0 0 4px; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #5F6367">洽詢時請提供以下資訊</p>
+<p style="margin: 0 0 4px; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #5F6367">洽詢時請提供以下資訊</p>
 <div style="padding: 20px; border: 1px solid #DCDDDA; background: #FFFFFF"><p style="margin: 0; font-size: 16px; font-weight: 500">您的學校與年級</p><p style="margin: 6px 0 0; font-size: 13px; line-height: 1.5; color: #44484C">醫學系、牙醫學系、藥學系或獸醫學系——以及就讀學校。</p></div>
 <div style="padding: 20px; border: 1px solid #DCDDDA; background: #FFFFFF"><p style="margin: 0; font-size: 16px; font-weight: 500">您想加強的項目</p><p style="margin: 6px 0 0; font-size: 13px; line-height: 1.5; color: #44484C">討論、論文、病例報告或學術會議英語。</p></div>
 <div style="padding: 20px; border: 1px solid #DCDDDA; background: #FFFFFF"><p style="margin: 0; font-size: 16px; font-weight: 500">您希望的回覆語言</p><p style="margin: 6px 0 0; font-size: 13px; line-height: 1.5; color: #44484C">英文、韓文或日文。</p></div>
@@ -157,12 +157,12 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <section class="mc-dark" id="book" style="padding: clamp(96px, 11cqi, 170px) clamp(20px, 4.5cqi, 64px); background: #8E1F4B; color: #F7F7F4">
 <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px 64px; align-items: flex-end; justify-content: space-between">
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: #F5D6E2">MEDCONNECT 洽詢</p>
+<p style="margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #F5D6E2">MEDCONNECT 洽詢</p>
 <h2 style="margin: 0; font-size: clamp(36px, 4.6cqi, 64px); line-height: 1.04; font-weight: 400; letter-spacing: -0.03em">已經錄取？保持前進的動力。</h2>
 <p style="margin: 0; max-width: 34em; font-size: 17px; line-height: 1.6; font-weight: 300; color: #FBE9F0">請告訴我們您的學校與目標。我們將回覆說明試行方案的運作方式。</p>
 </div>
 <div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start">
-<a href="/zh-Hant/book/?program=medconnect" style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; font-size: 12px; font-weight: 500; letter-spacing: 0.18em">洽詢 MEDCONNECT <span aria-hidden="true">→</span></a>
+<a href="/zh-Hant/book/?program=medconnect" style="min-height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 28px; background: #F7F7F4; color: #17191C; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">洽詢 MEDCONNECT <span aria-hidden="true">→</span></a>
 <a href="mailto:hello@lyvon.io" style="min-height: 44px; display: flex; align-items: center; font-size: 13px; color: #FBE9F0">hello@lyvon.io</a>
 </div>
 </div>
@@ -192,7 +192,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <div aria-label="免費入門指南" aria-modal="true" class="lv-guide" hidden="" role="dialog" style="position:fixed;inset:0;z-index:50;background:rgba(15,26,38,.72);display:flex;align-items:center;justify-content:center;padding:20px">
 <div style="width:100%;max-width:460px;background:#F7F7F4;color:#17191C;padding:32px 28px;position:relative">
 <button aria-label="關閉" data-act="guide" style="position:absolute;top:8px;right:8px;min-width:44px;min-height:44px;background:none;border:none;font-size:24px;cursor:pointer" type="button">×</button>
-<p style="margin:0 0 8px;font-size:11px;font-weight:500;letter-spacing:0.24em;color:#5F6367">免費入門指南</p>
+<p style="margin:0 0 8px;font-size:11px;font-weight:500;letter-spacing: 0.06em;color:#5F6367">免費入門指南</p>
 <p style="margin:0 0 20px;font-size:24px;line-height:1.2">透過電子郵件索取 LYVON 入門指南。</p>
 <form class="lv-guideform" style="display:flex;flex-direction:column;gap:14px">
 <input aria-hidden="true" autocomplete="off" name="company" style="position:absolute;left:-9999px" tabindex="-1" type="text"/>
@@ -200,7 +200,7 @@ body{margin:0;font-family:Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft Jheng
 <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;letter-spacing:0.08em;color:#44484C">電子郵件 *<input autocomplete="email" name="email" required="" style="min-height:46px;padding:0 12px;border:1px solid #C4C6C3;background:#FFF;font:inherit;font-size:15px" type="email"/></label>
 <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;letter-spacing:0.08em;color:#44484C">指南語言 *<select name="replyLang" required="" style="min-height:46px;padding:0 12px;border:1px solid #C4C6C3;background:#FFF;font:inherit;font-size:15px"><option value="EN">English</option><option value="KO">한국어</option><option value="JA">日本語</option><option value="ZH">繁體中文</option></select></label>
 <label style="display:flex;gap:10px;align-items:flex-start;font-size:12px;line-height:1.5;color:#44484C"><input name="consent" required="" style="width:18px;height:18px;margin:2px 0 0;flex-shrink:0" type="checkbox"/><span>我同意 LYVON 為寄送指南而蒐集及利用我的姓名與電子郵件，詳情請見 <a href="/legal/#privacy" style="text-decoration:underline">隱私權政策</a>. *</span></label>
-<button style="min-height:50px;background:#20344A;color:#FFF;border:none;font:inherit;font-size:12px;font-weight:500;letter-spacing:0.18em;cursor:pointer" type="submit">寄送指南給我 →</button>
+<button style="min-height:50px;background:#20344A;color:#FFF;border:none;font:inherit;font-size:12px;font-weight:500;letter-spacing: 0.06em;cursor:pointer" type="submit">寄送指南給我 →</button>
 <p class="lv-guidemsg" role="status" style="margin:0;font-size:13px;color:#20344A"></p>
 </form>
 </div>
