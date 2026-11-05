@@ -1,0 +1,17 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Noh;Patrick;;;
+FN:Patrick Noh
+ORG:LYVON
+TITLE:Founder & Program Director
+item1.TEL;TYPE=CELL,VOICE:+82-10-4083-9227
+item1.X-ABLabel:KR
+item2.TEL;TYPE=WORK,VOICE:+81-80-7226-9227
+item2.X-ABLabel:JP
+EMAIL;TYPE=INTERNET,PREF:patrick@lyvon.io
+item3.URL:https://lyvon.io
+item3.X-ABLabel:Website
+item4.URL:https://lyvon.io/card
+item4.X-ABLabel:Digital Card
+NOTE:LYVON — Everyone has a V.
+END:VCARD
