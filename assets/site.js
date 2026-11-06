@@ -97,9 +97,12 @@
 
   // ---------- guide modal ----------
   var guide = $('.lv-guide');
+  var guideOpener = null;
   function toggleGuide(show) {
     if (!guide) return;
+    if (show) guideOpener = document.activeElement;
     guide.hidden = !show;
+    if (!show && guideOpener) { try { guideOpener.focus(); } catch (x) {} }
     document.body.style.overflow = show ? 'hidden' : '';
     if (show) { var f = $('input[name="name"]', guide); if (f) f.focus(); }
   }
@@ -190,7 +193,7 @@
     var msg = $('.lv-formmsg', book);
     function show(n) {
       steps.forEach(function (s) { s.hidden = s.getAttribute('data-step') !== String(n); });
-      if (msg) msg.textContent = '';
+      $$('.lv-formmsg', book).forEach(function (m) { m.textContent = ''; });
       var top = book.getBoundingClientRect().top + window.scrollY - 80;
       if (window.scrollY > top) window.scrollTo({ top: top, behavior: 'smooth' });
     }
