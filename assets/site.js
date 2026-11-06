@@ -35,6 +35,16 @@
     var code = (a.getAttribute('hreflang') || 'en').toLowerCase().slice(0, 2);
     document.cookie = 'lv_lang=' + code + ';path=/;samesite=lax';  // session only: a new visit follows the phone language again
   });
+  // ---------- "another overseas medical school" free-text ----------
+  $$('[data-school-other]').forEach(function (cb) {
+    var grid = cb.closest('label').parentNode;
+    var txt = grid.querySelector('[data-school-other-text]');
+    if (!txt) return;
+    var base = cb.value;
+    function sync() { var v = (txt.value || '').trim(); cb.value = v ? base + ': ' + v : base; }
+    cb.addEventListener('change', function () { txt.hidden = !cb.checked; if (cb.checked) txt.focus(); });
+    txt.addEventListener('input', sync);
+  });
   // ---------- back button (sub pages) ----------
   $$('[data-act="back"]').forEach(function (a) {
     var m = location.pathname.match(/^(\/(?:ko|ja|zh-Hant))?\/insights\/[^/]+\/$/);
