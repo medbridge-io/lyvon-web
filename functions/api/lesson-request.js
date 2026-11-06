@@ -4,16 +4,14 @@
 const MAX = 20000;
 const FIELD_MAX = 1000;
 const ALLOWED = ['name', 'email', 'phone', 'situation', 'country', 'targetField', 'schools', 'whyDoctor', 'englishLevel',
-  'concerns', 'plannedApplication', 'preparation', 'budget', 'heardFrom', 'replyLang', 'guideLang', 'consent', 'source', 'siteLang'];
+  'concerns', 'message', 'plannedApplication', 'preparation', 'budget', 'heardFrom', 'replyLang', 'guideLang', 'consent', 'source', 'siteLang'];
 const SITE = /^https:\/\/([a-z0-9-]+\.)?(lyvon\.io|lyvon-web\.pages\.dev)(\/|$)/i;
 const json = (o, s = 200) => new Response(JSON.stringify(o), { status: s, headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' } });
 
-// keep spreadsheet cells as plain text (no formulas), trim and cap length
+// trim and cap length (formula escaping is done by the Apps Script, which also prefixes phone numbers)
 const clean = v => {
   if (typeof v === 'boolean') return v;
-  let s = String(v ?? '').replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g, '').trim().slice(0, FIELD_MAX);
-  if (/^[=+\-@\t\r]/.test(s)) s = "'" + s;
-  return s;
+  return String(v ?? '').replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g, '').trim().slice(0, FIELD_MAX);
 };
 
 export async function onRequestPost({ request, env }) {
@@ -30,6 +28,8 @@ export async function onRequestPost({ request, env }) {
   const src = body.data && typeof body.data === 'object' ? body.data : {};
   const d = {};
   for (const k of ALLOWED) if (k in src) d[k] = clean(src[k]);
+  // free-text message: stored with 'concerns' so it reaches the sheet and the team email without a new column
+  if (d.message) { d.concerns = (d.concerns ? d.concerns + '; ' : '') + 'Message: ' + d.message; delete d.message; }
   if (!d.name || !d.email || d.consent !== true) return json({ ok: false, error: 'missing' }, 400);
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(d.email))) return json({ ok: false, error: 'email' }, 400);
   d.type = body.type === 'guide' ? 'guide' : 'lesson';
