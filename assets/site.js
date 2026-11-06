@@ -25,6 +25,13 @@
     document.addEventListener('click', function (e) {
       if (!menu.hidden && !menu.contains(e.target)) { menu.hidden = true; btn.setAttribute('aria-expanded', 'false'); }
     });
+    // keyboard: Escape closes; leaving the menu with Tab closes it
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !menu.hidden) { menu.hidden = true; btn.setAttribute('aria-expanded', 'false'); btn.focus(); }
+    });
+    menu.addEventListener('focusout', function (e) {
+      if (!menu.contains(e.relatedTarget) && e.relatedTarget !== btn) { menu.hidden = true; btn.setAttribute('aria-expanded', 'false'); }
+    });
   });
 
 
@@ -57,14 +64,36 @@
   });
 
   // ---------- mobile menu ----------
-  var menu = $('.lv-menu');
+  var menu = $('.lv-menu'), menuOpener = null;
+  function setMenu(open) {
+    if (!menu) return;
+    menu.hidden = !open;
+    document.body.style.overflow = open ? 'hidden' : '';
+    $$('.lv-menubtn').forEach(function (b) { b.setAttribute('aria-expanded', String(open)); });
+    if (open) { var c = $('button[data-act="menu"]', menu); if (c) c.focus(); }
+    else if (menuOpener) { try { menuOpener.focus(); } catch (x) {} }
+  }
   $$('[data-act="menu"]').forEach(function (el) {
     el.addEventListener('click', function () {
       if (!menu) return;
-      menu.hidden = !menu.hidden;
-      document.body.style.overflow = menu.hidden ? '' : 'hidden';
+      if (menu.hidden) menuOpener = el;
+      setMenu(menu.hidden);
     });
   });
+  // keep keyboard focus inside open dialogs (menu, guide); Escape closes
+  function trap(box, close) {
+    if (!box) return;
+    box.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { close(); return; }
+      if (e.key !== 'Tab') return;
+      var f = $$('a[href],button,input,select,textarea', box).filter(function (x) { return x.offsetParent !== null && !x.disabled && x.getAttribute('tabindex') !== '-1'; });
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+  }
+  trap(menu, function () { setMenu(false); });
 
   // ---------- guide modal ----------
   var guide = $('.lv-guide');
@@ -74,6 +103,7 @@
     document.body.style.overflow = show ? 'hidden' : '';
     if (show) { var f = $('input[name="name"]', guide); if (f) f.focus(); }
   }
+  trap(guide, function () { toggleGuide(false); });
   $$('[data-act="guide"]').forEach(function (el) {
     el.addEventListener('click', function (e) { e.preventDefault(); toggleGuide(guide && guide.hidden); });
   });
@@ -102,13 +132,27 @@
     return data;
   }
   function valid(root) {
-    var ok = true;
+    var ok = true, first = null;
     $$('[required]', root).forEach(function (el) {
-      var bad = el.type === 'checkbox' ? !el.checked : !(el.value || '').trim() || !el.checkValidity();
+      var bad;
+      if (el.type === 'radio') bad = !$$('input[name="' + el.name + '"]', root).some(function (r) { return r.checked; });
+      else bad = el.type === 'checkbox' ? !el.checked : !(el.value || '').trim() || !el.checkValidity();
       el.setAttribute('aria-invalid', bad ? 'true' : 'false');
       el.style.outline = bad ? '2px solid #C0392B' : '';
-      if (bad) ok = false;
+      if (bad) { ok = false; if (!first) first = el; }
     });
+    // at least one school (checkbox group)
+    var sc = $$('input[name="schools"]', root);
+    if (sc.length) {
+      var any = sc.some(function (c) { return c.checked; });
+      var box = sc[0].closest('fieldset') || sc[0].parentNode.parentNode;
+      box.style.outline = any ? '' : '2px solid #C0392B';
+      if (!any) { ok = false; if (!first) first = sc[0]; }
+      var oc = $('[data-school-other]', root), ot = $('[data-school-other-text]', root);
+      if (oc && ot && oc.checked && !(ot.value || '').trim()) { ok = false; ot.style.outline = '2px solid #C0392B'; if (!first) first = ot; }
+      else if (ot) ot.style.outline = '';
+    }
+    if (first) { try { first.focus({ preventScroll: true }); first.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (x) {} }
     // radio groups marked required on any member
     var groups = {};
     $$('input[type="radio"]', root).forEach(function (r) { if (r.required) groups[r.name] = 1; });
@@ -166,6 +210,9 @@
           var m2 = $('.lv-formmsg', s) || msg; if (m2) m2.textContent = t.send;
           post({ type: 'lesson', company: d.company || '', data: d }).then(function () {
             steps.forEach(function (f) { if (f.tagName === 'FORM') f.reset(); });
+            $$('[data-school-other]', book).forEach(function (c) { c.value = 'Other overseas medical school'; });
+            $$('[data-school-other-text]', book).forEach(function (x) { x.hidden = true; x.value = ''; });
+            if (brl) { var dv2 = { ko: 'KO', ja: 'JA' }[lang] || 'EN'; brl.value = dv2; }
             btn.disabled = false; show(4);
           }).catch(function () { if (m2) m2.textContent = t.err; btn.disabled = false; });
         });
@@ -174,6 +221,9 @@
         b.addEventListener('click', function (e) { e.preventDefault(); show(b.getAttribute('data-to')); });
       });
     });
+    // reply language defaults to the site language
+    var brl = $('select[name="replyLang"]', book);
+    if (brl && !brl.value) { var dv = { ko: 'KO', ja: 'JA' }[lang] || 'EN'; if ($('option[value="' + dv + '"]', brl)) brl.value = dv; }
     // mark radio groups required where the step asks for them
     ['whyDoctor', 'englishLevel'].forEach(function (n) { var r = $('input[name="' + n + '"]', book); if (r) r.required = true; });
     show(1);

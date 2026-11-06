@@ -2,12 +2,12 @@
 // Order: saved choice (cookie lv_lang, set by the language menu) → Accept-Language → English.
 // Crawlers always get the English root, so search engines index every language via hreflang.
 const MAP = { ko: '/ko/', ja: '/ja/', zh: '/zh-Hant/' };
-const BOT = /bot|crawl|spider|slurp|facebookexternalhit|kakaotalk-scrap|line-poker|preview|whatsapp|telegram|discord|embed/i;
+const BOT = /bot|crawl|spider|slurp|yeti|daumoa|facebookexternalhit|kakaotalk-scrap|line-poker|preview|whatsapp|telegram|discord|embed/i;
 
 function pick(header) {
   const langs = (header || '')
     .split(',')
-    .map(p => { const [tag, q] = p.trim().split(';q='); return { tag: tag.toLowerCase(), q: q ? parseFloat(q) : 1 }; })
+    .map(p => { const [tag, q] = p.trim().split(/;\s*q=/); return { tag: tag.toLowerCase(), q: q ? parseFloat(q) : 1 }; })
     .filter(x => x.tag)
     .sort((a, b) => b.q - a.q);
   for (const { tag } of langs) {
