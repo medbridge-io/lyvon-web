@@ -114,7 +114,7 @@
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
     if (guide && !guide.hidden) toggleGuide(false);
-    if (menu && !menu.hidden) { menu.hidden = true; document.body.style.overflow = ''; }
+    if (menu && !menu.hidden) setMenu(false);
   });
   if (location.hash === '#guide') toggleGuide(true);
 
@@ -155,7 +155,7 @@
       if (oc && ot && oc.checked && !(ot.value || '').trim()) { ok = false; ot.style.outline = '2px solid #C0392B'; if (!first) first = ot; }
       else if (ot) ot.style.outline = '';
     }
-    if (first) { try { first.focus({ preventScroll: true }); first.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (x) {} }
+    if (first) { try { first.focus({ preventScroll: true }); } catch (x) {} }
     // radio groups marked required on any member
     var groups = {};
     $$('input[type="radio"]', root).forEach(function (r) { if (r.required) groups[r.name] = 1; });
@@ -181,7 +181,7 @@
       d.guideLang = d.replyLang;
       var btn = $('button[type="submit"]', gform); btn.disabled = true; gmsg.textContent = t.send;
       post({ type: 'guide', company: d.company || '', data: d }).then(function () {
-        gmsg.textContent = t.guideOk; gform.reset(); btn.disabled = false;
+        gmsg.textContent = t.guideOk; gform.reset(); if (gl) gl.value = { en: 'EN', ko: 'KO', ja: 'JA', zh: 'ZH' }[lang] || 'EN'; btn.disabled = false;
       }).catch(function () { gmsg.textContent = t.err; btn.disabled = false; });
     });
   }
@@ -205,7 +205,7 @@
         s.setAttribute('novalidate', '');
         s.addEventListener('submit', function (e) {
           e.preventDefault();
-          if (!valid(s)) { var m = $('.lv-formmsg', s) || msg; if (m) m.textContent = t.req; return; }
+          if (!valid(s)) { var m = $('.lv-formmsg', s) || msg; if (m) { m.textContent = t.req; try { m.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (x) {} } return; }
           if (n < 3) { show(n + 1); return; }
           var d = { type: 'lesson', source: 'web · ' + location.pathname + (program ? ' · ' + program : ''), siteLang: lang };
           steps.forEach(function (f) { if (f.tagName === 'FORM') collect(f, d); });
