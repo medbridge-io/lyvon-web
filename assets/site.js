@@ -285,6 +285,19 @@
     });
   }, { rootMargin: '0px 0px -14% 0px', threshold: 0.12 });
   picked.forEach(function (el) { io.observe(el); });
+  // safety net: an element clipped by its card (overflow hidden + the reveal offset) may never
+  // report an intersection, so reveal anything whose box has reached the viewport while scrolling
+  var sweepT = 0;
+  function sweep() {
+    sweepT = 0;
+    var lim = window.innerHeight * 0.92;
+    Array.prototype.forEach.call(document.querySelectorAll('.lv-rv:not(.lv-in)'), function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top - 56 < lim && r.bottom > 0) { el.classList.add('lv-in'); io.unobserve(el); }
+    });
+  }
+  window.addEventListener('scroll', function () { if (!sweepT) sweepT = setTimeout(sweep, 120); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(sweep, 300); });
 
   // count-up for large figures (e.g. 91.7%, 12, 150)
   var re = /^(\d+(?:\.\d+)?)(%?)$/;
