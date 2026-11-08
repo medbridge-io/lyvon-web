@@ -204,12 +204,18 @@
   .btn{box-sizing:border-box}.btn-primary{border:1px solid transparent}.bk-jp{text-wrap:balance}
   .logo,.nav-links a{white-space:nowrap}@media(min-width:641px) and (max-width:900px){.nav-links{gap:16px}.nav-links a{font-size:.74rem;letter-spacing:.04em}.logo span{display:none}}
   @media(max-width:480px){.hero-cta .btn{width:100%;max-width:260px;text-align:center}header h1{font-size:2.2rem}}
+.nav-brand{display:flex;align-items:center;gap:14px;min-width:0}
+.lv-home{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 4px 0 0;font-family:Inter,'Helvetica Neue',sans-serif;font-size:13px;font-weight:600;letter-spacing:.3em;color:inherit;text-decoration:none}
+.lv-home:hover{opacity:.75}
+.nav-sep{width:1px;height:18px;background:currentColor;opacity:.25}
+.lv-home-foot{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:600;text-decoration:none}
+@media (max-width:520px){.nav-sep,.nav-brand .logo{display:none}}
 </style>
 <link href="/assets/site.css?v=5" rel="stylesheet"/></head>
 <body class="p-navy lv-salonpage">
 <nav>
 <div class="nav-in">
-<a class="logo" href="/salon/" style="text-decoration:none;color:inherit">LYVON Salon <span style="font-family:'Inter',sans-serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);vertical-align:middle;margin-left:6px">Tokyo</span></a>
+<div class="nav-brand"><a class="lv-home" href="/" aria-label="LYVON home"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 20 20" width="18"><path d="M12.5 4 6.5 10l6 6"></path></svg><span>LYVON</span></a><span class="nav-sep" aria-hidden="true"></span><a class="logo" href="/salon/" style="text-decoration:none;color:inherit">LYVON Salon <span style="font-family:'Inter',sans-serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);vertical-align:middle;margin-left:6px">Tokyo</span></a></div>
 <div class="nav-links">
 <a href="#salon">The Salon</a>
 <a href="#event">LYVON Table</a>
@@ -523,7 +529,7 @@
 <span class="logo serif">LYVON Salon</span>
     Tokyo · Seoul · Taipei · Hong Kong<br/>
 <span class="jp" lang="ja">English · 日本語 — hosted in English, with Japanese support</span><br/>
-<a href="/legal/">Privacy</a><br/>
+<a class="lv-home-foot" href="/"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 20 20" width="18"><path d="M12.5 4 6.5 10l6 6"></path></svg><span>LYVON home</span></a><br/><a href="/legal/">Privacy</a><br/>
 <span class="jp" lang="ja">© 2026 LYVON. All rights reserved.</span>
 </div>
 </footer>
