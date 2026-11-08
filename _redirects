@@ -1,3 +1,5 @@
+# Internal files are not public.
+/README.md /404.html 404
 /apply.html            /book/                          301
 /apply                 /book/                          301
 /legal.html            /legal/                         301
