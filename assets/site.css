@@ -85,3 +85,23 @@ footer.lv-ondark nav[aria-label] > a { display: flex; align-items: center; min-h
 @container (max-width: 374px) { section.lv-hero:has(.lv-tri) > div[style*="z-index: 3"] > p.lv-d2 { letter-spacing: .3em !important; padding-left: .3em !important; } }
 @media (max-width: 640px) { .p-medbridge .mb-root > section:first-of-type > div[aria-hidden="true"] { background: linear-gradient(180deg, rgba(8, 38, 35, .5) 0%, rgba(8, 38, 35, .72) 35%, rgba(8, 38, 35, .88) 100%) !important; } }
 section[id], [id="programs"] { scroll-margin-top: var(--sticky-h, 0px); }
+html[lang] body .lv-prose { max-width: 36em; }
+html:is([lang=ko], [lang=ja], [lang=zh-Hant]) body .lv-prose { max-width: 38em; }
+html[lang=ja] :is(p, li, figcaption):not(.lv-jw, .lv-jw *, .lv-prose, .lv-prose *, [role=img] *) { word-break: auto-phrase; }
+@container (max-width: 374px) {
+  .lv-btn { --btn-px: 18px; }
+  :is(h1, h2)[style*="clamp(40px"] { font-size: 36px !important; }
+  footer nav[aria-label][style*="minmax(140px, auto)"] { column-gap: 28px !important; }
+}
+@supports (grid-template-rows: subgrid) {
+  @container (min-width: 700px) {
+    div[style*="minmax(260px, 1fr)"]:has(> article:nth-child(3):last-child) > article { display: grid !important; grid-template-rows: subgrid; align-content: start; }
+    div[style*="minmax(260px, 1fr)"]:has(> article:nth-child(3):last-child) > article:has(> :nth-child(4):last-child) { grid-row: span 4; }
+    div[style*="minmax(260px, 1fr)"]:has(> article:nth-child(3):last-child) > article:has(> :nth-child(5):last-child) { grid-row: span 5; }
+    div[style*="minmax(260px, 1fr)"]:has(> article:nth-child(3):last-child) > article:has(> :nth-child(6):last-child) { grid-row: span 6; }
+  }
+  .lv-salonpage .steps > .step { display: grid; grid-template-rows: subgrid; grid-row: span 3; row-gap: 0; align-content: start; }
+}
+p:is([style*="max-width:46em"], [style*="max-width: 46em"]) { max-width: 38em !important; }
+.lv-salonpage #founder p { max-width: 36em; }
+html:is([lang=ko], [lang=ja], [lang=zh-Hant]) p[style^="margin: 0; font-size: 16px; line-height: 1.65"] { max-width: 40em; }
