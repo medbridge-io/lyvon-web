@@ -432,6 +432,12 @@
     ja: { nav: 'クイックメニュー', home: 'ホーム', cta: '無料レッスンを予約', chat: 'LINE 相談', href: 'https://line.me/ti/p/uwrW7dtHqN' },
     'zh-Hant': { nav: '快速選單', home: '首頁', cta: '預約免費課程', chat: 'Email', href: 'mailto:hello@lyvon.io' }
   }[L];
+  var mc = /^\/programs\/medconnect(\/|$)/.test(rest) || /^\/programs\/medconnect(\/|$)/.test(path);
+  var ctaHref = base + 'book/', ctaText = T.cta;
+  if (mc) {
+    ctaHref = 'mailto:hello@lyvon.io?subject=MedConnect%20inquiry';
+    ctaText = { en: 'Ask about MedConnect', ko: 'MedConnect 문의', ja: 'MedConnect に問い合わせ', 'zh-Hant': '洽詢 MedConnect' }[L];
+  }
   var ic = function (d) { return '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + d + '</svg>'; };
   var home = ic('<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h5v-6h4v6h5V9.5"/>');
   var chat = /^mailto:/.test(T.href) ? ic('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6 8.5 7 8.5-7"/>') : ic('<path d="M12 4c-4.97 0-9 3.13-9 7 0 2.44 1.6 4.6 4.03 5.85L6 20.5l4.13-2.6c.6.07 1.23.1 1.87.1 4.97 0 9-3.13 9-7s-4.03-7-9-7Z"/>');
@@ -441,7 +447,7 @@
   dock.setAttribute('aria-label', T.nav);
   dock.innerHTML =
     '<a class="lv-dock-side" href="' + base + '">' + home + '<span>' + T.home + '</span></a>' +
-    '<a class="lv-dock-cta" href="' + base + 'book/">' + T.cta + ' <span aria-hidden="true">→</span></a>' +
+    '<a class="lv-dock-cta" href="' + ctaHref + '">' + ctaText + ' <span aria-hidden="true">→</span></a>' +
     '<a class="lv-dock-side" href="' + T.href + '"' + ext + '>' + chat + '<span>' + T.chat + '</span></a>';
   document.body.appendChild(dock);
   document.documentElement.classList.add('lv-has-dock');

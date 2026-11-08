@@ -157,3 +157,9 @@ article a[style*="text-underline-offset"]{text-wrap:balance}
 }
 @media (max-width: 700px) and (prefers-reduced-motion: reduce) { .lv-dock { transition: none; } }
 @media (max-width: 360px) { footer nav[style*="repeat(2, minmax(140px"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; column-gap: 24px !important; } }
+@media (max-width: 380px) {
+  [style*="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))"], [style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] { grid-template-columns: minmax(0, 1fr) !important; }
+  .lv-btn { white-space: normal !important; text-align: center; max-width: 100%; flex-wrap: wrap; justify-content: center; }
+  td, th, .lv-btn { overflow-wrap: anywhere; word-break: normal !important; }
+  [style*="flex: 1 1 260px"] { min-width: 0; max-width: 100%; }
+}
