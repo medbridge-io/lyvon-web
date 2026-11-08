@@ -56,10 +56,15 @@
   $$('[data-act="back"]').forEach(function (a) {
     var m = location.pathname.match(/^(\/(?:ko|ja|zh-Hant))?\/insights\/[^/]+\/$/);
     if (m) a.setAttribute('href', (m[1] || '') + '/insights/');
+    // program pages fall back to the programs section of that language's home
+    var pm = location.pathname.match(/^(\/(?:ko|ja|zh-Hant))?\/programs\/[^/]+\/$/);
+    if (pm) a.setAttribute('href', (pm[1] || '') + '/#programs');
     a.addEventListener('click', function (e) {
       var same = false;
       try { same = document.referrer && new URL(document.referrer).origin === location.origin; } catch (x) {}
-      if (same && history.length > 1) { e.preventDefault(); history.back(); }
+      if (same && history.length > 1) { e.preventDefault(); history.back(); return; }
+      // fallback link: tell the target page it was reached through the back arrow
+      try { sessionStorage.setItem('lv-via-back', new URL(a.href, location.href).pathname); } catch (x) {}
     });
   });
 
@@ -308,4 +313,94 @@
     });
   }, { threshold: 0.4 });
   nums.forEach(function (n) { n.el.style.fontVariantNumeric = 'tabular-nums'; co.observe(n.el); });
+})();
+
+// ---------- scroll position: restore where the visitor was when they come back ----------
+(function () {
+  'use strict';
+  var ss; try { ss = window.sessionStorage; ss.setItem('lv-t', '1'); ss.removeItem('lv-t'); } catch (x) { return; }
+  var KEY = 'lv-scroll:' + location.pathname + location.search;
+  var de = document.documentElement;
+  function save() { try { ss.setItem(KEY, String(Math.round(window.scrollY || de.scrollTop || 0))); } catch (x) {} }
+  var tid = 0;
+  window.addEventListener('scroll', function () { clearTimeout(tid); tid = setTimeout(save, 150); }, { passive: true });
+  window.addEventListener('pagehide', save);
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') save(); });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (a && a.origin === location.origin) save();
+  }, true);
+
+  var nav = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0]) || null;
+  var type = nav ? nav.type : (performance.navigation && performance.navigation.type === 2 ? 'back_forward' : 'navigate');
+  var viaBack = false;
+  try { viaBack = ss.getItem('lv-via-back') === location.pathname; ss.removeItem('lv-via-back'); } catch (x) {}
+  var saved = parseInt(ss.getItem(KEY) || '', 10);
+  function manual() { try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (x) {} }
+  if (!(type === 'back_forward' || viaBack) || !(saved > 0)) {
+    // nothing saved: keep the browser's own behaviour (fragment links, native restore)
+    if (type === 'reload' && saved > 0 && !location.hash) { manual(); jump(saved, 1500); }
+    else if (location.hash.length > 1) {
+      // landed on an anchor (e.g. /#programs): show whatever already peeks into the viewport
+      var peek = function () {
+        // jump straight to the anchor instead of a long smooth scroll from the top
+        var tg = null; try { tg = document.getElementById(decodeURIComponent(location.hash.slice(1))); } catch (x) {}
+        if (tg && !(window.scrollY > 0 && Math.abs(tg.getBoundingClientRect().top) < 2)) {
+          var prev = de.style.scrollBehavior; de.style.scrollBehavior = 'auto';
+          tg.scrollIntoView({ block: 'start' });
+          de.style.scrollBehavior = prev;
+        }
+        Array.prototype.forEach.call(document.querySelectorAll('.lv-rv:not(.lv-in)'), function (el) {
+          var r = el.getBoundingClientRect();
+          if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('lv-in');
+        });
+      };
+      if (document.readyState === 'complete') setTimeout(peek, 0); else window.addEventListener('load', function () { setTimeout(peek, 0); });
+    }
+    return;
+  }
+  manual();
+  jump(saved, 2500);
+
+  function jump(y, budget) {
+    var stopped = false, t0 = Date.now(), done = 0;
+    function stop() { stopped = true; }
+    ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (ev) { window.addEventListener(ev, stop, { passive: true, once: true }); });
+    function to(v) {
+      var prev = de.style.scrollBehavior;
+      de.style.scrollBehavior = 'auto';
+      window.scrollTo(0, v);
+      de.style.scrollBehavior = prev;
+    }
+    function reveal() {
+      var lim = window.innerHeight * 1.25;
+      Array.prototype.forEach.call(document.querySelectorAll('.lv-rv:not(.lv-in)'), function (el) {
+        if (el.getBoundingClientRect().top < lim) {
+          el.style.transition = 'none'; el.style.transitionDelay = '0ms'; el.classList.add('lv-in');
+          requestAnimationFrame(function () { requestAnimationFrame(function () { el.style.transition = ''; }); });
+        }
+      });
+    }
+    function near() {
+      // images in or near the viewport still loading?
+      var imgs = document.images, h = window.innerHeight;
+      for (var i = 0; i < imgs.length; i++) {
+        var r = imgs[i].getBoundingClientRect();
+        if (!imgs[i].complete && r.bottom > -h && r.top < 2 * h) return true;
+      }
+      return false;
+    }
+    function tick() {
+      if (stopped) return;
+      var max = (document.scrollingElement || de).scrollHeight - window.innerHeight;
+      if (max >= y - 1) {
+        if (Math.abs((window.scrollY || 0) - y) > 1) to(y);
+        reveal();
+        done++;
+        if ((document.readyState === 'complete' && !near() && done > 2) || Date.now() - t0 > budget) return;
+      } else if (Date.now() - t0 > budget) { to(Math.min(y, max)); reveal(); return; }
+      setTimeout(tick, 60);
+    }
+    tick();
+  }
 })();

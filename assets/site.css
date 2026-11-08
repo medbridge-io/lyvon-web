@@ -84,3 +84,4 @@ footer.lv-ondark nav[aria-label] > a { display: flex; align-items: center; min-h
 .lv-404 + ul li { margin: 0 !important; }
 @container (max-width: 374px) { section.lv-hero:has(.lv-tri) > div[style*="z-index: 3"] > p.lv-d2 { letter-spacing: .3em !important; padding-left: .3em !important; } }
 @media (max-width: 640px) { .p-medbridge .mb-root > section:first-of-type > div[aria-hidden="true"] { background: linear-gradient(180deg, rgba(8, 38, 35, .5) 0%, rgba(8, 38, 35, .72) 35%, rgba(8, 38, 35, .88) 100%) !important; } }
+section[id], [id="programs"] { scroll-margin-top: var(--sticky-h, 0px); }
