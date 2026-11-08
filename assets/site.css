@@ -136,3 +136,9 @@ article a[style*="text-underline-offset"]{text-wrap:balance}
 }
 @keyframes lv-city{0%{opacity:0}6.67%{opacity:1}33.33%{opacity:1}40%{opacity:0}100%{opacity:0}}
 @keyframes lv-drift{from{transform:scale(1)}to{transform:scale(1.06)}}
+
+/* touch: enlarge hit areas of small inline links without moving layout (inline padding doesn't change line boxes) */
+@media (max-width: 700px), (pointer: coarse) {
+  section a[style*="text-underline-offset"], section a[href*="/insights/"][style*="font-size: 12px"], .lv-eyebrow a, section a[style*="color:inherit;text-decoration:none"] { padding-block: 12px; }
+  section .lv-eyebrow a[href] { padding-block: 14px; }
+}
