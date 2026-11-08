@@ -114,10 +114,22 @@ section.lv-hero > div[aria-hidden="true"]{background:linear-gradient(180deg,rgba
   section.lv-hero .lv-proof{align-items:flex-start;font-size:13.5px;padding:9px 14px;border-radius:16px;text-align:left}
   section.lv-hero .lv-proof-ic{margin-top:3px}
   section.lv-hero .lv-tri{display:block!important}
-  section.lv-hero .lv-tri figure:not(:first-child){display:none!important}
-  section.lv-hero .lv-tri figure:first-child{position:absolute!important;inset:0!important}
+  section.lv-hero .lv-tri figure{position:absolute!important;inset:0!important}
+  section.lv-hero .lv-tri figure:not(:first-child){opacity:0}
   section.lv-hero .lv-tri figcaption{display:none!important}
 }
 /* keep a trailing arrow with its last word; balance multi-line text links */
 .lv-nw{white-space:nowrap}
 article a[style*="text-underline-offset"]{text-wrap:balance}
+
+/* Phones: Seoul → Tokyo → Manila slowly cross-fade behind the hero text (5 s each).
+   Seoul is fully visible at time 0, so a frozen animation (in-app browsers) still shows a photo. */
+@media (max-width:700px) and (prefers-reduced-motion:no-preference){
+  section.lv-hero .lv-tri figure{animation:lv-city 15s linear infinite both}
+  section.lv-hero .lv-tri figure:nth-child(1){animation-delay:-1s}
+  section.lv-hero .lv-tri figure:nth-child(2){animation-delay:4s}
+  section.lv-hero .lv-tri figure:nth-child(3){animation-delay:9s}
+  section.lv-hero .lv-tri figure img{animation:lv-drift 15s ease-in-out infinite alternate}
+}
+@keyframes lv-city{0%{opacity:0}6.67%{opacity:1}33.33%{opacity:1}40%{opacity:0}100%{opacity:0}}
+@keyframes lv-drift{from{transform:scale(1)}to{transform:scale(1.06)}}
