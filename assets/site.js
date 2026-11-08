@@ -417,3 +417,52 @@
     tick();
   }
 })();
+
+// ---------- phone dock: home · free lesson · chat, always one tap away ----------
+(function () {
+  'use strict';
+  var path = location.pathname;
+  var m = path.match(/^\/(ko|ja|zh-Hant)(\/|$)/), L = m ? m[1] : 'en', base = m ? '/' + L + '/' : '/';
+  var rest = path.slice(base.length - 1);
+  if (/^\/(book|salon|card|legal)(\/|$)/.test(rest) || /^\/(book|salon|card|legal)(\/|$)/.test(path)) return;
+  if (!document.querySelector('.lv-root, [class$="-root"]') && !document.querySelector('header')) return;
+  var T = {
+    en: { nav: 'Quick actions', home: 'Home', cta: 'Book a free lesson', chat: 'Email', href: 'mailto:hello@lyvon.io' },
+    ko: { nav: '빠른 메뉴', home: '홈', cta: '무료 수업 신청', chat: '카카오 상담', href: 'https://open.kakao.com/o/sh3TzOsi' },
+    ja: { nav: 'クイックメニュー', home: 'ホーム', cta: '無料レッスンを予約', chat: 'LINE 相談', href: 'https://line.me/ti/p/uwrW7dtHqN' },
+    'zh-Hant': { nav: '快速選單', home: '首頁', cta: '預約免費課程', chat: 'Email', href: 'mailto:hello@lyvon.io' }
+  }[L];
+  var ic = function (d) { return '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + d + '</svg>'; };
+  var home = ic('<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h5v-6h4v6h5V9.5"/>');
+  var chat = /^mailto:/.test(T.href) ? ic('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6 8.5 7 8.5-7"/>') : ic('<path d="M12 4c-4.97 0-9 3.13-9 7 0 2.44 1.6 4.6 4.03 5.85L6 20.5l4.13-2.6c.6.07 1.23.1 1.87.1 4.97 0 9-3.13 9-7s-4.03-7-9-7Z"/>');
+  var ext = /^https?:/.test(T.href) ? ' target="_blank" rel="noopener"' : '';
+  var dock = document.createElement('nav');
+  dock.className = 'lv-dock';
+  dock.setAttribute('aria-label', T.nav);
+  dock.innerHTML =
+    '<a class="lv-dock-side" href="' + base + '">' + home + '<span>' + T.home + '</span></a>' +
+    '<a class="lv-dock-cta" href="' + base + 'book/">' + T.cta + ' <span aria-hidden="true">→</span></a>' +
+    '<a class="lv-dock-side" href="' + T.href + '"' + ext + '>' + chat + '<span>' + T.chat + '</span></a>';
+  document.body.appendChild(dock);
+  document.documentElement.classList.add('lv-has-dock');
+  // home on the home page itself: back to the top
+  dock.firstChild.addEventListener('click', function (e) {
+    if (location.pathname === base) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  });
+  // stay out of the way: hidden at the very top (hero already has the buttons), over the contact form, and while typing
+  var contact = document.getElementById('contact');
+  var overForm = false, typing = false;
+  if (contact && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { overForm = es[0].isIntersecting; upd(); }, { rootMargin: '0px 0px -30% 0px' }).observe(contact);
+  }
+  document.addEventListener('focusin', function (e) { if (e.target.matches && e.target.matches('input,select,textarea')) { typing = true; upd(); } });
+  document.addEventListener('focusout', function () { typing = false; setTimeout(upd, 50); });
+  function upd() {
+    var show = (window.scrollY || 0) > window.innerHeight * 0.5 && !overForm && !typing;
+    dock.classList.toggle('lv-dock-on', show);
+  }
+  var t = 0;
+  window.addEventListener('scroll', function () { if (!t) t = requestAnimationFrame(function () { t = 0; upd(); }); }, { passive: true });
+  window.addEventListener('resize', upd);
+  upd();
+})();
