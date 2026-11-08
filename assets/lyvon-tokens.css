@@ -1,0 +1,92 @@
+/* LYVON shared tokens — one source for lyvon.io and the AI Coach app.
+   Base = the site's paper + navy identity. Accent = the student's program color (solid, never a gradient).
+   1 Scale · 2 Neutrals · 3 Programs · 4 Status · 5 Elevation & focus · 6 Motion · 7 Component spec · 8 Dark */
+
+:root {
+  /* 1 · Scale — 4/8 spacing (from the app), 8/12/16 radius (shared) */
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 20px; --s6: 24px; --s8: 32px; --s10: 40px; --s12: 48px; --s16: 64px;
+  --r-sm: 8px;   /* chips-in-cards, inputs inside tight rows, phone frame inner */
+  --r: 12px;     /* buttons, inputs, segmented controls, small cards */
+  --r-lg: 16px;  /* cards, photo frames, panels */
+  --r-pill: 999px; /* chips, pills, icon buttons */
+  --fs-xs: 12.5px; --fs-sm: 14px; --fs-base: 16px; --fs-md: 17px; --fs-lg: 19px; --fs-xl: 22px; --fs-2xl: 28px;
+  --font-site: Inter, "Helvetica Neue", "Noto Sans", "Noto Sans KR", "Noto Sans JP", sans-serif;
+  --font-app: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Hiragino Sans", "PingFang TC", "Noto Sans CJK KR", "Noto Sans CJK JP", "Noto Sans CJK TC", "Segoe UI", "Malgun Gothic", "Yu Gothic UI", "Microsoft JhengHei", system-ui, sans-serif;
+
+  /* 2 · Neutrals — the site's paper + navy */
+  --navy: #0F1A26; --navy-2: #20344A; --navy-3: #1A2C40;
+  --paper: #F7F7F4; --surface: #FFFFFF; --surface-2: #EFEFEA; --surface-3: #E6E6E0;
+  --ink: #17191C; --ink-2: #44484C; --muted: #5F6367; --line: #DCDDDA; --line-soft: #EBECE9;
+  --on-navy: #F7F7F4; --on-navy-muted: #C3CBD4;
+  --card-line: rgba(15, 26, 38, .07);
+
+  /* 3 · Programs — one accent per program; soft = tint fill, line = tint border, deep = text on tint */
+  --medpath: #4338CA;    --medpath-soft: #EEF0FE;    --medpath-line: #C9CDF8; --medpath-deep: #312E81;
+  --medbridge: #0F766E;  --medbridge-soft: #E1F2EF;  --medbridge-line: #BFE3DE; --medbridge-deep: #0B4F4A;
+  --medconnect: #8E1F4B; --medconnect-soft: #F0D3DE; --medconnect-line: #E3A9C0; --medconnect-deep: #5E1432;
+  /* active accent (set per page / per student) */
+  --primary: var(--medpath); --primary-soft: var(--medpath-soft); --primary-line: var(--medpath-line); --primary-deep: var(--medpath-deep);
+  --on-primary: #FFFFFF;
+
+  /* 4 · Status (from the app) */
+  --good: #16A34A; --good-ink: #11753A; --good-soft: #E8F7EE;
+  --bad: #E5484D;  --bad-ink: #B42328;  --bad-soft: #FDEEEE;
+  --warn: #F59E0B; --warn-ink: #8A5300; --warn-soft: #FFF5DF;
+
+  /* 5 · Elevation & focus — soft navy-tinted shadows instead of hairlines */
+  --sh-1: 0 1px 2px rgba(15, 26, 38, .05), 0 2px 10px rgba(15, 26, 38, .05);
+  --sh-2: 0 2px 4px rgba(15, 26, 38, .05), 0 14px 34px -10px rgba(15, 26, 38, .20);
+  --sh-btn: 0 1px 2px rgba(15, 26, 38, .14), 0 6px 16px -8px color-mix(in srgb, var(--primary) 60%, transparent);
+  --ring: 0 0 0 3px color-mix(in srgb, var(--primary) 30%, transparent);
+
+  /* 6 · Motion — UI feedback is quick (app); page reveals stay slow and cinematic (site) */
+  --dur-press: .12s; --dur-ui: .18s; --ease-ui: cubic-bezier(.2, .8, .2, 1);
+  --dur-cine: 1.1s; --ease-cine: cubic-bezier(.16, .8, .24, 1);
+
+  /* 7 · Component spec (both products) */
+  --btn-h: 48px; --btn-h-sm: 44px; --btn-h-lg: 56px; --btn-px: 22px; --btn-r: var(--r); --btn-fw: 650; --btn-fs: 15px;
+  --card-r: var(--r-lg); --card-p: var(--s6);
+  --chip-fs: 12.5px; --chip-fw: 650; --chip-px: 10px; --chip-py: 4px;
+  --eyebrow-fs: 12.5px; --eyebrow-fw: 700; --eyebrow-ls: .1em;
+  --field-h: 48px; --field-r: var(--r); --field-border: 1.5px;
+  --ic-stroke: 1.75;
+  color-scheme: light;
+}
+.p-medpath    { --primary: var(--medpath);    --primary-soft: var(--medpath-soft);    --primary-line: var(--medpath-line);    --primary-deep: var(--medpath-deep); }
+.p-medbridge  { --primary: var(--medbridge);  --primary-soft: var(--medbridge-soft);  --primary-line: var(--medbridge-line);  --primary-deep: var(--medbridge-deep); }
+.p-medconnect { --primary: var(--medconnect); --primary-soft: var(--medconnect-soft); --primary-line: var(--medconnect-line); --primary-deep: var(--medconnect-deep); }
+.p-navy       { --primary: var(--navy-2);     --primary-soft: #E7ECF2;                --primary-line: #C3CBD4;                --primary-deep: var(--navy); }
+
+/* 8 · Dark — navy night, not black; program accents lifted to pass AA on dark surfaces */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0B121A; --surface: #121C27; --surface-2: #1A2633; --surface-3: #233140;
+    --ink: #EEF0EC; --ink-2: #C9CED4; --muted: #9DA7B2; --line: #2A3644; --line-soft: #1F2A37;
+    --card-line: rgba(255, 255, 255, .06);
+    --medpath: #A5ACFA;    --medpath-soft: #1F2350;    --medpath-line: #3E4590; --medpath-deep: #C7CBFF;
+    --medbridge: #5CC8B8;  --medbridge-soft: #0F2B29;  --medbridge-line: #1F5550; --medbridge-deep: #9BE3D8;
+    --medconnect: #F29BBE; --medconnect-soft: #3A1626; --medconnect-line: #6B2C47; --medconnect-deep: #F8C4D8;
+    --on-primary: #0B121A;
+    --good: #4ADE80; --good-ink: #5EE592; --good-soft: #10301F;
+    --bad: #F87171; --bad-ink: #FC9A9A; --bad-soft: #3A1C21;
+    --warn: #F5B84A; --warn-ink: #F7C66A; --warn-soft: #33281A;
+    --sh-1: 0 1px 2px rgba(0, 0, 0, .35); --sh-2: 0 14px 34px -10px rgba(0, 0, 0, .6);
+    --sh-btn: 0 1px 2px rgba(0, 0, 0, .3);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0B121A; --surface: #121C27; --surface-2: #1A2633; --surface-3: #233140;
+  --ink: #EEF0EC; --ink-2: #C9CED4; --muted: #9DA7B2; --line: #2A3644; --line-soft: #1F2A37;
+  --card-line: rgba(255, 255, 255, .06);
+  --medpath: #A5ACFA;    --medpath-soft: #1F2350;    --medpath-line: #3E4590; --medpath-deep: #C7CBFF;
+  --medbridge: #5CC8B8;  --medbridge-soft: #0F2B29;  --medbridge-line: #1F5550; --medbridge-deep: #9BE3D8;
+  --medconnect: #F29BBE; --medconnect-soft: #3A1626; --medconnect-line: #6B2C47; --medconnect-deep: #F8C4D8;
+  --on-primary: #0B121A;
+  --good: #4ADE80; --good-ink: #5EE592; --good-soft: #10301F;
+  --bad: #F87171; --bad-ink: #FC9A9A; --bad-soft: #3A1C21;
+  --warn: #F5B84A; --warn-ink: #F7C66A; --warn-soft: #33281A;
+  --sh-1: 0 1px 2px rgba(0, 0, 0, .35); --sh-2: 0 14px 34px -10px rgba(0, 0, 0, .6);
+  --sh-btn: 0 1px 2px rgba(0, 0, 0, .3);
+  color-scheme: dark;
+}

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html data-theme="light" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="#0F1A26" name="theme-color"/>
@@ -14,7 +14,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Inter:wght@300;400;500;600&amp;family=Noto+Sans+JP:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
-<style>
+<link href="/assets/lyvon-tokens.css?v=1" rel="stylesheet"/><style>
   html{background:#0F1A26}
   :root{
     --ink:#0F1A26;
@@ -205,8 +205,8 @@
   .logo,.nav-links a{white-space:nowrap}@media(min-width:641px) and (max-width:900px){.nav-links{gap:16px}.nav-links a{font-size:.74rem;letter-spacing:.04em}.logo span{display:none}}
   @media(max-width:480px){.hero-cta .btn{width:100%;max-width:260px;text-align:center}header h1{font-size:2.2rem}}
 </style>
-</head>
-<body>
+<link href="/assets/site.css?v=1" rel="stylesheet"/></head>
+<body class="p-navy lv-salonpage">
 <nav>
 <div class="nav-in">
 <a class="logo" href="/salon/" style="text-decoration:none;color:inherit">LYVON Salon <span style="font-family:'Inter',sans-serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);vertical-align:middle;margin-left:6px">Tokyo</span></a>
@@ -215,7 +215,7 @@
 <a href="#event">LYVON Table</a>
 <a href="#season">Books</a>
 <a href="#faq">FAQ</a>
-<a class="nav-cta" href="#join">Join the Salon</a>
+<a class="nav-cta lv-btn lv-btn-primary lv-btn-sm" href="#join">Join the Salon</a>
 </div>
 </div>
 </nav>
@@ -231,8 +231,8 @@
 <p class="hero-sub">One great book each month, four 1:1 conversations about it in English with a professional instructor, and a table in Tokyo to share it with others.</p>
 <p class="hero-jp jp" lang="ja">毎月一冊の<wbr/>本を、<wbr/>英語で<wbr/>語る。<wbr/>専門の<wbr/>英語講師と<wbr/>毎週1対1で対話し、<wbr/>月に<wbr/>一度は<wbr/>東京の<wbr/>テーブルへ。</p>
 <div class="hero-cta">
-<a class="btn btn-primary" href="#join">Join the Salon</a>
-<a class="btn btn-ghost" href="#how">How It Works</a>
+<a class="btn btn-primary lv-btn lv-btn-light" href="#join">Join the Salon</a>
+<a class="btn btn-ghost lv-btn lv-btn-outline-light" href="#how">How It Works</a>
 </div>
 <div class="seats-note">Season 1 starts December 2026 · Seoul, Taipei &amp; Hong Kong coming</div>
 </div>
@@ -298,7 +298,7 @@
 <h2 class="serif">What's included</h2>
 <p class="h2-jp jp" lang="ja">プログラム<wbr/>内容</p>
 <div class="pricing">
-<div class="price-card featured">
+<div class="price-card featured lv-card">
 <div class="badge">Main Program</div>
 <h3>LYVON Salon</h3>
 <div class="pc-jp" lang="ja">LYVON Salon<wbr/>（オンライン・<wbr/>月額）</div>
@@ -309,9 +309,9 @@
 <li>Monthly online Club Night — 50 minutes, up to 5 members, led by an instructor<span class="jp" lang="ja">月<span style="white-space:nowrap">1回</span>の<wbr/>オンライン・<wbr/>クラブナイト<wbr/>（<span style="white-space:nowrap">50分</span>・<wbr/>最大<span style="white-space:nowrap">5名</span>・<wbr/>講師が<wbr/>進行）</span></li>
 <li>Priority booking for LYVON Table<span class="jp" lang="ja">LYVON Tableの<wbr/>優先予約</span></li>
 </ul>
-<a class="btn btn-primary" href="#join">Join the Salon</a>
+<a class="btn btn-primary lv-btn lv-btn-primary" href="#join">Join the Salon</a>
 </div>
-<div class="price-card">
+<div class="price-card lv-card">
 <h3>LYVON Table</h3>
 <div class="pc-jp" lang="ja">月例<wbr/>ディナー<wbr/>（東京）</div>
 <div class="pc-per">Once a month, in Tokyo / 月<span style="white-space:nowrap">1回</span>・東京</div>
@@ -319,7 +319,7 @@
 <li>Opens when 3 people sign up (max 8)<span class="jp" lang="ja"><span style="white-space:nowrap">3名</span>から<wbr/>開催<wbr/>（最大<span style="white-space:nowrap">8名</span>）</span></li>
 <li>Dinner and drinks at the table<span class="jp" lang="ja">食事と<wbr/>ドリンクを<wbr/>囲んで</span></li>
 </ul>
-<a class="btn btn-ghost" href="#join">Ask about the Dinner</a>
+<a class="btn btn-ghost lv-btn lv-btn-secondary" href="#join">Ask about the Dinner</a>
 </div>
 </div>
 </div>
@@ -327,15 +327,15 @@
 <section class="photo-strip">
 <div class="wrap">
 <div class="strip-grid">
-<figure>
+<figure class="lv-photo">
 <img alt="Books" loading="lazy" src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&amp;fit=crop&amp;w=1000&amp;q=80"/>
 <figcaption>One Book · 一冊の本</figcaption>
 </figure>
-<figure>
+<figure class="lv-photo">
 <img alt="Dinner table" loading="lazy" src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&amp;fit=crop&amp;w=1000&amp;q=80"/>
 <figcaption>One Table · 一つのテーブル</figcaption>
 </figure>
-<figure>
+<figure class="lv-photo">
 <img alt="Tokyo at night" loading="lazy" src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&amp;fit=crop&amp;w=1000&amp;q=80"/>
 <figcaption>In Tokyo · 東京で</figcaption>
 </figure>
@@ -348,7 +348,7 @@
 <h2 class="serif">Six months, six conversations</h2>
 <p class="h2-jp jp" lang="ja">シーズン1<wbr/>（<span style="white-space:nowrap">2026年12月</span>〜<span style="white-space:nowrap">2027年5月</span>）⁠の<wbr/>ラインナップ。<wbr/>毎月一冊。</p>
 <div class="book-grid">
-<div class="book-card current">
+<div class="book-card current lv-card">
 <div class="bk-cover"><img alt="The Culture Map cover" loading="lazy" onerror="this.parentElement.style.display='none'" src="https://covers.openlibrary.org/b/isbn/9781610392501-L.jpg"/></div>
 <div class="bk-vol">Vol.1 · December<br/>Culture</div>
 <div class="bk-title serif">The Culture Map</div>
@@ -356,7 +356,7 @@
 <div class="bk-jp" lang="ja">『異文化理解力』</div>
 <div class="bk-theme">Working across cultures</div>
 </div>
-<div class="book-card">
+<div class="book-card lv-card">
 <div class="bk-cover"><img alt="Range cover" loading="lazy" onerror="this.parentElement.style.display='none'" src="https://covers.openlibrary.org/b/isbn/9780735214484-L.jpg"/></div>
 <div class="bk-vol">Vol.2 · January<br/>Career</div>
 <div class="bk-title serif">Range</div>
@@ -364,7 +364,7 @@
 <div class="bk-jp" lang="ja">『RANGE — 知識の<wbr/>「幅」⁠が<wbr/>最強の<wbr/>武器に<wbr/>なる』</div>
 <div class="bk-theme">Generalist vs. specialist</div>
 </div>
-<div class="book-card">
+<div class="book-card lv-card">
 <div class="bk-cover"><img alt="No Rules Rules cover" loading="lazy" onerror="this.parentElement.style.display='none'" src="https://covers.openlibrary.org/b/isbn/9781984877864-L.jpg"/></div>
 <div class="bk-vol">Vol.3 · February<br/>Organization</div>
 <div class="bk-title serif">No Rules Rules</div>
@@ -372,7 +372,7 @@
 <div class="bk-jp" lang="ja">『NO RULES — 世界一<wbr/>「自由」な<wbr/>会社、<wbr/>NETFLIX』</div>
 <div class="bk-theme">Freedom &amp; candor at work</div>
 </div>
-<div class="book-card">
+<div class="book-card lv-card">
 <div class="bk-cover"><img alt="The Courage to Be Disliked cover" loading="lazy" onerror="this.parentElement.style.display='none'" src="https://covers.openlibrary.org/b/isbn/9781501197277-L.jpg"/></div>
 <div class="bk-vol">Vol.4 · March<br/>Mindset</div>
 <div class="bk-title serif">The Courage to Be Disliked</div>
@@ -380,7 +380,7 @@
 <div class="bk-jp" lang="ja">『嫌われる<wbr/>勇気』</div>
 <div class="bk-theme">Freedom from approval</div>
 </div>
-<div class="book-card">
+<div class="book-card lv-card">
 <div class="bk-cover"><img alt="Factfulness cover" loading="lazy" onerror="this.parentElement.style.display='none'" src="https://covers.openlibrary.org/b/isbn/9781250107817-L.jpg"/></div>
 <div class="bk-vol">Vol.5 · April<br/>Worldview</div>
 <div class="bk-title serif">Factfulness</div>
@@ -388,7 +388,7 @@
 <div class="bk-jp" lang="ja">『FACTFULNESS — 10の思い込みを<wbr/>乗り越え、<wbr/>データを<wbr/>基に<wbr/>世界を<wbr/>正しく<wbr/>見る<wbr/>習慣』</div>
 <div class="bk-theme">Seeing the world clearly</div>
 </div>
-<div class="book-card">
+<div class="book-card lv-card">
 <div class="bk-cover"><img alt="Men Without Women cover" loading="lazy" onerror="this.parentElement.style.display='none'" src="https://covers.openlibrary.org/b/isbn/9781101974520-L.jpg"/></div>
 <div class="bk-vol">Vol.6 · May<br/>Fiction</div>
 <div class="bk-title serif">Men Without Women</div>
@@ -399,7 +399,7 @@
 </div>
 </div>
 </section>
-<section class="event" id="event">
+<section class="event lv-ondark" id="event">
 <div class="wrap">
 <div class="event-card">
 <div>
@@ -412,9 +412,9 @@
 <div class="detail"><dt>Seats</dt><dd>3 – 8</dd></div>
 <div class="detail"><dt>Confirmed</dt><dd>7 days before, by email. If fewer than three sign up, we invite you to the online Club Night instead.<br/><span class="jp" lang="ja"><span style="white-space:nowrap">7日</span>前に<wbr/>開催可否を<wbr/>ご連絡します。<wbr/><span style="white-space:nowrap">3名</span>未満の<wbr/>場合は、<wbr/>オンラインの<wbr/>クラブナイトに<wbr/>ご招待します。</span></dd></div>
 </dl>
-<a class="btn btn-primary" href="#join">Ask about the Dinner</a>
+<a class="btn btn-primary lv-btn lv-btn-light" href="#join">Ask about the Dinner</a>
 </div>
-<div class="book-cover">
+<div class="book-cover lv-card">
 <div class="bc-label">This Month's Book</div>
 <img alt="The Culture Map book cover" class="bc-img" loading="lazy" onerror="this.style.display='none'" src="https://covers.openlibrary.org/b/isbn/9781610392501-L.jpg"/>
 <div class="bc-title serif">The Culture Map</div>
@@ -430,19 +430,19 @@
 <h2 class="serif">Eight seats, eight perspectives</h2>
 <p class="h2-jp jp" lang="ja">こんな方のための<wbr/>席です</p>
 <div class="who-grid">
-<div class="who-card">
+<div class="who-card lv-card">
 <strong>The global-career builder <span class="jp" lang="ja">グローバルキャリア<wbr/>志向</span></strong>
 <span>You work in Japan and want your English — and your network — to match your ambitions.</span>
 </div>
-<div class="who-card">
+<div class="who-card lv-card">
 <strong>The international professional <span class="jp" lang="ja">東京在住の<wbr/>外国人<wbr/>プロフェッショナル</span></strong>
 <span>You're in Tokyo and want conversations that go deeper than networking small talk.</span>
 </div>
-<div class="who-card">
+<div class="who-card lv-card">
 <strong>The curious reader <span class="jp" lang="ja">読書好き</span></strong>
 <span>You read good books anyway — you'd rather discuss them with interesting people.</span>
 </div>
-<div class="who-card">
+<div class="who-card lv-card">
 <strong>The future founder <span class="jp" lang="ja">起業を<wbr/>考えている人</span></strong>
 <span>You're looking for ideas, honest feedback, and people who think about business seriously.</span>
 </div>
@@ -455,7 +455,7 @@
 <h2 class="serif">Tokyo first. More tables to come.</h2>
 <p class="h2-jp jp" lang="ja">東京から<wbr/>スタート。<wbr/>ソウル・<wbr/>台北・<wbr/>香港も<wbr/>準備中です。</p>
 <p style="max-width:620px;margin:18px auto 0;color:#2E3A48">Tokyo · Season 1, December 2026  —  Seoul · Taipei · Hong Kong, coming soon.</p>
-<p style="margin-top:14px"><a href="mailto:hello@lyvon.io?subject=LYVON%20Salon%20waitlist" style="color:var(--accent)">Join the waitlist for your city →</a></p>
+<p style="margin-top:14px"><a href="mailto:hello@lyvon.io?subject=LYVON%20Salon%20waitlist" style="color:var(--accent)">Join the waitlist for your city <svg aria-hidden="true" class="ic" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24"><path d="M5 12h14"></path><path d="m13 5 7 7-7 7"></path></svg></a></p>
 </div>
 </section>
 <section id="founder" style="padding:80px 0;border-top:1px solid var(--line)">
@@ -472,7 +472,7 @@
 </section>
 <section class="faq" id="faq">
 <div class="wrap">
-<div class="sec-label">FAQ</div>
+<div class="sec-label lv-eyebrow lv-eyebrow-ink">FAQ</div>
 <h2 class="serif">Questions</h2>
 <p class="h2-jp jp" lang="ja">よくある<wbr/>質問</p>
 <details>
@@ -512,8 +512,8 @@
 <p class="h2-jp jp" lang="ja">シーズン1 — <span style="white-space:nowrap">2026年12月</span><wbr/>スタート</p>
 <p>Send us a note and we will reply within 48 hours with details for Season 1.<br/><span class="jp" lang="ja">お気軽に<wbr/>お問い合わせください。<wbr/><span style="white-space:nowrap">48時間</span>以内に<wbr/>シーズン1の詳細を<wbr/>ご案内します。</span></p>
 <div class="hero-cta">
-<a class="btn btn-primary" href="mailto:hello@lyvon.io?subject=LYVON%20Salon%20Tokyo">Ask about LYVON Salon</a>
-<a class="btn btn-ghost" href="mailto:hello@lyvon.io?subject=LYVON%20Table%20Tokyo">Ask about LYVON Table</a>
+<a class="btn btn-primary lv-btn lv-btn-primary" href="mailto:hello@lyvon.io?subject=LYVON%20Salon%20Tokyo">Ask about LYVON Salon</a>
+<a class="btn btn-ghost lv-btn lv-btn-secondary" href="mailto:hello@lyvon.io?subject=LYVON%20Table%20Tokyo">Ask about LYVON Table</a>
 </div>
 <p style="margin-top:22px;font-size:.82rem;color:var(--muted)">Questions? <a href="mailto:hello@lyvon.io" style="color:var(--accent)">hello@lyvon.io</a></p>
 </div>
