@@ -53,6 +53,9 @@ textarea.lv-field { padding: 12px 14px !important; }
 .lv-field-dark { background: rgba(247, 247, 244, .06) !important; border-color: rgba(247, 247, 244, .3) !important; color: var(--on-navy) !important; }
 .lv-field-dark:focus { border-color: var(--on-navy) !important; box-shadow: 0 0 0 3px rgba(247, 247, 244, .22) !important; }
 select.lv-field-dark option { color: var(--ink); }
+select.lv-field { -webkit-appearance: none; appearance: none; padding-right: 44px !important; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%235F6367' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important; background-repeat: no-repeat !important; background-position: right 16px center !important; background-size: 12px 8px !important; cursor: pointer; }
+select.lv-field.lv-field-dark { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23F7F7F4' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important; }
+select.lv-field::-ms-expand { display: none; }
 .lv-option { border: 1.5px solid var(--line) !important; border-radius: var(--r) !important; background: var(--surface); transition: background var(--dur-ui), border-color var(--dur-ui); }
 .lv-option:has(:checked) { background: var(--primary-soft); border-color: var(--primary) !important; color: var(--primary-deep); }
 .lv-option-dark { background: rgba(247, 247, 244, .05); border-color: rgba(247, 247, 244, .26) !important; }
