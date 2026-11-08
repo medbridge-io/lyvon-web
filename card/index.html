@@ -21,9 +21,9 @@
 <meta name="apple-mobile-web-app-title" content="Patrick Noh">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/lyvon-tokens.css?v=2">
+<link rel="stylesheet" href="/assets/lyvon-tokens.css?v=3">
 <style>
-:root{--navy:#0F1A26;--navy2:#20344A;--paper:#F7F7F4;--gold:#9DB4CC;--gold2:#7F98B3;--mute:#A9AEB4;--line:rgba(247,247,244,.14)}
+:root{--navy:#0F1A26;--navy2:#20344A;--paper:#F7F7F4;--accent:#9DB4CC;--accent-2:#7F98B3;--mute:#A9AEB4;--line:rgba(247,247,244,.14)}
 *{box-sizing:border-box}
 html{background:var(--navy)}
 body{margin:0;min-height:100svh;background:radial-gradient(120% 70% at 50% -10%,#20344A 0%,#0F1A26 62%);color:var(--paper);font-family:Inter,'Noto Sans KR','Noto Sans JP','Noto Sans TC',sans-serif;-webkit-font-smoothing:antialiased;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
@@ -33,7 +33,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .top{display:flex;justify-content:space-between;align-items:center;height:44px}
 .brand{font-size:13px;font-weight:600;letter-spacing:.32em}
 .lang{display:flex;gap:2px;font-size:11px;letter-spacing:.12em}
-.lang button{min-width:36px;min-height:32px;padding:0 6px;color:var(--mute);border-bottom:1px solid transparent}
+.lang button{min-width:44px;min-height:44px;padding:0 6px;color:var(--mute);border-bottom:1px solid transparent}
 .lang button.on{color:var(--paper);border-bottom-color:var(--paper)}
 /* card */
 .stage{perspective:1400px}
@@ -46,7 +46,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .front .city{font-size:clamp(7px,2vw,9px);letter-spacing:.22em;color:var(--mute);text-align:right;white-space:nowrap;padding-top:3px}
 .front .name{font-size:clamp(24px,7.2vw,32px);font-weight:400;letter-spacing:-.01em;line-height:1.1}
 .front .sub{margin-top:4px;font-size:clamp(11px,3vw,13px);color:#C3CBD4}
-.front .role{margin-top:10px;font-size:clamp(9px,2.5vw,11px);letter-spacing:.2em;color:var(--gold)}
+.front .role{margin-top:10px;font-size:clamp(9px,2.5vw,11px);letter-spacing:.2em;color:var(--accent)}
 .front .bottom{display:flex;justify-content:space-between;align-items:flex-end;font-size:clamp(9px,2.5vw,11px);color:#C3CBD4;gap:8px}
 .front .bottom span{white-space:nowrap}
 .back{transform:rotateY(180deg);background:radial-gradient(90% 120% at 85% 15%,#2A4361 0%,#0F1A26 70%);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;text-align:center}
@@ -56,10 +56,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hint{margin:10px 0 0;text-align:center;font-size:11px;letter-spacing:.14em;color:var(--mute)}
 /* actions */
 .cta{display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;background:var(--paper);color:#17191C;font-size:12px;font-weight:600;letter-spacing:.2em}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
-.grid a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:84px;background:#122030;font-size:11px;letter-spacing:.06em;color:#D3D6D9;transition:background .2s}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.grid a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:84px;background:#122030;border:1px solid var(--line);border-radius:var(--r);font-size:11px;letter-spacing:.06em;color:#D3D6D9;transition:background .2s}
 .grid a:active,.grid a:hover{background:#1A2C42}
-.grid svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:1.4}
+.grid svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.4}
 .sec{display:flex;flex-direction:column;gap:12px}
 .eyebrow{margin:0;font-size:10px;font-weight:500;letter-spacing:.26em;color:var(--mute)}
 .prog a{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-top:1px solid var(--line);font-size:17px}
@@ -84,7 +84,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.flip{transition:none}.rv{opacity:1;transform:none;transition:none}}
 </style>
-<link rel="stylesheet" href="/assets/site.css?v=2">
+<link rel="stylesheet" href="/assets/site.css?v=3">
 </head>
 <body class="lv-cardpage">
 <main class="wrap">

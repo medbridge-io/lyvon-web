@@ -64,7 +64,23 @@ input[type=checkbox], input[type=radio] { accent-color: var(--primary); }
 .p-medbridge .lv-card-seg [style*="opacity: 0.85"], .p-medbridge .lv-card-seg [style*="opacity:.85"] { opacity: 1 !important; }
 a.cta.lv-btn { display: flex !important; }
 .lv-card:has(> .badge) { overflow: visible; }
-.lv-cardpage .grid { border-radius: var(--r-lg); overflow: hidden; }
 .lv-cardpage .tools > * { border-radius: var(--r) !important; font-weight: var(--btn-fw); }
 .lv-cardpage .qr { border-radius: var(--r-lg); }
 .lv-salonpage { --accent: #58728E; --muted: #646D79; }
+.lv-menu { overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; padding-bottom: calc(32px + env(safe-area-inset-bottom)) !important; }
+.lv-menu > * { flex-shrink: 0; }
+@media (max-height: 600px) { .lv-menu > div:first-child { height: 64px !important; } .lv-menu nav { margin-top: 4px !important; } .lv-menu nav a { padding: 10px 0 !important; } .lv-menu > p { margin-top: 20px !important; } }
+.lv-menu a:hover, .lv-menu a:focus-visible, .lv-guidebar a:hover { color: #FFFFFF !important; }
+.lv-langmenu { border-radius: var(--r-lg) !important; overflow: hidden; }
+.lv-guide > div { border-radius: var(--r-lg) !important; }
+.lv-guidebar { padding-top: env(safe-area-inset-top) !important; padding-bottom: 0 !important; }
+.lv-guidebar button { min-height: 44px !important; }
+a.lv-back { min-width: 44px !important; margin-right: -4px; }
+.lv-header > a:first-child, .lv-header > div:first-child > a:not(.lv-back), .lv-menu > div:first-child > a, footer.lv-ondark a, a[href$="/insights/"][style*="letter-spacing: 0.14em"] { padding-block: 15px; margin-block: -15px; }
+footer.lv-ondark a { padding-inline: 11px; margin-inline: -11px; }
+footer.lv-ondark nav[aria-label] { row-gap: 0 !important; }
+footer.lv-ondark nav[aria-label] > a { display: flex; align-items: center; min-height: 44px; padding-block: 0; margin-block: 0; }
+.lv-404 + ul a { display: inline-flex; align-items: center; min-height: 44px; }
+.lv-404 + ul li { margin: 0 !important; }
+@container (max-width: 374px) { section.lv-hero:has(.lv-tri) > div[style*="z-index: 3"] > p.lv-d2 { letter-spacing: .3em !important; padding-left: .3em !important; } }
+@media (max-width: 640px) { .p-medbridge .mb-root > section:first-of-type > div[aria-hidden="true"] { background: linear-gradient(180deg, rgba(8, 38, 35, .5) 0%, rgba(8, 38, 35, .72) 35%, rgba(8, 38, 35, .88) 100%) !important; } }

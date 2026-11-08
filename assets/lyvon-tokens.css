@@ -7,7 +7,7 @@
   --r-pill: 999px; 
   --fs-xs: 12.5px; --fs-sm: 14px; --fs-base: 16px; --fs-md: 17px; --fs-lg: 19px; --fs-xl: 22px; --fs-2xl: 28px;
   --font-site: Inter, "Helvetica Neue", "Noto Sans", "Noto Sans KR", "Noto Sans JP", sans-serif;
-  --font-app: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Hiragino Sans", "PingFang TC", "Noto Sans CJK KR", "Noto Sans CJK JP", "Noto Sans CJK TC", "Segoe UI", "Malgun Gothic", "Yu Gothic UI", "Microsoft JhengHei", system-ui, sans-serif;
+  --font-ui: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Hiragino Sans", "PingFang TC", "Noto Sans CJK KR", "Noto Sans CJK JP", "Noto Sans CJK TC", "Segoe UI", "Malgun Gothic", "Yu Gothic UI", "Microsoft JhengHei", system-ui, sans-serif;
   --navy: #0F1A26; --navy-2: #20344A; --navy-3: #1A2C40;
   --paper: #F7F7F4; --surface: #FFFFFF; --surface-2: #EFEFEA; --surface-3: #E6E6E0;
   --ink: #17191C; --ink-2: #44484C; --muted: #5F6367; --line: #DCDDDA; --line-soft: #EBECE9;
