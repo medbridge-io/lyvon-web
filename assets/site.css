@@ -117,6 +117,7 @@ section.lv-hero > div[aria-hidden="true"]{background:linear-gradient(180deg,rgba
   section.lv-hero .lv-tri figure{position:absolute!important;inset:0!important}
   section.lv-hero .lv-tri figure:not(:first-child){opacity:0}
   section.lv-hero .lv-tri figcaption{display:none!important}
+  section.lv-hero .lv-tri figure:nth-child(2) img{object-position:25% 50%!important}
 }
 /* keep a trailing arrow with its last word; balance multi-line text links */
 .lv-nw{white-space:nowrap}
