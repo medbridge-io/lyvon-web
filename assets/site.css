@@ -99,10 +99,25 @@ html[lang=ja] :is(p, li, figcaption):not(.lv-jw, .lv-jw *, .lv-prose, .lv-prose 
 p:is([style*="max-width:46em"], [style*="max-width: 46em"]) { max-width: 38em !important; }
 .lv-salonpage #founder p { max-width: 36em; }
 html:is([lang=ko], [lang=ja], [lang=zh-Hant]) p[style^="margin: 0; font-size: 16px; line-height: 1.65"] { max-width: 40em; }
-/* Home hero tagline + one-line offer: stronger presence over the photos */
-section.lv-hero p.lv-d3{font-weight:500!important;font-size:clamp(19px,2.1cqi,30px)!important;line-height:1.3!important;letter-spacing:-0.005em;text-shadow:0 2px 18px rgba(8,14,22,.55),0 1px 2px rgba(8,14,22,.35)}
-section.lv-hero p.lv-d3 .lv-hero-sub{display:inline-block!important;margin-top:16px!important;padding:9px 18px;border-radius:999px;background:rgba(8,14,22,.46);border:1px solid rgba(247,247,244,.28);font-size:clamp(14px,1.15cqi,17px)!important;font-weight:600!important;letter-spacing:0!important;opacity:1!important;text-shadow:none;line-height:1.45;max-width:100%}
-@container (max-width:700px){section.lv-hero p.lv-d3{font-size:clamp(18px,5.2cqi,22px)!important}section.lv-hero p.lv-d3 .lv-hero-sub{padding:8px 14px;font-size:14px!important;border-radius:16px}}
+/* Home hero: the offer is the main line, proof under it; the slogan lives in the About heading */
+html body section.lv-hero p.lv-hero-main.lv-d3.lv-tb{font-size:clamp(24px,3.1cqi,44px)!important;font-weight:600!important;line-height:1.18!important;max-width:20em!important;letter-spacing:-0.012em;text-shadow:0 2px 24px rgba(8,14,22,.6)}
+section.lv-hero .lv-proof{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:10px 18px;border-radius:999px;background:rgba(8,14,22,.5);border:1px solid rgba(247,247,244,.28);font-size:clamp(14px,1.15cqi,16px);font-weight:600;letter-spacing:0;line-height:1.4;text-shadow:none}
+section.lv-hero .lv-proof b{color:#fff;font-weight:750}
+section.lv-hero .lv-proof-ic{flex:none}
+section.lv-hero p.lv-d2{font-size:clamp(10px,.95cqi,13px)!important;letter-spacing:.32em!important}
+section.lv-hero h1.lv-d1{font-size:clamp(64px,11cqi,168px)!important;line-height:.9!important}
+section.lv-hero > div[aria-hidden="true"]{background:linear-gradient(180deg,rgba(11,20,30,.35),rgba(11,20,30,.55) 55%,rgba(11,20,30,.7))!important}
+@media (max-width:700px){
+  html body .lv-root > section.lv-hero:has(.lv-tri) > div > p.lv-hero-main.lv-hero-main.lv-d3.lv-tb{font-size:25px!important;line-height:1.22!important}
+  section.lv-hero .lv-proof-sep{display:none}
+  section.lv-hero .lv-proof-uni{display:block;font-weight:500;opacity:.9}
+  section.lv-hero .lv-proof{align-items:flex-start;font-size:13.5px;padding:9px 14px;border-radius:16px;text-align:left}
+  section.lv-hero .lv-proof-ic{margin-top:3px}
+  section.lv-hero .lv-tri{display:block!important}
+  section.lv-hero .lv-tri figure:not(:first-child){display:none!important}
+  section.lv-hero .lv-tri figure:first-child{position:absolute!important;inset:0!important}
+  section.lv-hero .lv-tri figcaption{display:none!important}
+}
 /* keep a trailing arrow with its last word; balance multi-line text links */
 .lv-nw{white-space:nowrap}
 article a[style*="text-underline-offset"]{text-wrap:balance}
