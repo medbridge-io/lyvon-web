@@ -472,3 +472,14 @@
   window.addEventListener('resize', upd);
   upd();
 })();
+
+/* 2026-11-09: show the chosen program on the booking page (?program=medpath|medbridge|medconnect) */
+(function () {
+  try {
+    var el = document.querySelector('.lv-trust-prog');
+    if (!el) return;
+    var p = new URLSearchParams(location.search).get('program');
+    var names = { medpath: 'MedPath', medbridge: 'MedBridge', medconnect: 'MedConnect' };
+    if (p && names[p]) { el.textContent = el.getAttribute('data-prog-label') + ': ' + names[p]; el.hidden = false; }
+  } catch (e) {}
+})();
