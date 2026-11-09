@@ -448,7 +448,7 @@
   var ctaHref = base + 'book/', ctaText = T.cta;
   if (mc) {
     ctaHref = '#book';
-    ctaText = { en: 'Ask about MedConnect', ko: 'MedConnect 문의', ja: 'MedConnect に問い合わせ', 'zh-Hant': '洽詢 MedConnect' }[L];
+    ctaText = { en: 'MedConnect inquiry', ko: 'MedConnect 문의', ja: 'MedConnect 相談', 'zh-Hant': '洽詢 MedConnect' }[L];
   }
   var ic = function (d) { return '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + d + '</svg>'; };
   var home = ic('<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h5v-6h4v6h5V9.5"/>');
@@ -468,7 +468,7 @@
     if (location.pathname === base) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
   });
   // stay out of the way: hidden at the very top (hero already has the buttons), over the contact form, and while typing
-  var contact = document.getElementById('contact');
+  var contact = document.getElementById('contact') || (document.querySelector('form.lv-mcform') && document.getElementById('book'));
   var overForm = false, typing = false;
   if (contact && 'IntersectionObserver' in window) {
     new IntersectionObserver(function (es) { overForm = es[0].isIntersecting; upd(); }, { rootMargin: '0px 0px -30% 0px' }).observe(contact);
@@ -492,7 +492,7 @@
     if (!el) return;
     var p = new URLSearchParams(location.search).get('program');
     var names = { medpath: 'MedPath', medbridge: 'MedBridge', medconnect: 'MedConnect' };
-    if (p && names[p]) { el.textContent = el.getAttribute('data-prog-label') + ': ' + names[p]; el.hidden = false; }
+    if (p && names[p]) { el.textContent = el.getAttribute('data-prog-label') + (/^(ja|zh)/.test(document.documentElement.lang) ? '：' : ': ') + names[p]; el.hidden = false; }
   } catch (e) {}
 })();
 
