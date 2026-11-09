@@ -36,7 +36,11 @@ export async function onRequestPost({ request, env }) {
       const ip = request.headers.get('cf-connecting-ip'); if (ip) f.append('remoteip', ip);
       v = await (await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', { method: 'POST', body: f })).json();
     } catch (e) { console.error('lesson-request: turnstile', String(e)); }
-    if (!v || !v.success) return json({ ok: false, error: 'captcha', codes: v ? (v['error-codes'] || []).slice(0, 3) : ['unreachable'] }, 403);
+    const codes = v ? (v['error-codes'] || []) : ['unreachable'];
+    // a wrong or missing server key, or Cloudflare being unreachable, must never block real people
+    const ourFault = codes.some(c => c === 'invalid-input-secret' || c === 'missing-input-secret' || c === 'unreachable' || c === 'internal-error');
+    if (ourFault) console.error('lesson-request: turnstile misconfigured, letting through', codes.join(','));
+    else if (!v.success) return json({ ok: false, error: 'captcha', codes: codes.slice(0, 3) }, 403);
   }
   const src = body.data && typeof body.data === 'object' ? body.data : {};
   const d = {};
