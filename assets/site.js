@@ -233,7 +233,19 @@
     var brl = $('select[name="replyLang"]', book);
     if (brl && !brl.value) { var dv = { ko: 'KO', ja: 'JA' }[lang] || 'EN'; if ($('option[value="' + dv + '"]', brl)) brl.value = dv; }
     // mark radio groups required where the step asks for them
-    ['whyDoctor', 'englishLevel'].forEach(function (n) { var r = $('input[name="' + n + '"]', book); if (r) r.required = true; });
+    ['whyDoctor'].forEach(function (n) { var r = $('input[name="' + n + '"]', book); if (r) r.required = true; });
+    // conditional fields: student details for parents, guardian confirmation for middle-school students
+    var sit = $('select[name="situation"]', book);
+    function cond() {
+      var o = sit && sit.options[sit.selectedIndex];
+      var on = { parent: !!(o && o.hasAttribute('data-parent')), minor: !!(o && o.hasAttribute('data-minor')) };
+      $$('[data-when]', book).forEach(function (el) {
+        var v = on[el.getAttribute('data-when')];
+        el.hidden = !v;
+        $$('[data-req]', el).forEach(function (x) { x.required = v; if (!v) { if (x.type === 'checkbox') x.checked = false; else x.value = ''; } });
+      });
+    }
+    if (sit) { sit.addEventListener('change', cond); cond(); }
     show(1);
   }
 })();
@@ -435,7 +447,7 @@
   var mc = /^\/programs\/medconnect(\/|$)/.test(rest) || /^\/programs\/medconnect(\/|$)/.test(path);
   var ctaHref = base + 'book/', ctaText = T.cta;
   if (mc) {
-    ctaHref = 'mailto:hello@lyvon.io?subject=MedConnect%20inquiry';
+    ctaHref = '#book';
     ctaText = { en: 'Ask about MedConnect', ko: 'MedConnect 문의', ja: 'MedConnect に問い合わせ', 'zh-Hant': '洽詢 MedConnect' }[L];
   }
   var ic = function (d) { return '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + d + '</svg>'; };
@@ -482,4 +494,38 @@
     var names = { medpath: 'MedPath', medbridge: 'MedBridge', medconnect: 'MedConnect' };
     if (p && names[p]) { el.textContent = el.getAttribute('data-prog-label') + ': ' + names[p]; el.hidden = false; }
   } catch (e) {}
+})();
+
+/* 2026-11-09: MedConnect inquiry form (posts to the same endpoint as the lesson form) */
+(function () {
+  var f = document.querySelector('form.lv-mcform');
+  if (!f) return;
+  var lang = (document.documentElement.lang || 'en').slice(0, 2);
+  var T = {
+    en: ['Please fill in the required fields.', 'Sending…', 'Thank you. We will reply within 24 hours on weekdays.', 'Something went wrong. Please email hello@lyvon.io.'],
+    ko: ['필수 항목을 입력해 주세요.', '보내는 중…', '감사합니다. 평일 24시간 이내에 답변드리겠습니다.', '전송에 실패했습니다. hello@lyvon.io로 메일 주세요.'],
+    ja: ['必須項目をご入力ください。', '送信中…', 'ありがとうございます。平日24時間以内にご返信します。', '送信できませんでした。hello@lyvon.io までメールでご連絡ください。'],
+    zh: ['請填寫必填欄位。', '傳送中…', '謝謝。我們將於平日24小時內回覆。', '傳送失敗，請來信 hello@lyvon.io。']
+  }[lang] || null;
+  T = T || ['Please fill in the required fields.', 'Sending…', 'Thank you. We will reply within 24 hours on weekdays.', 'Something went wrong. Please email hello@lyvon.io.'];
+  var msg = f.querySelector('.lv-formmsg');
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var bad = null;
+    f.querySelectorAll('[required]').forEach(function (el) {
+      var b = el.type === 'checkbox' ? !el.checked : !(el.value || '').trim() || !el.checkValidity();
+      el.setAttribute('aria-invalid', b ? 'true' : 'false'); el.style.outline = b ? '2px solid #F7F7F4' : '';
+      if (b && !bad) bad = el;
+    });
+    if (bad) { msg.textContent = T[0]; try { bad.focus(); } catch (x) {} return; }
+    var v = function (n) { var el = f.querySelector('[name="' + n + '"]'); return el ? (el.value || '').trim() : ''; };
+    var d = { type: 'lesson', source: 'web · ' + location.pathname + ' · medconnect', siteLang: lang, name: v('name'), email: v('email'),
+      situation: 'University student', targetField: 'MedConnect', replyLang: v('replyLang'), consent: true,
+      message: 'MedConnect inquiry — School/year: ' + v('school') + (v('message') ? ' — ' + v('message') : '') };
+    var btn = f.querySelector('button[type="submit"]'); btn.disabled = true; msg.textContent = T[1];
+    fetch('/api/lesson-request', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type: 'lesson', company: v('company'), data: d }) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.ok === false) throw 0; }); })
+      .then(function () { msg.textContent = T[2]; f.reset(); btn.disabled = false; })
+      .catch(function () { msg.textContent = T[3]; btn.disabled = false; });
+  });
 })();

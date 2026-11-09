@@ -4,7 +4,7 @@
 const MAX = 20000;
 const FIELD_MAX = 1000;
 const ALLOWED = ['name', 'email', 'phone', 'situation', 'country', 'targetField', 'schools', 'whyDoctor', 'englishLevel',
-  'concerns', 'message', 'plannedApplication', 'preparation', 'budget', 'heardFrom', 'replyLang', 'guideLang', 'consent', 'source', 'siteLang'];
+  'concerns', 'message', 'studentInfo', 'guardianConfirm', 'preferredTimes', 'messengerId', 'plannedApplication', 'preparation', 'budget', 'heardFrom', 'replyLang', 'guideLang', 'consent', 'source', 'siteLang'];
 const SITE = /^https:\/\/([a-z0-9-]+\.)?(lyvon\.io|lyvon-web\.pages\.dev)(\/|$)/i;
 const json = (o, s = 200) => new Response(JSON.stringify(o), { status: s, headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' } });
 
@@ -28,8 +28,13 @@ export async function onRequestPost({ request, env }) {
   const src = body.data && typeof body.data === 'object' ? body.data : {};
   const d = {};
   for (const k of ALLOWED) if (k in src) d[k] = clean(src[k]);
-  // free-text message: stored with 'concerns' so it reaches the sheet and the team email without a new column
-  if (d.message) { d.concerns = (d.concerns ? d.concerns + '; ' : '') + 'Message: ' + d.message; delete d.message; }
+  // extra answers travel inside 'concerns' so they reach the sheet and the team email without new columns
+  const extra = [['studentInfo', 'Student'], ['guardianConfirm', 'Guardian confirmed (under 14)'], ['preferredTimes', 'Preferred times'], ['messengerId', 'Messenger ID'], ['message', 'Message']];
+  for (const [k, label] of extra) {
+    if (d[k] === undefined || d[k] === '' || d[k] === false) { delete d[k]; continue; }
+    const v = d[k] === true ? 'yes' : d[k];
+    d.concerns = (d.concerns ? d.concerns + '; ' : '') + label + ': ' + v; delete d[k];
+  }
   if (!d.name || !d.email || d.consent !== true) return json({ ok: false, error: 'missing' }, 400);
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(d.email))) return json({ ok: false, error: 'email' }, 400);
   d.type = body.type === 'guide' ? 'guide' : 'lesson';
