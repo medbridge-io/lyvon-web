@@ -1,6 +1,7 @@
 // Cloudflare Pages Function: POST /api/lesson-request
 // Forwards form submissions to the LYVON Google Apps Script web app.
 // Env (Pages → Settings → Variables, type "Secret"): APPS_SCRIPT_URL, APPS_SCRIPT_SECRET
+// Optional TURNSTILE_SECRET: when set, every submission must carry a valid Turnstile token (body.cf)
 const MAX = 20000;
 const FIELD_MAX = 1000;
 const ALLOWED = ['name', 'email', 'phone', 'situation', 'country', 'targetField', 'schools', 'whyDoctor', 'englishLevel',
@@ -25,6 +26,18 @@ export async function onRequestPost({ request, env }) {
   try { body = JSON.parse(raw); } catch { return json({ ok: false, error: 'bad_json' }, 400); }
   if (!body || typeof body !== 'object') return json({ ok: false, error: 'bad_json' }, 400);
   if (body.company) return json({ ok: true }); // honeypot
+  if (env.TURNSTILE_SECRET) {
+    const tok = typeof body.cf === 'string' ? body.cf.slice(0, 2048) : '';
+    if (!tok) return json({ ok: false, error: 'captcha' }, 403);
+    let v = null;
+    try {
+      const f = new FormData();
+      f.append('secret', env.TURNSTILE_SECRET); f.append('response', tok);
+      const ip = request.headers.get('cf-connecting-ip'); if (ip) f.append('remoteip', ip);
+      v = await (await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', { method: 'POST', body: f })).json();
+    } catch (e) { console.error('lesson-request: turnstile', String(e)); }
+    if (!v || !v.success) return json({ ok: false, error: 'captcha' }, 403);
+  }
   const src = body.data && typeof body.data === 'object' ? body.data : {};
   const d = {};
   for (const k of ALLOWED) if (k in src) d[k] = clean(src[k]);

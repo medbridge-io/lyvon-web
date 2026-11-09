@@ -1,3 +1,38 @@
+// Turnstile (spam protection): loaded on first form interaction, runs only on submit, shows a box only when Cloudflare asks for one
+window.lvTS = (function () {
+  var KEY = '0x4AAAAAAF5W9l0Y0yVKyiEe', ld = null;
+  function load() {
+    if (ld) return ld;
+    ld = new Promise(function (ok) {
+      if (window.turnstile) return ok(window.turnstile);
+      var sc = document.createElement('script');
+      sc.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'; sc.async = true; sc.defer = true;
+      sc.onload = function () { ok(window.turnstile || null); }; sc.onerror = function () { ok(null); };
+      document.head.appendChild(sc);
+    });
+    return ld;
+  }
+  document.addEventListener('focusin', function (e) { if (e.target && e.target.closest && e.target.closest('form')) load(); }, { once: true });
+  // returns a promise of a fresh token ('' if Turnstile could not run; the server then decides)
+  return function (form) {
+    return load().then(function (ts) {
+      if (!ts) return '';
+      return new Promise(function (ok) {
+        var box = form.querySelector('.lv-ts');
+        if (!box) { box = document.createElement('div'); box.className = 'lv-ts'; box.style.cssText = 'margin:8px 0 0'; form.appendChild(box); }
+        var done = false, fin = function (v) { if (!done) { done = true; ok(v || ''); } };
+        var lng = (document.documentElement.lang || 'en').toLowerCase();
+        try {
+          if (box.getAttribute('data-wid')) { ts.remove(box.getAttribute('data-wid')); }
+          var id = ts.render(box, { sitekey: KEY, execution: 'execute', appearance: 'interaction-only', language: lng.indexOf('zh') === 0 ? 'zh-tw' : lng.slice(0, 2),
+            callback: fin, 'error-callback': function () { fin(''); }, 'timeout-callback': function () { fin(''); } });
+          box.setAttribute('data-wid', id); ts.execute(box);
+        } catch (x) { fin(''); }
+        setTimeout(function () { fin(''); }, 60000);
+      });
+    });
+  };
+})();
 (function () {
   'use strict';
   var lang = (document.documentElement.lang || 'en').slice(0, 2);
@@ -167,10 +202,10 @@
     Object.keys(groups).forEach(function (n) { if (!$('input[name="' + n + '"]:checked', root)) ok = false; });
     return ok;
   }
-  function post(payload) {
-    return fetch('/api/lesson-request', {
+  function post(payload, form) {
+    return window.lvTS(form || document.body).then(function (tok) { payload.cf = tok; return fetch('/api/lesson-request', {
       method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
-    }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.ok === false) throw new Error(j.error || r.status); return j; }); });
+    }); }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.ok === false) throw new Error(j.error || r.status); return j; }); });
   }
 
   // ---------- guide form ----------
@@ -185,7 +220,7 @@
       var d = collect(gform, { type: 'guide', source: location.pathname, siteLang: lang });
       d.guideLang = d.replyLang;
       var btn = $('button[type="submit"]', gform); btn.disabled = true; gmsg.textContent = t.send;
-      post({ type: 'guide', company: d.company || '', data: d }).then(function () {
+      post({ type: 'guide', company: d.company || '', data: d }, gform).then(function () {
         gmsg.textContent = t.guideOk; gform.reset(); if (gl) gl.value = { en: 'EN', ko: 'KO', ja: 'JA', zh: 'ZH' }[lang] || 'EN'; btn.disabled = false;
       }).catch(function () { gmsg.textContent = t.err; btn.disabled = false; });
     });
@@ -216,7 +251,7 @@
           steps.forEach(function (f) { if (f.tagName === 'FORM') collect(f, d); });
           var btn = $('button[type="submit"]', s); btn.disabled = true;
           var m2 = $('.lv-formmsg', s) || msg; if (m2) m2.textContent = t.send;
-          post({ type: 'lesson', company: d.company || '', data: d }).then(function () {
+          post({ type: 'lesson', company: d.company || '', data: d }, s).then(function () {
             steps.forEach(function (f) { if (f.tagName === 'FORM') f.reset(); });
             $$('[data-school-other]', book).forEach(function (c) { c.value = 'Other overseas medical school'; });
             $$('[data-school-other-text]', book).forEach(function (x) { x.hidden = true; x.value = ''; });
@@ -523,7 +558,7 @@
       situation: 'University student', targetField: 'MedConnect', replyLang: v('replyLang'), consent: true,
       message: 'MedConnect inquiry — School/year: ' + v('school') + (v('message') ? ' — ' + v('message') : '') };
     var btn = f.querySelector('button[type="submit"]'); btn.disabled = true; msg.textContent = T[1];
-    fetch('/api/lesson-request', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type: 'lesson', company: v('company'), data: d }) })
+    window.lvTS(f).then(function (tok) { return fetch('/api/lesson-request', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type: 'lesson', company: v('company'), cf: tok, data: d }) }); })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.ok === false) throw 0; }); })
       .then(function () { msg.textContent = T[2]; f.reset(); btn.disabled = false; })
       .catch(function () { msg.textContent = T[3]; btn.disabled = false; });
