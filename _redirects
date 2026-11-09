@@ -11,7 +11,9 @@
 /medconnect            /programs/medconnect/           301
 /medconnect/*          /programs/medconnect/           301
 /medpath               /programs/medpath/              301
+/medpath/*             /programs/medpath/              301
 /medbridge             /programs/medbridge/            301
+/medbridge/*           /programs/medbridge/            301
 /index.html            /                               301
 /start                 /                               301
 /start/*               /                               301

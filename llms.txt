@@ -1,0 +1,25 @@
+# LYVON
+
+> LYVON (lyvon.io) provides 1:1 online English speaking training for overseas medical school oral exams and interviews, starting with Hungarian medical schools. Lessons are live, 50 minutes, 2–4 times a week, taught by professional English instructors from StepForward (Philippines). Results: 22 of 24 students who sat the entrance exams in 2025–2026 were admitted (Semmelweis 12, Szeged 6, Pécs 3, veterinary university in Budapest 1). LYVON is an English education provider, not an admissions agent, and does not guarantee admission. Prices are given individually after the free diagnostic. Offices: Seoul, Tokyo, Manila. Site languages: English, Korean, Japanese, Traditional Chinese. Contact: hello@lyvon.io.
+
+## Programs
+- [MedPath](https://lyvon.io/programs/medpath/): Flagship: 1:1 online preparation for the English oral entrance exams and interviews of Hungarian medical schools (Semmelweis, Szeged, Pécs, Debrecen). Biology and chemistry, three tiers (Starter, Core, Pro), 50 lessons each, a Lesson Learned Report after every lesson.
+- [MedBridge](https://lyvon.io/programs/medbridge/): Foundation: 3 months, 30 topics of medical English speaking — vocabulary, pronunciation and sentence structure — before oral exam preparation.
+- [MedConnect](https://lyvon.io/programs/medconnect/): Post-admission membership for medical, dental, pharmacy and veterinary students (pilot since July 2026): discussion, journal club, case presentations.
+- [Book a free lesson](https://lyvon.io/book/): Free 50-minute 1:1 online trial lesson with a written diagnostic and suggested plan.
+
+## Insights (English; Korean, Japanese and Traditional Chinese versions under /ko/, /ja/, /zh-Hant/)
+- [Hungarian medical entrance exams: how each school tests you](https://lyvon.io/insights/hungarian-medical-entrance-exams/): All four schools combine a written test with an interview in English. What ends up on the record is whether you can speak science in English.
+- [Output, not input: why medical English is a speaking skill](https://lyvon.io/insights/output-not-input/): Most students study science for years. The oral exam asks something different: can you explain it, in English, out loud, under follow-up questions?
+- [Studying medicine in English: exams you prove out loud](https://lyvon.io/insights/oral-exam-culture/): From the entrance interview to the final exam, Hungarian medical schools test you out loud, in English, for six years.
+- [Where is a Hungarian medical degree recognised?](https://lyvon.io/insights/degree-recognition/): Automatic recognition inside the EU for EU citizens, and an open route to the US exams. Korea and Japan each have their own procedure.
+- [From a foreign medical school to practising in Japan](https://lyvon.io/insights/japan-medical-licence/): Japan reviews the person, not the school. A document review and a Japanese clinical-language assessment clear you for the national or preliminary exam.
+- [Coming back to Korea: the preliminary and national exams](https://lyvon.io/insights/returning-to-korea/): Foreign medical graduates face a school review, the preliminary exam and the national exam. The written preliminary pass rate was 21–57% in the last four years.
+
+## Other languages
+- [한국어](https://lyvon.io/ko/)
+- [日本語](https://lyvon.io/ja/)
+- [繁體中文](https://lyvon.io/zh-Hant/)
+
+## Policies
+- [Privacy Policy and Terms](https://lyvon.io/legal/)

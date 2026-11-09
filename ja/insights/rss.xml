@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
+<title>LYVON インサイト</title><link>https://lyvon.io/ja/insights/</link><description>ハンガリー医学部の入試比較、英語口頭試験、学位の認定、日本・韓国の医師免許まで。出典を確認したLYVONのインサイト。</description><language>ja</language>
+<atom:link href="https://lyvon.io/ja/insights/rss.xml" rel="self" type="application/rss+xml"/>
+<lastBuildDate>Mon, 09 Nov 2026 00:00:00 +0000</lastBuildDate>
+<item><title>ハンガリー医学部の英語入試：大学ごとの違い</title><link>https://lyvon.io/ja/insights/hungarian-medical-entrance-exams/</link><guid isPermaLink="true">https://lyvon.io/ja/insights/hungarian-medical-entrance-exams/</guid><description>4校とも筆記試験と英語面接を課します。最終的に問われるのは「科学を英語で話せるか」です。</description><pubDate>Thu, 05 Nov 2026 00:00:00 +0000</pubDate></item>
+<item><title>インプットではなくアウトプット：医学英語がスピーキングのスキルである理由</title><link>https://lyvon.io/ja/insights/output-not-input/</link><guid isPermaLink="true">https://lyvon.io/ja/insights/output-not-input/</guid><description>多くの学生は何年もかけて科学を学びます。しかし口頭試験が問うのは別のことです。それを英語で、声に出して、追加の質問を受けながら説明できるか？</description><pubDate>Thu, 05 Nov 2026 01:00:00 +0000</pubDate></item>
+<item><title>英語で医学を学ぶということ：声で証明する試験文化</title><link>https://lyvon.io/ja/insights/oral-exam-culture/</link><guid isPermaLink="true">https://lyvon.io/ja/insights/oral-exam-culture/</guid><description>ハンガリーの医学部では、入試の面接から卒業最終試験まで、6年間ずっと英語で「口頭で受ける試験」が続きます。</description><pubDate>Thu, 05 Nov 2026 02:00:00 +0000</pubDate></item>
+<item><title>ハンガリーの医学部学位はどこで認められるのか</title><link>https://lyvon.io/ja/insights/degree-recognition/</link><guid isPermaLink="true">https://lyvon.io/ja/insights/degree-recognition/</guid><description>EU域内ではEU市民に自動承認、米国の試験ルートも開かれています。ただし日本・韓国はそれぞれ独自の手続きが必要です。</description><pubDate>Thu, 05 Nov 2026 03:00:00 +0000</pubDate></item>
+<item><title>海外医学部卒業生が日本で医師になる道</title><link>https://lyvon.io/ja/insights/japan-medical-licence/</link><guid isPermaLink="true">https://lyvon.io/ja/insights/japan-medical-licence/</guid><description>日本は大学ではなく「人」を審査します。書類審査と日本語診療能力調査を経て、国家試験または予備試験の受験資格が認められます。</description><pubDate>Thu, 05 Nov 2026 04:00:00 +0000</pubDate></item>
+<item><title>韓国に戻るなら：予備試験と国家試験</title><link>https://lyvon.io/ja/insights/returning-to-korea/</link><guid isPermaLink="true">https://lyvon.io/ja/insights/returning-to-korea/</guid><description>海外医学部の卒業生は、大学の認定審査、医師予備試験、医師国家試験を順に経ます。予備試験の筆記合格率は直近4年間で21〜57%でした。</description><pubDate>Thu, 05 Nov 2026 05:00:00 +0000</pubDate></item>
+</channel></rss>
