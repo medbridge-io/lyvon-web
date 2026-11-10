@@ -1,3 +1,23 @@
+// Where this visit came from: referring site (host only), campaign tags and first page. Kept in sessionStorage for this tab only.
+window.lvVia = (function () {
+  var k = 'lv_via', v = '';
+  try { v = sessionStorage.getItem(k) || ''; } catch (x) {}
+  if (!v) {
+    var p = [], h = '';
+    try { h = document.referrer ? new URL(document.referrer).hostname.replace(/^www\./, '') : ''; } catch (x) {}
+    if (/(^|\.)lyvon\.io$|(^|\.)lyvon-web\.pages\.dev$/.test(h)) h = '';
+    p.push('via ' + (h || 'direct').slice(0, 60));
+    try {
+      var q = new URLSearchParams(location.search), u = [];
+      ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (n) { var x = (q.get(n) || '').replace(/[^\w .\-가-힣ぁ-んァ-ヶ一-龥]/g, '').slice(0, 40); if (x) u.push(x); });
+      if (u.length) p.push('utm ' + u.join('/'));
+    } catch (x) {}
+    p.push('first ' + location.pathname.slice(0, 80));
+    v = p.join(' · ');
+    try { sessionStorage.setItem(k, v); } catch (x) {}
+  }
+  return v;
+})();
 // Turnstile (spam protection): loaded on first form interaction, runs only on submit, shows a box only when Cloudflare asks for one
 window.lvTS = (function () {
   var KEY = '0x4AAAAAAF5W9l0Y0yVKyiEe', ld = null;
@@ -241,7 +261,6 @@ window.lvTS = (function () {
       if (el.type === 'radio') { if (seen[el.name]) return; seen[el.name] = 1; }
       list.push(el);
     });
-    var sc = $('input[name="schools"]', root); if (sc) list.push(sc);
     var ot = $('[data-school-other-text]', root); if (ot) list.push(ot);
     return list;
   }
@@ -303,7 +322,7 @@ window.lvTS = (function () {
     gform.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!valid(gform)) { say(gmsg, E.sum, 'err', true); return; }
-      var d = collect(gform, { type: 'guide', source: location.pathname, siteLang: lang });
+      var d = collect(gform, { type: 'guide', source: location.pathname + ' · ' + window.lvVia, siteLang: lang });
       d.guideLang = d.replyLang;
       var btn = $('button[type="submit"]', gform); btn.disabled = true; say(gmsg, t.send);
       post({ type: 'guide', company: d.company || '', data: d }, gform).then(function () {
@@ -339,8 +358,9 @@ window.lvTS = (function () {
           e.preventDefault();
           if (!valid(s)) { say($('.lv-formmsg', s) || msg, E.sum, 'err', true); return; }
           if (n < 3) { show(n + 1, true); return; }
-          var d = { type: 'lesson', source: 'web · ' + location.pathname + (program ? ' · ' + program : ''), siteLang: lang };
+          var d = { type: 'lesson', source: 'web · ' + location.pathname + (program ? ' · ' + program : '') + ' · ' + window.lvVia, siteLang: lang };
           steps.forEach(function (f) { if (f.tagName === 'FORM') collect(f, d); });
+          ['preparation', 'schools'].forEach(function (k) { if (!d[k]) d[k] = 'Not answered'; });
           var btn = $('button[type="submit"]', s); btn.disabled = true;
           var m2 = $('.lv-formmsg', s) || msg; say(m2, t.send);
           post({ type: 'lesson', company: d.company || '', data: d }, s).then(function () {
@@ -351,7 +371,7 @@ window.lvTS = (function () {
             if (brl) { var dv2 = { ko: 'KO', ja: 'JA' }[lang] || 'EN'; brl.value = dv2; }
             steps.forEach(function (f) { clearErrs(f); });
             $$('details.lv-more', book).forEach(function (x) { x.open = false; });
-            cond();
+            cond(); presetCountry();
             btn.disabled = false; show(4, true);
           }).catch(function () { say(m2, t.err, 'err'); btn.disabled = false; });
         });
@@ -363,6 +383,10 @@ window.lvTS = (function () {
     // reply language defaults to the site language
     var brl = $('select[name="replyLang"]', book);
     if (brl && !brl.value) { var dv = { ko: 'KO', ja: 'JA' }[lang] || 'EN'; if ($('option[value="' + dv + '"]', brl)) brl.value = dv; }
+    // country starts on the site's own market (ko: Korea, ja: Japan, zh: Taiwan); English visitors choose
+    var ctry = $('select[name="country"]', book);
+    function presetCountry() { var ix = { ko: 1, ja: 2, zh: 3 }[lang]; if (ctry && ix && !ctry.value && ctry.options[ix]) ctry.selectedIndex = ix; }
+    presetCountry();
     // mark radio groups required where the step asks for them
     ['whyDoctor'].forEach(function (n) { var r = $('input[name="' + n + '"]', book); if (r) r.required = true; });
     // conditional fields: student details for parents, guardian confirmation for middle-school students
@@ -439,6 +463,7 @@ window.lvTS = (function () {
     if (!m) return;
     if (parseFloat(getComputedStyle(el).fontSize) < 36) return;
     if (/^20\d\d$/.test(m[1])) return; // skip years
+    if (m[2] === '%') return; // a rate is never shown part-way
     nums.push({ el: el, end: parseFloat(m[1]), dec: (m[1].split('.')[1] || '').length, suf: m[2], txt: el.textContent });
   });
   var co = new IntersectionObserver(function (entries) {
@@ -595,7 +620,7 @@ window.lvTS = (function () {
   var stick = document.createElement('div');
   stick.className = 'lv-stick';
   var onPage = !mc && !cr && document.getElementById('book') && document.getElementById('contact');
-  stick.innerHTML = '<div><a class="lv-stick-brand" href="' + base + '">LYVON</a><a class="lv-stick-cta" href="' + (onPage ? '#book' : ctaHref) + '">' + ctaText + ' <span aria-hidden="true">→</span></a></div>';
+  stick.innerHTML = '<div><a class="lv-stick-brand" href="' + base + '">LYVON</a><span class="lv-stick-acts"><a class="lv-stick-chat" href="' + T.href + '"' + ext + '>' + T.chat + '</a><a class="lv-stick-cta" href="' + (onPage ? '#book' : ctaHref) + '">' + ctaText + ' <span aria-hidden="true">→</span></a></span></div>';
   document.body.appendChild(stick);
   // home on the home page itself: back to the top
   dock.firstChild.addEventListener('click', function (e) {
@@ -654,7 +679,7 @@ window.lvTS = (function () {
     if (F && !F.valid(f)) { sayM(F.sum, 'err', true); return; }
     var v = function (n) { var el = f.querySelector('[name="' + n + '"]'); return el ? (el.value || '').trim() : ''; };
     var career = f.getAttribute('data-inquiry') === 'career';
-    var d = { type: 'lesson', source: 'web · ' + location.pathname + (career ? ' · career' : ' · medconnect'), siteLang: lang, name: v('name'), email: v('email'),
+    var d = { type: 'lesson', source: 'web · ' + location.pathname + (career ? ' · career' : ' · medconnect') + ' · ' + window.lvVia, siteLang: lang, name: v('name'), email: v('email'),
       situation: career ? 'Career inquiry' : 'University student', targetField: career ? 'LYVON Career' : 'MedConnect', replyLang: v('replyLang'), consent: true,
       message: (career ? 'LYVON Career inquiry — Goal: ' : 'MedConnect inquiry — School/year: ') + v('school') + (v('message') ? ' — ' + v('message') : '') };
     var btn = f.querySelector('button[type="submit"]'); btn.disabled = true; sayM(T[1]);
@@ -663,4 +688,20 @@ window.lvTS = (function () {
       .then(function () { sayM(T[2], 'ok'); f.reset(); btn.disabled = false; })
       .catch(function () { sayM(T[3], 'err'); btn.disabled = false; });
   });
+})();
+
+// ---------- phones: long sample report opens on request ----------
+(function () {
+  'use strict';
+  if (!window.matchMedia || !window.matchMedia('(max-width: 700px)').matches) return;
+  var card = document.querySelector('#method .lv-card[role="img"]');
+  if (!card || card.scrollHeight < 620) return;
+  var L = (document.documentElement.lang || 'en').toLowerCase();
+  var txt = L.indexOf('ko') === 0 ? '리포트 예시 전체 보기' : L.indexOf('ja') === 0 ? 'サンプルレポートをすべて見る' : L.indexOf('zh') === 0 ? '查看完整範例報告' : 'Show the full sample report';
+  var wrap = document.createElement('div'); wrap.className = 'lv-fold';
+  card.parentNode.insertBefore(wrap, card); wrap.appendChild(card);
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'lv-fold-btn'; b.setAttribute('aria-expanded', 'false');
+  b.innerHTML = txt + ' <span aria-hidden="true">↓</span>';
+  wrap.parentNode.insertBefore(b, wrap.nextSibling);
+  b.addEventListener('click', function () { wrap.classList.add('lv-fold-open'); b.parentNode.removeChild(b); });
 })();
