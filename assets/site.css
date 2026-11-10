@@ -192,3 +192,20 @@ article a[style*="text-underline-offset"]{text-wrap:balance}
 .lv-skip{position:absolute;left:12px;top:-60px;z-index:1000;padding:10px 16px;border-radius:8px;background:#F7F7F4;color:#17191C;font-size:14px;text-decoration:none;transition:top .15s}
 .lv-skip:focus{top:12px}
 .lv-navlinks{align-items:center}
+
+/* 2026-11-10: form errors — inline text per field, visible on dark and light, status next to the buttons */
+.lv-err { display: block; grid-column: 1 / -1; margin-top: 2px; font-size: 13px; line-height: 1.45; letter-spacing: 0; font-weight: 500; color: #B3261E; text-transform: none; }
+.lv-bad { outline: 2px solid #B3261E !important; outline-offset: 2px; }
+fieldset.lv-bad, div.lv-bad { outline-offset: 8px; border-radius: 6px; }
+#book .lv-err, .lv-mcform .lv-err, .lv-ondark .lv-err { color: #FFA194; }
+#book .lv-bad, .lv-mcform .lv-bad, .lv-ondark .lv-bad { outline-color: #FFA194 !important; }
+.lv-formmsg:empty, .lv-guidemsg:empty { display: none; }
+.lv-formmsg.is-err { color: #FFA194 !important; font-weight: 500; }
+.lv-formmsg.is-err::before, .lv-guidemsg.is-err::before { content: "! "; font-weight: 700; }
+.lv-guidemsg.is-err { color: #B3261E !important; font-weight: 500; }
+.lv-guidemsg.is-ok { font-weight: 500; }
+.lv-field-dark::placeholder { color: #AEB8C4; opacity: 1; }
+.mc-dark .lv-field-dark::placeholder { color: #EBC9D6; }
+[data-step]:focus { outline: none; }
+/* phones: 16px fields so iOS does not zoom the page on focus */
+@media (max-width: 700px) { .lv-field { font-size: 16px !important; } }
