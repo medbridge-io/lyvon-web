@@ -19,13 +19,29 @@ window.lvTS = (function () {
       if (!ts) return '';
       return new Promise(function (ok) {
         var box = form.querySelector('.lv-ts');
-        if (!box) { box = document.createElement('div'); box.className = 'lv-ts'; box.style.cssText = 'margin:8px 0 0'; form.appendChild(box); }
-        var done = false, fin = function (v) { if (!done) { done = true; ok(v || ''); } };
+        if (!box) {
+          box = document.createElement('div'); box.className = 'lv-ts';
+          // just above the submit button, so a check that needs a click is seen where the user is
+          var sb = form.querySelector('button[type="submit"]'), anchor = sb ? (sb.parentNode === form ? sb : sb.parentNode) : null;
+          if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(box, anchor); else form.appendChild(box);
+        }
         var lng = (document.documentElement.lang || 'en').toLowerCase();
+        var hint = box.previousElementSibling && box.previousElementSibling.className === 'lv-ts-hint' ? box.previousElementSibling : null;
+        var ask = function (on) {
+          if (on && !hint) {
+            hint = document.createElement('p'); hint.className = 'lv-ts-hint'; hint.setAttribute('role', 'status');
+            hint.textContent = { ko: '사람인지 확인하는 체크박스를 눌러 주세요.', ja: 'チェックボックスで確認をお願いします。', zh: '請勾選方塊以完成驗證。' }[lng.slice(0, 2)] || 'Please tick the box to confirm you are human.';
+            box.parentNode.insertBefore(hint, box);
+          }
+          if (hint) hint.hidden = !on;
+          if (on) { try { box.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (x) {} }
+        };
+        var done = false, fin = function (v) { if (!done) { done = true; ask(false); ok(v || ''); } };
         try {
           if (box.getAttribute('data-wid')) { ts.remove(box.getAttribute('data-wid')); }
           var id = ts.render(box, { sitekey: KEY, execution: 'execute', appearance: 'interaction-only', language: lng.indexOf('zh') === 0 ? 'zh-tw' : lng.slice(0, 2),
-            callback: fin, 'error-callback': function () { fin(''); }, 'timeout-callback': function () { fin(''); } });
+            callback: fin, 'error-callback': function () { fin(''); }, 'timeout-callback': function () { fin(''); },
+            'before-interactive-callback': function () { ask(true); }, 'after-interactive-callback': function () { ask(false); } });
           box.setAttribute('data-wid', id); ts.execute(box);
         } catch (x) { fin(''); }
         setTimeout(function () { fin(''); }, 60000);

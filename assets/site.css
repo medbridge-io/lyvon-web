@@ -276,3 +276,6 @@ html[lang=en] body .lv-root > section.lv-hero h1.lv-hero-main.lv-fade { font-siz
 @media (max-width: 700px) {
   section.mc-dark[aria-label="MedConnect"] > div[aria-hidden="true"] { background: linear-gradient(0deg, rgba(42, 18, 32, .92) 0%, rgba(42, 18, 32, .82) 58%, rgba(42, 18, 32, .4) 100%) !important; }
 }
+.lv-ts:empty { display: none; }
+.lv-ts-hint { margin: 0; font-size: 14px; line-height: 1.5; font-weight: 500; }
+.lv-ts-hint[hidden] { display: none; }
