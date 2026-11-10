@@ -325,7 +325,7 @@ window.lvTS = (function () {
       var d = collect(gform, { type: 'guide', source: location.pathname + ' · ' + window.lvVia, siteLang: lang });
       d.guideLang = d.replyLang;
       var btn = $('button[type="submit"]', gform); btn.disabled = true; say(gmsg, t.send);
-      post({ type: 'guide', company: d.company || '', data: d }, gform).then(function () {
+      post({ type: 'guide', company: d.lv_hp_x7 || '', data: d }, gform).then(function () {
         var sentTo = d.email;
         say(gmsg, ''); gform.reset(); if (gl) gl.value = { en: 'EN', ko: 'KO', ja: 'JA', zh: 'ZH' }[lang] || 'EN'; btn.disabled = false;
         guideDone(sentTo);
@@ -418,7 +418,7 @@ window.lvTS = (function () {
           ['preparation', 'schools'].forEach(function (k) { if (!d[k]) d[k] = 'Not answered'; });
           var btn = $('button[type="submit"]', s); btn.disabled = true;
           var m2 = $('.lv-formmsg', s) || msg; say(m2, t.send);
-          post({ type: 'lesson', company: d.company || '', data: d }, s).then(function () {
+          post({ type: 'lesson', company: d.lv_hp_x7 || '', data: d }, s).then(function () {
             var st = $('.lv-sent-to', book); if (st && d.email) { st.textContent = st.getAttribute('data-tpl').replace('{email}', d.email); st.hidden = false; }
             steps.forEach(function (f) { if (f.tagName === 'FORM') f.reset(); });
             $$('[data-school-other]', book).forEach(function (c) { c.value = 'Other overseas medical school'; });
@@ -738,7 +738,7 @@ window.lvTS = (function () {
       situation: career ? 'Career inquiry' : 'University student', targetField: career ? 'LYVON Career' : 'MedConnect', replyLang: v('replyLang'), consent: true,
       message: (career ? 'LYVON Career inquiry — Goal: ' : 'MedConnect inquiry — School/year: ') + v('school') + (v('message') ? ' — ' + v('message') : '') };
     var btn = f.querySelector('button[type="submit"]'); btn.disabled = true; sayM(T[1]);
-    window.lvTS(f).then(function (tok) { return fetch('/api/lesson-request', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type: 'lesson', company: v('company'), cf: tok, data: d }) }); })
+    window.lvTS(f).then(function (tok) { return fetch('/api/lesson-request', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type: 'lesson', company: v('lv_hp_x7'), cf: tok, data: d }) }); })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.ok === false) throw 0; }); })
       .then(function () { sayM(T[2], 'ok'); f.reset(); btn.disabled = false; })
       .catch(function () { sayM(T[3], 'err'); btn.disabled = false; });
