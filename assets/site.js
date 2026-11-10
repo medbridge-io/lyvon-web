@@ -721,7 +721,7 @@ window.lvTS = (function () {
   var lang = (document.documentElement.lang || 'en').slice(0, 2);
   var T = {
     en: ['Please fill in the required fields.', 'Sending…', 'Thank you. We will reply within 24 hours on weekdays.', 'Something went wrong. Please email hello@lyvon.io.'],
-    ko: ['필수 항목을 입력해 주세요.', '보내는 중…', '감사합니다. 평일 24시간 이내에 답변드리겠습니다.', '전송에 실패했습니다. hello@lyvon.io로 메일 주세요.'],
+    ko: ['필수 항목을 입력해 주세요.', '전송 중…', '감사합니다. 평일 24시간 이내에 답변드리겠습니다.', '전송에 실패했습니다. hello@lyvon.io로 메일 주세요.'],
     ja: ['必須項目をご入力ください。', '送信中…', 'ありがとうございます。平日24時間以内にご返信します。', '送信できませんでした。hello@lyvon.io までメールでご連絡ください。'],
     zh: ['請填寫必填欄位。', '傳送中…', '謝謝。我們將於平日24小時內回覆。', '傳送失敗，請來信 hello@lyvon.io。']
   }[lang] || null;
