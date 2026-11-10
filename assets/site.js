@@ -326,9 +326,64 @@ window.lvTS = (function () {
       d.guideLang = d.replyLang;
       var btn = $('button[type="submit"]', gform); btn.disabled = true; say(gmsg, t.send);
       post({ type: 'guide', company: d.company || '', data: d }, gform).then(function () {
-        say(gmsg, t.guideOk, 'ok'); gform.reset(); if (gl) gl.value = { en: 'EN', ko: 'KO', ja: 'JA', zh: 'ZH' }[lang] || 'EN'; btn.disabled = false; try { btn.focus(); } catch (x) {}
+        var sentTo = d.email;
+        say(gmsg, ''); gform.reset(); if (gl) gl.value = { en: 'EN', ko: 'KO', ja: 'JA', zh: 'ZH' }[lang] || 'EN'; btn.disabled = false;
+        guideDone(sentTo);
       }).catch(function () { say(gmsg, t.err, 'err'); btn.disabled = false; try { btn.focus(); } catch (x) {} });
     });
+  }
+
+  // ---------- guide sent: what arrives, and the next step ----------
+  function guideDone(email) {
+    var G = {
+      en: { h: 'Your guides are on the way', to: 'We sent an email to ', toEnd: ' with links to two guides.',
+            g1: 'LYVON Welcome Guide', g1d: 'our programs and how a lesson works',
+            g2: 'Semmelweis oral exam guide', g2d: 'the 50 official topics, key terms and practice questions',
+            spam: 'Not there in a few minutes? Check your spam folder.',
+            nx: 'Next step', nxp: 'Want to know where you stand? A free 50-minute 1:1 lesson online shows you, with a written diagnostic afterwards.',
+            b1: 'Book a free lesson', b2: 'Email us', b2h: 'mailto:hello@lyvon.io', again: 'Send to another email' },
+      ko: { h: '가이드를 보내 드렸습니다', to: '', toEnd: ' 주소로 가이드 두 가지의 링크를 보냈습니다.',
+            g1: 'LYVON 웰컴 가이드', g1d: '프로그램과 수업 방식 소개',
+            g2: '셈멜바이스 구술시험 가이드', g2d: '공식 토픽 50개, 핵심 용어, 연습 질문',
+            spam: '몇 분이 지나도 메일이 없다면 스팸함을 확인해 주세요.',
+            nx: '다음 단계', nxp: '지금 수준이 궁금하다면 50분 1:1 온라인 무료 수업에서 직접 확인해 보세요. 수업 후 진단 리포트를 보내 드립니다.',
+            b1: '무료 수업 신청', b2: '카카오톡으로 문의', b2h: 'https://open.kakao.com/o/sh3TzOsi', again: '다른 이메일로 받기' },
+      ja: { h: 'ガイドをお送りしました', to: '', toEnd: ' 宛てに、2つのガイドのリンクをお送りしました。',
+            g1: 'LYVON ウェルカムガイド', g1d: 'プログラムとレッスンの進め方',
+            g2: 'Semmelweis University 口頭試験ガイド', g2d: '公式トピック50、重要用語、練習問題',
+            spam: '数分たっても届かない場合は、迷惑メールフォルダをご確認ください。',
+            nx: '次のステップ', nxp: '今のレベルを知りたい方は、1対1のオンライン無料レッスン（50分）で確認できます。レッスン後に診断レポートをお送りします。',
+            b1: '無料レッスンを予約', b2: 'LINEで相談する', b2h: 'https://line.me/ti/p/uwrW7dtHqN', again: '別のメールアドレスで受け取る' },
+      zh: { h: '指南已寄出', to: '我們已寄送兩份指南的連結至 ', toEnd: '。',
+            g1: 'LYVON 入門指南', g1d: '課程與上課方式介紹',
+            g2: 'Semmelweis University 口試指南', g2d: '官方50個主題、關鍵術語與練習題',
+            spam: '幾分鐘後仍未收到，請檢查垃圾郵件匣。',
+            nx: '下一步', nxp: '想知道目前的程度嗎？50分鐘一對一線上免費課程可直接確認，課後會寄送診斷報告。',
+            b1: '預約免費課程', b2: '來信洽詢', b2h: 'mailto:hello@lyvon.io', again: '寄到其他電子郵件' }
+    }[lang] || null;
+    var base = { en: '/', ko: '/ko/', ja: '/ja/', zh: '/zh-Hant/' }[lang] || '/';
+    var box = gform.parentNode, title = $('p.lv-tb', box);
+    var old = $('.lv-gdone', box); if (old) old.parentNode.removeChild(old);
+    var el = function (tag, cls, txt) { var x = document.createElement(tag); if (cls) x.className = cls; if (txt != null) x.textContent = txt; return x; };
+    var w = el('div', 'lv-gdone'); w.setAttribute('role', 'status'); w.tabIndex = -1;
+    var h = el('p', 'lv-gdone-h'); h.appendChild(el('span', 'lv-gdone-ic', '✓')); h.appendChild(document.createTextNode(' ' + G.h)); w.appendChild(h);
+    var to = el('p', 'lv-gdone-to'); to.appendChild(document.createTextNode(G.to)); to.appendChild(el('strong', '', email)); to.appendChild(document.createTextNode(G.toEnd)); w.appendChild(to);
+    var ol = el('ol', 'lv-gdone-list');
+    [[G.g1, G.g1d], [G.g2, G.g2d]].forEach(function (g) { var li = el('li'); li.appendChild(el('strong', '', g[0])); li.appendChild(el('span', '', g[1])); ol.appendChild(li); });
+    w.appendChild(ol);
+    w.appendChild(el('p', 'lv-gdone-spam', G.spam));
+    w.appendChild(el('p', 'lv-gdone-nx', G.nx));
+    w.appendChild(el('p', 'lv-gdone-nxp', G.nxp));
+    var row = el('div', 'lv-gdone-btns');
+    var a1 = el('a', 'lv-btn lv-btn-primary', G.b1 + ' →'); a1.href = base + 'book/'; row.appendChild(a1);
+    var a2 = el('a', 'lv-btn lv-btn-secondary', G.b2 + (/^http/.test(G.b2h) ? ' ↗' : '')); a2.href = G.b2h;
+    if (/^http/.test(G.b2h)) { a2.target = '_blank'; a2.rel = 'noopener'; }
+    row.appendChild(a2); w.appendChild(row);
+    var again = el('button', 'lv-gdone-again', G.again); again.type = 'button';
+    again.addEventListener('click', function () { w.parentNode.removeChild(w); gform.hidden = false; if (title) title.hidden = false; var f = $('input[name="name"]', gform); if (f) f.focus(); });
+    w.appendChild(again);
+    gform.hidden = true; if (title) title.hidden = true;
+    box.appendChild(w); try { w.focus(); } catch (x) {}
   }
 
   // ---------- 3-step lesson form ----------
