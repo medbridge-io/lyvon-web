@@ -324,6 +324,7 @@ window.lvTS = (function () {
           var btn = $('button[type="submit"]', s); btn.disabled = true;
           var m2 = $('.lv-formmsg', s) || msg; say(m2, t.send);
           post({ type: 'lesson', company: d.company || '', data: d }, s).then(function () {
+            var st = $('.lv-sent-to', book); if (st && d.email) { st.textContent = st.getAttribute('data-tpl').replace('{email}', d.email); st.hidden = false; }
             steps.forEach(function (f) { if (f.tagName === 'FORM') f.reset(); });
             $$('[data-school-other]', book).forEach(function (c) { c.value = 'Other overseas medical school'; });
             $$('[data-school-other-text]', book).forEach(function (x) { x.hidden = true; x.value = ''; });
@@ -549,9 +550,11 @@ window.lvTS = (function () {
     ctaHref += '?program=' + pg;
     document.querySelectorAll('a[href]').forEach(function (a) { if (a.getAttribute('href') === base + 'book/') a.setAttribute('href', base + 'book/?program=' + pg); });
   }
-  if (mc) {
+  var cr = /^\/programs\/career(\/|$)/.test(rest);
+  if (mc || cr) {
     ctaHref = '#book';
-    ctaText = { en: 'MedConnect inquiry', ko: 'MedConnect 문의', ja: 'MedConnect 相談', 'zh-Hant': '洽詢 MedConnect' }[L];
+    ctaText = mc ? { en: 'MedConnect inquiry', ko: 'MedConnect 문의', ja: 'MedConnect 相談', 'zh-Hant': '洽詢 MedConnect' }[L]
+                 : { en: 'Career inquiry', ko: 'Career 문의', ja: 'Career 相談', 'zh-Hant': '洽詢 Career' }[L];
     document.querySelectorAll('a.lv-navcta').forEach(function (a) { a.setAttribute('href', '#book'); a.textContent = ctaText; });
   }
   var ic = function (d) { return '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + d + '</svg>'; };
@@ -567,12 +570,18 @@ window.lvTS = (function () {
     '<a class="lv-dock-side" href="' + T.href + '"' + ext + '>' + chat + '<span>' + T.chat + '</span></a>';
   document.body.appendChild(dock);
   document.documentElement.classList.add('lv-has-dock');
+  // wider screens: a slim bar with the same action, shown once the hero has scrolled away
+  var stick = document.createElement('div');
+  stick.className = 'lv-stick';
+  var onPage = !mc && !cr && document.getElementById('book') && document.getElementById('contact');
+  stick.innerHTML = '<div><a class="lv-stick-brand" href="' + base + '">LYVON</a><a class="lv-stick-cta" href="' + (onPage ? '#book' : ctaHref) + '">' + ctaText + ' <span aria-hidden="true">→</span></a></div>';
+  document.body.appendChild(stick);
   // home on the home page itself: back to the top
   dock.firstChild.addEventListener('click', function (e) {
     if (location.pathname === base) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
   });
   // stay out of the way: hidden at the very top (hero already has the buttons), over the contact form, and while typing
-  var contact = document.getElementById('contact') || (document.querySelector('form.lv-mcform') && document.getElementById('book'));
+  var contact = document.getElementById('contact') || document.getElementById('book');
   var overForm = false, typing = false;
   if (contact && 'IntersectionObserver' in window) {
     new IntersectionObserver(function (es) { overForm = es[0].isIntersecting; upd(); }, { rootMargin: '0px 0px -30% 0px' }).observe(contact);
@@ -582,6 +591,9 @@ window.lvTS = (function () {
   function upd() {
     var show = (window.scrollY || 0) > window.innerHeight * 0.5 && !overForm && !typing;
     dock.classList.toggle('lv-dock-on', show);
+    var on = (window.scrollY || 0) > window.innerHeight * 0.85 && !overForm;
+    stick.classList.toggle('lv-stick-on', on);
+    if (on) stick.removeAttribute('inert'); else stick.setAttribute('inert', '');
   }
   var t = 0;
   window.addEventListener('scroll', function () { if (!t) t = requestAnimationFrame(function () { t = 0; upd(); }); }, { passive: true });
@@ -618,9 +630,10 @@ window.lvTS = (function () {
     var F = window.lvForm, sayM = function (x, k) { if (F) F.say(msg, x, k); else msg.textContent = x; };
     if (F && !F.valid(f)) { sayM(F.sum, 'err'); return; }
     var v = function (n) { var el = f.querySelector('[name="' + n + '"]'); return el ? (el.value || '').trim() : ''; };
-    var d = { type: 'lesson', source: 'web · ' + location.pathname + ' · medconnect', siteLang: lang, name: v('name'), email: v('email'),
-      situation: 'University student', targetField: 'MedConnect', replyLang: v('replyLang'), consent: true,
-      message: 'MedConnect inquiry — School/year: ' + v('school') + (v('message') ? ' — ' + v('message') : '') };
+    var career = f.getAttribute('data-inquiry') === 'career';
+    var d = { type: 'lesson', source: 'web · ' + location.pathname + (career ? ' · career' : ' · medconnect'), siteLang: lang, name: v('name'), email: v('email'),
+      situation: career ? 'Career inquiry' : 'University student', targetField: career ? 'LYVON Career' : 'MedConnect', replyLang: v('replyLang'), consent: true,
+      message: (career ? 'LYVON Career inquiry — Goal: ' : 'MedConnect inquiry — School/year: ') + v('school') + (v('message') ? ' — ' + v('message') : '') };
     var btn = f.querySelector('button[type="submit"]'); btn.disabled = true; sayM(T[1]);
     window.lvTS(f).then(function (tok) { return fetch('/api/lesson-request', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type: 'lesson', company: v('company'), cf: tok, data: d }) }); })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.ok === false) throw 0; }); })

@@ -209,3 +209,53 @@ fieldset.lv-bad, div.lv-bad { outline-offset: 8px; border-radius: 6px; }
 [data-step]:focus { outline: none; }
 /* phones: 16px fields so iOS does not zoom the page on focus */
 @media (max-width: 700px) { .lv-field { font-size: 16px !important; } }
+
+/* 2026-11-10: hero — the offer is the headline, the wordmark sits above it */
+section.lv-hero .lv-wordmark { display: block; margin: 0; font-size: clamp(34px, 5.2cqi, 76px); line-height: 1; font-weight: 500; letter-spacing: .16em; padding-left: .16em; }
+html body .lv-root > section.lv-hero h1.lv-hero-main.lv-fade { margin: clamp(10px, 1.4cqi, 20px) 0 0 !important; font-size: clamp(27px, 3.9cqi, 58px) !important; line-height: 1.16 !important; font-weight: 600 !important; letter-spacing: -0.014em; max-width: 19em; text-wrap: balance; text-shadow: 0 2px 24px rgba(8, 14, 22, .6); }
+section.lv-hero a.lv-proof { pointer-events: auto; color: inherit; text-decoration: none; margin-top: 6px; }
+section.lv-hero a.lv-proof:hover { background: rgba(8, 14, 22, .66); }
+@container (max-width: 700px) {
+  html body .lv-root > section.lv-hero:has(.lv-tri) h1.lv-hero-main.lv-fade { font-size: 27px !important; line-height: 1.22 !important; }
+  section.lv-hero .lv-wordmark { font-size: 36px; }
+}
+/* call-to-action row placed at decision points */
+.lv-cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; }
+.lv-cta-row > span { font-size: 14px; line-height: 1.5; color: #5F6367; }
+.lv-chooser p a { display: inline; min-height: 0; padding: 0; border: 0; font-size: inherit; font-weight: 600; color: #20344A; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+.lv-morelinks { display: flex; flex-wrap: wrap; gap: 4px 28px; }
+.lv-morelinks a { display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; color: #20344A; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(32, 52, 74, .35); }
+.lv-morelinks a:hover { text-decoration-color: currentColor; }
+html[lang=en] body .lv-root > section.lv-hero h1.lv-hero-main.lv-fade { font-size: clamp(27px, 3.4cqi, 50px) !important; max-width: 24em; }
+
+/* 2026-11-10: booking form — question first, optional details folded away, clearer success screen */
+.lv-trustline { margin: 0 0 22px; display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 14px; font-weight: 600; line-height: 1.5; }
+.lv-trustline span { font-weight: 400; opacity: .82; }
+#book > .lv-trust-prog { margin: -10px 0 22px; font-size: 14px; font-weight: 600; }
+.lv-book-after { margin-top: clamp(56px, 7cqi, 88px); padding-top: 40px; border-top: 1px solid rgba(247, 247, 244, .2); display: flex; flex-direction: column; gap: 24px; }
+.lv-book-after .lv-trust { margin: 0; }
+.lv-book-after > div:last-child { display: flex; flex-wrap: wrap; gap: 8px 32px; align-items: center; }
+.lv-more { border-top: 1px solid rgba(247, 247, 244, .2); border-bottom: 1px solid rgba(247, 247, 244, .2); }
+.lv-more > summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 52px; cursor: pointer; list-style: none; font-size: 14px; color: #D6DCE2; }
+.lv-more > summary::-webkit-details-marker { display: none; }
+.lv-more > summary::after { content: "+"; font-size: 20px; font-weight: 300; line-height: 1; }
+.lv-more[open] > summary::after { content: "–"; }
+.lv-more-body { display: flex; flex-direction: column; gap: 24px; padding: 8px 0 28px; }
+.lv-next { margin: 8px 0 0; }
+.lv-sent-to { overflow-wrap: anywhere; }
+
+/* 2026-11-10: slim call-to-action bar on wider screens (phones use the dock) */
+.lv-stick { display: none; }
+@media (min-width: 701px) {
+  .lv-stick { display: block; position: fixed; top: 0; left: 0; right: 0; z-index: 34; background: rgba(15, 26, 38, .94); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(247, 247, 244, .12); transform: translateY(-100%); transition: transform .28s cubic-bezier(.2, .7, .2, 1); }
+  .lv-stick.lv-stick-on { transform: none; }
+  .lv-stick > div { max-width: 1280px; margin: 0 auto; height: 56px; padding: 0 clamp(20px, 4.5vw, 64px); display: flex; align-items: center; justify-content: space-between; gap: 24px; box-sizing: content-box; }
+  .lv-stick a { text-decoration: none; }
+  .lv-stick-brand { font-size: 15px; font-weight: 600; letter-spacing: .32em; color: #F7F7F4; }
+  .lv-stick-cta { display: inline-flex; align-items: center; gap: 6px; min-height: 38px; padding: 0 18px; border-radius: 999px; background: #F7F7F4; color: #0F1A26; font-size: 14px; font-weight: 600; }
+  .lv-stick-cta:hover { background: #FFFFFF; }
+}
+@media (min-width: 701px) and (prefers-reduced-motion: reduce) { .lv-stick { transition: none; } }
+.lv-chooser-alt { background: #EBECE9; margin-bottom: clamp(48px, 6cqi, 80px); }
+.lv-chooser a[aria-current="page"] span { font-weight: 600; }
+.lv-root .lv-row:hover .lv-row-name { color: #20344A; }
