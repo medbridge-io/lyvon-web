@@ -259,3 +259,20 @@ html[lang=en] body .lv-root > section.lv-hero h1.lv-hero-main.lv-fade { font-siz
 .lv-chooser-alt { background: #EBECE9; margin-bottom: clamp(48px, 6cqi, 80px); }
 .lv-chooser a[aria-current="page"] span { font-weight: 600; }
 .lv-root .lv-row:hover .lv-row-name { color: #20344A; }
+
+/* 2026-11-10 review fixes */
+@media (min-width: 701px) { :root { --sticky-h: 72px; } section[id], [id="book"] { scroll-margin-top: 72px; } }
+#book.lv-done .lv-book-after, #book.lv-done .lv-trustline, #book.lv-done > .lv-trust-prog { display: none; }
+.lv-stepper li { min-width: 0; }
+.lv-chooser .lv-chooser-h { margin: 0 0 8px; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #5F6367; }
+.lv-chooser a span { text-wrap: balance; }
+.lv-hero-note { color: #F7F7F4 !important; text-shadow: 0 1px 2px rgba(8, 14, 22, .9), 0 0 14px rgba(8, 14, 22, .85); }
+.lv-mcform:has(.lv-formmsg.is-ok) .lv-replynote { display: none; }
+.lv-mcform .lv-formmsg.is-ok { font-weight: 500; }
+@container (min-width: 560px) and (max-width: 1000px) {
+  #method ol[style*="minmax(220px"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  #book fieldset > div[style*="grid"]:has(> label:nth-of-type(4):last-of-type) { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 700px) {
+  section.mc-dark[aria-label="MedConnect"] > div[aria-hidden="true"] { background: linear-gradient(0deg, rgba(42, 18, 32, .92) 0%, rgba(42, 18, 32, .82) 58%, rgba(42, 18, 32, .4) 100%) !important; }
+}

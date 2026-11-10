@@ -236,11 +236,12 @@ window.lvTS = (function () {
     });
     $$('[aria-invalid]', root).forEach(function (el) { el.removeAttribute('aria-invalid'); el.removeAttribute('aria-describedby'); });
   }
-  function say(m, text, kind) {
+  // stay: leave the scroll position alone (validation has already scrolled to the first wrong field)
+  function say(m, text, kind, stay) {
     if (!m) return;
     m.textContent = text || '';
     m.classList.toggle('is-err', kind === 'err'); m.classList.toggle('is-ok', kind === 'ok');
-    if (text) { try { m.scrollIntoView({ block: 'nearest' }); } catch (x) {} }
+    if (text && !stay) { try { m.scrollIntoView({ block: 'nearest' }); } catch (x) {} }
   }
   function valid(root) {
     var bad = false;
@@ -262,7 +263,9 @@ window.lvTS = (function () {
       var first = $('[aria-invalid="true"]', root);
       if (first) {
         var tgt = first.type === 'radio' || first.name === 'schools' ? groupBox(first) : (first.closest('label') || first);
-        try { tgt.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (x) {}
+        var tr = tgt.getBoundingClientRect();
+        // already comfortably on screen: leave the page where it is
+        if (tr.top < 90 || tr.bottom > window.innerHeight - 90) { try { tgt.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch (x) {} }
         try { first.focus({ preventScroll: true }); } catch (x) {}
       }
     }
@@ -283,7 +286,7 @@ window.lvTS = (function () {
     if (gl) gl.value = { en: 'EN', ko: 'KO', ja: 'JA', zh: 'ZH' }[lang] || 'EN';
     gform.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (!valid(gform)) { say(gmsg, E.sum, 'err'); return; }
+      if (!valid(gform)) { say(gmsg, E.sum, 'err', true); return; }
       var d = collect(gform, { type: 'guide', source: location.pathname, siteLang: lang });
       d.guideLang = d.replyLang;
       var btn = $('button[type="submit"]', gform); btn.disabled = true; say(gmsg, t.send);
@@ -300,6 +303,7 @@ window.lvTS = (function () {
     var msg = $('.lv-formmsg', book);
     function show(n, focus) {
       steps.forEach(function (s) { s.hidden = s.getAttribute('data-step') !== String(n); });
+      book.classList.toggle('lv-done', String(n) === '4');
       $$('.lv-formmsg', book).forEach(function (m) { say(m, ''); });
       if (focus) { var cur = $('[data-step="' + n + '"]', book); if (cur) { cur.setAttribute('tabindex', '-1'); try { cur.focus({ preventScroll: true }); } catch (x) {} } }
       var top = book.getBoundingClientRect().top + window.scrollY - 80;
@@ -317,7 +321,7 @@ window.lvTS = (function () {
         var li = $$('.lv-stepper li', s)[n - 1]; if (li) li.setAttribute('aria-current', 'step');
         s.addEventListener('submit', function (e) {
           e.preventDefault();
-          if (!valid(s)) { say($('.lv-formmsg', s) || msg, E.sum, 'err'); return; }
+          if (!valid(s)) { say($('.lv-formmsg', s) || msg, E.sum, 'err', true); return; }
           if (n < 3) { show(n + 1, true); return; }
           var d = { type: 'lesson', source: 'web · ' + location.pathname + (program ? ' · ' + program : ''), siteLang: lang };
           steps.forEach(function (f) { if (f.tagName === 'FORM') collect(f, d); });
@@ -330,6 +334,7 @@ window.lvTS = (function () {
             $$('[data-school-other-text]', book).forEach(function (x) { x.hidden = true; x.value = ''; });
             if (brl) { var dv2 = { ko: 'KO', ja: 'JA' }[lang] || 'EN'; brl.value = dv2; }
             steps.forEach(function (f) { clearErrs(f); });
+            $$('details.lv-more', book).forEach(function (x) { x.open = false; });
             cond();
             btn.disabled = false; show(4, true);
           }).catch(function () { say(m2, t.err, 'err'); btn.disabled = false; });
@@ -553,8 +558,8 @@ window.lvTS = (function () {
   var cr = /^\/programs\/career(\/|$)/.test(rest);
   if (mc || cr) {
     ctaHref = '#book';
-    ctaText = mc ? { en: 'MedConnect inquiry', ko: 'MedConnect 문의', ja: 'MedConnect 相談', 'zh-Hant': '洽詢 MedConnect' }[L]
-                 : { en: 'Career inquiry', ko: 'Career 문의', ja: 'Career 相談', 'zh-Hant': '洽詢 Career' }[L];
+    ctaText = mc ? { en: 'MedConnect inquiry', ko: 'MedConnect 문의', ja: 'MedConnect お問い合わせ', 'zh-Hant': '洽詢 MedConnect' }[L]
+                 : { en: 'Career inquiry', ko: 'Career 문의', ja: 'Career お問い合わせ', 'zh-Hant': '洽詢 Career' }[L];
     document.querySelectorAll('a.lv-navcta').forEach(function (a) { a.setAttribute('href', '#book'); a.textContent = ctaText; });
   }
   var ic = function (d) { return '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + d + '</svg>'; };
@@ -591,6 +596,7 @@ window.lvTS = (function () {
   function upd() {
     var show = (window.scrollY || 0) > window.innerHeight * 0.5 && !overForm && !typing;
     dock.classList.toggle('lv-dock-on', show);
+    if (show) dock.removeAttribute('inert'); else dock.setAttribute('inert', '');
     var on = (window.scrollY || 0) > window.innerHeight * 0.85 && !overForm;
     stick.classList.toggle('lv-stick-on', on);
     if (on) stick.removeAttribute('inert'); else stick.setAttribute('inert', '');
@@ -625,10 +631,11 @@ window.lvTS = (function () {
   }[lang] || null;
   T = T || ['Please fill in the required fields.', 'Sending…', 'Thank you. We will reply within 24 hours on weekdays.', 'Something went wrong. Please email hello@lyvon.io.'];
   var msg = f.querySelector('.lv-formmsg');
+  var sb0 = f.querySelector('button[type="submit"]'); if (msg && sb0) sb0.parentNode.insertBefore(msg, sb0);
   f.addEventListener('submit', function (e) {
     e.preventDefault();
-    var F = window.lvForm, sayM = function (x, k) { if (F) F.say(msg, x, k); else msg.textContent = x; };
-    if (F && !F.valid(f)) { sayM(F.sum, 'err'); return; }
+    var F = window.lvForm, sayM = function (x, k, stay) { if (F) F.say(msg, x, k, stay); else msg.textContent = x; };
+    if (F && !F.valid(f)) { sayM(F.sum, 'err', true); return; }
     var v = function (n) { var el = f.querySelector('[name="' + n + '"]'); return el ? (el.value || '').trim() : ''; };
     var career = f.getAttribute('data-inquiry') === 'career';
     var d = { type: 'lesson', source: 'web · ' + location.pathname + (career ? ' · career' : ' · medconnect'), siteLang: lang, name: v('name'), email: v('email'),
