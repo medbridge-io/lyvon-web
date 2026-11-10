@@ -279,3 +279,5 @@ html[lang=en] body .lv-root > section.lv-hero h1.lv-hero-main.lv-fade { font-siz
 .lv-ts:empty { display: none; }
 .lv-ts-hint { margin: 0; font-size: 14px; line-height: 1.5; font-weight: 500; }
 .lv-ts-hint[hidden] { display: none; }
+.lv-field-dark:focus-visible { outline: 2px solid #F7F7F4 !important; outline-offset: 2px; }
+.lv-dock-cta { min-width: 0; }

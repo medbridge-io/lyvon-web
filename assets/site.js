@@ -307,8 +307,8 @@ window.lvTS = (function () {
       d.guideLang = d.replyLang;
       var btn = $('button[type="submit"]', gform); btn.disabled = true; say(gmsg, t.send);
       post({ type: 'guide', company: d.company || '', data: d }, gform).then(function () {
-        say(gmsg, t.guideOk, 'ok'); gform.reset(); if (gl) gl.value = { en: 'EN', ko: 'KO', ja: 'JA', zh: 'ZH' }[lang] || 'EN'; btn.disabled = false;
-      }).catch(function () { say(gmsg, t.err, 'err'); btn.disabled = false; });
+        say(gmsg, t.guideOk, 'ok'); gform.reset(); if (gl) gl.value = { en: 'EN', ko: 'KO', ja: 'JA', zh: 'ZH' }[lang] || 'EN'; btn.disabled = false; try { btn.focus(); } catch (x) {}
+      }).catch(function () { say(gmsg, t.err, 'err'); btn.disabled = false; try { btn.focus(); } catch (x) {} });
     });
   }
 
@@ -574,8 +574,8 @@ window.lvTS = (function () {
   var cr = /^\/programs\/career(\/|$)/.test(rest);
   if (mc || cr) {
     ctaHref = '#book';
-    ctaText = mc ? { en: 'MedConnect inquiry', ko: 'MedConnect 문의', ja: 'MedConnect お問い合わせ', 'zh-Hant': '洽詢 MedConnect' }[L]
-                 : { en: 'Career inquiry', ko: 'Career 문의', ja: 'Career お問い合わせ', 'zh-Hant': '洽詢 Career' }[L];
+    ctaText = mc ? { en: 'MedConnect inquiry', ko: 'MedConnect 문의', ja: 'お問い合わせ', 'zh-Hant': '洽詢 MedConnect' }[L]
+                 : { en: 'Career inquiry', ko: 'Career 문의', ja: 'お問い合わせ', 'zh-Hant': '洽詢 Career' }[L];
     document.querySelectorAll('a.lv-navcta').forEach(function (a) { a.setAttribute('href', '#book'); a.textContent = ctaText; });
   }
   var ic = function (d) { return '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + d + '</svg>'; };
