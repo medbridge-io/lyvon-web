@@ -773,6 +773,7 @@ window.lvTS = (function () {
   function fold(el, key, h) {
     if (!el || el.scrollHeight < h + 120) return;
     var wrap = document.createElement('div'); wrap.className = 'lv-fold'; wrap.style.maxHeight = h + 'px';
+    wrap.style.flex = el.style.flex; wrap.style.minWidth = '0';
     el.parentNode.insertBefore(wrap, el); wrap.appendChild(el);
     var b = document.createElement('button'); b.type = 'button'; b.className = 'lv-fold-btn'; b.setAttribute('aria-expanded', 'false');
     b.innerHTML = (T[key][L] || T[key].en) + ' <span aria-hidden="true">↓</span>';
@@ -780,7 +781,7 @@ window.lvTS = (function () {
     b.addEventListener('click', function () { wrap.classList.add('lv-fold-open'); wrap.style.maxHeight = ''; b.parentNode.removeChild(b); });
   }
   var m = document.querySelector('#method'); if (!m) return;
-  fold(m.querySelector('.lv-phones'), 'dash', 150);
+  // the dashboard carousel stays as it is: it scrolls sideways and needs its own flex sizing
   var ol = [].slice.call(m.querySelectorAll('ol')).filter(function (o) { return !o.classList.contains('lv-card-group'); }).pop();
   fold(ol, 'steps', 190);
 })();
