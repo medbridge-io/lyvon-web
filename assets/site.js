@@ -1,3 +1,10 @@
+// ---------- analytics events (GA4) ----------
+window.lvTrack = function (name, params) { try { if (window.gtag) window.gtag('event', name, params || {}); } catch (e) {} };
+document.addEventListener('click', function (e) {
+  var a = e.target && e.target.closest ? e.target.closest('a[href*="open.kakao.com"], a[href*="line.me"]') : null;
+  if (a) window.lvTrack('chat_click', { channel: /kakao/.test(a.href) ? 'kakao' : 'line', page: location.pathname });
+}, true);
+
 // Where this visit came from: referring site (host only), campaign tags and first page. Kept in sessionStorage for this tab only.
 window.lvVia = (function () {
   var k = 'lv_via', v = '';
@@ -329,6 +336,7 @@ window.lvTS = (function () {
         var sentTo = d.email;
         say(gmsg, ''); gform.reset(); if (gl) gl.value = { en: 'EN', ko: 'KO', ja: 'JA', zh: 'ZH' }[lang] || 'EN'; btn.disabled = false;
         guideDone(sentTo);
+        window.lvTrack('guide_request', { page: location.pathname });
       }).catch(function () { say(gmsg, t.err, 'err'); btn.disabled = false; try { btn.focus(); } catch (x) {} });
     });
   }
@@ -419,6 +427,7 @@ window.lvTS = (function () {
           var btn = $('button[type="submit"]', s); btn.disabled = true;
           var m2 = $('.lv-formmsg', s) || msg; say(m2, t.send);
           post({ type: 'lesson', company: d.lv_hp_x7 || '', data: d }, s).then(function () {
+            window.lvTrack('lesson_request', { program: program || 'none', page: location.pathname });
             var st = $('.lv-sent-to', book); if (st && d.email) { st.textContent = st.getAttribute('data-tpl').replace('{email}', d.email); st.hidden = false; }
             steps.forEach(function (f) { if (f.tagName === 'FORM') f.reset(); });
             $$('[data-school-other]', book).forEach(function (c) { c.value = 'Other overseas medical school'; });
@@ -740,7 +749,7 @@ window.lvTS = (function () {
     var btn = f.querySelector('button[type="submit"]'); btn.disabled = true; sayM(T[1]);
     window.lvTS(f).then(function (tok) { return fetch('/api/lesson-request', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type: 'lesson', company: v('lv_hp_x7'), cf: tok, data: d }) }); })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.ok === false) throw 0; }); })
-      .then(function () { sayM(T[2], 'ok'); f.reset(); btn.disabled = false; })
+      .then(function () { sayM(T[2], 'ok'); f.reset(); btn.disabled = false; window.lvTrack('lesson_request', { program: career ? 'career' : 'medconnect', page: location.pathname }); })
       .catch(function () { sayM(T[3], 'err'); btn.disabled = false; });
   });
 })();
