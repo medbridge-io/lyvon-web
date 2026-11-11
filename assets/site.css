@@ -340,3 +340,15 @@ html[lang=en] body .lv-root > section.lv-hero h1.lv-hero-main.lv-fade { font-siz
 /* 2026-11-11: show the guide hook on phones, where the long description is hidden */
 .lv-gb-m { display: none; }
 @media (max-width: 600px) { .lv-gb-m { display: inline; } }
+/* 2026-11-11: one line on fees under the hero buttons */
+.lv-heronote { margin: 14px auto 0; max-width: 34em; font-size: 13px; line-height: 1.6; letter-spacing: 0.01em; color: rgba(247, 247, 244, .82); text-align: center; text-wrap: balance; pointer-events: auto; text-shadow: 0 1px 8px rgba(10, 16, 24, .45); }
+/* step 1: level and concerns folded so the required question stands alone */
+.lv-more-s1 { margin-top: 4px; }
+/* JA home: Tokyo first in the phone crossfade */
+@media (max-width:700px) and (prefers-reduced-motion:no-preference){
+  html[lang="ja"] section.lv-hero .lv-tri figure:nth-child(1){animation-delay:4s}
+  html[lang="ja"] section.lv-hero .lv-tri figure:nth-child(2){animation-delay:-1s;opacity:1}
+}
+@media (max-width:700px) and (prefers-reduced-motion:reduce){
+  html[lang="ja"] section.lv-hero .lv-tri figure:nth-child(2){opacity:1}
+}

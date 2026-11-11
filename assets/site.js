@@ -261,7 +261,7 @@ window.lvTS = (function () {
       if (el.type === 'radio') { if (seen[el.name]) return; seen[el.name] = 1; }
       list.push(el);
     });
-    var ot = $('[data-school-other-text]', root); if (ot) list.push(ot);
+    // the free-text school name is optional: ticking 'another school' alone is enough
     return list;
   }
   function clearErrs(root) {
