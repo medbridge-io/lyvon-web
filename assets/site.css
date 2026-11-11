@@ -396,3 +396,5 @@ html[lang=en] body .lv-root > section.lv-hero h1.lv-hero-main.lv-fade { font-siz
   html[lang=en] h3[style*="clamp(26px"] { font-size: 23px !important; }
   html[lang=ja] h3[style*="clamp(26px"] { font-size: 22px !important; line-height: 1.32 !important; }
 }
+/* 2026-11-11: the oral-exam hook in the top bar reads in bold */
+.lv-gb-m, .lv-gb-b { font-weight: 600; color: #FFFFFF; }
