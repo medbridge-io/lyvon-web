@@ -760,28 +760,3 @@ window.lvTS = (function () {
   wrap.parentNode.insertBefore(b, wrap.nextSibling);
   b.addEventListener('click', function () { wrap.classList.add('lv-fold-open'); b.parentNode.removeChild(b); });
 })();
-
-// ---------- phones: dashboard mock-ups and the process list open on request (shorter home) ----------
-(function () {
-  'use strict';
-  if (!window.matchMedia || !window.matchMedia('(max-width: 700px)').matches) return;
-  var L = (document.documentElement.lang || 'en').toLowerCase().slice(0, 2);
-  var T = {
-    dash: { ko: '대시보드 화면 예시 보기', ja: 'ダッシュボード画面の例を見る', zh: '查看儀表板畫面範例', en: 'Show the dashboard screens' },
-    steps: { ko: '진행 과정 전체 보기', ja: '進め方をすべて見る', zh: '查看完整流程', en: 'Show every step' }
-  };
-  function fold(el, key, h) {
-    if (!el || el.scrollHeight < h + 120) return;
-    var wrap = document.createElement('div'); wrap.className = 'lv-fold'; wrap.style.maxHeight = h + 'px';
-    wrap.style.flex = el.style.flex; wrap.style.minWidth = '0';
-    el.parentNode.insertBefore(wrap, el); wrap.appendChild(el);
-    var b = document.createElement('button'); b.type = 'button'; b.className = 'lv-fold-btn'; b.setAttribute('aria-expanded', 'false');
-    b.innerHTML = (T[key][L] || T[key].en) + ' <span aria-hidden="true">↓</span>';
-    wrap.parentNode.insertBefore(b, wrap.nextSibling);
-    b.addEventListener('click', function () { wrap.classList.add('lv-fold-open'); wrap.style.maxHeight = ''; b.parentNode.removeChild(b); });
-  }
-  var m = document.querySelector('#method'); if (!m) return;
-  // the dashboard carousel stays as it is: it scrolls sideways and needs its own flex sizing
-  var ol = [].slice.call(m.querySelectorAll('ol')).filter(function (o) { return !o.classList.contains('lv-card-group'); }).pop();
-  fold(ol, 'steps', 190);
-})();
