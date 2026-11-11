@@ -352,3 +352,47 @@ html[lang=en] body .lv-root > section.lv-hero h1.lv-hero-main.lv-fade { font-siz
 @media (max-width:700px) and (prefers-reduced-motion:reduce){
   html[lang="ja"] section.lv-hero .lv-tri figure:nth-child(2){opacity:1}
 }
+/* 2026-11-11: the three questions parents ask first, right after the programs */
+.lv-qtop { margin-top: clamp(40px, 5cqi, 72px); max-width: 860px; }
+.lv-qtop h3 { margin: 0 0 16px; font-size: clamp(22px, 2.2cqi, 30px); font-weight: 400; letter-spacing: -0.015em; line-height: 1.2; }
+.lv-qtop-more { margin: 14px 0 0; }
+.lv-qtop-more a { display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; color: #20344A; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(32, 52, 74, .35); }
+/* 2026-11-11: phones show the school list on one line (country word dropped, the names say it) */
+@media (max-width:700px){
+  section.lv-hero .lv-proof-uni .lv-pu-c{display:none}
+  section.lv-hero .lv-proof-uni{white-space:nowrap;font-size:12.5px;letter-spacing:-0.005em}
+}
+/* 2026-11-11: English runs longer than KO/JA/ZH; smaller hero type on phones keeps the first screen balanced */
+@media (max-width:700px){
+  html[lang=en] body .lv-root > section.lv-hero:has(.lv-tri) h1.lv-hero-main.lv-fade { font-size: 22px !important; line-height: 1.26 !important; max-width: 17em; }
+  html[lang=en] section.lv-hero .lv-proof { font-size: 13px; }
+  html[lang=en] .lv-heronote { font-size: 12px; max-width: 30em; }
+}
+@media (max-width:374px){
+  html[lang=en] body .lv-root > section.lv-hero:has(.lv-tri) h1.lv-hero-main.lv-fade { font-size: 20px !important; }
+}
+/* 2026-11-11: hero type per language on phones, so each headline sits in 2–3 lines */
+@media (max-width:700px){
+  html[lang=ko] body .lv-root > section.lv-hero:has(.lv-tri) h1.lv-hero-main.lv-fade { font-size: 24px !important; line-height: 1.3 !important; }
+  html[lang=ja] body .lv-root > section.lv-hero:has(.lv-tri) h1.lv-hero-main.lv-fade { font-size: 21px !important; line-height: 1.36 !important; max-width: 16em; }
+  html[lang=zh-Hant] body .lv-root > section.lv-hero:has(.lv-tri) h1.lv-hero-main.lv-fade { font-size: 23px !important; line-height: 1.32 !important; max-width: 15em; }
+  html[lang=ja] section.lv-hero .lv-proof, html[lang=zh-Hant] section.lv-hero .lv-proof, html[lang=ko] section.lv-hero .lv-proof { font-size: 13px; }
+  html[lang=ko] .lv-heronote, html[lang=ja] .lv-heronote, html[lang=zh-Hant] .lv-heronote { font-size: 12px; }
+}
+@media (max-width:374px){
+  html[lang=ja] body .lv-root > section.lv-hero:has(.lv-tri) h1.lv-hero-main.lv-fade { font-size: 19px !important; }
+  html[lang=ko] body .lv-root > section.lv-hero:has(.lv-tri) h1.lv-hero-main.lv-fade { font-size: 22px !important; }
+  html[lang=zh-Hant] body .lv-root > section.lv-hero:has(.lv-tri) h1.lv-hero-main.lv-fade { font-size: 21px !important; }
+}
+/* 2026-11-11: English and Japanese headings run longer than Korean/Chinese; one step smaller on phones so they stay at 1–3 lines */
+@media (max-width:700px){
+  html[lang=en] body h1:not(.lv-hero-main), html[lang=ja] body h1:not(.lv-hero-main) { font-size: 28px !important; line-height: 1.18 !important; }
+  html[lang=en] body h1.mp-fade.mp-d1, html[lang=ja] body h1.mp-fade.mp-d1 { font-size: 30px !important; line-height: 1.14 !important; }
+  html[lang=ja] body h1:not(.lv-hero-main) { line-height: 1.3 !important; }
+  html[lang=en] h2[style*="clamp(32px"], html[lang=en] h2[style*="font-size: 32px"] { font-size: 28px !important; line-height: 1.14 !important; }
+  html[lang=ja] h2[style*="clamp(32px"], html[lang=ja] h2[style*="font-size: 32px"] { font-size: 26px !important; line-height: 1.3 !important; }
+  html[lang=en] h2[style*="clamp(36px"], html[lang=en] h2[style*="clamp(40px"] { font-size: 31px !important; }
+  html[lang=ja] h2[style*="clamp(36px"], html[lang=ja] h2[style*="clamp(40px"] { font-size: 29px !important; line-height: 1.28 !important; }
+  html[lang=en] h3[style*="clamp(26px"] { font-size: 23px !important; }
+  html[lang=ja] h3[style*="clamp(26px"] { font-size: 22px !important; line-height: 1.32 !important; }
+}
