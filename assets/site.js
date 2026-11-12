@@ -81,7 +81,7 @@ window.lvTS = (function () {
   var lang = (document.documentElement.lang || 'en').slice(0, 2);
   var T = {
     en: { req: 'Please fill in the required fields.', send: 'Sending…', err: 'Something went wrong. Please try again or email hello@lyvon.io.', guideOk: 'Thank you. The guide is on its way to your inbox.' },
-    ko: { req: '필수 항목을 입력해 주세요.', send: '전송 중…', err: '전송에 실패했습니다. 다시 시도하시거나 hello@lyvon.io로 메일 주세요.', guideOk: '감사합니다. 가이드를 메일로 보내 드렸습니다.' },
+    ko: { req: '필수 항목을 입력해 주세요.', send: '전송 중…', err: '전송에 실패했습니다. 다시 시도하시거나 hello@lyvon.io로 메일을 보내 주세요.', guideOk: '감사합니다. 가이드를 메일로 보내 드렸습니다.' },
     ja: { req: '必須項目を入力してください。', send: '送信中…', err: '送信できませんでした。もう一度お試しいただくか、hello@lyvon.io までご連絡ください。', guideOk: 'ありがとうございます。ガイドをメールでお送りしました。' },
     zh: { req: '請填寫必填欄位。', send: '傳送中…', err: '傳送失敗，請再試一次或來信 hello@lyvon.io。', guideOk: '謝謝。指南已寄到您的信箱。' }
   };
@@ -350,7 +350,7 @@ window.lvTS = (function () {
             spam: 'Not there in a few minutes? Check your spam folder.',
             nx: 'Next step', nxp: 'Want to know where you stand? A free 50-minute 1:1 lesson online shows you, with a written diagnostic afterwards.',
             b1: 'Book a free lesson', b2: 'Email us', b2h: 'mailto:hello@lyvon.io', again: 'Send to another email' },
-      ko: { h: '가이드를 보내 드렸습니다', to: '', toEnd: ' 주소로 가이드 두 가지의 링크를 보냈습니다.',
+      ko: { h: '가이드를 보내 드렸습니다', to: '', toEnd: ' 주소로 가이드 두 가지 링크를 보내 드렸습니다.',
             g1: 'LYVON 웰컴 가이드', g1d: '프로그램과 수업 방식 소개',
             g2: '셈멜바이스 구술시험 가이드', g2d: '공식 토픽 50개, 핵심 용어, 연습 질문',
             spam: '몇 분이 지나도 메일이 없다면 스팸함을 확인해 주세요.',
@@ -730,7 +730,7 @@ window.lvTS = (function () {
   var lang = (document.documentElement.lang || 'en').slice(0, 2);
   var T = {
     en: ['Please fill in the required fields.', 'Sending…', 'Thank you. We will reply within 24 hours on weekdays.', 'Something went wrong. Please email hello@lyvon.io.'],
-    ko: ['필수 항목을 입력해 주세요.', '전송 중…', '감사합니다. 평일 24시간 이내에 답변드리겠습니다.', '전송에 실패했습니다. hello@lyvon.io로 메일 주세요.'],
+    ko: ['필수 항목을 입력해 주세요.', '전송 중…', '감사합니다. 평일 24시간 이내에 답변드리겠습니다.', '전송에 실패했습니다. hello@lyvon.io로 메일을 보내 주세요.'],
     ja: ['必須項目をご入力ください。', '送信中…', 'ありがとうございます。平日24時間以内にご返信します。', '送信できませんでした。hello@lyvon.io までメールでご連絡ください。'],
     zh: ['請填寫必填欄位。', '傳送中…', '謝謝。我們將於平日24小時內回覆。', '傳送失敗，請來信 hello@lyvon.io。']
   }[lang] || null;
