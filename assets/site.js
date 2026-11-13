@@ -57,7 +57,7 @@ window.lvTS = (function () {
         var ask = function (on) {
           if (on && !hint) {
             hint = document.createElement('p'); hint.className = 'lv-ts-hint'; hint.setAttribute('role', 'status');
-            hint.textContent = { ko: '사람인지 확인하는 체크박스를 눌러 주세요.', ja: 'チェックボックスで確認をお願いします。', zh: '請勾選方塊以完成驗證。' }[lng.slice(0, 2)] || 'Please tick the box to confirm you are human.';
+            hint.textContent = { ko: '사람인지 확인하는 체크박스를 눌러 주세요.', ja: 'ロボットでないことを確認するため、チェックボックスにチェックを入れてください。', zh: '請勾選方塊以完成驗證。' }[lng.slice(0, 2)] || 'Please tick the box to confirm you are human.';
             box.parentNode.insertBefore(hint, box);
           }
           if (hint) hint.hidden = !on;
@@ -353,7 +353,7 @@ window.lvTS = (function () {
       ko: { h: '가이드를 보내 드렸습니다', to: '', toEnd: ' 주소로 가이드 두 가지 링크를 보내 드렸습니다.',
             g1: 'LYVON 웰컴 가이드', g1d: '프로그램과 수업 방식 소개',
             g2: '셈멜바이스 구술시험 가이드', g2d: '공식 토픽 50개, 핵심 용어, 연습 질문',
-            spam: '몇 분이 지나도 메일이 없다면 스팸함을 확인해 주세요.',
+            spam: '몇 분이 지나도 메일이 오지 않으면 스팸함을 확인해 주세요.',
             nx: '다음 단계', nxp: '지금 수준이 궁금하다면 50분 1:1 온라인 무료 수업에서 직접 확인해 보세요. 수업 후 진단 리포트를 보내 드립니다.',
             b1: '무료 수업 신청', b2: '카카오톡으로 문의', b2h: 'https://open.kakao.com/o/sh3TzOsi', again: '다른 이메일로 받기' },
       ja: { h: 'ガイドをお送りしました', to: '', toEnd: ' 宛てに、2つのガイドのリンクをお送りしました。',
@@ -430,7 +430,7 @@ window.lvTS = (function () {
             window.lvTrack('lesson_request', { program: program || 'none', page: location.pathname });
             var st = $('.lv-sent-to', book); if (st && d.email) { st.textContent = st.getAttribute('data-tpl').replace('{email}', d.email); st.hidden = false; }
             steps.forEach(function (f) { if (f.tagName === 'FORM') f.reset(); });
-            $$('[data-school-other]', book).forEach(function (c) { c.value = 'Other overseas medical school'; });
+            $$('[data-school-other]', book).forEach(function (c) { c.value = 'Another overseas medical school'; });
             $$('[data-school-other-text]', book).forEach(function (x) { x.hidden = true; x.value = ''; });
             if (brl) { var dv2 = { ko: 'KO', ja: 'JA' }[lang] || 'EN'; brl.value = dv2; }
             steps.forEach(function (f) { clearErrs(f); });
@@ -730,8 +730,8 @@ window.lvTS = (function () {
   var lang = (document.documentElement.lang || 'en').slice(0, 2);
   var T = {
     en: ['Please fill in the required fields.', 'Sending…', 'Thank you. We will reply within 24 hours on weekdays.', 'Something went wrong. Please email hello@lyvon.io.'],
-    ko: ['필수 항목을 입력해 주세요.', '전송 중…', '감사합니다. 평일 24시간 이내에 답변드리겠습니다.', '전송에 실패했습니다. hello@lyvon.io로 메일을 보내 주세요.'],
-    ja: ['必須項目をご入力ください。', '送信中…', 'ありがとうございます。平日24時間以内にご返信します。', '送信できませんでした。hello@lyvon.io までメールでご連絡ください。'],
+    ko: ['필수 항목을 입력해 주세요.', '전송 중…', '감사합니다. 평일 24시간 이내에 답변해 드리겠습니다.', '전송에 실패했습니다. hello@lyvon.io로 메일을 보내 주세요.'],
+    ja: ['必須項目を入力してください。', '送信中…', 'ありがとうございます。平日24時間以内にご返信します。', '送信できませんでした。hello@lyvon.io までメールでご連絡ください。'],
     zh: ['請填寫必填欄位。', '傳送中…', '謝謝。我們將於平日24小時內回覆。', '傳送失敗，請來信 hello@lyvon.io。']
   }[lang] || null;
   T = T || ['Please fill in the required fields.', 'Sending…', 'Thank you. We will reply within 24 hours on weekdays.', 'Something went wrong. Please email hello@lyvon.io.'];
