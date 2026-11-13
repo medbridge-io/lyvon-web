@@ -405,6 +405,9 @@ html[lang=en] body .lv-root > section.lv-hero h1.lv-hero-main.lv-fade { font-siz
 @supports (height: 100svh) { .lv-film-bg + div { margin-top: -100svh !important; } }
 .lv-film-bg img, .lv-film-bg video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.2s ease; }
 .lv-film-bg .on { opacity: 1; }
+.lv-film-bg img:not(.on), .lv-film-bg video:not(.on) { opacity: 0 !important; }
+.lv-film-bg .on { opacity: 1 !important; }
+.lv-film-bg .lv-rv { transform: none !important; }
 .lv-film-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,22,38,.9) 0%, rgba(11,22,38,.62) 34%, rgba(11,22,38,0) 64%), linear-gradient(0deg, rgba(11,22,38,.35), transparent 30%); }
 .lv-film > div:not(.lv-film-bg) { position: relative; z-index: 1; padding: 0 clamp(20px, 4.5cqi, 64px); }
 .lv-film > div > p.lv-tb:first-child { box-sizing: border-box; padding: 96px 0 64px; display: grid; grid-template-columns: minmax(0,1fr); align-content: center; min-height: 100vh; min-height: 100svh; margin: 0 !important; max-width: 17em !important; font-size: clamp(26px, 2.9vw, 42px) !important; line-height: 1.4 !important; color: #FFFFFF !important; }
