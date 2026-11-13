@@ -779,13 +779,28 @@ window.lvTS = (function () {
   var imgs = [].slice.call(bg.querySelectorAll('img')), vids = [].slice.call(bg.querySelectorAll('video'));
   var rows = [].slice.call(film.querySelectorAll('.ph-row')), cur = -1; var intro = film.querySelector('div > p.lv-tb:first-child');
   function load(v) { if (!v.getAttribute('src')) v.src = v.getAttribute('data-src') + (small ? '-m' : '') + '.mp4'; }
+  // iOS: muted+inline must be set as properties; if autoplay is refused (Low Power Mode etc.)
+  // keep the still image and retry on the first touch.
+  vids.forEach(function (v) { v.muted = true; v.defaultMuted = true; v.playsInline = true; v.setAttribute('webkit-playsinline', ''); });
+  function tryPlay(v) {
+    var p; try { p = v.play(); } catch (e) { p = null; }
+    if (p && p.then) {
+      p.then(function () { if (+v.getAttribute('data-i') === cur) v.classList.add('on'); }).catch(function () { v.classList.remove('on'); });
+    } else { v.classList.add('on'); }
+  }
+  function kick() {
+    var v = vids.filter(function (x) { return +x.getAttribute('data-i') === cur; })[0];
+    if (v && v.paused) tryPlay(v);
+  }
+  ['touchstart', 'click', 'keydown'].forEach(function (ev) { window.addEventListener(ev, kick, { passive: true }); });
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) kick(); });
   function show(i) {
     if (i === cur) return; cur = i;
     imgs.forEach(function (m) { m.classList.toggle('on', +m.getAttribute('data-i') === i); });
     if (reduce) return;
     vids.forEach(function (v) {
       var k = +v.getAttribute('data-i');
-      if (k === i) { load(v); var p = v.play(); if (p && p.catch) p.catch(function () {}); v.classList.add('on'); }
+      if (k === i) { load(v); tryPlay(v); }
       else { v.classList.remove('on'); setTimeout(function () { if (!v.classList.contains('on')) v.pause(); }, 1100); }
       if (k === i + 1) load(v);
     });
