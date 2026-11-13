@@ -777,7 +777,7 @@ window.lvTS = (function () {
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var small = window.matchMedia && matchMedia('(max-width: 700px)').matches;
   var imgs = [].slice.call(bg.querySelectorAll('img')), vids = [].slice.call(bg.querySelectorAll('video'));
-  var rows = [].slice.call(film.querySelectorAll('.ph-row')), cur = -1;
+  var rows = [].slice.call(film.querySelectorAll('.ph-row')), cur = -1; var intro = film.querySelector('div > p.lv-tb:first-child');
   function load(v) { if (!v.getAttribute('src')) v.src = v.getAttribute('data-src') + (small ? '-m' : '') + '.mp4'; }
   function show(i) {
     if (i === cur) return; cur = i;
@@ -794,6 +794,7 @@ window.lvTS = (function () {
     es.forEach(function (e) { if (e.isIntersecting) show(rows.indexOf(e.target)); });
   }, { rootMargin: '-45% 0px -45% 0px' });
   rows.forEach(function (r) { io.observe(r); });
+  if (intro) new IntersectionObserver(function (es) { if (es[0].isIntersecting) show(0); }, { rootMargin: '-45% 0px -45% 0px' }).observe(intro);
   var io0 = new IntersectionObserver(function (es) { if (es[0].isIntersecting && cur < 0) show(0); }, { threshold: 0.01 });
   io0.observe(film);
 })();

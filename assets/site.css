@@ -398,22 +398,27 @@ html[lang=en] body .lv-root > section.lv-hero h1.lv-hero-main.lv-fade { font-siz
 }
 /* 2026-11-11: the oral-exam hook in the top bar reads in bold */
 .lv-gb-m, .lv-gb-b { font-weight: 600; color: #FFFFFF; }
-/* 2026-11-13: philosophy film — sticky Veo clips behind the four chapters */
-.lv-film { position: relative; background: #0F1A26; color: #EEF1F5; padding-bottom: clamp(48px, 6cqi, 96px) !important; }
-.lv-film-bg { position: sticky; top: 0; height: 100vh; height: 100svh; margin: calc(-1 * clamp(72px, 9cqi, 140px)) calc(-1 * clamp(20px, 4.5cqi, 64px)) -100vh; margin-bottom: calc(-100vh); overflow: hidden; z-index: 0; background: #14233A; }
+/* 2026-11-13: philosophy film — sticky Veo clips behind the four chapters (v2 layout) */
+.lv-film { position: relative; background: #0F1A26; color: #EEF1F5; padding: 0 !important; }
+.lv-film-bg { position: sticky; top: 0; height: 100vh; height: 100svh; margin: 0 0 -100vh; overflow: hidden; z-index: 0; background: #14233A; }
 @supports (height: 100svh) { .lv-film-bg { margin-bottom: -100svh; } }
-.lv-film-bg img, .lv-film-bg video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease; }
+.lv-film-bg img, .lv-film-bg video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.2s ease; }
 .lv-film-bg .on { opacity: 1; }
-.lv-film-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,22,38,.93) 0%, rgba(11,22,38,.7) 40%, rgba(11,22,38,.12) 72%), linear-gradient(0deg, rgba(11,22,38,.5), transparent 40%); }
-.lv-film > div:not(.lv-film-bg) { position: relative; z-index: 1; }
-.lv-film .ph-row { max-width: 820px; min-height: 82vh; align-content: center; grid-template-columns: minmax(0,1fr) minmax(0,2.2fr) !important; border-top-color: rgba(238,241,245,.16) !important; }
-.lv-film p, .lv-film li { color: #C3CBD4 !important; }
-.lv-film > div > p.lv-tb:first-child { color: #EEF1F5 !important; max-width: 20em !important; }
-.lv-film .ph-row p[style*="clamp(24px"] { color: #FFFFFF !important; }
-.lv-film .lv-eyebrow { color: #A9B4C2 !important; }
+.lv-film-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,22,38,.9) 0%, rgba(11,22,38,.62) 34%, rgba(11,22,38,0) 64%), linear-gradient(0deg, rgba(11,22,38,.35), transparent 30%); }
+.lv-film > div:not(.lv-film-bg) { position: relative; z-index: 1; padding: 0 clamp(20px, 4.5cqi, 64px); }
+.lv-film > div > p.lv-tb:first-child { display: grid; grid-template-columns: minmax(0,1fr); align-content: center; min-height: 100vh; min-height: 100svh; margin: 0 !important; max-width: 17em !important; font-size: clamp(26px, 2.9vw, 42px) !important; line-height: 1.4 !important; color: #FFFFFF !important; }
+.lv-film .ph-row { display: flex !important; flex-direction: column; justify-content: center; gap: 22px !important; min-height: 100vh; min-height: 100svh; max-width: 540px; padding: 12vh 0 !important; border-top: 0 !important; }
+.lv-film .ph-row > div { gap: 18px !important; max-width: none !important; min-width: 0; }
+.lv-film .ph-row > *, .lv-film .ph-row > div > * { min-width: 0; overflow-wrap: anywhere; }
+.lv-film .ph-row p[style*="clamp(24px"] { order: -1; font-size: clamp(30px, 3.2vw, 46px) !important; line-height: 1.22 !important; color: #FFFFFF !important; }
+.lv-film p, .lv-film li { color: #D3D9E0 !important; }
+.lv-film .lv-eyebrow { color: #FFFFFF !important; opacity: .72; letter-spacing: .22em; }
+.lv-film .lv-check { color: #FFFFFF; }
 @media (max-width: 700px) {
   .lv-film-bg img, .lv-film-bg video { object-position: 72% 40%; }
-  .lv-film-bg::after { background: linear-gradient(0deg, rgba(11,22,38,.95) 0%, rgba(11,22,38,.82) 42%, rgba(11,22,38,0) 72%); }
-  .lv-film .ph-row { grid-template-columns: minmax(0,1fr) !important; align-content: end; min-height: 92vh; padding-bottom: 96px !important; }
+  .lv-film-bg::after { background: linear-gradient(0deg, rgba(11,22,38,.96) 0%, rgba(11,22,38,.9) 48%, rgba(11,22,38,.35) 70%, rgba(11,22,38,0) 85%); }
+  .lv-film > div > p.lv-tb:first-child { align-content: end; padding-bottom: calc(120px + env(safe-area-inset-bottom, 0px)); box-sizing: border-box; }
+  .lv-film .ph-row { justify-content: flex-end; padding: 0 0 calc(110px + env(safe-area-inset-bottom, 0px)) !important; gap: 16px !important; }
+  .lv-film .ph-row p[style*="clamp(24px"] { font-size: 28px !important; }
 }
 @media (prefers-reduced-motion: reduce) { .lv-film-bg video { display: none; } .lv-film-bg img { transition: none; } }
