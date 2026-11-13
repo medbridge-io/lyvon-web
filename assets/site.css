@@ -418,13 +418,6 @@ html[lang=en] body .lv-root > section.lv-hero h1.lv-hero-main.lv-fade { font-siz
 .lv-film p, .lv-film li { color: #D3D9E0 !important; }
 .lv-film .lv-eyebrow { color: #FFFFFF !important; opacity: .72; letter-spacing: .22em; }
 .lv-film .lv-check { color: #FFFFFF; }
-@media (min-width: 701px) {
-  /* desktop: whole 16:9 film in a frame on the right — less enlargement of the 720p source, nothing cropped */
-  .lv-film-bg { background: #0F1A26; }
-  .lv-film-bg img, .lv-film-bg video { inset: auto; top: 50%; left: auto; right: clamp(20px, 4.5vw, 64px); transform: translateY(-50%); width: min(52vw, calc((100vh - 200px) * 16 / 9)); height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; box-shadow: 0 30px 80px rgba(0,0,0,.45); }
-  .lv-film-bg::after { display: none; }
-  .lv-film .ph-row, .lv-film > div > p.lv-tb:first-child { max-width: min(520px, 36vw) !important; }
-}
 @media (max-width: 700px) {
   .lv-film-bg { background: #0F1A26; }
   .lv-film-bg img, .lv-film-bg video { height: 60%; object-position: 70% 50%; }
