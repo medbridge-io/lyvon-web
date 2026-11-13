@@ -769,3 +769,31 @@ window.lvTS = (function () {
   wrap.parentNode.insertBefore(b, wrap.nextSibling);
   b.addEventListener('click', function () { wrap.classList.add('lv-fold-open'); b.parentNode.removeChild(b); });
 })();
+
+/* 2026-11-13: philosophy film — crossfade the clip that matches the chapter in view */
+(function () {
+  var film = document.querySelector('.lv-film'); if (!film || !('IntersectionObserver' in window)) return;
+  var bg = film.querySelector('.lv-film-bg'); if (!bg) return;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var small = window.matchMedia && matchMedia('(max-width: 700px)').matches;
+  var imgs = [].slice.call(bg.querySelectorAll('img')), vids = [].slice.call(bg.querySelectorAll('video'));
+  var rows = [].slice.call(film.querySelectorAll('.ph-row')), cur = -1;
+  function load(v) { if (!v.getAttribute('src')) v.src = v.getAttribute('data-src') + (small ? '-m' : '') + '.mp4'; }
+  function show(i) {
+    if (i === cur) return; cur = i;
+    imgs.forEach(function (m) { m.classList.toggle('on', +m.getAttribute('data-i') === i); });
+    if (reduce) return;
+    vids.forEach(function (v) {
+      var k = +v.getAttribute('data-i');
+      if (k === i) { load(v); var p = v.play(); if (p && p.catch) p.catch(function () {}); v.classList.add('on'); }
+      else { v.classList.remove('on'); setTimeout(function () { if (!v.classList.contains('on')) v.pause(); }, 1100); }
+      if (k === i + 1) load(v);
+    });
+  }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) show(rows.indexOf(e.target)); });
+  }, { rootMargin: '-45% 0px -45% 0px' });
+  rows.forEach(function (r) { io.observe(r); });
+  var io0 = new IntersectionObserver(function (es) { if (es[0].isIntersecting && cur < 0) show(0); }, { threshold: 0.01 });
+  io0.observe(film);
+})();
