@@ -443,3 +443,10 @@ html[lang=en] body .lv-root > section.lv-hero h1.lv-hero-main.lv-fade { font-siz
 @media (max-width: 700px) and (max-height: 600px) {
   html body .lv-root > section.lv-hero:has(.lv-tri) > div[style*="z-index: 3"] { padding-top: 64px !important; gap: 8px !important; }
 }
+/* home hero note: one line on mobile (EN / JA) */
+@media (max-width: 700px) {
+  html[lang=en] body .lv-root > section.lv-hero:has(.lv-tri) > div[style*="z-index: 3"] > p.lv-heronote:nth-of-type(2),
+  html[lang=ja] body .lv-root > section.lv-hero:has(.lv-tri) > div[style*="z-index: 3"] > p.lv-heronote:nth-of-type(2) { white-space: nowrap; margin-left: -16px !important; margin-right: -16px !important; max-width: none !important; letter-spacing: 0 !important; }
+  html[lang=en] body .lv-root > section.lv-hero:has(.lv-tri) > div[style*="z-index: 3"] > p.lv-heronote:nth-of-type(2) { font-size: min(13px, calc((100vw - 24px) / 24)) !important; }
+  html[lang=ja] body .lv-root > section.lv-hero:has(.lv-tri) > div[style*="z-index: 3"] > p.lv-heronote:nth-of-type(2) { font-size: min(13px, calc((100vw - 24px) / 25)) !important; }
+}
