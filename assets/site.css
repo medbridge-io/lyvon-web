@@ -428,14 +428,18 @@ html[lang=en] body .lv-root > section.lv-hero h1.lv-hero-main.lv-fade { font-siz
   .lv-film .ph-row p[style*="clamp(24px"] { font-size: 28px !important; }
 }
 @media (prefers-reduced-motion: reduce) { .lv-film-bg video { display: none; } .lv-film-bg img { transition: none; } }
-/* 2026-11-13: philosophy hero on mobile — centred, smaller type, more breathing room */
+/* 2026-11-13: home hero on mobile — content centred below the header, smaller type, more breathing room */
 @media (max-width: 700px) {
-  .ph-hero { box-sizing: border-box; min-height: calc(100svh - 34px); display: flex; flex-direction: column; justify-content: center; padding: 104px 24px 64px !important; }
-  .ph-hero > div[style*="max-width:1280px"] { width: 100%; }
-  .ph-hero .lv-eyebrow:first-child { margin-bottom: 14px !important; font-size: 11px; }
-  .ph-hero h1 { font-size: 34px !important; line-height: 1.2 !important; }
-  .ph-hero h1 + p.lv-tb { margin-top: 18px !important; font-size: 14.5px !important; line-height: 1.65 !important; }
-  .ph-hero div[style*="border-top"] { margin-top: 32px !important; padding-top: 20px !important; gap: 6px 24px !important; }
-  .ph-hero div[style*="border-top"] p:nth-child(-n+2) { font-size: 24px !important; }
-  .ph-hero div[style*="border-top"] p:nth-child(n+3) { margin-top: 6px !important; font-size: 11px !important; }
+  html body .lv-root > section.lv-hero:has(.lv-tri) > div[style*="z-index: 3"] { padding: 84px 28px 24px !important; gap: 10px !important; }
+  html body .lv-root > section.lv-hero:has(.lv-tri) .lv-wordmark { font-size: 30px !important; }
+  html body .lv-root > section.lv-hero:has(.lv-tri) > div > p.lv-d2 { font-size: 9.5px !important; margin-top: -2px !important; }
+  html body .lv-root > section.lv-hero:has(.lv-tri) h1.lv-hero-main.lv-fade { margin-top: 10px !important; font-size: 22px !important; line-height: 1.32 !important; max-width: 15em; }
+  html[lang=en] body .lv-root > section.lv-hero:has(.lv-tri) h1.lv-hero-main.lv-fade { font-size: 21px !important; }
+  html body .lv-root > section.lv-hero:has(.lv-tri) a.lv-proof { margin-top: 8px; font-size: 12.5px; padding: 8px 13px; }
+  html body .lv-root > section.lv-hero:has(.lv-tri) > div > div[style*="flex-wrap"] { margin-top: 10px !important; gap: 10px !important; }
+  html body .lv-root > section.lv-hero:has(.lv-tri) .lv-btn { font-size: 14.5px; padding-top: 11px; padding-bottom: 11px; min-height: 44px; }
+  html body .lv-root > section.lv-hero:has(.lv-tri) .lv-heronote { margin-top: 6px !important; font-size: 12.5px !important; }
+}
+@media (max-width: 700px) and (max-height: 600px) {
+  html body .lv-root > section.lv-hero:has(.lv-tri) > div[style*="z-index: 3"] { padding-top: 64px !important; gap: 8px !important; }
 }
