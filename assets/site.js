@@ -790,11 +790,19 @@ window.lvTS = (function () {
       if (k === i + 1) load(v);
     });
   }
-  var io = new IntersectionObserver(function (es) {
-    es.forEach(function (e) { if (e.isIntersecting) show(rows.indexOf(e.target)); });
-  }, { rootMargin: '-45% 0px -45% 0px' });
-  rows.forEach(function (r) { io.observe(r); });
-  if (intro) new IntersectionObserver(function (es) { if (es[0].isIntersecting) show(0); }, { rootMargin: '-45% 0px -45% 0px' }).observe(intro);
-  var io0 = new IntersectionObserver(function (es) { if (es[0].isIntersecting && cur < 0) show(0); }, { threshold: 0.01 });
-  io0.observe(film);
+  // Scene = last chapter whose top has passed the viewport middle (intro and 01 share scene 0)
+  var tick = false;
+  function pick() {
+    tick = false;
+    var r = film.getBoundingClientRect(), vh = window.innerHeight || 800;
+    if (r.bottom < 0 || r.top > vh) return;
+    var mid = vh / 2, idx = 0;
+    for (var k = 0; k < rows.length; k++) { if (rows[k].getBoundingClientRect().top <= mid) idx = k; }
+    show(idx);
+  }
+  function req() { if (!tick) { tick = true; requestAnimationFrame(pick); } }
+  window.addEventListener('scroll', req, { passive: true });
+  window.addEventListener('resize', req);
+  window.addEventListener('pageshow', req);
+  pick();
 })();
