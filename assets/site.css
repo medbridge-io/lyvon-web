@@ -450,3 +450,14 @@ html[lang=en] body .lv-root > section.lv-hero h1.lv-hero-main.lv-fade { font-siz
   html[lang=en] body .lv-root > section.lv-hero:has(.lv-tri) > div[style*="z-index: 3"] > p.lv-heronote:nth-of-type(2) { font-size: min(13px, calc((100vw - 24px) / 24)) !important; }
   html[lang=ja] body .lv-root > section.lv-hero:has(.lv-tri) > div[style*="z-index: 3"] > p.lv-heronote:nth-of-type(2) { font-size: min(13px, calc((100vw - 24px) / 25)) !important; }
 }
+/* 2026-11-14: home polish (unslop) — quiet feature list, calmer labels, no dead band before FAQ */
+body:has(.lv-tri) .lv-ic-badge { display: none !important; }
+body:has(.lv-tri) .lv-eyebrow { font-weight: 600 !important; }
+html[lang=en] body:has(.lv-tri) .lv-eyebrow { letter-spacing: .04em !important; }
+body:has(.lv-tri) .lv-chooser .lv-chooser-h, body:has(.lv-tri) .lv-chooser h3 { text-transform: none; letter-spacing: .02em; }
+body:has(.lv-tri) section#method { padding-bottom: 80px !important; }
+body:has(.lv-tri) section#faq { padding-top: 48px !important; }
+@media (max-width: 700px) {
+  body:has(.lv-tri) section#method { padding-bottom: 56px !important; }
+  body:has(.lv-tri) section#faq { padding-top: 32px !important; }
+}
