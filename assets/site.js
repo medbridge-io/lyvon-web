@@ -1,7 +1,7 @@
 // ---------- analytics events (GA4) ----------
 window.lvTrack = function (name, params) { try { if (window.gtag) window.gtag('event', name, params || {}); } catch (e) {} };
 document.addEventListener('click', function (e) {
-  var a = e.target && e.target.closest ? e.target.closest('a[href*="open.kakao.com"], a[href*="line.me"]') : null;
+  var a = e.target && e.target.closest ? e.target.closest('a[href*="open.kakao.com"], a[href*="pf.kakao.com"], a[href*="line.me"]') : null;
   if (a) window.lvTrack('chat_click', { channel: /kakao/.test(a.href) ? 'kakao' : 'line', page: location.pathname });
 }, true);
 
@@ -355,7 +355,7 @@ window.lvTS = (function () {
             g2: '셈멜바이스 구술시험 가이드', g2d: '공식 토픽 50개, 핵심 용어, 연습 질문',
             spam: '몇 분이 지나도 메일이 오지 않으면 스팸함을 확인해 주세요.',
             nx: '다음 단계', nxp: '지금 수준이 궁금하다면 50분 1:1 온라인 무료 수업에서 직접 확인해 보세요. 수업 후 진단 리포트를 보내 드립니다.',
-            b1: '무료 수업 신청', b2: '카카오톡으로 문의', b2h: 'https://open.kakao.com/o/sh3TzOsi', again: '다른 이메일로 받기' },
+            b1: '무료 수업 신청', b2: '카카오톡으로 문의', b2h: 'https://pf.kakao.com/_xdnxfNX/chat', again: '다른 이메일로 받기' },
       ja: { h: 'ガイドをお送りしました', to: '', toEnd: ' 宛てに、2つのガイドのリンクをお送りしました。',
             g1: 'LYVON ウェルカムガイド', g1d: 'プログラムとレッスンの進め方',
             g2: 'Semmelweis University 口頭試験ガイド', g2d: '公式トピック50、重要用語、練習問題',
@@ -648,7 +648,7 @@ window.lvTS = (function () {
   if (!document.querySelector('.lv-root, [class$="-root"]') && !document.querySelector('header')) return;
   var T = {
     en: { nav: 'Quick actions', home: 'Home', cta: 'Book a free lesson', chat: 'Email', href: 'mailto:hello@lyvon.io' },
-    ko: { nav: '빠른 메뉴', home: '홈', cta: '무료 수업 신청', chat: '카카오 상담', href: 'https://open.kakao.com/o/sh3TzOsi' },
+    ko: { nav: '빠른 메뉴', home: '홈', cta: '무료 수업 신청', chat: '카카오 상담', href: 'https://pf.kakao.com/_xdnxfNX/chat' },
     ja: { nav: 'クイックメニュー', home: 'ホーム', cta: '無料レッスンを予約', chat: 'LINE 相談', href: 'https://line.me/ti/p/uwrW7dtHqN' },
     'zh-Hant': { nav: '快速選單', home: '首頁', cta: '預約免費課程', chat: 'Email', href: 'mailto:hello@lyvon.io' }
   }[L];
