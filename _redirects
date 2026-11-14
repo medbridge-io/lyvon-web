@@ -17,3 +17,5 @@
 /index.html            /                               301
 /start                 /                               301
 /start/*               /                               301
+/kr                    /ko/                            301
+/kr/*                  /ko/:splat                      301
