@@ -432,7 +432,7 @@ html[lang=en] body .lv-root > section.lv-hero h1.lv-hero-main.lv-fade { font-siz
 @media (max-width: 700px) {
   html body .lv-root > section.lv-hero:has(.lv-tri) > div[style*="z-index: 3"] { padding: 84px 28px 24px !important; gap: 10px !important; }
   html body .lv-root > section.lv-hero:has(.lv-tri) .lv-wordmark { font-size: 30px !important; }
-  html body .lv-root > section.lv-hero:has(.lv-tri) > div > p.lv-d2 { font-size: 9.5px !important; margin-top: -2px !important; }
+  html body .lv-root > section.lv-hero:has(.lv-tri) > div > p.lv-d2 { font-size: 10.5px !important; margin-top: -2px !important; }
   html body .lv-root > section.lv-hero:has(.lv-tri) h1.lv-hero-main.lv-fade { margin-top: 10px !important; font-size: 22px !important; line-height: 1.32 !important; max-width: 15em; }
   html[lang=en] body .lv-root > section.lv-hero:has(.lv-tri) h1.lv-hero-main.lv-fade { font-size: 21px !important; }
   html body .lv-root > section.lv-hero:has(.lv-tri) a.lv-proof { margin-top: 8px; font-size: 12.5px; padding: 8px 13px; }
