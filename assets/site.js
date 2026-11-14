@@ -1,7 +1,7 @@
 // ---------- analytics events (GA4) ----------
 window.lvTrack = function (name, params) { try { if (window.gtag) window.gtag('event', name, params || {}); } catch (e) {} };
 document.addEventListener('click', function (e) {
-  var a = e.target && e.target.closest ? e.target.closest('a[href*="open.kakao.com"], a[href*="pf.kakao.com"], a[href*="line.me"]') : null;
+  var a = e.target && e.target.closest ? e.target.closest('a[href*="open.kakao.com"], a[href*="pf.kakao.com"], a[href*="line.me"], a[href*="lin.ee"]') : null;
   if (a) window.lvTrack('chat_click', { channel: /kakao/.test(a.href) ? 'kakao' : 'line', page: location.pathname });
 }, true);
 
@@ -361,7 +361,7 @@ window.lvTS = (function () {
             g2: 'Semmelweis University 口頭試験ガイド', g2d: '公式トピック50、重要用語、練習問題',
             spam: '数分たっても届かない場合は、迷惑メールフォルダをご確認ください。',
             nx: '次のステップ', nxp: '今のレベルを知りたい方は、1対1のオンライン無料レッスン（50分）で確認できます。レッスン後に診断レポートをお送りします。',
-            b1: '無料レッスンを予約', b2: 'LINEで相談する', b2h: 'https://line.me/ti/p/uwrW7dtHqN', again: '別のメールアドレスで受け取る' },
+            b1: '無料レッスンを予約', b2: 'LINEで相談する', b2h: 'https://lin.ee/qQFkeDX', again: '別のメールアドレスで受け取る' },
       zh: { h: '指南已寄出', to: '我們已寄送兩份指南的連結至 ', toEnd: '。',
             g1: 'LYVON 入門指南', g1d: '課程與上課方式介紹',
             g2: 'Semmelweis University 口試指南', g2d: '官方50個主題、關鍵術語與練習題',
@@ -649,7 +649,7 @@ window.lvTS = (function () {
   var T = {
     en: { nav: 'Quick actions', home: 'Home', cta: 'Book a free lesson', chat: 'Email', href: 'mailto:hello@lyvon.io' },
     ko: { nav: '빠른 메뉴', home: '홈', cta: '무료 수업 신청', chat: '카카오 상담', href: 'https://pf.kakao.com/_xdnxfNX/chat' },
-    ja: { nav: 'クイックメニュー', home: 'ホーム', cta: '無料レッスンを予約', chat: 'LINE 相談', href: 'https://line.me/ti/p/uwrW7dtHqN' },
+    ja: { nav: 'クイックメニュー', home: 'ホーム', cta: '無料レッスンを予約', chat: 'LINE 相談', href: 'https://lin.ee/qQFkeDX' },
     'zh-Hant': { nav: '快速選單', home: '首頁', cta: '預約免費課程', chat: 'Email', href: 'mailto:hello@lyvon.io' }
   }[L];
   var mc = /^\/programs\/medconnect(\/|$)/.test(rest) || /^\/programs\/medconnect(\/|$)/.test(path);
