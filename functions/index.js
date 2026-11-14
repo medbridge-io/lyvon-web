@@ -1,6 +1,7 @@
 // GET / — send first-time visitors to their phone/browser language.
 // Order: saved choice (cookie lv_lang, set by the language menu) → Accept-Language → English.
-// Crawlers always get the English root, so search engines index every language via hreflang.
+// Search crawlers always get the English root, so search engines index every language via hreflang.
+// KakaoTalk / LINE link-preview bots are sent to /ko/ and /ja/ so shared links preview in the reader's language.
 const MAP = { ko: '/ko/', ja: '/ja/', zh: '/zh-Hant/' };
 const BOT = /bot|crawl|spider|slurp|yeti|daumoa|facebookexternalhit|kakaotalk-scrap|line-poker|preview|whatsapp|telegram|discord|embed/i;
 
@@ -21,6 +22,9 @@ function pick(header) {
 
 export async function onRequestGet({ request, next }) {
   const ua = request.headers.get('user-agent') || '';
+  // Messenger link previews: KakaoTalk users are Korean, LINE users Japanese — show those previews.
+  if (/kakaotalk-scrap/i.test(ua)) return Response.redirect(new URL('/ko/', request.url).toString(), 302);
+  if (/line-poker/i.test(ua)) return Response.redirect(new URL('/ja/', request.url).toString(), 302);
   if (BOT.test(ua)) return next();
   const url = new URL(request.url);
   if (url.searchParams.has('lang')) return next();             // explicit ?lang=en etc. stays put
