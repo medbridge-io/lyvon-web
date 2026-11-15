@@ -638,7 +638,7 @@ window.lvTS = (function () {
   }
 })();
 
-// ---------- phone dock: home · free lesson · chat, always one tap away ----------
+// ---------- phone dock: welcome guide · free lesson · chat, always one tap away ----------
 (function () {
   'use strict';
   var path = location.pathname;
@@ -647,10 +647,10 @@ window.lvTS = (function () {
   if (/^\/(book|salon|card|legal)(\/|$)/.test(rest) || /^\/(book|salon|card|legal)(\/|$)/.test(path)) return;
   if (!document.querySelector('.lv-root, [class$="-root"]') && !document.querySelector('header')) return;
   var T = {
-    en: { nav: 'Quick actions', home: 'Home', cta: 'Book a free lesson', chat: 'Email', href: 'mailto:hello@lyvon.io' },
-    ko: { nav: '빠른 메뉴', home: '홈', cta: '무료 수업 신청', chat: '카카오 상담', href: 'https://pf.kakao.com/_xdnxfNX/chat' },
-    ja: { nav: 'クイックメニュー', home: 'ホーム', cta: '無料レッスンを予約', chat: 'LINE 相談', href: 'https://lin.ee/qQFkeDX' },
-    'zh-Hant': { nav: '快速選單', home: '首頁', cta: '預約免費課程', chat: 'Email', href: 'mailto:hello@lyvon.io' }
+    en: { nav: 'Quick actions', home: '50 topics', cta: 'Book a free lesson', chat: 'Email', href: 'mailto:hello@lyvon.io' },
+    ko: { nav: '빠른 메뉴', home: '토픽 50', cta: '무료 수업 신청', chat: '카카오 상담', href: 'https://pf.kakao.com/_xdnxfNX/chat' },
+    ja: { nav: 'クイックメニュー', home: 'トピック50', cta: '無料レッスンを予約', chat: 'LINE 相談', href: 'https://lin.ee/qQFkeDX' },
+    'zh-Hant': { nav: '快速選單', home: '口試50題', cta: '預約免費課程', chat: 'Email', href: 'mailto:hello@lyvon.io' }
   }[L];
   var mc = /^\/programs\/medconnect(\/|$)/.test(rest) || /^\/programs\/medconnect(\/|$)/.test(path);
   var ctaHref = base + 'book/', ctaText = T.cta;
@@ -668,14 +668,14 @@ window.lvTS = (function () {
     document.querySelectorAll('a.lv-navcta').forEach(function (a) { a.setAttribute('href', '#book'); a.textContent = ctaText; });
   }
   var ic = function (d) { return '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + d + '</svg>'; };
-  var home = ic('<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h5v-6h4v6h5V9.5"/>');
+  var home = ic('<path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/>');
   var chat = /^mailto:/.test(T.href) ? ic('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6 8.5 7 8.5-7"/>') : ic('<path d="M12 4c-4.97 0-9 3.13-9 7 0 2.44 1.6 4.6 4.03 5.85L6 20.5l4.13-2.6c.6.07 1.23.1 1.87.1 4.97 0 9-3.13 9-7s-4.03-7-9-7Z"/>');
   var ext = /^https?:/.test(T.href) ? ' target="_blank" rel="noopener"' : '';
   var dock = document.createElement('nav');
   dock.className = 'lv-dock';
   dock.setAttribute('aria-label', T.nav);
   dock.innerHTML =
-    '<a class="lv-dock-side" href="' + base + '">' + home + '<span>' + T.home + '</span></a>' +
+    '<a class="lv-dock-side" href="' + base + '#guide">' + home + '<span>' + T.home + '</span></a>' +
     '<a class="lv-dock-cta" href="' + ctaHref + '">' + ctaText + ' <span aria-hidden="true">→</span></a>' +
     '<a class="lv-dock-side" href="' + T.href + '"' + ext + '>' + chat + '<span>' + T.chat + '</span></a>';
   document.body.appendChild(dock);
@@ -686,9 +686,10 @@ window.lvTS = (function () {
   var onPage = !mc && !cr && document.getElementById('book') && document.getElementById('contact');
   stick.innerHTML = '<div><a class="lv-stick-brand" href="' + base + '">LYVON</a><span class="lv-stick-acts"><a class="lv-stick-chat" href="' + T.href + '"' + ext + '>' + T.chat + '</a><a class="lv-stick-cta" href="' + (onPage ? '#book' : ctaHref) + '">' + ctaText + ' <span aria-hidden="true">→</span></a></span></div>';
   document.body.appendChild(stick);
-  // home on the home page itself: back to the top
+  // free welcome guide (50 oral-exam topics): open the guide form on this page, or on the home page if this page has none
   dock.firstChild.addEventListener('click', function (e) {
-    if (location.pathname === base) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    var t = document.querySelector('.lv-guide') && document.querySelector('[data-act="guide"]');
+    if (t) { e.preventDefault(); t.click(); }
   });
   // stay out of the way: hidden at the very top (hero already has the buttons), over the contact form, and while typing
   var contact = document.getElementById('contact') || document.getElementById('book');
