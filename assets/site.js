@@ -821,3 +821,23 @@ window.lvTS = (function () {
   window.addEventListener('pageshow', req);
   pick();
 })();
+
+/* 2026-11-15: re-align #anchor links after load — iOS Safari has no scroll anchoring, so images that load
+   above the target push it down and the visitor lands in the wrong section. Stops as soon as they scroll. */
+(function () {
+  if (!location.hash || location.hash.length < 2) return;
+  var id; try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }
+  var touched = false;
+  ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (ev) {
+    window.addEventListener(ev, function () { touched = true; }, { passive: true, once: true });
+  });
+  function align() {
+    if (touched) return;
+    var el = document.getElementById(id); if (!el) return;
+    var m = parseFloat(getComputedStyle(el).scrollMarginTop) || 0;
+    var off = el.getBoundingClientRect().top - m;
+    if (Math.abs(off) > 4) window.scrollTo({ top: window.pageYOffset + off, behavior: 'auto' });
+  }
+  function run() { align(); setTimeout(align, 300); setTimeout(align, 900); setTimeout(align, 1800); }
+  if (document.readyState === 'complete') run(); else window.addEventListener('load', run);
+})();
