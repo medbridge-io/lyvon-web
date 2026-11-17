@@ -461,3 +461,7 @@ body:has(.lv-tri) section#faq { padding-top: 48px !important; }
   body:has(.lv-tri) section#method { padding-bottom: 56px !important; }
   body:has(.lv-tri) section#faq { padding-top: 32px !important; }
 }
+/* 2026-11-17: home hero — lighter overlay so the three cities read brighter; soft shadow keeps the copy legible */
+section.lv-hero:has(.lv-tri) > div[aria-hidden="true"] { background: linear-gradient(180deg, rgba(11,20,30,.14) 0%, rgba(11,20,30,.32) 50%, rgba(11,20,30,.5) 100%) !important; }
+section.lv-hero:has(.lv-tri) .lv-tri img { filter: brightness(1.1) saturate(1.04); }
+section.lv-hero:has(.lv-tri) .lv-wordmark, section.lv-hero:has(.lv-tri) p.lv-d2, section.lv-hero:has(.lv-tri) .lv-hero-main, section.lv-hero:has(.lv-tri) .lv-heronote { text-shadow: 0 1px 14px rgba(8,14,22,.55), 0 0 2px rgba(8,14,22,.35); }
