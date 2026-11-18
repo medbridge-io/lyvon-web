@@ -465,3 +465,7 @@ body:has(.lv-tri) section#faq { padding-top: 48px !important; }
 section.lv-hero:has(.lv-tri) > div[aria-hidden="true"] { background: linear-gradient(180deg, rgba(11,20,30,.14) 0%, rgba(11,20,30,.32) 50%, rgba(11,20,30,.5) 100%) !important; }
 section.lv-hero:has(.lv-tri) .lv-tri img { filter: brightness(1.1) saturate(1.04); }
 section.lv-hero:has(.lv-tri) .lv-wordmark, section.lv-hero:has(.lv-tri) p.lv-d2, section.lv-hero:has(.lv-tri) .lv-hero-main, section.lv-hero:has(.lv-tri) .lv-heronote { text-shadow: 0 1px 14px rgba(8,14,22,.55), 0 0 2px rgba(8,14,22,.35); }
+
+/* JA form options: allow wrapping inside narrow option boxes; avoid lone punctuation lines in JA/ZH headings */
+html[lang=ja] .lv-option, html[lang=ja] .lv-option * { word-break: normal !important; overflow-wrap: anywhere; }
+html:is([lang=ja], [lang=zh-Hant]) :is(h1, h2) { text-wrap: pretty; }
