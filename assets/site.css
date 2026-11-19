@@ -469,3 +469,15 @@ section.lv-hero:has(.lv-tri) .lv-wordmark, section.lv-hero:has(.lv-tri) p.lv-d2,
 /* JA form options: allow wrapping inside narrow option boxes; avoid lone punctuation lines in JA/ZH headings */
 html[lang=ja] .lv-option, html[lang=ja] .lv-option * { word-break: normal !important; overflow-wrap: anywhere; }
 html:is([lang=ja], [lang=zh-Hant]) :is(h1, h2) { text-wrap: pretty; }
+
+/* "What happens next" strip next to the booking buttons */
+.lv-afterline { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 0; font-size: 13px; line-height: 1.5; color: #C3CBD4; }
+.lv-afterline li { display: inline-flex; align-items: center; }
+.lv-afterline li + li::before { content: "→"; margin: 0 10px; color: rgba(247,247,244,.45); }
+.lv-afterline li:first-child { color: #F7F7F4; font-weight: 600; }
+.lv-navrow { justify-content: space-between !important; align-items: center; flex-wrap: wrap; gap: 16px 24px; }
+@media (max-width: 700px) {
+  .lv-navrow { flex-direction: column; align-items: stretch; }
+  .lv-navrow .lv-btn { align-self: flex-end; }
+  .lv-afterline { font-size: 12px; }
+}
