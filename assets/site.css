@@ -481,3 +481,7 @@ html:is([lang=ja], [lang=zh-Hant]) :is(h1, h2) { text-wrap: pretty; }
   .lv-navrow .lv-btn { align-self: flex-end; }
   .lv-afterline { font-size: 12px; }
 }
+
+/* CJK: device system fonts instead of downloading Noto Sans JP/TC (hundreds of webfont slices per page) */
+html[lang=ja] .lv-root{font-family:Inter,'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans CJK JP','Noto Sans JP','Yu Gothic UI',YuGothic,Meiryo,sans-serif !important}
+html[lang=zh-Hant] .lv-root{font-family:Inter,'PingFang TC','Noto Sans CJK TC','Noto Sans TC','Microsoft JhengHei','Heiti TC',sans-serif !important}
