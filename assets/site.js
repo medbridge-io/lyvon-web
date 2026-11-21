@@ -677,7 +677,7 @@ window.lvTS = (function () {
   // KO / JA: chat (Kakao / LINE) is the main action, the free-lesson form sits on the side
   var chatFirst = (L === 'ko' || L === 'ja') && !mc && !cr;
   var cal = ic('<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>');
-  var freeShort = { ko: '무료 신청', ja: '無料レッスン' }[L];
+  var freeShort = { ko: '무료 수업', ja: '無料レッスン' }[L];
   dock.innerHTML = chatFirst ?
     '<a class="lv-dock-side" href="' + base + '#guide">' + home + '<span>' + T.home + '</span></a>' +
     '<a class="lv-dock-cta ' + (L === 'ko' ? 'lv-dock-kakao' : 'lv-dock-line') + '" href="' + T.href + '"' + ext + '>' + T.chatCta + ' <span aria-hidden="true">→</span></a>' +
