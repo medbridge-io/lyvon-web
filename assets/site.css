@@ -589,3 +589,4 @@ html body :is(section.mp-dark,section.mc-dark) h1 + p,html body :is(section.mp-d
 .lv-vnote{margin:10px 0 0;max-width:34em;font-size:15px;line-height:1.6;color:#D3D9E0}
 .lv-salon-line{margin:0 auto 4px}
 .lv-prose p.lv-byline{margin:-8px 0 28px!important;padding-bottom:16px;border-bottom:1px solid #DCDDDA;font-size:13px!important;line-height:1.5;color:#5F6367!important}
+.lv-hb-note{margin-left:6px;font-size:12px;font-weight:500;opacity:.85}

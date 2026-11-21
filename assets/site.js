@@ -155,7 +155,7 @@ window.lvTS = (function () {
       ko: { g1: '프로그램', g2: 'LYVON 알아보기', g3: '더 보기', mp: '해외 의대 구술시험 대비 · 대표 과정', mb: '의학 영어 기초 · 3개월', mc: '합격 후 멤버십', about: '소개', phil: '철학', ins: '인사이트', faq: '자주 묻는 질문', car: '일본·한국 취업 영어', sal: '영어 북 살롱', chat: '카카오톡으로 상담하기', chatHref: 'https://pf.kakao.com/_xdnxfNX/chat', free: '무료 수업 신청', guide: '무료 웰컴 가이드 · 토픽 50', lang: '언어', faqHref: B + 'faq/' },
       ja: { g1: 'プログラム', g2: 'LYVONについて', g3: 'その他', mp: '海外医学部の口頭試験対策 · 主力コース', mb: '医学英語の基礎 · 3か月', mc: '合格後のメンバーシップ', about: 'LYVONについて', phil: 'フィロソフィー', ins: 'インサイト', faq: 'よくある質問', car: '日本・韓国で働くための語学', sal: '英語ブックサロン', chat: 'LINEで相談する', chatHref: 'https://lin.ee/qQFkeDX', free: '無料レッスンを予約', guide: '無料ウェルカムガイド · トピック50', lang: '言語', faqHref: B + '#faq' },
       en: { g1: 'Programs', g2: 'About LYVON', g3: 'More', mp: 'Oral exam prep · flagship', mb: 'Medical English basics · 3 months', mc: 'After admission · membership', about: 'About', phil: 'Philosophy', ins: 'Insights', faq: 'FAQ', car: 'Language for work in Japan & Korea', sal: 'English book salon', chat: '', chatHref: '', free: 'Book a free lesson', guide: 'Free welcome guide · 50 topics', lang: 'Language', faqHref: B + 'faq/' },
-      'zh-Hant': { g1: '課程', g2: '認識 LYVON', g3: '更多', mp: '海外醫學院口試準備 · 旗艦課程', mb: '醫學英語基礎 · 3個月', mc: '錄取後會員方案', about: '關於我們', phil: '理念', ins: '專欄', faq: '常見問題', car: '赴日韓工作的語言課程', sal: '英語讀書會', chat: '', chatHref: '', free: '預約免費課程', guide: '免費入門指南 · 口試50題', lang: '語言', faqHref: B + '#faq' }
+      'zh-Hant': { g1: '課程', g2: '認識 LYVON', g3: '更多', mp: '海外醫學院口試準備 · 旗艦課程', mb: '醫學英語基礎 · 3個月', mc: '錄取後會員方案', about: '關於我們', phil: '理念', ins: '專欄', faq: '常見問題', car: '赴日韓工作的語言課程', sal: '英語讀書會', chat: '用 LINE 諮詢 · 英文回覆', chatHref: 'https://lin.ee/qQFkeDX', free: '預約免費課程', guide: '免費入門指南 · 口試50題', lang: '語言', faqHref: B + '#faq' }
     }[L];
     var here = location.pathname;
     function row(href, name, sub, close) {
@@ -706,7 +706,7 @@ window.lvTS = (function () {
     en: { nav: 'Quick actions', home: '50 topics', cta: 'Book a free lesson', chat: 'Email', href: 'mailto:hello@lyvon.io' },
     ko: { nav: '빠른 메뉴', home: '토픽 50', cta: '무료 수업 신청', chat: '카카오 상담', chatCta: '카카오톡 상담', href: 'https://pf.kakao.com/_xdnxfNX/chat' },
     ja: { nav: 'クイックメニュー', home: 'トピック50', cta: '無料レッスンを予約', chat: 'LINE 相談', chatCta: 'LINEで相談', href: 'https://lin.ee/qQFkeDX' },
-    'zh-Hant': { nav: '快速選單', home: '口試50題', cta: '預約免費課程', chat: 'Email', href: 'mailto:hello@lyvon.io' }
+    'zh-Hant': { nav: '快速選單', home: '口試50題', cta: '預約免費課程', chat: 'LINE 諮詢', chatCta: '用 LINE 諮詢', href: 'https://lin.ee/qQFkeDX' }
   }[L];
   var mc = /^\/programs\/medconnect(\/|$)/.test(rest) || /^\/programs\/medconnect(\/|$)/.test(path);
   var ctaHref = base + 'book/', ctaText = T.cta;
@@ -731,9 +731,9 @@ window.lvTS = (function () {
   dock.className = 'lv-dock';
   dock.setAttribute('aria-label', T.nav);
   // KO / JA: chat (Kakao / LINE) is the main action, the free-lesson form sits on the side
-  var chatFirst = (L === 'ko' || L === 'ja') && !mc && !cr;
+  var chatFirst = (L === 'ko' || L === 'ja' || L === 'zh-Hant') && !mc && !cr;
   var cal = ic('<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>');
-  var freeShort = { ko: '무료 수업', ja: '無料レッスン' }[L];
+  var freeShort = { ko: '무료 수업', ja: '無料レッスン', 'zh-Hant': '免費課程' }[L];
   dock.innerHTML = chatFirst ?
     '<a class="lv-dock-side" href="' + base + '#guide">' + home + '<span>' + T.home + '</span></a>' +
     '<a class="lv-dock-cta ' + (L === 'ko' ? 'lv-dock-kakao' : 'lv-dock-line') + '" href="' + T.href + '"' + ext + '>' + T.chatCta + ' <span aria-hidden="true">→</span></a>' +
