@@ -516,3 +516,6 @@ html body .lv-root > section.lv-hero > div.lv-hero2 > p.lv-heronote{margin:0!imp
 .lv-dock .lv-dock-cta.lv-dock-line{background:#06C755;color:#fff}
 html body .lv-dock a.lv-dock-cta.lv-dock-kakao{background:#FEE500!important;color:#191919!important}
 html body .lv-dock a.lv-dock-cta.lv-dock-line{background:#06C755!important;color:#fff!important}
+/* dashboard previews: small swipe hint on phones, where the screens scroll sideways */
+.lv-swipe-hint{display:none;margin:6px 0 0;width:100%;font-size:11.5px;line-height:1.4;letter-spacing:.02em;color:#8A8E92;text-align:center}
+@media (max-width:760px){.lv-swipe-hint{display:block;margin-top:-28px}}
