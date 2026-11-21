@@ -565,3 +565,27 @@ html body .lv-menu > p.lv-eyebrow{margin-top:20px!important}
  html body .lv-film .ph-row{min-height:88vh;min-height:88svh;justify-content:flex-end!important;padding:40vh 0 calc(96px + env(safe-area-inset-bottom,0px))!important}
  html body .lv-film > div > p.lv-tb:first-child{min-height:88vh;min-height:88svh}
 }
+html body .lv-stick a.lv-stick-cta.lv-dock-kakao{background:#FEE500!important;color:#191919!important}
+html body .lv-stick a.lv-stick-cta.lv-dock-line{background:#06C755!important;color:#fff!important}
+.lv-artend-btns{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+/* philosophy: a short note from the founder, above the closing section */
+.lv-founder{background:#F7F7F4;color:#17191C;padding:clamp(72px,9cqi,128px) clamp(20px,4.5cqi,64px)}
+.lv-founder-in{max-width:640px;margin:0 auto}
+.lv-founder-eb{margin:0 0 14px;color:#5F6367}
+.lv-founder-h{margin:0 0 28px;font-size:clamp(28px,3.2cqi,42px);line-height:1.2;font-weight:400;letter-spacing:-0.02em}
+.lv-founder-body p{margin:0 0 18px;font-size:17px;line-height:1.75;color:#2E3135}
+.lv-founder-sign{margin:32px 0 0;padding-top:20px;border-top:1px solid #C4C6C3;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.lv-founder-name{font-family:'Snell Roundhand','Segoe Script','Brush Script MT',cursive;font-size:30px;line-height:1;color:#20344A}
+.lv-founder-role{font-size:12px;letter-spacing:.08em;color:#5F6367}
+html body a.lv-hbtn,html body a.lv-hbtn:hover{text-decoration:none!important}
+/* MedPath / MedConnect heroes: subtitle stays readable over bright parts of the photo */
+html body section.mp-dark > div[aria-hidden]:first-of-type{background:linear-gradient(90deg,rgba(20,17,58,.84) 0%,rgba(20,17,58,.6) 48%,rgba(20,17,58,.2) 100%)!important}
+html body section.mc-dark > div[aria-hidden]:first-of-type{background:linear-gradient(0deg,rgba(42,18,32,.86) 0%,rgba(42,18,32,.66) 45%,rgba(42,18,32,.2) 75%,rgba(42,18,32,.4) 100%),linear-gradient(90deg,rgba(42,18,32,.9) 0%,rgba(42,18,32,.72) 50%,rgba(42,18,32,.36) 100%)!important}
+html body :is(section.mp-dark,section.mc-dark) h1 + p,html body :is(section.mp-dark,section.mc-dark) h1 ~ p:not(.lv-eyebrow){color:#FFFFFF!important;text-shadow:0 1px 2px rgba(0,0,0,.5),0 2px 18px rgba(0,0,0,.55)}
+@media (max-width:700px){html body section.mp-dark > div[aria-hidden]:first-of-type{background:linear-gradient(0deg,rgba(20,17,58,.9) 0%,rgba(20,17,58,.7) 55%,rgba(20,17,58,.45) 100%)!important}}
+.lv-pilot{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin:0;padding:6px 12px;border-radius:999px;background:rgba(247,247,244,.14);border:1px solid rgba(247,247,244,.3);font-size:12.5px;font-weight:600;letter-spacing:.02em;color:#FFFFFF}
+.lv-pilot span{color:#F0A6C2;font-size:9px}
+.lv-pilot{margin-top:-14px!important}
+.lv-vnote{margin:10px 0 0;max-width:34em;font-size:15px;line-height:1.6;color:#D3D9E0}
+.lv-salon-line{margin:0 auto 4px}
+.lv-prose p.lv-byline{margin:-8px 0 28px!important;padding-bottom:16px;border-bottom:1px solid #DCDDDA;font-size:13px!important;line-height:1.5;color:#5F6367!important}

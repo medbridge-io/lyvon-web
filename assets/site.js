@@ -748,7 +748,9 @@ window.lvTS = (function () {
   var stick = document.createElement('div');
   stick.className = 'lv-stick';
   var onPage = !mc && !cr && document.getElementById('book') && document.getElementById('contact');
-  stick.innerHTML = '<div><a class="lv-stick-brand" href="' + base + '">LYVON</a><span class="lv-stick-acts"><a class="lv-stick-chat" href="' + T.href + '"' + ext + '>' + T.chat + '</a><a class="lv-stick-cta" href="' + (onPage ? '#book' : ctaHref) + '">' + ctaText + ' <span aria-hidden="true">→</span></a></span></div>';
+  stick.innerHTML = chatFirst ?
+    '<div><a class="lv-stick-brand" href="' + base + '">LYVON</a><span class="lv-stick-acts"><a class="lv-stick-chat" href="' + (onPage ? '#book' : ctaHref) + '">' + ctaText + '</a><a class="lv-stick-cta ' + (L === 'ko' ? 'lv-dock-kakao' : 'lv-dock-line') + '" href="' + T.href + '"' + ext + '>' + T.chatCta + ' <span aria-hidden="true">→</span></a></span></div>'
+    : '<div><a class="lv-stick-brand" href="' + base + '">LYVON</a><span class="lv-stick-acts"><a class="lv-stick-chat" href="' + T.href + '"' + ext + '>' + T.chat + '</a><a class="lv-stick-cta" href="' + (onPage ? '#book' : ctaHref) + '">' + ctaText + ' <span aria-hidden="true">→</span></a></span></div>';
   document.body.appendChild(stick);
   // free welcome guide (50 oral-exam topics): open the guide form on this page, or on the home page if this page has none
   dock.firstChild.addEventListener('click', function (e) {
