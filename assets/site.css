@@ -559,3 +559,9 @@ html body .lv-menu nav.lv-m2{margin-top:4px!important;font-size:16px!important;f
 .lv-m2-langs a{flex:1;min-height:40px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(247,247,244,.2);border-radius:999px;font-size:13px;color:#C3CBD4;text-decoration:none}
 .lv-m2-langs a[aria-current]{border-color:#F7F7F4;color:#F7F7F4;font-weight:600}
 html body .lv-menu > p.lv-eyebrow{margin-top:20px!important}
+/* philosophy: end with a way to talk to us; chapters on phones sit on the dark lower part, a little shorter */
+.lv-ph-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
+@media (max-width:700px){
+ html body .lv-film .ph-row{min-height:88vh;min-height:88svh;justify-content:flex-end!important;padding:40vh 0 calc(96px + env(safe-area-inset-bottom,0px))!important}
+ html body .lv-film > div > p.lv-tb:first-child{min-height:88vh;min-height:88svh}
+}
