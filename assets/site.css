@@ -530,3 +530,8 @@ html body .lv-dock a.lv-dock-cta.lv-dock-line{background:#06C755!important;color
 html:is([lang=ja],[lang=zh-Hant]) body, html:is([lang=ja],[lang=zh-Hant]) body *{word-break:keep-all!important;overflow-wrap:anywhere!important}
 html[lang=ja] body{line-break:strict}
 html[lang] body .lv-root > section.lv-hero:has(.lv-tri) > div.lv-hero2[style] > p.lv-heronote:nth-of-type(n){margin:0!important;white-space:normal!important}
+/* dashboard previews: 5 screens, swipe/scroll sideways from the first one */
+html body .lv-phones{justify-content:flex-start!important;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+html body .lv-phones > [role=img]{scroll-snap-align:start}
+html body .lv-swipe-hint{display:block!important}
+@media (min-width:761px){html body .lv-swipe-hint{margin-top:-28px}}
