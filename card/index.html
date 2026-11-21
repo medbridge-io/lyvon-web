@@ -58,7 +58,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hint{margin:10px 0 0;text-align:center;font-size:11px;letter-spacing:.14em;color:var(--mute)}
 /* actions */
 .cta{display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;background:var(--paper);color:#17191C;font-size:12px;font-weight:600;letter-spacing:.2em}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
 .grid a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:84px;background:#122030;border:1px solid var(--line);border-radius:var(--r);font-size:11px;letter-spacing:.06em;color:#D3D6D9;transition:background .2s}
 .grid a:active,.grid a:hover{background:#1A2C42}
 .grid svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.4}
@@ -68,6 +68,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .prog a:last-child{border-bottom:1px solid var(--line)}
 .prog small{font-size:11px;letter-spacing:.16em;color:var(--mute)}
 .tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+#cta{word-break:keep-all;overflow-wrap:anywhere}
 .tools button,.tools a{display:flex;align-items:center;justify-content:center;text-align:center;min-height:48px;padding:6px;border:1px solid var(--line);font-size:11px;letter-spacing:.04em;color:#D3D6D9}
 .qr{display:flex;gap:16px;align-items:center;padding:16px;border:1px solid var(--line)}
 .qr img{width:84px;height:84px;background:#fff;padding:6px;border-radius:6px;cursor:zoom-in}
@@ -121,14 +122,12 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     <p class="hint" data-i="flip">탭하여 뒤집기</p>
   </div>
 
-  <a class="cta rv lv-btn lv-btn-light" id="cta" href="/ko/book/"><span data-i="cta">무료 수업 신청</span> <svg aria-hidden="true" class="ic" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></svg></a>
+  <a class="cta rv lv-btn lv-btn-light" id="savetop" href="patrick.vcf" download="Patrick_Noh_LYVON.vcf"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg><span data-i="save">연락처 저장</span></a>
 
   <div class="grid rv">
-    <a href="tel:+821040839227"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span data-i="callkr">한국 전화</span></a>
-    <a href="tel:+818072269227"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span data-i="calljp">일본 전화</span></a>
-    <a href="mailto:patrick@lyvon.io"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg><span data-i="email">이메일</span></a>
     <a href="https://pf.kakao.com/_xdnxfNX/chat" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 4C7 4 3 7.1 3 11c0 2.5 1.7 4.7 4.2 6L6.5 20l3.6-2.2c.6.1 1.2.2 1.9.2 5 0 9-3.1 9-7s-4-7-9-7z"/></svg><span data-i="kakao">카카오톡</span></a>
     <a href="https://lin.ee/qQFkeDX" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="15" rx="4"/><path d="M8 9v4h2M12 9v4M14.5 13V9l3 4V9"/></svg><span>LINE</span></a>
+    <a href="mailto:patrick@lyvon.io"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg><span data-i="email">이메일</span></a>
     <a href="/" id="web"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.5 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.5-3.8-9S9.5 5.5 12 3z"/></svg><span data-i="web">웹사이트</span></a>
   </div>
 
@@ -143,9 +142,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
   <div class="sec rv">
     <div class="tools">
-      <a href="patrick.vcf" download="Patrick_Noh_LYVON.vcf" data-i="save">연락처 저장</a>
       <button type="button" id="share" data-i="share">카드 공유</button>
       <button type="button" id="copy" data-i="copy">링크 복사</button>
+      <a id="cta" href="/ko/book/" data-i="cta">무료 수업 신청</a>
     </div>
     <div class="qr">
       <img id="qrimg" src="qr.png" alt="QR code — lyvon.io/card">
@@ -170,7 +169,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
         mb:"기초 과정 →", mp:"입시 준비 →", mc:"합격 이후 →", save:"연락처 저장", share:"카드 공유", copy:"링크 복사",
         qrcap:"스캔하여 디지털 명함 열기", qrhint:"탭하여 확대", qrlp:"이미지를 길게 누르면 사진에 저장됩니다", qrsave:"QR 저장", qrclose:"닫기",
         foot:"학습·소통·연결로 잠재력을 성장으로.<br>의학에서 시작해 그 너머로.", sub:"패트릭 노", toast:"링크가 복사되었습니다", path:"/ko"},
-    ja:{flip:"タップして裏返す", cta:"無料レッスンを申し込む", callkr:"韓国 電話", calljp:"日本 電話", email:"メール", kakao:"カカオトーク", web:"ウェブサイト",
+    ja:{flip:"タップして裏返す", cta:"無料レッスンを<wbr>申し込む", callkr:"韓国 電話", calljp:"日本 電話", email:"メール", kakao:"カカオトーク", web:"ウェブサイト",
         mb:"基礎コース →", mp:"入試対策 →", mc:"合格後 →", save:"連絡先を保存", share:"カードを共有", copy:"リンクをコピー",
         qrcap:"スキャンしてデジタル名刺を開く", qrhint:"タップで拡大", qrlp:"画像を長押しすると写真に保存できます", qrsave:"QRを保存", qrclose:"閉じる",
         foot:"学び・対話・つながりで、可能性を成長へ。<br>医学から始まり、その先へ。", sub:"パトリック・ノ", toast:"リンクをコピーしました", path:"/ja"},
