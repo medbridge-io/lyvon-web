@@ -146,6 +146,62 @@ window.lvTS = (function () {
     });
   });
 
+  // ---------- menu panel v2 (2026-11-21): grouped, smaller type, quick actions + languages ----------
+  (function () {
+    var box = $('.lv-menu'), nav = box && $('nav', box);
+    if (!nav) return;
+    var m = location.pathname.match(/^\/(ko|ja|zh-Hant)(\/|$)/), L = m ? m[1] : 'en', B = m ? '/' + L + '/' : '/';
+    var T = {
+      ko: { g1: '프로그램', g2: 'LYVON 알아보기', g3: '더 보기', mp: '해외 의대 구술시험 대비 · 대표 과정', mb: '의학 영어 기초 · 3개월', mc: '합격 후 멤버십', about: '소개', phil: '철학', ins: '인사이트', faq: '자주 묻는 질문', car: '일본·한국 취업 영어', sal: '영어 북 살롱', chat: '카카오톡으로 상담하기', chatHref: 'https://pf.kakao.com/_xdnxfNX/chat', free: '무료 수업 신청', guide: '무료 웰컴 가이드 · 토픽 50', lang: '언어', faqHref: B + 'faq/' },
+      ja: { g1: 'プログラム', g2: 'LYVONについて', g3: 'その他', mp: '海外医学部の口頭試験対策 · 主力コース', mb: '医学英語の基礎 · 3か月', mc: '合格後のメンバーシップ', about: 'LYVONについて', phil: 'フィロソフィー', ins: 'インサイト', faq: 'よくある質問', car: '日本・韓国で働くための語学', sal: '英語ブックサロン', chat: 'LINEで相談する', chatHref: 'https://lin.ee/qQFkeDX', free: '無料レッスンを予約', guide: '無料ウェルカムガイド · トピック50', lang: '言語', faqHref: B + '#faq' },
+      en: { g1: 'Programs', g2: 'About LYVON', g3: 'More', mp: 'Oral exam prep · flagship', mb: 'Medical English basics · 3 months', mc: 'After admission · membership', about: 'About', phil: 'Philosophy', ins: 'Insights', faq: 'FAQ', car: 'Language for work in Japan & Korea', sal: 'English book salon', chat: '', chatHref: '', free: 'Book a free lesson', guide: 'Free welcome guide · 50 topics', lang: 'Language', faqHref: B + 'faq/' },
+      'zh-Hant': { g1: '課程', g2: '認識 LYVON', g3: '更多', mp: '海外醫學院口試準備 · 旗艦課程', mb: '醫學英語基礎 · 3個月', mc: '錄取後會員方案', about: '關於我們', phil: '理念', ins: '專欄', faq: '常見問題', car: '赴日韓工作的語言課程', sal: '英語讀書會', chat: '', chatHref: '', free: '預約免費課程', guide: '免費入門指南 · 口試50題', lang: '語言', faqHref: B + '#faq' }
+    }[L];
+    var here = location.pathname;
+    function row(href, name, sub, close) {
+      var cur = href.split('#')[0] === here && href.indexOf('#') < 0 ? ' aria-current="page"' : '';
+      return '<a class="lv-m2-row" href="' + href + '"' + cur + (close ? ' data-m2close' : '') + '><span class="lv-m2-name">' + name + '</span>' + (sub ? '<span class="lv-m2-sub">' + sub + '</span>' : '') + '</a>';
+    }
+    var html =
+      '<p class="lv-m2-h">' + T.g1 + '</p>' +
+      row(B + 'programs/medpath/', 'MedPath', T.mp) + row(B + 'programs/medbridge/', 'MedBridge', T.mb) + row(B + 'programs/medconnect/', 'MedConnect', T.mc) +
+      '<p class="lv-m2-h">' + T.g2 + '</p><div class="lv-m2-grid">' +
+      row(B + '#about', T.about, '', true) + row(B + 'philosophy/', T.phil) + row(B + 'insights/', T.ins) + row(T.faqHref, T.faq, '', true) + '</div>' +
+      '<p class="lv-m2-h">' + T.g3 + '</p><div class="lv-m2-grid">' +
+      row(B + 'programs/career/', 'LYVON Career', T.car) + row('/salon/', 'LYVON Salon', T.sal) + '</div>';
+    nav.innerHTML = html;
+    nav.classList.add('lv-m2');
+    var acts = document.createElement('div');
+    acts.className = 'lv-m2-acts';
+    acts.innerHTML =
+      (T.chat ? '<a class="lv-m2-btn lv-m2-' + (L === 'ko' ? 'kakao' : 'line') + '" href="' + T.chatHref + '" target="_blank" rel="noopener">' + T.chat + '</a>' : '') +
+      '<a class="lv-m2-btn lv-m2-free" href="' + B + 'book/">' + T.free + ' →</a>' +
+      '<a class="lv-m2-guide" href="' + B + '#guide" data-m2guide>' + T.guide + ' →</a>';
+    nav.parentNode.insertBefore(acts, nav.nextSibling);
+    var langs = $('.lv-langmenu');
+    if (langs) {
+      var lw = document.createElement('div');
+      lw.className = 'lv-m2-langs';
+      lw.setAttribute('aria-label', T.lang);
+      lw.innerHTML = $$('a', langs).map(function (a) {
+        var on = a.getAttribute('hreflang') === (L === 'en' ? 'en' : L);
+        return '<a href="' + a.getAttribute('href') + '" hreflang="' + a.getAttribute('hreflang') + '" lang="' + a.getAttribute('hreflang') + '"' + (on ? ' aria-current="true"' : '') + '>' + { en: 'EN', ko: '한국어', ja: '日本語', 'zh-Hant': '繁中' }[a.getAttribute('hreflang')] + '</a>';
+      }).join('');
+      acts.parentNode.insertBefore(lw, acts.nextSibling);
+    }
+    var closeBtn = $('button[data-act="menu"]', box);
+    box.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a');
+      if (!a || !box.contains(a)) return;
+      if (a.hasAttribute('data-m2guide')) {
+        var g = $('[data-act="guide"]');
+        if (g) { e.preventDefault(); if (closeBtn) closeBtn.click(); setTimeout(function () { g.click(); }, 60); }
+        return;
+      }
+      if (a.hasAttribute('data-m2close') && a.getAttribute('href').split('#')[0] === here && closeBtn) closeBtn.click();
+    });
+  })();
+
   // ---------- mobile menu ----------
   var menu = $('.lv-menu'), menuOpener = null;
   function setMenu(open) {
