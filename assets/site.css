@@ -526,3 +526,7 @@ html body .lv-dock a.lv-dock-cta.lv-dock-line{background:#06C755!important;color
  html body a.lv-program-row > div:nth-child(2){margin-top:8px;flex:none!important;width:100%}
  html body a.lv-program-row .lv-row-cta{order:9;align-self:flex-start;margin-top:12px}
 }
+/* 2026-11-21 JA / ZH: lines break only between phrases (<wbr> marks them), never inside a word — same on Safari and Chrome */
+html:is([lang=ja],[lang=zh-Hant]) body, html:is([lang=ja],[lang=zh-Hant]) body *{word-break:keep-all!important;overflow-wrap:anywhere!important}
+html[lang=ja] body{line-break:strict}
+html[lang] body .lv-root > section.lv-hero:has(.lv-tri) > div.lv-hero2[style] > p.lv-heronote:nth-of-type(n){margin:0!important;white-space:normal!important}
