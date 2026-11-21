@@ -519,3 +519,10 @@ html body .lv-dock a.lv-dock-cta.lv-dock-line{background:#06C755!important;color
 /* dashboard previews: small swipe hint on phones, where the screens scroll sideways */
 .lv-swipe-hint{display:none;margin:6px 0 0;width:100%;font-size:11.5px;line-height:1.4;letter-spacing:.02em;color:#8A8E92;text-align:center}
 @media (max-width:760px){.lv-swipe-hint{display:block;margin-top:-28px}}
+/* program rows on phones/tablets: read first, then "learn more" — the button moves below the description and checklist */
+@media (max-width:940px){
+ html body a.lv-program-row{flex-direction:column!important;flex-wrap:nowrap!important;gap:12px!important}
+ html body a.lv-program-row > div:first-child{display:contents!important}
+ html body a.lv-program-row > div:nth-child(2){margin-top:8px;flex:none!important;width:100%}
+ html body a.lv-program-row .lv-row-cta{order:9;align-self:flex-start;margin-top:12px}
+}
