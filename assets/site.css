@@ -485,3 +485,34 @@ html:is([lang=ja], [lang=zh-Hant]) :is(h1, h2) { text-wrap: pretty; }
 /* CJK: device system fonts instead of downloading Noto Sans JP/TC (hundreds of webfont slices per page) */
 html[lang=ja] .lv-root{font-family:Inter,'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans CJK JP','Noto Sans JP','Yu Gothic UI',YuGothic,Meiryo,sans-serif !important}
 html[lang=zh-Hant] .lv-root{font-family:Inter,'PingFang TC','Noto Sans CJK TC','Noto Sans TC','Microsoft JhengHei','Heiti TC',sans-serif !important}
+
+/* 2026-11-21 hero v2: left-aligned, logo + headline + proof + one primary action (KO Kakao, JA LINE) */
+html body .lv-root > section.lv-hero > div.lv-hero2{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:flex-start!important;justify-content:flex-end!important;text-align:left!important;gap:14px!important;padding:0 20px clamp(48px,9vh,88px)!important;pointer-events:none}
+html body .lv-root > section.lv-hero:has(.lv-hero2)::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(11,20,30,0) 25%,rgba(11,20,30,.6) 55%,rgba(11,20,30,.92) 100%)}
+html body section.lv-hero:has(.lv-hero2) figcaption{display:none}
+html body .lv-hero2 .lv-fade{animation-duration:.6s!important}
+html body .lv-hero2 .lv-d1{animation-delay:.1s!important}html body .lv-hero2 .lv-d2,html body .lv-hero2 .lv-d3{animation-delay:.2s!important}
+html body .lv-hero2 .lv-wordmark.lv-d1{display:block!important;font-size:clamp(40px,5.6cqi,88px)!important;letter-spacing:.2em!important;padding-left:0!important;line-height:1!important;font-weight:500!important;margin:0 0 2px -2px!important;text-align:left!important}
+html body .lv-hero2 p.lv-d2{margin:0!important;padding-left:0!important;font-size:12px!important;font-weight:600!important;letter-spacing:.2em!important;color:#C3CBD4!important;text-align:left!important}
+html body .lv-hero2 .lv-hero-main.lv-fade{margin:0!important;max-width:15em!important;text-align:left!important;font-size:clamp(28px,4.2cqi,62px)!important;line-height:1.16!important;text-wrap:balance}
+html[lang=en] body .lv-hero2 .lv-hero-main.lv-fade{max-width:18em!important;font-size:clamp(26px,3.6cqi,54px)!important}
+html body .lv-hero2 .lv-proof{margin:0!important;padding:0!important;background:none!important;border:none!important;border-radius:0!important;font-size:15px!important;text-align:left!important}
+html body .lv-hero2 .lv-hbtns{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:6px;pointer-events:auto}
+.lv-hbtn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 22px;border-radius:12px;font-size:16px;font-weight:600;line-height:1.2;text-decoration:none;white-space:nowrap;transition:filter .15s}
+.lv-hbtn:hover{filter:brightness(.95)}.lv-hbtn:focus-visible,.lv-hlink:focus-visible{outline:2px solid #F7F7F4;outline-offset:3px}
+.lv-hbtn-kakao{background:#FEE500;color:#191919}
+.lv-hbtn-line{background:#06C755;color:#fff}
+.lv-hbtn-light{background:#F7F7F4;color:#17191C}
+.lv-hb-ic{flex:none}
+.lv-hlink{color:#F7F7F4;font-size:15px;font-weight:500;text-decoration:underline;text-underline-offset:5px;text-decoration-color:rgba(247,247,244,.5);white-space:nowrap}
+html body .lv-root > section.lv-hero > div.lv-hero2 > p.lv-heronote{margin:0!important;max-width:36em!important;text-align:left!important;white-space:normal!important;letter-spacing:0!important;font-size:12.5px!important;color:rgba(247,247,244,.88)!important}
+@media (min-width:900px){
+ html body .lv-root > section.lv-hero > div.lv-hero2{justify-content:center!important;padding:40px clamp(20px,4.5cqi,64px) 0!important;gap:18px!important}
+ html body .lv-root > section.lv-hero:has(.lv-hero2)::after{background:linear-gradient(90deg,rgba(11,20,30,.85) 0%,rgba(11,20,30,.55) 45%,rgba(11,20,30,.1) 75%)}
+ html body .lv-root > section.lv-hero > div.lv-hero2 > p.lv-heronote{font-size:13px!important}
+}
+/* dock: chat-first languages */
+.lv-dock .lv-dock-cta.lv-dock-kakao{background:#FEE500;color:#191919}
+.lv-dock .lv-dock-cta.lv-dock-line{background:#06C755;color:#fff}
+html body .lv-dock a.lv-dock-cta.lv-dock-kakao{background:#FEE500!important;color:#191919!important}
+html body .lv-dock a.lv-dock-cta.lv-dock-line{background:#06C755!important;color:#fff!important}

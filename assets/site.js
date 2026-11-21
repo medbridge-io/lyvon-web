@@ -2,7 +2,7 @@
 window.lvTrack = function (name, params) { try { if (window.gtag) window.gtag('event', name, params || {}); } catch (e) {} };
 document.addEventListener('click', function (e) {
   var a = e.target && e.target.closest ? e.target.closest('a[href*="open.kakao.com"], a[href*="pf.kakao.com"], a[href*="line.me"], a[href*="lin.ee"]') : null;
-  if (a) window.lvTrack('chat_click', { channel: /kakao/.test(a.href) ? 'kakao' : 'line', page: location.pathname });
+  if (a) window.lvTrack('chat_click', { channel: /kakao/.test(a.href) ? 'kakao' : 'line', page: location.pathname, place: a.closest('.lv-hero') ? 'hero' : a.closest('.lv-dock') ? 'dock' : a.closest('.lv-stick') ? 'stickybar' : 'page' });
 }, true);
 
 // Where this visit came from: referring site (host only), campaign tags and first page. Kept in sessionStorage for this tab only.
@@ -648,8 +648,8 @@ window.lvTS = (function () {
   if (!document.querySelector('.lv-root, [class$="-root"]') && !document.querySelector('header')) return;
   var T = {
     en: { nav: 'Quick actions', home: '50 topics', cta: 'Book a free lesson', chat: 'Email', href: 'mailto:hello@lyvon.io' },
-    ko: { nav: '빠른 메뉴', home: '토픽 50', cta: '무료 수업 신청', chat: '카카오 상담', href: 'https://pf.kakao.com/_xdnxfNX/chat' },
-    ja: { nav: 'クイックメニュー', home: 'トピック50', cta: '無料レッスンを予約', chat: 'LINE 相談', href: 'https://lin.ee/qQFkeDX' },
+    ko: { nav: '빠른 메뉴', home: '토픽 50', cta: '무료 수업 신청', chat: '카카오 상담', chatCta: '카카오톡 상담', href: 'https://pf.kakao.com/_xdnxfNX/chat' },
+    ja: { nav: 'クイックメニュー', home: 'トピック50', cta: '無料レッスンを予約', chat: 'LINE 相談', chatCta: 'LINEで相談', href: 'https://lin.ee/qQFkeDX' },
     'zh-Hant': { nav: '快速選單', home: '口試50題', cta: '預約免費課程', chat: 'Email', href: 'mailto:hello@lyvon.io' }
   }[L];
   var mc = /^\/programs\/medconnect(\/|$)/.test(rest) || /^\/programs\/medconnect(\/|$)/.test(path);
@@ -674,7 +674,15 @@ window.lvTS = (function () {
   var dock = document.createElement('nav');
   dock.className = 'lv-dock';
   dock.setAttribute('aria-label', T.nav);
-  dock.innerHTML =
+  // KO / JA: chat (Kakao / LINE) is the main action, the free-lesson form sits on the side
+  var chatFirst = (L === 'ko' || L === 'ja') && !mc && !cr;
+  var cal = ic('<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>');
+  var freeShort = { ko: '무료 신청', ja: '無料予約' }[L];
+  dock.innerHTML = chatFirst ?
+    '<a class="lv-dock-side" href="' + base + '#guide">' + home + '<span>' + T.home + '</span></a>' +
+    '<a class="lv-dock-cta ' + (L === 'ko' ? 'lv-dock-kakao' : 'lv-dock-line') + '" href="' + T.href + '"' + ext + '>' + T.chatCta + ' <span aria-hidden="true">→</span></a>' +
+    '<a class="lv-dock-side" href="' + ctaHref + '">' + cal + '<span>' + freeShort + '</span></a>'
+    :
     '<a class="lv-dock-side" href="' + base + '#guide">' + home + '<span>' + T.home + '</span></a>' +
     '<a class="lv-dock-cta" href="' + ctaHref + '">' + ctaText + ' <span aria-hidden="true">→</span></a>' +
     '<a class="lv-dock-side" href="' + T.href + '"' + ext + '>' + chat + '<span>' + T.chat + '</span></a>';
