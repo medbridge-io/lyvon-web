@@ -4,7 +4,7 @@ N:Noh;Patrick;;;
 FN:Patrick Noh
 ORG:LYVON
 TITLE:Founder & Program Director
-item1.TEL;TYPE=CELL,VOICE:+82-10-4083-9227
+item1.TEL;TYPE=WORK,VOICE:+82-70-8098-8077
 item1.X-ABLabel:KR
 item2.TEL;TYPE=WORK,VOICE:+81-80-7226-9227
 item2.X-ABLabel:JP
@@ -15,5 +15,7 @@ item4.URL:https://lyvon.io/card
 item4.X-ABLabel:Digital Card
 item5.URL:https://lin.ee/qQFkeDX
 item5.X-ABLabel:LINE
+item6.URL:https://pf.kakao.com/_xdnxfNX/chat
+item6.X-ABLabel:KakaoTalk
 NOTE:LYVON — Everyone has a V.
 END:VCARD
