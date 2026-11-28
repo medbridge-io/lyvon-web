@@ -602,3 +602,5 @@ html body section.lv-hero:has(.lv-hero2) .lv-tri figcaption{z-index:3!important;
 html body footer .lv-biz{display:block!important;order:3;flex-basis:100%;margin:0;font-size:10.5px;line-height:1.7;color:#6F767E;letter-spacing:0}
 html body footer .lv-biz>span{display:inline}
 html body footer .lv-biz-sep>span+span::before{content:" · "}
+/* 2026-11-28: no reserved space under the footer while the mobile dock is hidden */
+html.lv-has-dock.lv-dock-off body{padding-bottom:0}

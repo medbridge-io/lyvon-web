@@ -768,6 +768,7 @@ window.lvTS = (function () {
   function upd() {
     var show = (window.scrollY || 0) > window.innerHeight * 0.5 && !overForm && !typing;
     dock.classList.toggle('lv-dock-on', show);
+    document.documentElement.classList.toggle('lv-dock-off', !show);
     if (show) dock.removeAttribute('inert'); else dock.setAttribute('inert', '');
     var on = (window.scrollY || 0) > window.innerHeight * 0.85 && !overForm;
     stick.classList.toggle('lv-stick-on', on);
@@ -907,4 +908,16 @@ window.lvTS = (function () {
   }
   function run() { align(); setTimeout(align, 300); setTimeout(align, 900); setTimeout(align, 1800); }
   if (document.readyState === 'complete') run(); else window.addEventListener('load', run);
+})();
+
+/* 2026-11-28: touch screens — open program rows / chooser links on the first tap
+   (iOS otherwise spends the first tap on the :hover colour change) */
+(function () {
+  if (!window.matchMedia || !matchMedia('(hover: none)').matches) return;
+  Array.prototype.forEach.call(document.querySelectorAll('a.lv-program-row, .lv-chooser > a'), function (a) {
+    var sx = 0, sy = 0, moved = false;
+    a.addEventListener('touchstart', function (e) { if (e.touches.length !== 1) { moved = true; return; } sx = e.touches[0].clientX; sy = e.touches[0].clientY; moved = false; }, { passive: true });
+    a.addEventListener('touchmove', function (e) { var t = e.touches[0]; if (Math.abs(t.clientX - sx) > 10 || Math.abs(t.clientY - sy) > 10) moved = true; }, { passive: true });
+    a.addEventListener('touchend', function (e) { if (moved) return; e.preventDefault(); location.href = a.href; }, { passive: false });
+  });
 })();
