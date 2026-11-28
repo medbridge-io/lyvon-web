@@ -540,7 +540,7 @@ window.lvTS = (function () {
 
   // scroll reveal
   var SEL = 'h1,h2,h3,p,li,img,figure,dl,table,article,a.lv-row,blockquote';
-  var EXCL = 'header,nav,form,.lv-menu,.lv-guide,.lv-guidebar,.lv-langmenu,.lv-hero,footer,[data-step],.lv-film-bg';
+  var EXCL = 'header,nav,form,.lv-menu,.lv-guide,.lv-guidebar,.lv-langmenu,.lv-hero,footer,[data-step],.lv-film-bg,.lv-program-row';
   var picked = [];
   ROOT.querySelectorAll(SEL).forEach(function (el) {
     if (el.closest(EXCL)) return;
